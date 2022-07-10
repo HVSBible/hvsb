@@ -11,7 +11,12 @@ const config = {
 	},
 
 	preprocess: [
-		preprocess(),
+		preprocess({
+			replace: [
+				// allow use of import.meta.env.VERCEL_ANALYTICS_ID
+				['import.meta.env.VERCEL_ANALYTICS_ID', JSON.stringify(process.env.VERCEL_ANALYTICS_ID)]
+			]
+		}),
 		deepWind(),
 		windi({
 			configPath: './windi.config.js',

@@ -114,6 +114,7 @@ importers:
       tslib: ^2.4.0
       typescript: ~4.7.4
       vitest: ^0.15.2
+      web-vitals: ^2.1.4
       windicss: ^3.5.5
     devDependencies:
       '@hvsb/parts': link:../parts
@@ -139,6 +140,7 @@ importers:
       tslib: 2.4.0
       typescript: 4.7.4
       vitest: 0.15.2
+      web-vitals: 2.1.4
       windicss: 3.5.5
 
   packages/types:
@@ -4061,6 +4063,10 @@ packages:
     resolution: {integrity: sha512-EqPmREeOzttaLRm5HS7io98goBgZ7IVz79aDvqjD0kYXLtFZTc0T/U6wHTPKyIjb+MdN7DFIIX6hgdBEpWmfPA==}
     engines: {node: '>= 8'}
     dev: false
+
+  /web-vitals/2.1.4:
+    resolution: {integrity: sha512-sVWcwhU5mX6crfI5Vd2dC4qchyTqxV8URinzt25XqVh+bHEPGH4C3NPrNionCP7Obx59wrYEbNlw4Z8sjALzZg==}
+    dev: true
 
   /webidl-conversions/3.0.1:
     resolution: {integrity: sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=}
