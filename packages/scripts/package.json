@@ -1,0 +1,20 @@
+{
+  "name": "@hvsb/scripts",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "example": "ts-node example/example.ts",
+    "test": "vitest -u"
+  },
+  "dependencies": {
+    "node-fetch": "^3.2.3"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^16.0.0",
+    "fs-extra": "^10.1.0",
+    "ts-node": "^10.7.0",
+    "typescript": "~4.7.4",
+    "vitest": "^0.15.2"
+  }
+}

@@ -1,0 +1,153 @@
+<script lang="ts">
+  import { Story } from 'kitbook';
+  import { DocumentGenres, type DocumentGenre } from '@hvsb/types';
+
+  import DocGenreThumb from '$lib/chapter/media/thumbs/DocGenreThumb.svelte';
+  import ImageThumb from '$lib/chapter/media/thumbs/ImageThumb.svelte';
+  import VideoThumb from '$lib/chapter/media/thumbs/VideoThumb.svelte';
+  const documentGenres = Object.keys(DocumentGenres) as DocumentGenre[];
+
+  const videoData = {
+    data: {
+      pictures: {
+        base_link:
+          'https://i.vimeocdn.com/video/902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d',
+        sizes: [
+          {
+            width: 100,
+            height: 75,
+            link: 'https://i.vimeocdn.com/video/902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d_100x75?r=pad',
+            link_with_play_button:
+              'https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d_100x75&src1=http%3A%2F%2Ff.vimeocdn.com%2Fp%2Fimages%2Fcrawler_play.png',
+          },
+          {
+            width: 200,
+            height: 150,
+            link: 'https://i.vimeocdn.com/video/902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d_200x150?r=pad',
+            link_with_play_button:
+              'https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d_200x150&src1=http%3A%2F%2Ff.vimeocdn.com%2Fp%2Fimages%2Fcrawler_play.png',
+          },
+          {
+            width: 295,
+            height: 166,
+            link: 'https://i.vimeocdn.com/video/902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d_295x166?r=pad',
+            link_with_play_button:
+              'https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d_295x166&src1=http%3A%2F%2Ff.vimeocdn.com%2Fp%2Fimages%2Fcrawler_play.png',
+          },
+          {
+            width: 640,
+            height: 360,
+            link: 'https://i.vimeocdn.com/video/902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d_640x360?r=pad',
+            link_with_play_button:
+              'https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d_640x360&src1=http%3A%2F%2Ff.vimeocdn.com%2Fp%2Fimages%2Fcrawler_play.png',
+          },
+          {
+            width: 960,
+            height: 540,
+            link: 'https://i.vimeocdn.com/video/902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d_960x540?r=pad',
+            link_with_play_button:
+              'https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d_960x540&src1=http%3A%2F%2Ff.vimeocdn.com%2Fp%2Fimages%2Fcrawler_play.png',
+          },
+          {
+            width: 1280,
+            height: 720,
+            link: 'https://i.vimeocdn.com/video/902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d_1280x720?r=pad',
+            link_with_play_button:
+              'https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d_1280x720&src1=http%3A%2F%2Ff.vimeocdn.com%2Fp%2Fimages%2Fcrawler_play.png',
+          },
+          {
+            width: 1920,
+            height: 1080,
+            link: 'https://i.vimeocdn.com/video/902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d_1920x1080?r=pad',
+            link_with_play_button:
+              'https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F902231697-447f4c4263e6b6614a5370435e669d28710f86c7be3a818f6fcd535a29c64c09-d_1920x1080&src1=http%3A%2F%2Ff.vimeocdn.com%2Fp%2Fimages%2Fcrawler_play.png',
+          },
+        ],
+      },
+    },
+  };
+</script>
+
+<!-- prettier-ignore -->
+# Media Thumbnails
+
+The [SideMargin](/1-components/1-side-margin) contains three types of thumbnails for documents, images, and videos.
+
+The document genre thumbnail pulls from an array of thumbnails, sorts out the properties and applies styles and [icons](https://icones.js.org/) appropriately. 
+<!-- end-prettier-ignore -->
+
+<Story
+  name="Document Genres"
+  knobs={{ size: '10-200;40', minimal: true, fillBackground: false }}
+  let:props={{ size, minimal, fillBackground }}>
+  <div class="flex flex-wrap">
+    {#each documentGenres as genre}
+      <div
+        class="bg-gray-100 m-1 rounded overflow-hidden"
+        style="width: {size}px; height: {size}px;">
+        <DocGenreThumb {genre} {minimal} {fillBackground} />
+      </div>
+    {/each}
+    <div class="bg-gray-100 m-1 rounded overflow-hidden" style="width: {size}px; height: {size}px;">
+      <DocGenreThumb genre={undefined} {minimal} {fillBackground} />
+    </div>
+  </div>
+</Story>
+
+<Story
+  name="Document Genres - Filled"
+  knobs={{ size: '10-200;80', minimal: false, fillBackground: true }}
+  let:props={{ size, minimal, fillBackground }}>
+  <div class="flex flex-wrap">
+    {#each documentGenres as genre}
+      <div
+        class="bg-gray-100 m-1 rounded overflow-hidden"
+        style="width: {size}px; height: {size}px;">
+        <DocGenreThumb {genre} {minimal} {fillBackground} />
+      </div>
+    {/each}
+    <div class="bg-gray-100 m-1 rounded overflow-hidden" style="width: {size}px; height: {size}px;">
+      <DocGenreThumb genre={undefined} {minimal} {fillBackground} />
+    </div>
+  </div>
+</Story>
+
+*TODO: remove the icons from the safelist, continue weaning off FontAwesome. Note the genre's
+drop-down for editors will need to be updated.*
+<Story name="Image" knobs={{ size: '10-200;60' }} let:props={{ size }}>
+  <div class="bg-gray-100 rounded overflow-hidden m-1" style="width: {size}px; height: {size}px;">
+    <ImageThumb
+      gcs="N9RbKq0YoZJ-l_ab0IhU0Hiqwgr-V30kR8vt72pdfmWvWTFRRTfQLCU_6NUxXtYBP5NBmdHUj1JRdK4Bg_2XOg"
+      size={+size} />
+  </div>
+</Story>
+
+<Story
+  name="Desktop Video"
+  knobs={{
+    width: '40-400;120',
+    height: '40-400;40',
+    src: `${videoData.data.pictures.sizes[4].link.replace('?r=pad', '')}`,
+  }}
+  let:props={{ width, height, src }}>
+  <div
+    class="bg-gray-100 rounded overflow-hidden m-1"
+    style="width: {width}px; height: {height}px;">
+    <VideoThumb {src} />
+  </div>
+</Story>
+
+<Story
+  name="Mobile Video"
+  knobs={{
+    width: '40-400;40',
+    height: '40-400;40',
+    src: `${videoData.data.pictures.sizes[4].link.replace('?r=pad', '')}`,
+  }}
+  let:props={{ width, height, src }}>
+  <div
+    class="bg-gray-100 rounded overflow-hidden m-1"
+    style="width: {width}px; height: {height}px;">
+    <VideoThumb {src} />
+  </div>
+</Story>

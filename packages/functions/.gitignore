@@ -1,0 +1,14 @@
+## Compiled JavaScript files
+# lib/**/*.js
+# lib/**/*.js.map
+lib/
+
+# Typescript v1 declaration files
+typings/
+
+node_modules/
+
+service-account*
+stripe-returned-data/
+
+logs/

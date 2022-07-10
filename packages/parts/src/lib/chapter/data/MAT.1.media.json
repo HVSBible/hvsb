@@ -1,0 +1,2269 @@
+[
+  {
+    "createdAt": {
+      "seconds": 1559781395,
+      "nanoseconds": 324000000
+    },
+    "updatedBy": "UpPxQ6LuhobN8dQFdKvrDV6ROWw2",
+    "currentVerses": [
+      37
+    ],
+    "verseIds": [
+      "MRK.4.19",
+      "LUK.4.22",
+      "JHN.2.22",
+      "JHN.1.1",
+      "MAT.5.37",
+      "ACT.4.31",
+      "HEB.7.28",
+      "1JN.5.7",
+      "REV.9.19"
+    ],
+    "yearWritten": 2012,
+    "currentChapter": "5",
+    "authors": [
+      "Steve Stanley"
+    ],
+    "chapterIds": [
+      "MRK.4",
+      "LUK.4",
+      "JHN.2",
+      "JHN.1",
+      "MAT.5",
+      "ACT.4",
+      "HEB.7",
+      "1JN.5",
+      "REV.9"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "currentBookId": "MAT",
+    "bookIds": [
+      "MRK",
+      "LUK",
+      "JHN",
+      "MAT",
+      "ACT",
+      "HEB",
+      "1JN",
+      "REV"
+    ],
+    "type": "document",
+    "genre": "word",
+    "keywords": null,
+    "id": "0yDQI3zj4zuYAM01r31A",
+    "title": "The Word",
+    "description": null,
+    "sections": [
+      {
+        "text": "<p>Word (Gk. λόγος, <i>logos</i>). (John 1:1; Matt 5:37; Mark 4:19; Luke 4:22; John 2:22; Acts 4:31; Rom 9:6; Heb 7:28; 1 Jn 5:7, Rev 9:19) Strong’s 3056</p><p>This is the word from which we get our English word “logic,” but to read that meaning from English back into the first century use of this Greek word would be anachronistic and inappropriate. This word,&nbsp;λόγος (<i>logos</i>), is used over three hundred times in the NT. In one category of uses, it is refers to 1) an expression of the mind, 2) a statement or discussion, 3) a “word,” or a matter or thing under discussion and 4) extending of the previous meaning, simply a “thing.” In another category, it is used for a “mathematical computation,” “reckoning” or “settlement of an account.” Finally, it is used for the second person of the Trinity as the “expression” or “revelation” of God. Jesus is by choice and destiny Savior; He is by nature the revelation of God. In the progress of revelation from Job and Genesis forward, the “Word,” the incarnate Jesus, is the best and most complete revelation of God to date. The next progression or improvement in revelation will be at the revelation of Jesus Christ when He comes again. In John 1, the apostle does not specifically identify that the subject of His writing is Jesus until 1:17. John refers to his subject at first only as the word, then creator, then light, then the one who came, then the word become flesh, then finally as Jesus Christ. Most foundationally, the “Word” is the second person of the Trinity. He is the express revelation of God in the most personal and intimate way, since He reveals God, while being God. John’s grammar in 1:1 asserts first the eternality of the Word (at the beginning [of time and creation], the Word already was), secondly the interrelatedness of the first and second persons of the trinity (the Word was in a face-to-face relationship with God) and thirdly the divinity of the “Word” (and the Word was divine). The Word is Jesus, the personal expression of divinity, God’s best revelation yet.</p>",
+        "contentType": "text"
+      }
+    ],
+    "published": true,
+    "updatedAt": {
+      "seconds": 1624285247,
+      "nanoseconds": 682000000
+    }
+  },
+  {
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "updatedAt": {
+      "seconds": 1608739911,
+      "nanoseconds": 566000000
+    },
+    "createdAt": {
+      "seconds": 1589682151,
+      "nanoseconds": 647000000
+    },
+    "currentBookId": "DEU",
+    "sections": [
+      {
+        "contentType": "text",
+        "text": "<p>A document declaring the separation of a husband and wife mandated by Mosaic law (Dt. 24:1-4; see Mt 5:31; 19:7; Mk 10:4 . The certificate of divorce protected the woman's rights, providing evidence of her freedom and ensuring that her husband could not claim her dowry. An example of the wording of such a certificate is Hosea 2:2: \"She is not my wife, and I am not her husband.\"</p><p>The OT prophets used this statement figuratively to portray God's desire to separate himself from his rebellious people (Isa 50:1; Jer 3:8).</p><p>See CIVIL LAW AND JUSTICE; DIVORCE; MARRIAGE; MARRIAGE CUSTOMS.</p><p>&nbsp;</p><p>Deut 24:1; Isa 50:1; Jer 3:8; Matt 5:31; Matt 19:7; Mark 10:4</p>"
+      }
+    ],
+    "description": null,
+    "currentVerses": [
+      31
+    ],
+    "genre": "note",
+    "title": "Certificate of Divorce",
+    "location": null,
+    "verseIds": [
+      "DEU.24.1",
+      "ISA.50.1",
+      "JER.3.8",
+      "MAT.5.31",
+      "MAT.19.7",
+      "MRK.10.4"
+    ],
+    "type": "document",
+    "id": "2VLHUMiInzb8SwfUHzeu",
+    "chapterIds": [
+      "DEU.24",
+      "ISA.50",
+      "JER.3",
+      "MAT.5",
+      "MAT.19",
+      "MRK.10"
+    ],
+    "keywords": null,
+    "currentChapter": "24",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "bookIds": [
+      "DEU",
+      "ISA",
+      "JER",
+      "MAT",
+      "MRK"
+    ]
+  },
+  {
+    "createdAt": {
+      "seconds": 1558609334,
+      "nanoseconds": 329000000
+    },
+    "currentVerses": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "type": "document",
+    "verse": 3,
+    "updatedAt": {
+      "seconds": 1616174015,
+      "nanoseconds": 942000000
+    },
+    "keywords": null,
+    "description": null,
+    "verseIds": [
+      "MAT.5.3",
+      "MAT.5.4",
+      "MAT.5.5",
+      "MAT.5.6",
+      "MAT.5.7",
+      "MAT.5.8",
+      "MAT.5.9",
+      "MAT.5.10",
+      "MAT.5.11",
+      "MAT.11.6",
+      "MAT.13.6",
+      "MAT.13.16",
+      "MAT.16.17",
+      "MAT.24.46",
+      "LUK.1.45",
+      "LUK.6.20",
+      "LUK.6.21",
+      "LUK.6.22",
+      "LUK.7.23",
+      "LUK.10.23",
+      "LUK.11.27",
+      "LUK.11.28",
+      "LUK.12.37",
+      "LUK.12.38",
+      "LUK.14.15",
+      "LUK.23.29",
+      "JHN.13.17",
+      "JHN.20.29",
+      "LUK.24.30",
+      "JHN.20.19",
+      "ACT.26.2",
+      "EPH.1.19",
+      "1PE.3.14",
+      "REV.14.13"
+    ],
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "currentChapter": "5",
+    "sections": [
+      {
+        "text": "<p>Matthew 5:3 – Word Study: Blessed (Gk. μακάριος, <i>makarios</i>). Strong's: 3107 (5:3-11; Matt 5:11; 11:6; 16:17; 24:46; Luke 1:45; Acts 26:2; Rom 4:7, 8; Jas 1:12, 25; 1 Pet 3:14; Rev 14:13)&nbsp;&nbsp;</p><p>This term is used in Greek literature to describe one who is happy or blessed on account of circumstances as well as for the privileged by wealth or education. Jesus’ use of the term here is very interesting. It seems to redirect the readers’ thinking away from making earthly values primary, toward making heaven’s values primary. Jesus’ teaching seems to recall Ecclesiastes, which teaches that life under the sun is vain until heaven’s reality is brought to bear. It may also have given root to Paul’s teaching in passages such as Rom 12:1, 2 and 2 Cor 4:17, that believers must approach life from a heavenly, divine perspective. So, when Jesus uses this term here He is challenging His hearers to see that true happiness finds root in heaven’s values and reward, and thus it is a privilege, a blessing, to suffer temporarily for such great, eternal gain.</p>",
+        "contentType": "text"
+      }
+    ],
+    "location": [
+      "Mount of Beatitudes"
+    ],
+    "genre": "word",
+    "title": "Blessed",
+    "authors": [
+      "Steve Stanley"
+    ],
+    "currentBookId": "MAT",
+    "id": "3L6eNLRLXnW9RCPHBVYq",
+    "chapterIds": [
+      "MAT.5",
+      "MAT.11",
+      "MAT.13",
+      "MAT.16",
+      "MAT.24",
+      "LUK.1",
+      "LUK.6",
+      "LUK.7",
+      "LUK.10",
+      "LUK.11",
+      "LUK.12",
+      "LUK.14",
+      "LUK.23",
+      "JHN.13",
+      "JHN.20",
+      "LUK.24",
+      "ACT.26",
+      "EPH.1",
+      "1PE.3",
+      "REV.14"
+    ],
+    "published": true,
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "bookIds": [
+      "MAT",
+      "LUK",
+      "JHN",
+      "ACT",
+      "EPH",
+      "1PE",
+      "REV"
+    ]
+  },
+  {
+    "bookIds": [
+      "ROM",
+      "PRO",
+      "MAT",
+      "LEV"
+    ],
+    "yearWritten": 2020,
+    "published": true,
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "genre": "passage",
+    "type": "document",
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "currentVerses": [
+      38
+    ],
+    "updatedAt": {
+      "seconds": 1642658558,
+      "nanoseconds": 25000000
+    },
+    "createdAt": {
+      "seconds": 1585521461,
+      "nanoseconds": 942000000
+    },
+    "chapterIds": [
+      "ROM.12",
+      "PRO.25",
+      "MAT.5",
+      "LEV.19"
+    ],
+    "id": "AknC0mK1paYVTZ9lQMv1",
+    "location": null,
+    "sections": [
+      {
+        "contentType": "text",
+        "text": "<p>Not taking vengeance against one is a teaching found in several places in the Old and New Testament, but the apostle Paul takes this admonition to another level than what is found in the ancient writings outside of Scripture, that of conquering evil by doing good. His writing appears to be based on Proverbs &nbsp;25:21-22, as well as consistent with what one observes in the teaching of Jesus in Matthew 5:38-45, and the instruction of Yahweh to Israel in Leviticus 19, particularly verses 17-18 regarding the second part of the Ten Commandments, and how obedience to it relates to personal relationship with Yahweh.</p>"
+      }
+    ],
+    "currentBookId": "ROM",
+    "currentChapter": "12",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "keywords": null,
+    "title": "Conquer Evil by Doing Good",
+    "description": null,
+    "verseIds": [
+      "ROM.12.20",
+      "PRO.25.21",
+      "MAT.5.38",
+      "LEV.19.17"
+    ]
+  },
+  {
+    "currentChapter": "5",
+    "chapterIds": [
+      "MRK.2",
+      "LUK.5",
+      "LUK.17",
+      "JHN.7",
+      "JHN.11",
+      "JHN.12",
+      "JHN.13",
+      "JHN.17",
+      "JHN.21",
+      "ACT.3",
+      "ACT.4",
+      "MAT.5",
+      "MAT.6",
+      "ACT.21",
+      "ROM.1",
+      "ROM.8",
+      "HEB.5",
+      "1PE.1",
+      "REV.15",
+      "1CO.6",
+      "GAL.1",
+      "MAT.9",
+      "REV.18",
+      "1PE.4"
+    ],
+    "updatedAt": {
+      "seconds": 1642658248,
+      "nanoseconds": 424000000
+    },
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "bookIds": [
+      "MRK",
+      "LUK",
+      "JHN",
+      "ACT",
+      "MAT",
+      "ROM",
+      "HEB",
+      "1PE",
+      "REV",
+      "1CO",
+      "GAL"
+    ],
+    "keywords": null,
+    "description": null,
+    "type": "document",
+    "id": "C9aBDCEKkTQPWnmx4Sbo",
+    "title": "Glorify",
+    "genre": "word",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "sections": [
+      {
+        "contentType": "text",
+        "text": "<p>Glorify (Gk.&nbsp;δοξάζω, <i>doxadzo</i>). (Acts 3:13; Matt 5:16; 6:2; Luke 5:25; Acts 21:20; Rom 1:21; 8:30; Heb 5:5; 1 Pet 1:8; Rev 15:4) Strong’s 1392 &nbsp;&nbsp;</p><p>To glorify can mean to enhance one’s reputation in the eyes of another, to “praise, honor, extol.” It can also mean to cause to have splendid greatness, “clothe in splendor.” In this verse, it refers specifically to the resurrection and ascension of Jesus to the right hand of God. These events are arguably some of the most splendid and glorious in history, and some of the most honoring to Jesus and His Father. God’s eternal and ultimate purpose is to glorify Himself. God’s highest purpose for a human being, His image, is that he or she glorify Him. In both Testaments, the glory of God is understood as a tangible, physical reflection of God’s intangible, invisible attributes (nature). To glorify God is to give tangible expression to His intangible nature and personality. This enhances God’s reputation, the very point of praise (recounting experiences that reflect something of who God is or does.)&nbsp;</p>"
+      }
+    ],
+    "verseIds": [
+      "MRK.2.12",
+      "LUK.5.26",
+      "LUK.17.15",
+      "JHN.7.39",
+      "JHN.11.4",
+      "JHN.12.16",
+      "JHN.13.31",
+      "JHN.17.1",
+      "JHN.21.19",
+      "ACT.3.13",
+      "ACT.4.21",
+      "MAT.5.16",
+      "MAT.6.2",
+      "ACT.21.20",
+      "ROM.1.21",
+      "ROM.8.30",
+      "HEB.5.5",
+      "1PE.1.8",
+      "REV.15.4",
+      "1CO.6.20",
+      "GAL.1.24",
+      "MAT.9.8",
+      "REV.18.7",
+      "1PE.4.11"
+    ],
+    "authors": [
+      "Steve Stanley",
+      "Hershel Wayne House"
+    ],
+    "currentBookId": "LUK",
+    "createdAt": {
+      "seconds": 1559779461,
+      "nanoseconds": 403000000
+    },
+    "published": true,
+    "currentVerses": [
+      16
+    ]
+  },
+  {
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "keywords": null,
+    "verseIds": [
+      "MAT.5.17"
+    ],
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "type": "document",
+    "id": "Dmb1DzwZaQ70kMrXt45V",
+    "location": null,
+    "sections": [
+      {
+        "contentType": "text",
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:17 , 18 Do not think that I came to destroy : Jesus rejected the Pharisees’ charge that He was nullifying the law. The law was both temporary (see Gal. 3:19 ; Eph. 2:15 ; Heb. 7:12 ) and eternal (see 5:18 ; Rom. 3:31 ; 8:4 ). The word fulfill means “to fill out, expand, or complete.” It does not mean to bring to an end. Jesus fulfills the law in several ways: (1) He obeyed it perfectly and taught its correct meaning (vv. 19 , 20 ); (2) He will one day fulfill all of the OT types and prophecies; and (3) He provides a way of salvation that meets all the requirements of the law ( Rom. 3:21 , 31 ). one jot or one tittle will by no means pass: This statement of Jesus provides us with one of the strongest affirmations in the Bible of the inerrancy of Scripture. It is absolutely trustworthy.</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257456-257465). Thomas Nelson. Kindle Edition.&nbsp;</p>"
+      }
+    ],
+    "title": null,
+    "genre": "note",
+    "updatedAt": {
+      "seconds": 1608739378,
+      "nanoseconds": 974000000
+    },
+    "bookIds": [
+      "MAT"
+    ],
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "createdAt": {
+      "seconds": 1608739293,
+      "nanoseconds": 688000000
+    },
+    "description": null,
+    "currentVerses": [
+      17
+    ]
+  },
+  {
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "sections": [
+      {
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:38 This important OT law (see Ex. 21:24 , 25 ; Lev. 24:20 ; Deut. 19:21 ), known as the lex talionis (the law of retaliation), covered what type of punishment should be meted out to transgressors. It limited the retribution that an offender would have to endure.</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257496-257499). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "title": null,
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "updatedAt": {
+      "seconds": 1608740050,
+      "nanoseconds": 959000000
+    },
+    "description": null,
+    "genre": "note",
+    "type": "document",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "keywords": null,
+    "location": null,
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "verseIds": [
+      "MAT.5.38"
+    ],
+    "id": "F7jsd1j6xUjqIZXSY2Fs",
+    "createdAt": {
+      "seconds": 1608740020,
+      "nanoseconds": 502000000
+    },
+    "bookIds": [
+      "MAT"
+    ],
+    "currentVerses": [
+      38
+    ]
+  },
+  {
+    "genre": "note",
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "location": null,
+    "id": "FuwXxSPu2bj6p3m3pvnw",
+    "sections": [
+      {
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:45 To be a “son of” was to be like someone or something. That you may be sons of your Father in heaven means “that you may be like the Heavenly Father who displays His love without discrimination.”</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257508-257510). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "bookIds": [
+      "MAT"
+    ],
+    "title": null,
+    "verseIds": [
+      "MAT.5.45"
+    ],
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "type": "document",
+    "keywords": null,
+    "description": null,
+    "createdAt": {
+      "seconds": 1608767003,
+      "nanoseconds": 46000000
+    },
+    "updatedAt": {
+      "seconds": 1608767044,
+      "nanoseconds": 20000000
+    },
+    "currentVerses": [
+      45
+    ]
+  },
+  {
+    "type": "document",
+    "genre": "note",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "sections": [
+      {
+        "contentType": "text",
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:2 He… taught them : This Sermon on the Mount recorded by Matthew (chs. 5–7 ) is slightly different from the sermon preached to the multitude in Luke 6 . The essence of this sermon was probably preached many times during Jesus’ early ministry. The Sermon on the Mount was not given as the way of salvation for the lost, but as the way of life for true children of the kingdom. It was instruction for those who had responded to Jesus’ invitation to “repent” ( 4:17 ). These disciples were probably confused as to the true nature of righteousness and God’s kingdom. In this address, Jesus clarified both the heart of the law and the nature of true religion in God’s kingdom (see Mic. 6:8 ). In a sense, Jesus turned the law, which was mainly negative, inside out to show its positive core (v. 17 ).</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257432-257440). Thomas Nelson. Kindle Edition.&nbsp;</p>"
+      }
+    ],
+    "createdAt": {
+      "seconds": 1608738776,
+      "nanoseconds": 228000000
+    },
+    "verseIds": [
+      "MAT.5.2"
+    ],
+    "id": "H5KEB1eUJsfizY0ZNLIy",
+    "bookIds": [
+      "MAT"
+    ],
+    "location": null,
+    "updatedAt": {
+      "seconds": 1608738811,
+      "nanoseconds": 859000000
+    },
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "description": null,
+    "keywords": null,
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "title": null,
+    "currentVerses": [
+      2
+    ]
+  },
+  {
+    "createdAt": {
+      "seconds": 1608738948,
+      "nanoseconds": 812000000
+    },
+    "location": null,
+    "type": "document",
+    "genre": "note",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "bookIds": [
+      "MAT"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "id": "HXBoHTcou7v8cbtm5gO9",
+    "verseIds": [
+      "MAT.5.13"
+    ],
+    "title": null,
+    "keywords": null,
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "updatedAt": {
+      "seconds": 1608738956,
+      "nanoseconds": 550000000
+    },
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "sections": [
+      {
+        "text": "<p>5:13 Pure salt maintains its flavor. In Israel, some salt was mixed with other ingredients. When it was exposed to the elements, the salt would be “leached out.” Such leached-out salt was used for coating pathways.</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257450-257452). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "description": null,
+    "currentVerses": [
+      13
+    ]
+  },
+  {
+    "genre": "note",
+    "id": "IxjbB5qOMDRMluIZPdrg",
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "createdAt": {
+      "seconds": 1608740064,
+      "nanoseconds": 372000000
+    },
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "verseIds": [
+      "MAT.5.39"
+    ],
+    "location": null,
+    "title": null,
+    "description": null,
+    "keywords": null,
+    "type": "document",
+    "bookIds": [
+      "MAT"
+    ],
+    "sections": [
+      {
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:39–42 The Lord seems to be speaking in hyperbolic terms to teach the lesson of non-retaliation. Generally He commands us to have a generous and compassionate attitude toward the needy. He makes this application in four areas: physical attacks (v. 39 ), legal suits (v. 40 ), government demands (v. 41 ), and financial requests (v. 42 ).</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257499-257503). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "updatedAt": {
+      "seconds": 1608740083,
+      "nanoseconds": 765000000
+    },
+    "currentVerses": [
+      39
+    ]
+  },
+  {
+    "chapterIds": [
+      "MRK.10",
+      "LUK.17",
+      "LUK.18",
+      "MAT.5",
+      "MAT.18",
+      "ROM.9",
+      "ROM.12",
+      "1CO.7",
+      "2CO.4",
+      "1TI.1",
+      "1PE.2",
+      "JUD.1",
+      "PHP.2",
+      "1TI.5"
+    ],
+    "id": "J35BJIfsujI7Ho1Ognov",
+    "currentBookId": "MAT",
+    "authors": [
+      "Steve Stanley"
+    ],
+    "verse": 47,
+    "sections": [
+      {
+        "contentType": "text",
+        "text": "<p>Mercy (Gk. ἐλεέω, <i>eleeó</i>). Strong's 1653</p><p>The verb ἐλεέω (eleeo) “to have mercy” has a cognate noun formed from the same root in Greek, ἔλεος (eleos), “mercy,” which occurs about as often in the NT. Both mean to show compassion and concern, even pity, for someone in need. To show mercy in some circumstances is not to give to someone what they do deserve. In Luke 18:39, a blind man asks the “Son of David,” a messianic title, for mercy, then Jesus restores his sight. Human beings are exhorted to show mercy, and in fact the gift of mercy is one of the spiritual gifts. Human mercy is a reflection of divine mercy. God’s mercy is literally the salvation of humanity, both in terms of eternal redemption, as well as temporal blessing and the sustaining of life. For these reasons, mercy is a very important theological and spiritual term, helping to define our salvation, human nature and the need for humility.</p>"
+      }
+    ],
+    "currentVerses": [
+      7
+    ],
+    "genre": "word",
+    "bookIds": [
+      "MRK",
+      "LUK",
+      "MAT",
+      "ROM",
+      "1CO",
+      "2CO",
+      "1TI",
+      "1PE",
+      "JUD",
+      "PHP"
+    ],
+    "type": "document",
+    "updatedBy": "UpPxQ6LuhobN8dQFdKvrDV6ROWw2",
+    "createdAt": {
+      "seconds": 1559786906,
+      "nanoseconds": 694000000
+    },
+    "currentChapter": "5",
+    "updatedAt": {
+      "seconds": 1628438848,
+      "nanoseconds": 747000000
+    },
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "published": true,
+    "verseIds": [
+      "MRK.10.47",
+      "LUK.17.13",
+      "LUK.18.39",
+      "MAT.5.7",
+      "MAT.18.33",
+      "ROM.9.15",
+      "ROM.12.8",
+      "1CO.7.25",
+      "2CO.4.1",
+      "1TI.1.13",
+      "1PE.2.10",
+      "JUD.1.22",
+      "PHP.2.27",
+      "1TI.5.10"
+    ],
+    "title": "Mercy",
+    "description": null,
+    "keywords": null
+  },
+  {
+    "location": null,
+    "genre": "note",
+    "createdAt": {
+      "seconds": 1608738830,
+      "nanoseconds": 525000000
+    },
+    "bookIds": [
+      "MAT"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "title": null,
+    "description": null,
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "sections": [
+      {
+        "text": "<p>5:3–12 The Beatitudes are comprised of three elements: a pronouncement of blessing, a quality of life, and a reason why the recipient should be considered blessed. The first element is found in the word Blessed (see Ps. 1:1 ), which introduces each beatitude. The second element does not describe different groups of people, but a composite picture of the kind of person who will inherit Christ’s kingdom. The third element looks ahead to some aspect of the coming kingdom.</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257440-257444). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "verseIds": [
+      "MAT.5.3"
+    ],
+    "type": "document",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "id": "J8gTFwYjaGA71zBFMf2c",
+    "updatedAt": {
+      "seconds": 1608738841,
+      "nanoseconds": 839000000
+    },
+    "keywords": null,
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "currentVerses": [
+      3
+    ]
+  },
+  {
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "keywords": null,
+    "sections": [
+      {
+        "contentType": "text",
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:5 Earth can also be translated land (see Ps. 37:3 , 9 , 11 , 29 ; Prov. 2:21 ).</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257447-257449). Thomas Nelson. Kindle Edition.&nbsp;</p>"
+      }
+    ],
+    "verseIds": [
+      "MAT.5.5"
+    ],
+    "genre": "note",
+    "currentVerses": [
+      5
+    ],
+    "createdAt": {
+      "seconds": 1608738907,
+      "nanoseconds": 521000000
+    },
+    "currentBookId": "MAT",
+    "currentChapter": "5",
+    "description": null,
+    "type": "document",
+    "bookIds": [
+      "MAT"
+    ],
+    "id": "Jl2IE7DbPYrgTErW3Vhb",
+    "title": null,
+    "updatedAt": {
+      "seconds": 1608766569,
+      "nanoseconds": 945000000
+    },
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "location": null,
+    "authors": [
+      "Hershel Wayne House"
+    ]
+  },
+  {
+    "genre": "note",
+    "location": null,
+    "type": "document",
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "updatedAt": {
+      "seconds": 1608739547,
+      "nanoseconds": 662000000
+    },
+    "bookIds": [
+      "MAT"
+    ],
+    "verseIds": [
+      "MAT.5.25"
+    ],
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "createdAt": {
+      "seconds": 1608739519,
+      "nanoseconds": 686000000
+    },
+    "keywords": null,
+    "sections": [
+      {
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:25 It is wise not to have enemies. One should make peace as soon as possible because enemies are capable of doing great damage.</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257477-257478). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "description": null,
+    "title": null,
+    "id": "Jz3XfyzXQKsy02VIK1Mh",
+    "currentVerses": [
+      25
+    ]
+  },
+  {
+    "location": null,
+    "keywords": null,
+    "bookIds": [
+      "MAT"
+    ],
+    "verseIds": [
+      "MAT.5.41"
+    ],
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "description": null,
+    "updatedAt": {
+      "seconds": 1608740110,
+      "nanoseconds": 289000000
+    },
+    "sections": [
+      {
+        "text": "",
+        "contentType": "text"
+      }
+    ],
+    "title": null,
+    "createdAt": {
+      "seconds": 1608740110,
+      "nanoseconds": 289000000
+    },
+    "genre": "word",
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "type": "document",
+    "id": "MbW3gPlPIzJ4hpvT4UuG",
+    "currentVerses": [
+      41
+    ]
+  },
+  {
+    "title": "The Teaching Methods of Jesus",
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "type": "document",
+    "createdAt": {
+      "seconds": 1566108007,
+      "nanoseconds": 151000000
+    },
+    "updatedAt": {
+      "seconds": 1647655126,
+      "nanoseconds": 736000000
+    },
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "sections": [
+      {
+        "contentType": "text",
+        "text": "<h3 style=\"text-align:center;\"><strong>The Ways in Which Jesus Taught</strong></h3><h4><strong>Picturesque Speech</strong></h4><p><i>Vivid or overstated language</i></p><blockquote><p><strong>Matt 7:3-5</strong></p><p>\"And why do you look at the speck in your brother's eye, but do not consider the plank in your brother's eye, but do not consider the plank in your own eye? Or how can you say to your brother, 'Let me remove the speck from your eye'; and look, a plank is in your own eye? Hypocrite! First remove the plank from your own eye, and then you will see clearly to remove the speck from your brother's eye?\"</p><p><strong>Lk 14:26</strong></p><p>\"If anyone comes to Me and does not hate his father and mother, wife and children, brothers and sisters, yes, and his own life also, he cannot be My disciple.\"</p></blockquote><h4><strong>Puns</strong></h4><p><i>A play on words</i></p><blockquote><p><strong>Jn 3:8</strong>, interchange of wind and Spirit, which are the same word in the Greek&nbsp;</p><p><strong>Matt 23:24</strong>, gnat (<i>qalma'</i>) and camel (<i>gamla'</i>) are used in reacting to a Pharisee observance of Lev 11:41f).</p></blockquote><h4><strong>Proverbs</strong></h4><p><i>Not to be understood as absolutes; they stress one side of a truth</i>.&nbsp;</p><blockquote><p><strong>Prov 26:4-5</strong></p><p>Do not answer a fool according to his folly,</p><p>&nbsp; &nbsp; &nbsp;Lest you also be like him.</p><p>Answer a fool according to his folly,</p><p>&nbsp; &nbsp; &nbsp;Lest he be wise in his own eyes.</p><p><strong>Matt 7:1 with Matt 7:6</strong></p><p>\"Judge not, that you be not judged.\"</p><p>\"Do not give what is holy to the dogs; nor cast your pearls before swine, lest they trample them under their feet, and turn and tear you in pieces.\"</p></blockquote><h4><strong>Poetry</strong></h4><p>Hebrew poetry is <i>not based on rhyme or meter</i> as is commonly done today but is concerned with <i>balance of thought</i>. Jesus used this form. There are various kinds of poetical form:</p><blockquote><p>Lk 6:27-28 <i>Synonymous</i></p><p>But I say to you who hear:</p><p>&nbsp; &nbsp; Love your enemies,&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; do good to those who hate you,&nbsp;</p><p>&nbsp; &nbsp; bless those who curse you,&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; and pray for those who spitefully use you.</p><p>Mk 8:35 <i>Antithetic</i></p><p>&nbsp; &nbsp; For whoever desires to save his life will lose it,</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;but whoever loses his life for My sake and the gospel's will save it.</p><p>Lk 9:48 <i>Stairlike or climactic</i></p><p>&nbsp; &nbsp; \"Whoever receives this little child in My name receives me;</p><p>&nbsp; &nbsp; and whoever receives Me receives Him who sent Me.</p><p>&nbsp; &nbsp; For he who is least among you all will be great.\"</p><p>Lk 17:26-30 Double parallel stanzas</p><p>&nbsp; &nbsp; 26 As it was in the days of Noah, even so it will also be in the days of the Son of Man.&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 27 &nbsp;They ate, they drank, they married, and they were given in marriage until the day that Noah entered into the ship, and the flood came and destroyed them all.&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 28 &nbsp;Likewise, even as it was in the days of Lot: they ate, they drank, they bought, they sold, they planted, they built; 29 but in the day that Lot went out from Sodom, it rained fire and sulfur from the sky and destroyed them all.&nbsp;</p><p>&nbsp; 30 &nbsp;It will be the same way in the day that the Son of Man is revealed.</p></blockquote><p>See Bruce Metzger, <i>Introduction to the New Testament</i>,&nbsp;</p>"
+      }
+    ],
+    "currentChapter": "5",
+    "description": null,
+    "currentBookId": "MAT",
+    "verseIds": [
+      "MAT.5.2"
+    ],
+    "id": "P0sYvJvJZC1BrPBBg1Gs",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "genre": "topical",
+    "bookIds": [
+      "MAT"
+    ],
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "keywords": null,
+    "published": true,
+    "currentVerses": [
+      2
+    ]
+  },
+  {
+    "bookIds": [
+      "MAT"
+    ],
+    "id": "QddzgnwlAkm5FUhI9PfV",
+    "createdAt": {
+      "seconds": 1608767056,
+      "nanoseconds": 547000000
+    },
+    "genre": "note",
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "type": "document",
+    "verseIds": [
+      "MAT.5.48"
+    ],
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "description": null,
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "location": null,
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "keywords": null,
+    "updatedAt": {
+      "seconds": 1608767101,
+      "nanoseconds": 681000000
+    },
+    "sections": [
+      {
+        "contentType": "text",
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:48 This verse, which comes from Deut. 18:13 , refers to completeness. In the context of 5:43–48 , it seems to mean that Jesus’ followers are to be as perfect as God in the ways that they love. God does not lower the standard to accommodate our sinfulness. He gives us the power to keep His righteous standard.</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257511-257514). Thomas Nelson. Kindle Edition.&nbsp;</p>"
+      }
+    ],
+    "title": null,
+    "currentVerses": [
+      48
+    ]
+  },
+  {
+    "genre": "note",
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "keywords": null,
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "type": "document",
+    "updatedAt": {
+      "seconds": 1608739509,
+      "nanoseconds": 509000000
+    },
+    "title": null,
+    "createdAt": {
+      "seconds": 1608739470,
+      "nanoseconds": 688000000
+    },
+    "verseIds": [
+      "MAT.5.22"
+    ],
+    "bookIds": [
+      "MAT"
+    ],
+    "location": null,
+    "published": true,
+    "description": null,
+    "id": "SJSzRr3pZQ38URTQ5MIL",
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "sections": [
+      {
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:22 The scribes and Pharisees said that a person who referred to another as Raca, meaning “empty head,” was in danger of being sued for libel before the council (or the Sanhedrin). On the other hand, Jesus said that whoever calls another a fool will have to answer to God. That is not to say that calling someone a fool will condemn a believer to eternal punishment in hell. Rather Jesus was saying that to utter such words is to place oneself in a worse condition at the time of judgment (see 1 Cor. 3:12–15 ).</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257472-257475). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "currentVerses": [
+      22
+    ]
+  },
+  {
+    "createdAt": {
+      "seconds": 1578339355,
+      "nanoseconds": 630000000
+    },
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "location": null,
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "verseIds": [
+      "MAT.5.28"
+    ],
+    "sections": [
+      {
+        "contentType": "text",
+        "text": ""
+      }
+    ],
+    "type": "document",
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "title": null,
+    "genre": "word",
+    "updatedAt": {
+      "seconds": 1578339355,
+      "nanoseconds": 630000000
+    },
+    "bookIds": [
+      "MAT"
+    ],
+    "keywords": null,
+    "description": null,
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "id": "StGYznPh56CJpDXkqiFv",
+    "currentVerses": [
+      28
+    ]
+  },
+  {
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "location": null,
+    "createdAt": {
+      "seconds": 1608739388,
+      "nanoseconds": 641000000
+    },
+    "bookIds": [
+      "MAT"
+    ],
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "sections": [
+      {
+        "text": "<p>5:20 The righteousness of the scribes and Pharisees was essentially external adherence to rules. God demands more than this. Jesus’ words must have shaken His disciples, since the meticulously righteous deeds of the scribes and Pharisees were regarded as being far above those of the average person. However the only righteousness that satisfies God’s standard is faith in Jesus Christ (see Rom. 3:21 , 22).</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257466-257470). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "verseIds": [
+      "MAT.5.20"
+    ],
+    "type": "document",
+    "description": null,
+    "id": "T8tRVzhhCeN41v9tE6PT",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "keywords": null,
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "genre": "note",
+    "updatedAt": {
+      "seconds": 1608739408,
+      "nanoseconds": 984000000
+    },
+    "title": null,
+    "currentVerses": [
+      20
+    ]
+  },
+  {
+    "verseIds": [
+      "MAT.5.32",
+      "MAT.19.1",
+      "MAT.19.2",
+      "MAT.19.3",
+      "MAT.19.4",
+      "MAT.19.5",
+      "MAT.19.6",
+      "MAT.19.7",
+      "MAT.19.8",
+      "MAT.19.9",
+      "MAT.19.10",
+      "MRK.10.11",
+      "MRK.16.18",
+      "LUK.16.18"
+    ],
+    "published": true,
+    "keywords": null,
+    "currentVerses": [
+      32
+    ],
+    "currentChapter": "5",
+    "type": "document",
+    "yearWritten": 2012,
+    "location": [
+      "Mount of Beatitudes"
+    ],
+    "updatedAt": {
+      "seconds": 1616192045,
+      "nanoseconds": 610000000
+    },
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "description": null,
+    "authors": [
+      "Daniel Garland",
+      "Hershel Wayne House"
+    ],
+    "title": "Jesus' Teachings on Divorce and Remarriage",
+    "createdAt": {
+      "seconds": 1559256810,
+      "nanoseconds": 530000000
+    },
+    "currentBookId": "MAT",
+    "sections": [
+      {
+        "text": "<p>Most Christians throughout history have believed that marriage was intended for one man and one woman for as long as they both live. They have further believed that, with one exception, adultery is committed by a person who divorces his or her spouse and marries another. The question is, what is meant by&nbsp;πορνείᾳ” (<i>porneia</i>—“except for immorality”); three possibilities have generally been given.&nbsp;</p><p>If the word <i>immorality&nbsp;</i>was used in its more restrictive sense, possibly referring to an illegal marriage under Jewish Law (see Lev 18:6-18; Matt 14:1-3), or the unfaithfulness of a Jewish bride during her betrothal (see Deut 22:13ff; Matt 1:18-19), then there are no biblical grounds for divorce and remarriage for those in a fully consummated, biblically legal marriage. This has been the historical view of the Church Fathers and the Roman Catholic Church.&nbsp;</p><p>If, on the other hand, the word that is translated <i>immorality&nbsp;</i>was used in the sense of sexual sin, including marital infidelity, then there are biblical grounds for divorce. In such cases, the innocent partner is free to remarry without committing adultery because the original marriage was nullified by the guilty partner's sexual misconduct (see Deut 24:1-4; Matt 19:1-10). This has been the majority view held by the Reformers and evangelicals.</p><p>Others have argued that &nbsp;Jesus did not discuss other <i>biblical</i> grounds for divorce, such as neglect (Exod 21:10-11), but He did not disapprove of divorce on these grounds. This position sees Jesus answering a very specific question, relating to a debate that had begun between the Hillel and Shammaite rabbinic schools over divorce. In the early years of the first century A.D., the Hillel school began to issue divorce certificates for “any matter,” while the Shammaites argued that divorces were only allowed for “matters of indecency” (which included sexual sin, as well as neglect). Jesus seems to have sided with the Shammaites, since He used almost the exact same phrase. This argument would also negate the seeming contradiction between Jesus on Paul on the subject (1 Cor 7:15).&nbsp;</p><p>For more information on the first two views, see <a href=\"https://www.amazon.com/Divorce-Remarriage-Christian-Spectrum-Multiview/dp/0830812830/ref=sr_1_1?dchild=1&amp;keywords=H.+Wayne+House%2C+Divorce+and+Remarriage%2C+Four+Christian+Views&amp;qid=1614888852&amp;sr=8-1\">H. Wayne House, <i>Divorce and Remarriage: Four Christian Views</i></a>, and for the latter perspective, see <a href=\"https://www.amazon.com/Divorce-Remarriage-Bible-Literary-Context/dp/0802849431/ref=pd_bxgy_img_2/138-1482186-5974907?_encoding=UTF8&amp;pd_rd_i=0802849431&amp;pd_rd_r=6044997f-5c11-43b1-8f35-4cd38639e563&amp;pd_rd_w=PSecA&amp;pd_rd_wg=a4PPh&amp;pf_rd_p=f325d01c-4658-4593-be83-3e12ca663f0e&amp;pf_rd_r=GDG9QMNJ7VQE04A4F03X&amp;psc=1&amp;refRID=GDG9QMNJ7VQE04A4F03X\">David Instone-Brewer, <i>Divorce and Remarriage in the Bible: &nbsp;The Social and Literary Context</i></a>.&nbsp;</p><p>Other Scriptures that bear on this important subject, include: Gen 2:24; Mal 2:14; Mark 10:11-12; Luke 16:18; Rom 7:1-3; 1 Cor 7:10-11; 15, 39.</p>",
+        "contentType": "text"
+      }
+    ],
+    "chapterIds": [
+      "MAT.5",
+      "MAT.19",
+      "MRK.10",
+      "MRK.16",
+      "LUK.16"
+    ],
+    "genre": "topical",
+    "id": "TIdTIAJdjzgO6LzcGNCc",
+    "bookIds": [
+      "MAT",
+      "MRK",
+      "LUK"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2"
+  },
+  {
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "keywords": null,
+    "type": "document",
+    "title": null,
+    "sections": [
+      {
+        "contentType": "text",
+        "text": ""
+      }
+    ],
+    "description": null,
+    "genre": "word",
+    "location": null,
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "createdAt": {
+      "seconds": 1608739059,
+      "nanoseconds": 118000000
+    },
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "bookIds": [
+      "MAT"
+    ],
+    "updatedAt": {
+      "seconds": 1608739059,
+      "nanoseconds": 118000000
+    },
+    "verseIds": [
+      "MAT.5.16"
+    ],
+    "id": "TSZBYRB1NVkLYjcmusxH",
+    "currentVerses": [
+      16
+    ]
+  },
+  {
+    "location": [
+      "Valley of Hinnom"
+    ],
+    "currentBookId": "MAT",
+    "updatedAt": {
+      "seconds": 1571630889,
+      "nanoseconds": 727000000
+    },
+    "keywords": null,
+    "currentVerses": [
+      29
+    ],
+    "currentChapter": "5",
+    "sections": [
+      {
+        "text": "<p>Most translations of the New Testament have the word “hell” in Matt 5:29. The word in Greek is&nbsp;γέεννα, which itself is a translation of Ge’hinnom&nbsp;(גֵיא בֶן־הִנֹּם). The Hebrew word means the valley of Hinnom, and refers to the valley that forms the western boundary of Jerusalem. By New Testament times it had become synonymous with hell due to the burning of children in sacrifice to Molech in Jer. 7:31, as well as the presence of an ever-burning garbage dump in the valley during Jesus’ day.</p><p><strong>Bibliography</strong></p><p>Finegan , Jack, <i>The Archaeology of the New Testament: The Life of Jesus and the Beginning of the Early Church</i>, (Princeton, NJ: Princeton University Press, 1992), 183.</p>",
+        "contentType": "text"
+      }
+    ],
+    "createdAt": {
+      "seconds": 1556417691,
+      "nanoseconds": 583000000
+    },
+    "genre": "passage",
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "verseIds": [
+      "MAT.5.29"
+    ],
+    "bookIds": [
+      "MAT"
+    ],
+    "description": null,
+    "id": "TVfVBbJ8knMEg9acJob4",
+    "createdBy": "NAA1gs9vegWQ6hBNFgxDZusfuih1",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "published": true,
+    "yearWritten": 2014,
+    "title": "Jesus' Teaching on Gehenna",
+    "type": "document"
+  },
+  {
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "bookIds": [
+      "MAT"
+    ],
+    "sections": [
+      {
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:3 Blessed are the poor in spirit : The idea of God blessing the humble and resisting the proud can also be found in Prov. 3:34 ; James 4:6 .</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257445-257446). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "createdAt": {
+      "seconds": 1608738881,
+      "nanoseconds": 459000000
+    },
+    "currentVerses": [
+      3
+    ],
+    "currentChapter": "5",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "id": "VZAKwUqCkGajcKwRY77D",
+    "location": null,
+    "currentBookId": "MAT",
+    "description": null,
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "updatedAt": {
+      "seconds": 1608766550,
+      "nanoseconds": 746000000
+    },
+    "genre": "note",
+    "title": null,
+    "verseIds": [
+      "MAT.5.3"
+    ],
+    "keywords": null,
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "type": "document"
+  },
+  {
+    "updatedAt": {
+      "seconds": 1571631609,
+      "nanoseconds": 474000000
+    },
+    "verseIds": [
+      "MAT.5.41"
+    ],
+    "currentVerses": [
+      41
+    ],
+    "id": "ZENz4XIkXA1mudCuDIsI",
+    "description": null,
+    "createdAt": {
+      "seconds": 1564607891,
+      "nanoseconds": 879000000
+    },
+    "published": true,
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "yearWritten": 2019,
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "currentBookId": "MAT",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "bookIds": [
+      "MAT"
+    ],
+    "title": "Roman Milestones",
+    "currentChapter": "5",
+    "sections": [
+      {
+        "text": "<p>The Roman Empire built an elaborate road system throughout its domain, marking the roads by Milestones, which were generally a mile apart. One of the milestones, The Golden Milestone, Milliarium Aureum, at the center of Rome, is said to have marked the center of the Roman Empire.</p>",
+        "contentType": "text"
+      },
+      {
+        "contentType": "image",
+        "imageId": "23bhbSZQhRf8ZiaqzIQg"
+      },
+      {
+        "imageId": "FKYd7ohiIddusAte3n6O",
+        "contentType": "image"
+      },
+      {
+        "contentType": "image",
+        "imageId": "ICmkKXJf5bDoyszvWH7v"
+      },
+      {
+        "imageId": "zTRCZt7B9s3AvxGKteqD",
+        "contentType": "image"
+      }
+    ],
+    "genre": "topical",
+    "keywords": null,
+    "type": "document"
+  },
+  {
+    "genre": "topical",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "location": null,
+    "createdAt": {
+      "seconds": 1585507007,
+      "nanoseconds": 719000000
+    },
+    "currentVerses": [
+      38
+    ],
+    "currentChapter": "12",
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "currentBookId": "ROM",
+    "verseIds": [
+      "ROM.12.17",
+      "MAT.5.38",
+      "EXO.23.4",
+      "PRO.24.17",
+      "LEV.19.18"
+    ],
+    "title": "\"Repay no one evil for evil\"",
+    "bookIds": [
+      "ROM",
+      "MAT",
+      "EXO",
+      "PRO",
+      "LEV"
+    ],
+    "type": "document",
+    "chapterIds": [
+      "ROM.12",
+      "MAT.5",
+      "EXO.23",
+      "PRO.24",
+      "LEV.19"
+    ],
+    "yearWritten": 2020,
+    "sections": [
+      {
+        "contentType": "text",
+        "text": "<p>The command not to retaliate against one's neighbor is found in several passages in the Bible, and also in non-biblical texts in the Ancient Near East from the 8th century B.C. on. We tend to view &nbsp;Jesus' words in Matthew 5:38-45, in which he teaches this important principle (cf note at <a href=\"https://hvsb-edit.web.app/WEB/MAT/5/study\">Matt 5:38</a> where Jesus sets aside the idea of retaliation for personal revenge) as the originator of this moral truth. Additionally, Old Testament texts teach the same principle that Jesus gave in his Sermon on the Mount (Exod 23:4, 5; Prov 24:17, 18 and Leviticus 19:18; Job alludes to this idea, as well, in Job 31:29-30). A similar admonition is found in a Babylonian text of the late eighth century B.C.</p><blockquote><p>\"Unto your opponent do no evil;</p><p>Your evildoer recompense with good;</p><p>Unto your enemy let justice [be done].\" (lines 35-37) [1]</p></blockquote><p>Pritchard provides some other examples similar to the Sermon on the Mount :</p><blockquote><p>\"Lines 35-40, about rendering good for evil, are on the level of the Sermon on the Mount (Matt. 5:38-45). The closest parallels in the Old Testament are Ex. 23:4-5; Prov. 24:17-18; 25:21-22; Job 31:29-30; cf. Lev. 19:18; Prov. 24:29; Ecclus. 28:2; Tobit 4:15.\" He also adds an example from R.H. Charles, \"In Ahiqar, Syriac A version, we read (2:20), \"My son, if your enemy meet you with evil, meet him with wisdom\" (R. H. Charles, <i>Apocrypha and Pseudepigrapha</i>, 11, 730). [2]</p></blockquote><p>[1] James Pritchard, <i>Ancient Near Texts Relating to the Old Testament</i>, Under Counsels of Wisdom, p. 426, lines 35-37.</p><p>[2] Ibid.</p>"
+      }
+    ],
+    "description": null,
+    "keywords": null,
+    "id": "c7uCNxgUfylxEsomQmKP",
+    "published": true,
+    "updatedAt": {
+      "seconds": 1642658488,
+      "nanoseconds": 535000000
+    }
+  },
+  {
+    "updatedAt": {
+      "seconds": 1608738734,
+      "nanoseconds": 91000000
+    },
+    "genre": "note",
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "type": "document",
+    "bookIds": [
+      "MAT"
+    ],
+    "sections": [
+      {
+        "contentType": "text",
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:1 The multitudes were found at the beginning and end of Jesus’ Sermon on the Mount (the term is translated the people in 7:28 ). Yet this verse implies that Jesus left the multitude. Evidently He went away from the crowds so that He could instruct the disciples. As He taught the disciples, the crowds came to where He was. when He was seated: It was normal for a teacher or rabbi to sit while he taught, with his audience gathered around. The mountain, probably a high hill on the northwest shore of the Sea of Galilee, would have served as a natural amphitheater. disciples: Jesus had many disciples in addition to the crowds who followed Him and listened to His teaching. From the many disciples, He selected 12 to receive special instruction and power.</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257426-257430). Thomas Nelson. Kindle Edition.&nbsp;</p>"
+      }
+    ],
+    "location": null,
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "keywords": null,
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "verseIds": [
+      "MAT.5.1"
+    ],
+    "description": null,
+    "title": null,
+    "createdAt": {
+      "seconds": 1608738682,
+      "nanoseconds": 554000000
+    },
+    "id": "cRda5BnY5X7fVjaYU02R",
+    "currentVerses": [
+      1
+    ]
+  },
+  {
+    "description": null,
+    "id": "fivz7qnCndacW2TEZQsO",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "location": null,
+    "updatedAt": {
+      "seconds": 1608739828,
+      "nanoseconds": 838000000
+    },
+    "createdAt": {
+      "seconds": 1608739566,
+      "nanoseconds": 175000000
+    },
+    "keywords": null,
+    "title": null,
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "verseIds": [
+      "MAT.5.28"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "sections": [
+      {
+        "contentType": "text",
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:28 to lust for her : A man who gazes at a woman with the purpose of wanting her sexually has mentally committed adultery.</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257478-257479). Thomas Nelson. Kindle Edition.&nbsp;</p>"
+      }
+    ],
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "type": "document",
+    "bookIds": [
+      "MAT"
+    ],
+    "genre": "note",
+    "currentVerses": [
+      28
+    ]
+  },
+  {
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "genre": "word",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "keywords": null,
+    "createdAt": {
+      "seconds": 1608739941,
+      "nanoseconds": 66000000
+    },
+    "title": null,
+    "description": null,
+    "updatedAt": {
+      "seconds": 1608739979,
+      "nanoseconds": 78000000
+    },
+    "sections": [
+      {
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:31 , 32 Sexual immorality is a general term that includes premarital sex, extramarital infidelity, homosexuality, and bestiality ( 19:3–12 ).</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Location 257486). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "type": "document",
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "location": null,
+    "verseIds": [
+      "MAT.5.31"
+    ],
+    "bookIds": [
+      "MAT"
+    ],
+    "id": "gyOg8jLLt0oeYKqeXTsQ",
+    "currentVerses": [
+      31
+    ]
+  },
+  {
+    "genre": "note",
+    "verseIds": [
+      "MAT.5.21"
+    ],
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "keywords": null,
+    "description": null,
+    "createdAt": {
+      "seconds": 1608739416,
+      "nanoseconds": 999000000
+    },
+    "location": null,
+    "id": "iIVVHp7WVV7HoKHRHG6M",
+    "sections": [
+      {
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:21 You have heard refers to the teaching of various rabbis rather than to that of Moses. Jesus was questioning the interpretation of the Jewish scholars, not the OT itself.</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257470-257472). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "type": "document",
+    "title": null,
+    "updatedAt": {
+      "seconds": 1608739448,
+      "nanoseconds": 752000000
+    },
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "bookIds": [
+      "MAT"
+    ],
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "currentVerses": [
+      21
+    ]
+  },
+  {
+    "location": null,
+    "type": "document",
+    "verseIds": [
+      "MAT.5.43"
+    ],
+    "updatedAt": {
+      "seconds": 1608766957,
+      "nanoseconds": 561000000
+    },
+    "genre": "note",
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "title": null,
+    "createdAt": {
+      "seconds": 1608766908,
+      "nanoseconds": 519000000
+    },
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "id": "lMdU8PeUd11hzIWvJTZb",
+    "description": null,
+    "bookIds": [
+      "MAT"
+    ],
+    "currentChapter": "5",
+    "currentBookId": "MAT",
+    "keywords": null,
+    "sections": [
+      {
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:43 Hate your enemy is not found in Moses’ writings. This was a principle drawn by the scribes and Pharisees from Lev. 19:18 .</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257506-257508). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "currentVerses": [
+      43
+    ]
+  },
+  {
+    "keywords": null,
+    "bookIds": [
+      "MAT"
+    ],
+    "sections": [
+      {
+        "text": "",
+        "contentType": "text"
+      }
+    ],
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "verseIds": [
+      "MAT.5.2"
+    ],
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "genre": "word",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "description": null,
+    "createdAt": {
+      "seconds": 1566108007,
+      "nanoseconds": 249000000
+    },
+    "title": null,
+    "type": "document",
+    "updatedAt": {
+      "seconds": 1566108007,
+      "nanoseconds": 249000000
+    },
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "id": "qDASR5gIQmF7QBwdvZXC",
+    "currentVerses": [
+      2
+    ]
+  },
+  {
+    "keywords": null,
+    "yearWritten": 2012,
+    "sections": [
+      {
+        "text": "<p>(Gk. πορνεια, <i>porneia</i>). Strong's: 4202 (19: 9; John 8: 41; 1 Cor 5: 1; 7: 2; Eph 5: 3; 1 Thess 4: 3)</p><p><strong>Write some more from my thesis.</strong></p><p>Fornication refers to sexual intercourse outside a proper marriage relationship. The nature of the sexual relationship is to bond together permanently a man and woman, making them one flesh. This is God’s design, although He gives a concession in Deut 24: 1- 4 allowing divorce, to which this passage refers. The nature of the sexual bond argues for the foolishness of promiscuity, doing damage to the marital bond or to one’s ability to successfully make that bond in the future. Though one may avoid the physical diseases associated with promiscuity, it is not possible to avoid the damage fornication wrecks on the soul.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "currentBookId": "MAT",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "verseIds": [
+      "MAT.5.32",
+      "MAT.19.9",
+      "JHN.8.41",
+      "ACT.15.20",
+      "ACT.15.29",
+      "ACT.21.25",
+      "1CO.5.1",
+      "1CO.7.2",
+      "1TH.4.3",
+      "GAL.5.19",
+      "EPH.5.3",
+      "ROM.1.29",
+      "COL.3.5",
+      "REV.9.21",
+      "REV.19.2"
+    ],
+    "bookIds": [
+      "MAT",
+      "JHN",
+      "ACT",
+      "1CO",
+      "1TH",
+      "GAL",
+      "EPH",
+      "ROM",
+      "COL",
+      "REV"
+    ],
+    "title": "Fornication",
+    "chapterIds": [
+      "MAT.5",
+      "MAT.19",
+      "JHN.8",
+      "ACT.15",
+      "ACT.21",
+      "1CO.5",
+      "1CO.7",
+      "1TH.4",
+      "GAL.5",
+      "EPH.5",
+      "ROM.1",
+      "COL.3",
+      "REV.9",
+      "REV.19"
+    ],
+    "currentVerses": [
+      32
+    ],
+    "currentChapter": "5",
+    "type": "document",
+    "createdAt": {
+      "seconds": 1559256641,
+      "nanoseconds": 93000000
+    },
+    "genre": "word",
+    "published": true,
+    "location": [
+      "Mount of Beatitudes"
+    ],
+    "id": "rOrF956Eg1fTtwt3AcFN",
+    "updatedAt": {
+      "seconds": 1587338909,
+      "nanoseconds": 809000000
+    },
+    "authors": [
+      "Steve Stanley"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "description": null
+  },
+  {
+    "location": null,
+    "createdAt": {
+      "seconds": 1608739090,
+      "nanoseconds": 432000000
+    },
+    "id": "slsEXtliSQ0rgHbn9ZcE",
+    "updatedAt": {
+      "seconds": 1608739269,
+      "nanoseconds": 478000000
+    },
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "title": null,
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "keywords": null,
+    "description": null,
+    "bookIds": [
+      "MAT"
+    ],
+    "sections": [
+      {
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:16 Let your light so shine : The believer does not have inherent light; rather we have reflective light. As we behold the glory of the Lord, we reflect it. Therefore, we need to make sure that nothing comes between us and the Lord’s light (see 2 Cor. 3:18 ; Phil. 2:14–16 ).</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257452-257455). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "verseIds": [
+      "MAT.5.16"
+    ],
+    "genre": "note",
+    "type": "document",
+    "currentVerses": [
+      16
+    ]
+  },
+  {
+    "title": null,
+    "bookIds": [
+      "MAT"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "createdAt": {
+      "seconds": 1608739842,
+      "nanoseconds": 608000000
+    },
+    "verseIds": [
+      "MAT.5.29"
+    ],
+    "sections": [
+      {
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:29 , 30 The hyperbole (exaggerated saying) about tearing out one’s eye is similar to the phrase in Prov. 23:2 , “Put a knife to your throat if you are a man given to appetite.” In striking overstatement, Jesus advises removing every temptation to evil, no matter what the cost. The warning of hell (v. 22 ) indicates that those whose lifestyle is characterized by uncontrolled immorality are not heirs of the kingdom (see 1 Cor. 6:9 , 10 ).</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257480-257485). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "id": "wYVrQfSaItXiGmVtSxBA",
+    "keywords": null,
+    "type": "document",
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "genre": "note",
+    "location": null,
+    "description": null,
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "updatedAt": {
+      "seconds": 1608739860,
+      "nanoseconds": 710000000
+    },
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "currentVerses": [
+      29
+    ]
+  },
+  {
+    "keywords": null,
+    "currentVerses": [
+      41
+    ],
+    "description": null,
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "updatedAt": {
+      "seconds": 1608766905,
+      "nanoseconds": 339000000
+    },
+    "location": null,
+    "currentBookId": "MAT",
+    "verseIds": [
+      "MAT.5.41"
+    ],
+    "currentChapter": "5",
+    "bookIds": [
+      "MAT"
+    ],
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "sections": [
+      {
+        "contentType": "text",
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:41 Compels is a technical term that refers to the law of impressment. The Roman government could press anyone into its service to carry a load as far as one mile. Matthew records a Roman officer doing this to Simon of Cyrene in 27:32 .</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257504-257506). Thomas Nelson. Kindle Edition.&nbsp;</p><p>&nbsp;</p>"
+      }
+    ],
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "createdAt": {
+      "seconds": 1608766842,
+      "nanoseconds": 584000000
+    },
+    "type": "document",
+    "title": null,
+    "id": "x58RDtItKOCRrAanUrhT",
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "genre": "note"
+  },
+  {
+    "authors": [
+      "Steve Stanley"
+    ],
+    "verseIds": [
+      "MAT.4.3",
+      "MRK.1.1",
+      "LUK.1.35",
+      "ROM.8.3",
+      "MRK.15.39",
+      "LUK.4.3",
+      "JHN.1.49",
+      "JHN.19.7",
+      "ACT.8.37",
+      "2CO.1.19",
+      "MAT.5.9",
+      "EPH.4.13",
+      "HEB.4.14",
+      "1JN.4.15",
+      "REV.2.18"
+    ],
+    "keywords": null,
+    "currentVerses": [
+      9
+    ],
+    "chapterIds": [
+      "MAT.4",
+      "MRK.1",
+      "LUK.1",
+      "ROM.8",
+      "MRK.15",
+      "LUK.4",
+      "JHN.1",
+      "JHN.19",
+      "ACT.8",
+      "2CO.1",
+      "MAT.5",
+      "EPH.4",
+      "HEB.4",
+      "1JN.4",
+      "REV.2"
+    ],
+    "id": "yXB9crGzcKpwhmGH0kHz",
+    "currentBookId": "MAT",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "title": "Son of God",
+    "createdAt": {
+      "seconds": 1559777376,
+      "nanoseconds": 75000000
+    },
+    "type": "document",
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "updatedAt": {
+      "seconds": 1570612294,
+      "nanoseconds": 859000000
+    },
+    "currentChapter": "4",
+    "bookIds": [
+      "MAT",
+      "MRK",
+      "LUK",
+      "ROM",
+      "JHN",
+      "ACT",
+      "2CO",
+      "EPH",
+      "HEB",
+      "1JN",
+      "REV"
+    ],
+    "published": true,
+    "description": null,
+    "genre": "word",
+    "sections": [
+      {
+        "contentType": "text",
+        "text": "<p>Son of God (Gk.&nbsp;υἱὸς τοῦ Θεοῦ, <i>huios tou theou</i>). (4:3; Matt 4:3, 5:9, Luke 1:35, Rom&nbsp; 8:3) Strong’s 5207</p><p>Jesus is the Son of God in two senses. One, He is Son of God by virtue of His birth as a human being through the agency of the Father. More than this though, He is the eternal Son of God, just as God is the eternal Father. He is Son precisely because God is Father, and vice-versa. Jesus is the “unique” Son of God in that, unlike human beings, as Son He shares the exact substance with the Father. Therefore He is divine, just as the Father and the Spirit are divine. As such, He is the second person of the trinity.</p>"
+      }
+    ]
+  },
+  {
+    "authors": [
+      "Hershel Wayne House"
+    ],
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "createdAt": {
+      "seconds": 1608739981,
+      "nanoseconds": 805000000
+    },
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "genre": "note",
+    "location": null,
+    "verseIds": [
+      "MAT.5.33"
+    ],
+    "id": "yghf6VLesQwCLqaakff6",
+    "description": null,
+    "sections": [
+      {
+        "text": "<p>FROM NKJV STUDY BIBLE</p><p>5:33 , 34 Do not swear at all : This does not forbid solemn, official oaths (see Gen. 22:16 ; Ps. 110:4 ; 2 Cor. 1:23 ), but only oaths made in common speech. Such oath-taking suggests that a person’s normal words cannot be trusted. God’s law says, “Do not lie under oath” (see Lev. 19:12 ; Num. 30:2 ); Jesus was telling His followers not to lie under any circumstances. The phrase to the Lord could be used as a cover-up for falsehood. Any oath with God’s name in it was legally binding; however, an oath without God’s name was not legally binding. This explains the emphasis of vv. 34–37 .</p><p>Nelson, Thomas. NKJV, The NKJV Study Bible, eBook (Kindle Locations 257488-257495). Thomas Nelson. Kindle Edition.&nbsp;</p>",
+        "contentType": "text"
+      }
+    ],
+    "title": null,
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "updatedAt": {
+      "seconds": 1608740003,
+      "nanoseconds": 568000000
+    },
+    "keywords": null,
+    "type": "document",
+    "bookIds": [
+      "MAT"
+    ],
+    "currentVerses": [
+      33
+    ]
+  },
+  {
+    "type": "skip",
+    "keywords": null,
+    "updatedAt": {
+      "seconds": 1571631582,
+      "nanoseconds": 679000000
+    },
+    "bookIds": [
+      "MAT"
+    ],
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "parents": [
+      {
+        "chapterId": "MAT.5",
+        "parentId": "ZENz4XIkXA1mudCuDIsI"
+      }
+    ],
+    "verseIds": [
+      "MAT.5.41"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "yearTaken": 2005,
+    "genre": "photograph",
+    "credit": [
+      "MM"
+    ],
+    "createdAt": {
+      "seconds": 1564608815,
+      "nanoseconds": 342000000
+    },
+    "description": "Milliarium Aureum (\"Golden Milestone\"), a Milestone that was viewed as marking the center of the Roman Empire.",
+    "sourceURL": "CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=174998",
+    "path": "images/1440px_RomaForoRomanoMiliariumAureum01_1564608812831.jpg",
+    "id": "23bhbSZQhRf8ZiaqzIQg",
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "gcs": "7bqDpXxiwgCcTrOf9Y0T6W_s18XYDgqMEXvOxaTDPnw5cRkBbpk8NbHIWLoXvShyezv1eBxmMXCHt5cIyicL\n",
+    "location": [
+      "Rome"
+    ],
+    "currentVerses": [
+      41
+    ]
+  },
+  {
+    "credit": [
+      "Hershel Wayne House"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "subject": "Mountain",
+    "gcs": "f4v90F_jpZOz3zxq8FqG6HkDI0lTIyWzP572nlt7ZXHdljjB00fqkeA7X-_i94SYESzgiOi51k04pRIdONJYPg\n",
+    "currentChapter": "5",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "published": true,
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "updatedAt": {
+      "seconds": 1571630804,
+      "nanoseconds": 980000000
+    },
+    "location": [
+      "Mount of Beatitudes"
+    ],
+    "verseIds": [
+      "MAT.5.1"
+    ],
+    "type": "image",
+    "currentVerses": [
+      1
+    ],
+    "description": "<p>&nbsp;</p>",
+    "genre": "photograph",
+    "keywords": null,
+    "title": "Mount of Beatitudes (shore of Sea of Galilee)",
+    "createdAt": {
+      "seconds": 1560836284,
+      "nanoseconds": 880000000
+    },
+    "path": "images/I_001_Matt_5_1_Mt_of_Beatitudes_Israel_Tour_2013_IMG_4110_1560836271281.jpg",
+    "yearTaken": 2012,
+    "bookIds": [
+      "MAT"
+    ],
+    "id": "68PpPTG9LudDh97oH4PZ",
+    "currentBookId": "MAT"
+  },
+  {
+    "id": "FKYd7ohiIddusAte3n6O",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "currentChapter": "5",
+    "parents": [
+      {
+        "chapterId": "MAT.5",
+        "parentId": "ZENz4XIkXA1mudCuDIsI"
+      }
+    ],
+    "credit": [
+      "Cristian Chirita"
+    ],
+    "location": [
+      "Romania"
+    ],
+    "verseIds": [
+      "MAT.5.41"
+    ],
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "createdAt": {
+      "seconds": 1564608384,
+      "nanoseconds": 515000000
+    },
+    "currentVerses": [
+      41
+    ],
+    "currentBookId": "MAT",
+    "sourceURL": "By User:CristianChirita - Own work, Public Domain, https://commons.wikimedia.org/w/index.php?curid=856204",
+    "subject": "Building",
+    "yearTaken": 1993,
+    "updatedAt": {
+      "seconds": 1571631591,
+      "nanoseconds": 469000000
+    },
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "description": "Milliarium of Aiton, Roman Milestone in Turda, Romania (A.D. 108, created by Emperor Trajan), explaining construction of road from Potaissa to Napoca. PD",
+    "genre": "photograph",
+    "gcs": "LHekI9m96IG_CLdNsOZ4yOtcEqxBc9U9jg_vFW4oq-nX_Hpz1BBRdALbqYZZWTPitsQZ-kyiq4v3sHzEUbxE\n",
+    "bookIds": [
+      "MAT"
+    ],
+    "keywords": null,
+    "type": "skip",
+    "path": "images/634px_Milliarum_of_Aiton_modern_copy_erected_in_Turda_Romania_in_1993_1564608382372.jpg"
+  },
+  {
+    "yearTaken": 2005,
+    "path": "images/1620px_Campidoglio_il_miliarium_PD_1564608238065.jpg",
+    "subject": "Building",
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "bookIds": [
+      "MAT"
+    ],
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "currentChapter": "5",
+    "gcs": "KsWzgjIkhW0LYX7-Fit-fiU3GPQ04rbHrmbmqR2UzySbzh1UGTkT0momBQ9EVVD9n-Yf39qKvaaWu0bD7wzUkg\n",
+    "createdAt": {
+      "seconds": 1564608241,
+      "nanoseconds": 22000000
+    },
+    "keywords": null,
+    "id": "ICmkKXJf5bDoyszvWH7v",
+    "genre": "photograph",
+    "description": "Roman Milestone, point of departure of the consular roads (Campidoglio - il miliarium) PD",
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "parents": [
+      {
+        "parentId": "ZENz4XIkXA1mudCuDIsI",
+        "chapterId": "MAT.5"
+      }
+    ],
+    "type": "skip",
+    "currentBookId": "MAT",
+    "updatedAt": {
+      "seconds": 1571631601,
+      "nanoseconds": 494000000
+    },
+    "credit": [
+      "Lalupa"
+    ],
+    "currentVerses": [
+      41
+    ],
+    "sourceURL": "By user:Lalupa - Own work, Public Domain, https://commons.wikimedia.org/w/index.php?curid=371982",
+    "verseIds": [
+      "MAT.5.41"
+    ]
+  },
+  {
+    "verseIds": [
+      "MAT.5.2"
+    ],
+    "id": "K80hxlA9B1pHfB8lA0Gz",
+    "published": true,
+    "description": "<p>James Tissot, Public domain, via Wikimedia Commons, between 1886-1894</p>",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "updatedAt": {
+      "seconds": 1647655805,
+      "nanoseconds": 373000000
+    },
+    "sourceURL": "https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_The_Sermon_of_the_Beatitudes_(La_sermon_des_b%C3%A9atitudes)_-_James_Tissot.jpg",
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "yearTaken": null,
+    "genre": "painting",
+    "createdAt": {
+      "seconds": 1647655176,
+      "nanoseconds": 439000000
+    },
+    "credit": [
+      "James Tissot, PD"
+    ],
+    "subject": "Sermon on the Mount",
+    "title": "Sermon on the Beatitudes",
+    "gcs": "z3b5qjlOsm7ni_p1K33QDqoYDcHwdc6M1X05kq94U8wfs-Y7U_SSVPUki53NA9wraTUCDmKhSl2IeFKg16xzqRAGA_IEImjw2g\n",
+    "type": "image",
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "bookIds": [
+      "MAT"
+    ],
+    "location": [
+      "Brooklyn Museum"
+    ],
+    "path": "images/Brooklyn_Museum_The_Sermon_of_the_Beatitudes_La_sermon_des_be_atitudes_James_Tissot_1647655172854.jpg",
+    "currentVerses": [
+      2
+    ]
+  },
+  {
+    "path": "images/001_27_Matt_5_15_Herodian_Lamp_sm_IMG_5273_1556415454915.jpg",
+    "title": "Herodian Lamp (1st century B.C.)",
+    "currentChapter": "5",
+    "description": "<p>&nbsp;</p>",
+    "updatedAt": {
+      "seconds": 1571630554,
+      "nanoseconds": 716000000
+    },
+    "createdBy": "NAA1gs9vegWQ6hBNFgxDZusfuih1",
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "id": "eLpcrpi6PqcRntOUxINZ",
+    "genre": "photograph",
+    "keywords": null,
+    "credit": [
+      "Hershel Wayne House"
+    ],
+    "gcs": "N9RbKq0YoZJ-l_ab0IhU0Hiqwgr-V30kR8vt72pdfmWvWTFRRTfQLCU_6NUxXtYBP5NBmdHUj1JRdK4Bg_2XOg\n",
+    "verseIds": [
+      "MAT.5.15"
+    ],
+    "published": true,
+    "bookIds": [
+      "MAT"
+    ],
+    "type": "image",
+    "yearTaken": 2012,
+    "currentVerses": [
+      15
+    ],
+    "createdAt": {
+      "seconds": 1556415460,
+      "nanoseconds": 267000000
+    },
+    "subject": "Artifact",
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "currentBookId": "MAT"
+  },
+  {
+    "location": [
+      "Ephesus"
+    ],
+    "description": "Collection of Milestones at Ephesus, Asia Minor (modern Turkey).",
+    "createdAt": {
+      "seconds": 1564608725,
+      "nanoseconds": 289000000
+    },
+    "gcs": "UcQoUE9Dng5xgBjBWMrDiOH-bm78kx7n9wu4ErzaDQTV4Z-mbTpgZeLKXuz1ZFIXmL3tAyKCR1kgDCERe8lT5w\n",
+    "subject": "Building",
+    "bookIds": [
+      "MAT"
+    ],
+    "updatedAt": {
+      "seconds": 1571631609,
+      "nanoseconds": 375000000
+    },
+    "yearTaken": 2009,
+    "updatedBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "type": "skip",
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "createdBy": "DXPv1mfImXhR08iWQqoFsT4AIar2",
+    "parents": [
+      {
+        "parentId": "ZENz4XIkXA1mudCuDIsI",
+        "chapterId": "MAT.5"
+      }
+    ],
+    "genre": "photograph",
+    "path": "images/Milestones_at_EphesusDSC02389_1564608721482.JPG",
+    "verseIds": [
+      "MAT.5.41"
+    ],
+    "credit": [
+      "Hershel Wayne House"
+    ],
+    "keywords": null,
+    "id": "zTRCZt7B9s3AvxGKteqD",
+    "currentVerses": [
+      41
+    ]
+  },
+  {
+    "published": true,
+    "verseIds": [
+      "MAT.5.3"
+    ],
+    "type": "video",
+    "bookIds": [
+      "MAT"
+    ],
+    "chapterIds": [
+      "MAT.5"
+    ],
+    "id": "417839671",
+    "currentVerses": [
+      3
+    ]
+  }
+]

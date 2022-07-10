@@ -1,0 +1,767 @@
+.scripture {
+  font-size: 18px;
+  font-family: "Noto Serif", serif;
+  line-height: 25px;
+  color: #111;
+  -webkit-font-smoothing: antialiased
+}
+
+.scripture html,
+.scripture body,
+.scripture div,
+.scripture span,
+.scripture applet,
+.scripture object,
+.scripture iframe,
+.scripture h1,
+.scripture h2,
+.scripture h3,
+.scripture h4,
+.scripture h5,
+.scripture h6,
+.scripture p,
+.scripture blockquote,
+.scripture pre,
+.scripture a,
+.scripture abbr,
+.scripture acronym,
+.scripture address,
+.scripture big,
+.scripture cite,
+.scripture code,
+.scripture del,
+.scripture dfn,
+.scripture em,
+.scripture img,
+.scripture ins,
+.scripture kbd,
+.scripture q,
+.scripture s,
+.scripture samp,
+.scripture small,
+.scripture strike,
+.scripture strong,
+.scripture sub,
+.scripture sup,
+.scripture tt,
+.scripture var,
+.scripture b,
+.scripture u,
+.scripture i,
+.scripture center,
+.scripture dl,
+.scripture dt,
+.scripture dd,
+.scripture ol,
+.scripture ul,
+.scripture li,
+.scripture fieldset,
+.scripture form,
+.scripture label,
+.scripture legend,
+.scripture table,
+.scripture caption,
+.scripture tbody,
+.scripture tfoot,
+.scripture thead,
+.scripture tr,
+.scripture th,
+.scripture td,
+.scripture article,
+.scripture aside,
+.scripture canvas,
+.scripture details,
+.scripture embed,
+.scripture figure,
+.scripture figcaption,
+.scripture footer,
+.scripture header,
+.scripture hgroup,
+.scripture menu,
+.scripture nav,
+.scripture output,
+.scripture ruby,
+.scripture section,
+.scripture summary,
+.scripture time,
+.scripture mark,
+.scripture audio,
+.scripture video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  vertical-align: baseline
+}
+
+.scripture article,
+.scripture aside,
+.scripture details,
+.scripture figcaption,
+.scripture figure,
+.scripture footer,
+.scripture header,
+.scripture hgroup,
+.scripture menu,
+.scripture nav,
+.scripture section {
+  display: block
+}
+
+.scripture ol,
+.scripture ul {
+  list-style: none
+}
+
+.scripture blockquote,
+.scripture q {
+  quotes: none
+}
+
+.scripture blockquote:before,
+.scripture blockquote:after,
+.scripture q:before,
+.scripture q:after {
+  content: "";
+  content: none
+}
+
+.scripture table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+.scripture .c {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3em
+}
+
+.scripture .ca {
+  font-style: italic;
+  font-weight: normal;
+  color: #777
+}
+
+.scripture .ca:before {
+  content: "("
+}
+
+.scripture .ca:after {
+  content: ")" !important
+}
+
+.scripture .cl {
+  text-align: center;
+  font-weight: bold
+}
+
+.scripture .cd {
+  margin-left: 1em;
+  margin-right: 1em;
+  font-style: italic
+}
+
+.scripture .v,
+.scripture .vp,
+.scripture sup[class^="v"] {
+  color: #000;
+  font-size: 0.7em;
+  letter-spacing: -0.03em;
+  vertical-align: 0.25em;
+  line-height: 0;
+  font-family: sans-serif;
+  font-weight: bold;
+  top: inherit
+}
+
+.scripture .v:after,
+.scripture .vp:after,
+.scripture sup[class^="v"]:after {
+  content: "\a0"
+}
+
+.scripture sup+sup:before {
+  content: "\a0"
+}
+
+.scripture .va {
+  font-style: italic
+}
+
+.scripture .va:before {
+  content: "("
+}
+
+.scripture .va:after {
+  content: ")" !important
+}
+
+.scripture .x {
+  font-size: 16px;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  padding: 0 0.4em;
+  margin: 0 0.1em;
+  text-indent: 0;
+  text-align: left;
+  border-radius: 4px;
+  border: 1px solid #dcdcdc
+}
+
+.scripture .xo {
+  font-weight: bold
+}
+
+.scripture .xk {
+  font-style: italic
+}
+
+.scripture .xq {
+  font-style: italic
+}
+
+.scripture .notelink {
+  text-decoration: underline;
+  padding: 0.1em
+}
+
+.scripture .notelink,
+.scripture .notelink:hover,
+.scripture .notelink:active,
+.scripture .notelink:visited {
+  color: #6a6a6a
+}
+
+.scripture .notelink sup {
+  font-size: 0.7em;
+  letter-spacing: -0.03em;
+  vertical-align: 0.25em;
+  line-height: 0;
+  font-family: sans-serif;
+  font-weight: bold
+}
+
+.scripture .notelink+sup:before {
+  content: "\a0"
+}
+
+.scripture .f {
+  font-size: 16px;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 0.4em;
+  margin: 0 0.1em;
+  text-indent: 0;
+  text-align: left;
+  border-radius: 4px;
+  border: 1px solid #dcdcdc
+}
+
+.scripture .fr {
+  font-weight: bold
+}
+
+.scripture .fk {
+  font-style: italic;
+  font-variant: small-caps
+}
+
+.scripture [class^="fq"] {
+  font-style: italic
+}
+
+.scripture .fl {
+  font-style: italic;
+  font-weight: bold
+}
+
+.scripture .fv {
+  color: #515151;
+  font-size: 0.75em;
+  letter-spacing: -0.03em;
+  vertical-align: 0.25em;
+  line-height: 0;
+  font-family: sans-serif;
+  font-weight: bold
+}
+
+.scripture .fv:after {
+  content: "\a0"
+}
+
+.scripture .h {
+  text-align: center;
+  font-style: italic
+}
+
+.scripture [class^="imt"],
+.scripture [class^="is"] {
+  text-align: center;
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px
+}
+
+.scripture [class^="ip"] {
+  text-indent: 1em
+}
+
+.scripture .ipi {
+  padding-left: 1em;
+  padding-right: 1em
+}
+
+.scripture .im {
+  text-indent: 0
+}
+
+.scripture .imi {
+  text-indent: 0;
+  margin-left: 1em;
+  margin-right: 1em
+}
+
+.scripture .ipq {
+  font-style: italic;
+  margin-left: 1em;
+  margin-right: 1em
+}
+
+.scripture .imq {
+  margin-left: 1em;
+  margin-right: 1em
+}
+
+.scripture .ipr {
+  text-align: right;
+  text-indent: 0
+}
+
+.scripture [class^="iq"] {
+  margin-left: 1em;
+  margin-right: 1em
+}
+
+.scripture .iq2 {
+  text-indent: 1em
+}
+
+.scripture [class^="ili"] {
+  padding-left: 1em;
+  text-indent: -1em
+}
+
+.scripture .ili1 {
+  margin-left: 1em;
+  margin-right: 1em
+}
+
+.scripture .ili2 {
+  margin-left: 2em;
+  margin-right: 1em
+}
+
+.scripture .iot {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  margin-top: 25px;
+  margin-bottom: 0px
+}
+
+.scripture .io,
+.scripture .io1 {
+  margin-left: 1em;
+  margin-right: 0em
+}
+
+.scripture .io2 {
+  margin-left: 2em;
+  margin-right: 0em
+}
+
+.scripture .io3 {
+  margin-left: 3em;
+  margin-right: 0em
+}
+
+.scripture .io4 {
+  margin-left: 4em;
+  margin-right: 0em
+}
+
+.scripture .ior {
+  font-style: italic
+}
+
+.scripture .iex {
+  text-indent: 1em
+}
+
+.scripture .iqt {
+  text-indent: 1em;
+  font-style: italic
+}
+
+.scripture [class^="p"] {
+  text-indent: 1em
+}
+
+.scripture .m {
+  text-indent: 0 !important
+}
+
+.scripture .pmo {
+  text-indent: 0;
+  margin-left: 1em;
+  margin-right: 0em
+}
+
+.scripture .pm {
+  margin-left: 1em;
+  margin-right: 0em
+}
+
+.scripture .pmr {
+  text-align: right
+}
+
+.scripture .pmc {
+  margin-left: 1em;
+  margin-right: 0em
+}
+
+.scripture .pi {
+  margin-left: 1em;
+  margin-right: 0em
+}
+
+.scripture .pi1 {
+  margin-left: 2em;
+  margin-right: 0em
+}
+
+.scripture .pi2 {
+  margin-left: 3em;
+  margin-right: 0em
+}
+
+.scripture .pi3 {
+  margin-left: 4em;
+  margin-right: 0em
+}
+
+.scripture .mi {
+  margin-left: 1em;
+  margin-right: 0em;
+  text-indent: 0
+}
+
+.scripture .pc {
+  text-align: center;
+  text-indent: 0
+}
+
+.scripture .cls {
+  text-align: right
+}
+
+.scripture [class^="li"] {
+  padding-left: 1em;
+  text-indent: -1em;
+  margin-left: 1em;
+  margin-right: 0em
+}
+
+.scripture .li2 {
+  margin-left: 2em;
+  margin-right: 0em
+}
+
+.scripture .li3 {
+  margin-left: 3em;
+  margin-right: 0em
+}
+
+.scripture .li4 {
+  margin-left: 4em;
+  margin-right: 0em
+}
+
+.scripture .b {
+  height: 25px
+}
+
+.scripture [class^="q"] {
+  padding-left: 1em;
+  text-indent: -1em;
+  margin-left: 1em;
+  margin-right: 0em
+}
+
+.scripture .q2 {
+  margin-left: 1.5em;
+  margin-right: 0em
+}
+
+.scripture .q3 {
+  margin-left: 2em;
+  margin-right: 0em
+}
+
+.scripture .q4 {
+  margin-left: 2.5em;
+  margin-right: 0em
+}
+
+.scripture .qr {
+  text-align: right;
+  font-style: italic
+}
+
+.scripture .qc {
+  text-align: center
+}
+
+.scripture .qs {
+  font-style: italic;
+  text-align: right
+}
+
+.scripture .qa {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.1em;
+  margin-left: 0em;
+  margin-right: 0em
+}
+
+.scripture .qac {
+  margin-left: 0em;
+  margin-right: 0em;
+  padding: 0;
+  text-indent: 0;
+  font-style: italic
+}
+
+.scripture .qm2 {
+  margin-left: 1.5em;
+  margin-right: 0em
+}
+
+.scripture .qm3 {
+  margin-left: 2em;
+  margin-right: 0em
+}
+
+.scripture .qt {
+  font-style: italic;
+  text-indent: 0;
+  padding: 0;
+  margin: 0
+}
+
+.scripture .bk {
+  font-style: italic
+}
+
+.scripture .nd {
+  font-variant: small-caps
+}
+
+.scripture .add {
+  font-style: italic
+}
+
+.scripture .dc {
+  font-style: italic
+}
+
+.scripture .k {
+  font-weight: bold;
+  font-style: italic
+}
+
+.scripture .lit {
+  text-align: right;
+  font-weight: bold
+}
+
+.scripture .pn {
+  font-weight: bold;
+  text-decoration: underline
+}
+
+.scripture .sls {
+  font-style: italic
+}
+
+.scripture .tl {
+  font-style: italic
+}
+
+.scripture .wj {
+  color: #cc0000
+}
+
+.scripture .em {
+  font-style: italic
+}
+
+.scripture .bd {
+  font-weight: bold
+}
+
+.scripture .it {
+  font-style: italic
+}
+
+.scripture .bdit {
+  font-weight: bold;
+  font-style: italic
+}
+
+.scripture .no {
+  font-weight: normal;
+  font-style: normal
+}
+
+.scripture .sc {
+  font-variant: small-caps
+}
+
+.scripture .qt {
+  font-style: italic
+}
+
+.scripture .sig {
+  font-weight: normal;
+  font-style: italic
+}
+
+.scripture table {
+  width: 100%;
+  display: table
+}
+
+.scripture .tr {
+  display: table-row
+}
+
+.scripture [class^="th"] {
+  font-style: italic;
+  display: table-cell
+}
+
+.scripture [class^="thr"] {
+  text-align: right;
+  padding: 0 25px
+}
+
+.scripture [class^="tc"] {
+  display: table-cell
+}
+
+.scripture [class^="tcr"] {
+  text-align: right;
+  padding: 0 25px
+}
+
+.scripture [class^="mt"] {
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: normal
+}
+
+.scripture .mt,
+.scripture .mt1,
+.scripture .mt2 {
+  font-size: 40px;
+  line-height: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px
+}
+
+.scripture .mt2 {
+  font-size: 34px;
+  margin-top: -25px;
+  font-style: italic;
+  font-weight: normal
+}
+
+.scripture [class^="ms"],
+.scripture .ms,
+.scripture .ms1,
+.scripture .ms2,
+.scripture .ms3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 50px;
+  margin-top: 25px;
+  margin-bottom: 0px
+}
+
+.scripture .mr {
+  font-size: 0.9em;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: normal;
+  font-style: italic
+}
+
+.scripture .s,
+.scripture .s1,
+.scripture .s2,
+.scripture .s3,
+.scripture .s4 {
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: inherit;
+  margin-bottom: 15px;
+  margin-top: 25px
+}
+
+.scripture .sr {
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  font-size: inherit;
+  letter-spacing: normal
+}
+
+.scripture .r {
+  font-size: 18px;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: normal
+}
+
+.scripture .rq {
+  font-size: inherit;
+  line-height: 25px;
+  font-style: italic;
+  text-align: right;
+  letter-spacing: normal
+}
+
+.scripture .d {
+  font-style: italic;
+  text-align: center;
+  font-size: inherit;
+  letter-spacing: normal
+}
+
+.scripture .sp {
+  text-align: left;
+  font-weight: normal;
+  font-style: italic;
+  font-size: inherit;
+  letter-spacing: normal
+}

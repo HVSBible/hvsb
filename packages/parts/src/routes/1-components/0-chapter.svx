@@ -1,0 +1,50 @@
+<script lang="ts">
+  import { fetchBibleText } from '$lib/chapter/fetchBibleText';
+  import { Story } from 'kitbook';
+  // import JSON from 'svelte-pieces/data/JSON.svelte';
+
+  import Chapter from '$lib/chapter/Chapter.svelte';
+
+  import media from '$lib/chapter/data/MAT.1.media.json';
+  import type { IMedia } from '@hvsb/types';
+  const mat1Media = media as unknown as IMedia[];
+</script>
+
+<Story name="New Testament" knobs={{ bookId: 'MAT', chapter: 1 }} let:props={{ bookId, chapter }}>
+  {#await fetchBibleText(bookId, chapter) then { content: contentHtml }}
+    <Chapter {contentHtml} media={mat1Media} />
+  {/await}
+</Story>
+
+<Story name="Words in Red" knobs={{ bookId: 'MAT', chapter: 5 }} let:props={{ bookId, chapter }}>
+  {#await fetchBibleText(bookId, chapter)}
+    Getting text...
+  {:then { content: contentHtml }}
+    <Chapter {contentHtml} media={mat1Media} />
+    <!-- <JSON obj={contentHtml} /> -->
+  {:catch error}
+    Error getting text: <b>{error}</b>
+  {/await}
+</Story>
+
+<Story name="Old Testament" knobs={{ bookId: 'GEN', chapter: 1 }} let:props={{ bookId, chapter }}>
+  {#await fetchBibleText(bookId, chapter) then { content: contentHtml }}
+    <Chapter {contentHtml} media={mat1Media} />
+  {/await}
+</Story>
+
+<!-- prettier-ignore -->
+Can use https://scripture.api.bible/livedocs#/Chapters/getChapter to see how to fetch data
+
+## Todo
+- truncate media if too much
+- integrate into site and deploy that from Vercel
+- audit styles from https://docs.api.bible/tutorials/styling-scripture
+- keep building over there
+
+## Done
+- pulled in text https://scripture.api.bible/livedocs#/Chapters/getChapter
+
+## Future ways to highlight current verse or key words
+- [Rough Notation](https://roughnotation.com/) and [usage in Svelte](https://svelte.dev/repl/e0346ec2945e4b3abbaceebf50163d2d?version=3.23.0)
+- Use https://www.faithcomesbyhearing.com/bible-brain-available-content for audio as well?

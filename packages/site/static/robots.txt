@@ -1,0 +1,5 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+
+# Use https://www.npmjs.com/package/sitemap-generator-cli to build a sitemap on deployed code

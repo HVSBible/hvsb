@@ -1,0 +1,10 @@
+{
+  "name": "@hvsb/types",
+  "version": "0.0.1",
+  "description": "Types for HVSB",
+  "main": "index.ts",
+  "devDependencies": {
+    "firebase": "^9.8.4",
+    "sveltefirets": "^0.0.27"
+  }
+}

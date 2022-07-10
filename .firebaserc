@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "hvsb-dev",
+    "production": "hvsb-prod"
+  }
+}

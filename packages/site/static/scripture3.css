@@ -1,0 +1,569 @@
+/* .scripture {
+    font-family: "CharisSIL", serif;
+    line-height: 1.5;
+    color: #333;
+  } */
+
+/* .scripture div,
+.scripture span,
+.scripture h1,
+.scripture h2,
+.scripture h3,
+.scripture h4,
+.scripture h5,
+.scripture h6,
+.scripture p,
+.scripture a,
+.scripture em,
+.scripture img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+} */
+
+/* article, aside, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+
+  ol, ul {
+    list-style: none;
+  }
+
+  blockquote, q {
+    quotes: none;
+  } */
+.scripture .p {
+  margin-bottom: 10px;
+}
+.scripture .c {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.scripture .ca {
+  font-style: italic;
+  font-weight: normal;
+  color: #999999;
+}
+.scripture .ca:before {
+  content: '(';
+}
+.scripture .ca:after {
+  content: ')' !important;
+}
+.scripture .cl {
+  text-align: center;
+  font-weight: bold;
+}
+.scripture .cd {
+  margin-left: 1em;
+  margin-right: 1em;
+  font-style: italic;
+}
+.scripture .v,
+.scripture sup[class^='v'] {
+  color: black;
+  font-size: 0.7em;
+  letter-spacing: -0.03em;
+  vertical-align: 0.25em;
+  line-height: 0;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+  top: inherit;
+}
+.scripture .v:after,
+.scripture sup:after {
+  content: '\a0';
+}
+
+.scripture sup + sup:before {
+  content: '\a0';
+}
+.scripture .va {
+  font-style: italic;
+}
+.scripture .va:before {
+  content: '(';
+}
+.scripture .va:after {
+  content: ')' !important;
+}
+.scripture .xo {
+  font-weight: bold;
+}
+.scripture .xk {
+  font-style: italic;
+}
+.scripture .xq {
+  font-style: italic;
+}
+.scripture .notelink {
+  text-decoration: underline;
+  padding: 0.1em;
+}
+.scripture .notelink,
+.scripture .notelink:hover,
+.scripture .notelink:active,
+.scripture .notelink:visited {
+  color: #8c8c8c;
+}
+.scripture .notelink sup {
+  font-size: 0.7em;
+  letter-spacing: -0.03em;
+  vertical-align: 0.25em;
+  line-height: 0;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+}
+.scripture .notelink + sup:before {
+  content: '\a0';
+}
+.scripture .f {
+  display: block;
+}
+.scripture .fr {
+  font-weight: bold;
+}
+.scripture .fk {
+  font-style: italic;
+  font-variant: small-caps;
+}
+.scripture [class^='fq'] {
+  font-style: italic;
+}
+.scripture .fl {
+  font-style: italic;
+  font-weight: bold;
+}
+.scripture .fv {
+  color: #737373;
+  font-size: 0.75em;
+  letter-spacing: -0.03em;
+  vertical-align: 0.25em;
+  line-height: 0;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+}
+.scripture .fv:after {
+  content: '\a0';
+}
+.scripture .h {
+  text-align: center;
+  font-style: italic;
+}
+.scripture [class^='imt'] {
+  text-align: center;
+  font-weight: bold;
+}
+.scripture .imt,
+.scripture .imt1,
+.scripture .imte,
+.scripture .imte1 {
+  font-size: 1.4em;
+}
+.scripture .imt2,
+.scripture .imte2 {
+  font-size: 1.3em;
+}
+.scripture .imt3,
+.scripture .imte3 {
+  font-size: 1.2em;
+}
+.scripture .imt4,
+.scripture .imte4 {
+  font-size: 1.1em;
+}
+.scripture [class^='is'] {
+  font-size: 1.1em;
+  text-align: center;
+  font-weight: bold;
+}
+.scripture [class^='ip'] {
+  text-indent: 1em;
+}
+.scripture .ipi {
+  padding-left: rhythm(1);
+  padding-right: rhythm(1);
+}
+.scripture .im {
+  text-indent: 0;
+}
+.scripture .imi {
+  text-indent: 0;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.scripture .ipq {
+  font-style: italic;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.scripture .imq {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.scripture .ipr {
+  text-align: right;
+  text-indent: 0;
+}
+.scripture [class^='iq'] {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.scripture .iq2 {
+  text-indent: 1em;
+}
+.scripture [class^='ili'] {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+.scripture .ili1 {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.scripture .ili2 {
+  margin-left: 2em;
+  margin-right: 1em;
+}
+.scripture .iot {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 1.5em;
+}
+.scripture .io,
+.scripture .io1 {
+  margin-left: 1em;
+  margin-right: 0em;
+}
+.scripture .io2 {
+  margin-left: 2em;
+  margin-right: 0em;
+}
+.scripture .io3 {
+  margin-left: 3em;
+  margin-right: 0em;
+}
+.scripture .io4 {
+  margin-left: 4em;
+  margin-right: 0em;
+}
+.scripture .ior {
+  font-style: italic;
+}
+.scripture .iex {
+  text-indent: 1em;
+}
+.scripture .iqt {
+  text-indent: 1em;
+  font-style: italic;
+}
+
+/* [class^=p] {
+    text-indent: 1em;
+  } */
+.scripture .m {
+  text-indent: 0 !important;
+}
+.scripture .pmo {
+  text-indent: 0;
+  margin-left: 1em;
+  margin-right: 0em;
+}
+.scripture .pm {
+  margin-left: 1em;
+  margin-right: 0em;
+}
+.scripture .pmr {
+  text-align: right;
+}
+.scripture .pmc {
+  margin-left: 1em;
+  margin-right: 0em;
+}
+.scripture .pi {
+  margin-left: 1em;
+  margin-right: 0em;
+}
+.scripture .pi1 {
+  margin-left: 2em;
+  margin-right: 0em;
+}
+.scripture .pi2 {
+  margin-left: 3em;
+  margin-right: 0em;
+}
+.scripture .pi3 {
+  margin-left: 4em;
+  margin-right: 0em;
+}
+.scripture .mi {
+  margin-left: 1em;
+  margin-right: 0em;
+  text-indent: 0;
+}
+.scripture .pc {
+  text-align: center;
+  text-indent: 0;
+}
+.scripture .cls {
+  text-align: right;
+}
+.scripture [class^='li'] {
+  padding-left: 1em;
+  text-indent: -1em;
+  margin-left: 1em;
+  margin-right: 0em;
+}
+.scripture .li2 {
+  margin-left: 2em;
+  margin-right: 0em;
+}
+.scripture .li3 {
+  margin-left: 3em;
+  margin-right: 0em;
+}
+.scripture .li4 {
+  margin-left: 4em;
+  margin-right: 0em;
+}
+.scripture [class^='q'] {
+  padding-left: 1em;
+  text-indent: -1em;
+  margin-left: 1em;
+  margin-right: 0em;
+}
+.scripture .q2 {
+  margin-left: 1.5em;
+  margin-right: 0em;
+}
+.scripture .q3 {
+  margin-left: 2em;
+  margin-right: 0em;
+}
+.scripture .q4 {
+  margin-left: 2.5em;
+  margin-right: 0em;
+}
+.scripture .qr {
+  text-align: right;
+  font-style: italic;
+}
+.scripture .qc {
+  text-align: center;
+}
+.scripture .qs {
+  font-style: italic;
+  text-align: right;
+}
+.scripture .qa {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.1em;
+  margin-left: 0em;
+  margin-right: 0em;
+}
+.scripture .qac {
+  margin-left: 0em;
+  margin-right: 0em;
+  padding: 0;
+  text-indent: 0;
+  font-style: italic;
+}
+.scripture .qm2 {
+  margin-left: 1.5em;
+  margin-right: 0em;
+}
+.scripture .qm3 {
+  margin-left: 2em;
+  margin-right: 0em;
+}
+.scripture .bk {
+  font-style: italic;
+}
+.scripture .nd {
+  font-variant: small-caps;
+}
+.scripture .add {
+  font-weight: bold;
+  font-style: italic;
+}
+.scripture .dc {
+  font-style: italic;
+}
+.scripture .k {
+  font-weight: bold;
+  font-style: italic;
+}
+.scripture .lit {
+  text-align: right;
+  font-weight: bold;
+}
+.scripture .pn {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.scripture .sls {
+  font-style: italic;
+}
+.scripture .tl {
+  font-style: italic;
+}
+.scripture .wj {
+  color: #cc0000;
+}
+.scripture .em {
+  font-style: italic;
+}
+.scripture .bd {
+  font-weight: bold;
+}
+.scripture .it {
+  font-style: italic;
+}
+.scripture .bdit {
+  font-weight: bold;
+  font-style: italic;
+}
+.scripture .no {
+  font-weight: normal;
+  font-style: normal;
+}
+.scripture .sc {
+  font-variant: small-caps;
+}
+.scripture .qt {
+  font-style: italic;
+}
+.scripture .sig {
+  font-weight: normal;
+  font-style: italic;
+}
+
+table {
+  width: 100%;
+  display: table;
+}
+.scripture .tr {
+  display: table-row;
+}
+.scripture [class^='th'] {
+  font-style: italic;
+  display: table-cell;
+}
+.scripture [class^='thr'] {
+  text-align: right;
+  padding-right: 1.5em;
+}
+.scripture [class^='tc'] {
+  display: table-cell;
+}
+.scripture [class^='tcr'] {
+  text-align: right;
+  padding-right: 1.5em;
+}
+.scripture [class^='mt'] {
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: normal;
+}
+.scripture .mt,
+.scripture .mt1 {
+  font-size: 2.8em;
+}
+.scripture .mt2 {
+  font-size: 1.6em;
+  font-style: italic;
+  font-weight: normal;
+}
+.scripture [class^='ms'] {
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: normal;
+}
+.scripture .ms,
+.scripture .ms1 {
+  font-size: 1.6em;
+}
+.scripture .ms2 {
+  font-size: 1.5em;
+}
+.scripture .ms3 {
+  font-size: 1.4em;
+}
+.scripture .mr {
+  font-size: 0.9em;
+  margin-bottom: 1em;
+  text-align: center;
+  font-weight: normal;
+  font-style: italic;
+}
+.scripture .s,
+.scripture .s1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1em;
+  letter-spacing: normal;
+}
+.scripture .s2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: inherit;
+  letter-spacing: normal;
+}
+.scripture .s3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: inherit;
+  letter-spacing: normal;
+}
+.scripture .s4 {
+  text-align: center;
+  font-weight: bold;
+  font-size: inherit;
+  letter-spacing: normal;
+}
+.scripture .sr {
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  font-size: inherit;
+  letter-spacing: normal;
+}
+.scripture .r {
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: normal;
+}
+.scripture .rq {
+  font-size: 0.85em;
+  line-height: 1.9;
+  font-style: italic;
+  padding-left: rhythm(0.5);
+  letter-spacing: normal;
+}
+.scripture .d {
+  font-style: italic;
+  text-align: center;
+  font-size: inherit;
+  letter-spacing: normal;
+}
+.scripture .sp {
+  text-align: left;
+  font-weight: normal;
+  font-style: italic;
+  font-size: inherit;
+  letter-spacing: normal;
+}
+.scripture [class^='p'] + .s,
+.scripture [class^='p'] + .s1,
+.scripture [class^='q'] + .s,
+.scripture [class^='q'] + .s1 {
+  margin-top: 1.5em;
+}
