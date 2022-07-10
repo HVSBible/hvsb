@@ -23,7 +23,7 @@ Firebase is used for:
 
 ## Contributing
 
-Choose a planned task from the [HVSB Development Project Overview](https://github.com/orgs/HVSBible/projects/1) or [create an issue](https://github.com/HVSBible/hvsb/issues/new) to propose a new feature (please await discussion before creating a pull request). Read [Contributing](https://hvsb-components.vercel.app/[0]docs/[0]contributing) to understand how to commit your changes using Git flow and then follow the instructions in _Developing_ to get started.
+Choose a planned task from the [HVSB Development Project Overview](https://github.com/orgs/HVSBible/projects/1) or [create an issue](https://github.com/HVSBible/hvsb/issues/new) to propose a new feature (please await discussion before creating a pull request). Read [Contributing](https://hvsb-parts.vercel.app/[0]docs/[0]contributing) to understand how to commit your changes using Git flow and then follow the instructions in _Developing_ to get started.
 
 ## Developing
 

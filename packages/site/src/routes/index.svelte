@@ -479,13 +479,13 @@
         {#if $admin}
           <br />
           <a
-            href="https://hvsb-components.vercel.app/privacy-policy"
+            href="https://hvsb-parts.vercel.app/privacy-policy"
             class="text-gray-600 hover:text-gray-900 underline">
             Privacy Policy
           </a>
           •
           <a
-            href="https://hvsb-components.vercel.app/terms-of-service"
+            href="https://hvsb-parts.vercel.app/terms-of-service"
             class="text-gray-600 hover:text-gray-900 underline">
             Terms of Service
           </a>
