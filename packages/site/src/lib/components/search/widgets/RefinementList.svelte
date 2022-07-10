@@ -84,7 +84,8 @@
           class="ml-2 block text-sm leading-5 text-gray-900">
           {#if attribute === 'genre'}
             <!-- TODO: add genre thumbnail -->
-            {Genres[item.label]}
+            <!-- {Genres[item.label]} -->
+            {item.label}
           {:else}
             {item.label}
           {/if}
