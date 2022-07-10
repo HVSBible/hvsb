@@ -1,10 +1,9 @@
-import { dev } from '$app/env';
-import { processImageUrl } from './processImageUrl';
+import { firebaseConfig } from '$lib/firebaseConfig';
 
 export async function getImageServingURL(storagePath: string): Promise<string> {
-  const imageProcessingUrl = `${processImageUrl}/hvsb-${
-    dev ? 'dev' : 'prod'
-  }.appspot.com/${storagePath}`;
+  const imageProcessingUrl = `${import.meta.env.VITE_ProcessImageUrl}/${
+    firebaseConfig.storageBucket
+  }/${storagePath}`;
 
   const result = await fetch(imageProcessingUrl);
   const url = await result.text();
