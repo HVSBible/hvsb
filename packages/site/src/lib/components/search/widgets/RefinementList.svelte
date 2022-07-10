@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { DocumentGenres, ImageGenres, type DocumentGenre, type ImageGenre } from '@hvsb/types';
+  import { DocumentGenres, ImageGenres } from '@hvsb/types';
 
   import type { InstantSearch } from 'instantsearch.js';
   // import { connectRefinementList } from 'instantsearch.js/es/connectors';
   import { connectRefinementList } from 'instantsearch.js/cjs/connectors/index.js';
   import type { RefinementListItem } from 'instantsearch.js/es/connectors/refinement-list/connectRefinementList';
   import { onMount } from 'svelte';
-  const Genres = Object.keys({ ...DocumentGenres, ...ImageGenres }) as (DocumentGenre | ImageGenre)[];
-
+  const Genres = { ...DocumentGenres, ...ImageGenres };
+  console.log(Genres);
   export let search: InstantSearch,
     attribute:
       | 'genre'
@@ -83,9 +83,8 @@
           for="{attribute.replace('.', '')}_{i}"
           class="ml-2 block text-sm leading-5 text-gray-900">
           {#if attribute === 'genre'}
-            <!-- TODO: add genre thumbnail -->
-            <!-- {Genres[item.label]} -->
-            {item.label}
+            <!-- TODO: add genre thumbnail and improve genre searching -->
+            {Genres[item.label]}
           {:else}
             {item.label}
           {/if}
