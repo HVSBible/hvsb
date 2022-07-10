@@ -5,8 +5,8 @@ import type { Metric } from 'web-vitals';
 
 let isRegistered = false;
 
-export type AnalyticsOptions = {
-  params: Record<string, string>;
+type AnalyticsOptions = {
+  params: { [s: string]: any } | ArrayLike<any>;
   path: string;
   analyticsId: string;
   debug?: true;
@@ -59,9 +59,7 @@ function sendToAnalytics(metric: Metric, options: AnalyticsOptions) {
 
 export function measureWebVitals(options: AnalyticsOptions): void {
   // Only register listeners once
-  if (isRegistered) {
-    return;
-  }
+  if (isRegistered) return;
   isRegistered = true;
 
   try {

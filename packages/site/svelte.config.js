@@ -11,12 +11,7 @@ const config = {
 	},
 
 	preprocess: [
-		preprocess({
-			replace: [
-				// allow use of import.meta.env.VERCEL_ANALYTICS_ID
-				['import.meta.env.VERCEL_ANALYTICS_ID', JSON.stringify(process.env.VERCEL_ANALYTICS_ID)]
-			]
-		}),
+		preprocess(),
 		deepWind(),
 		windi({
 			configPath: './windi.config.js',
@@ -41,6 +36,7 @@ const config = {
 			},
 			define: {
 				'import.meta.vitest': false,
+				'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID),
 			},
 			server: {
 				hmr: { // enables Gitpod HMR

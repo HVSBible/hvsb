@@ -2,28 +2,22 @@
   import { setConfig } from 'sveltefirets';
   import { firebaseConfig } from '$lib/firebaseConfig';
   import type { Load } from '@sveltejs/kit';
-  export const load: Load = ({ params, url: { pathname } }) => {
+  export const load: Load = () => {
     setConfig(firebaseConfig);
-    return {
-      props: {
-        path: pathname,
-        params,
-      },
-    };
+    return {};
   };
 </script>
 
 <script lang="ts">
   import { onMount } from 'svelte';
 
+  import { page } from '$app/stores';
   let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID as string;
-  export let path: string;
-  export let params: Record<string, string>;
 
   onMount(async () => {
     if (analyticsId) {
       const { measureWebVitals } = await import('$lib/webVitals');
-      measureWebVitals({ path, params, analyticsId });
+      measureWebVitals({ path: $page.url.pathname, params: $page.params, analyticsId });
     }
 
     const Sentry = await import('@sentry/browser');
