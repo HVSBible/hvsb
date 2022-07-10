@@ -42,36 +42,38 @@
         </div>
         <Hits {search} let:hits>
           {#each hits as medium}
-            {#if medium.type === 'document'}
-              <PreviewDocument document={medium}>
-                <span slot="title">
-                  {@html instantsearch.highlight({
-                    attribute: 'title',
-                    hit: medium,
-                  })}</span>
-              </PreviewDocument>
-            {/if}
-            {#if medium.type === 'image'}
-              <PreviewImage image={medium} admin={$admin}>
-                <span slot="title">
-                  {@html instantsearch.highlight({
-                    attribute: 'title',
-                    hit: medium,
-                  })}</span>
-              </PreviewImage>
-            {/if}
-            {#if medium.type === 'video'}
-              <PreviewVideo
-                video={medium}
-                admin={$admin}
-                on:deleteVideo={(e) => deleteVideo(e.detail)}>
-                <span slot="title">
-                  {@html instantsearch.highlight({
-                    attribute: 'title',
-                    hit: medium,
-                  })}</span
-                ></PreviewVideo>
-            {/if}
+            <div class="mb-2">
+              {#if medium.type === 'document'}
+                <PreviewDocument document={medium}>
+                  <span slot="title">
+                    {@html instantsearch.highlight({
+                      attribute: 'title',
+                      hit: medium,
+                    })}</span>
+                </PreviewDocument>
+              {/if}
+              {#if medium.type === 'image'}
+                <PreviewImage image={medium} admin={$admin}>
+                  <span slot="title">
+                    {@html instantsearch.highlight({
+                      attribute: 'title',
+                      hit: medium,
+                    })}</span>
+                </PreviewImage>
+              {/if}
+              {#if medium.type === 'video'}
+                <PreviewVideo
+                  video={medium}
+                  admin={$admin}
+                  on:deleteVideo={(e) => deleteVideo(e.detail)}>
+                  <span slot="title">
+                    {@html instantsearch.highlight({
+                      attribute: 'title',
+                      hit: medium,
+                    })}</span
+                  ></PreviewVideo>
+              {/if}
+            </div>
           {:else}No results{/each}
         </Hits>
         <Pagination {search} />
