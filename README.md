@@ -30,7 +30,7 @@ Choose a planned task from the [HVSB Development Project Overview](https://githu
 - Install the recommended VSCode extensions (at least the first 6 [recommendations](.vscode/extensions.json)).
 - Install [pnpm](https://pnpm.io/) globaly using `npm install -g pnpm` if you don't have it. 
 - Install dependencies with `pnpm i` and then run `pnpm site` to start a dev server for the site or `pnpm parts` to start a dev server for the parts protoyping/documenting workbench depending on which you are working on. Each command will start up a Vite dev server which will give you a link to open on localhost. Changes will hot reload instantly (consider using auto-save if you want to), and you can have both dev servers simultaenously if applicable.
-- Note that you can run needed `dev`, `build`, and `test` commands from the project root. You can also instal packages from the root, e.g. `pnpm add -D foo-package --filter=site` will install `foo-package` as a devDependency of the `@hvsb/site` package.
+- Note that you can run needed `dev`, `build`, and `test` commands from the project root. You can also instal packages from the root, e.g. `pnpm -F site add -D foo-package` will install `foo-package` as a devDependency of the `@hvsb/site` package (`-F` is shorthand for `--filter`).
 
 As an easy alternative you can use the Gitpod button here to open a ready-built dev environment w/ pnpm dependencies already installed:
 
