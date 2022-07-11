@@ -126,7 +126,7 @@
 
   {#if $admin || (data && $user && data.createdBy === $user.uid)}
     <div class="p-2">
-      <slot name="admin" />
+      <slot name="author" />
     </div>
   {/if}
 

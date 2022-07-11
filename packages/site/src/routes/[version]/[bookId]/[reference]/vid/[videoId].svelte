@@ -48,7 +48,7 @@
     {video.description}
   </div>
 
-  <div slot="admin">
+  <div slot="author">
     <a
       class="font-medium px-3 py-2 hover:bg-gray-200 text-primary-700 rounded
       border border-primary-700 my-2 mx-2 md:mx-0 btn inline-block"

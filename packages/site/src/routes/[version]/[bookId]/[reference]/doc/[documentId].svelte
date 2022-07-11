@@ -95,10 +95,10 @@
     {/await}
   {/if}
 
-  <div slot="admin">
+  <div slot="author">
     {#if document.editorNotes}
       <div class="mb-4 p-2 bg-gray-200 rounded">
-        <div class="text-xs font-semibold">Editor Notes</div>
+        <div class="text-xs font-semibold">Editor Notes <i class="fas fa-key" /></div>
         <ParsedParagraph value={document.editorNotes} />
       </div>
     {/if}

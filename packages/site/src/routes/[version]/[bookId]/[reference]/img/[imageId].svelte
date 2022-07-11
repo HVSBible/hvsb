@@ -58,10 +58,10 @@
     {/if}
   </div>
 
-  <div class="mt-2" slot="admin">
+  <div class="mt-2" slot="author">
     {#if image.editorNotes}
       <div class="mb-4 p-2 bg-gray-200 rounded">
-        <div class="text-xs font-semibold">Editor Notes</div>
+        <div class="text-xs font-semibold">Editor Notes <i class="fas fa-key" /></div>
         <ParsedParagraph value={image.editorNotes} />
       </div>
     {/if}
