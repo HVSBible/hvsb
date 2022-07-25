@@ -1,4 +1,4 @@
-import { number } from "./number.js"; // ts-node requires .js extension for importing typescript files in ESM mode
+import { number } from "./number";
 
 export function addLeadingZeros(number: number, type: 'ten' | 'hundred' = 'ten'): string {
   if (type === 'ten') {
