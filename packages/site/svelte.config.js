@@ -6,10 +6,11 @@ import { windi } from "svelte-windicss-preprocess";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	experimental: {
-		inspector: true
-	},
-
+  vitePlugin: {
+    experimental: {
+      inspector: true
+    },
+  },
 	preprocess: [
 		preprocess(),
 		deepWind(),
