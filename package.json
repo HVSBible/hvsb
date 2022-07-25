@@ -6,7 +6,6 @@
 		"build": "pnpm site:build",
 		"test": "pnpm --filter=site... test",
 		"site": "pnpm --filter=site dev",
-		"site:open": "pnpm --filter=site dev --open",
 		"site:build": "pnpm --filter=site build",
 		"site:test": "pnpm --filter=site test",
 		"parts": "pnpm --filter=parts dev",
@@ -15,14 +14,14 @@
 		"check-packages": "pnpm update --interactive --recursive --latest"
 	},
 	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "^5.29.0",
-		"@typescript-eslint/parser": "^5.29.0",
-		"eslint": "^8.18.0",
+		"@typescript-eslint/eslint-plugin": "^5.30.7",
+		"@typescript-eslint/parser": "^5.30.7",
+		"eslint": "^8.20.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
-		"svelte": "^3.48.0",
+		"svelte": "^3.49.0",
 		"typescript": "~4.7.4"
 	}
 }
