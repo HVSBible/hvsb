@@ -75,12 +75,17 @@
       {#if editing}
         <div class="max-w-screen-md tw-prose prose-lg">
           {#await import('$lib/components/editor/ClassicCustomized.svelte') then { default: ClassicCustomized }}
-            <ClassicCustomized bind:html={intro.text} />
+            <ClassicCustomized
+              html={intro?.text || ''}
+              on:update={(e) => {
+                console.log(e.detail);
+                intro = { text: e.detail };
+              }} />
           {/await}
         </div>
       {/if}
       <div class="tw-prose prose-lg max-w-screen-md {editing && 'hidden md:block mt-14 ml-3'}">
-        {#if intro}
+        {#if intro?.text}
           <ParsedParagraph value={intro.text} />
         {:else if !$admin}
           To be written...
