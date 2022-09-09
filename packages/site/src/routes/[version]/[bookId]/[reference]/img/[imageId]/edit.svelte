@@ -6,7 +6,14 @@
 </script>
 
 <script lang="ts">
-  import { ImageGenres, type IImage, type ILocation, type ImageGenre, type IPhotographer, type ISubject } from '@hvsb/types';
+  import {
+    ImageGenres,
+    type IImage,
+    type ILocation,
+    type ImageGenre,
+    type IPhotographer,
+    type ISubject,
+  } from '@hvsb/types';
   import ImageDisplay from '../_ImageDisplay.svelte';
   import { admin } from '$lib/stores';
   import { page } from '$app/stores';
@@ -148,7 +155,9 @@
     </div>
 
     <div class="mt-3 prose max-w-none">
-      <ClassicCustomized bind:html={image.description} />
+      <ClassicCustomized
+        html={image.description}
+        on:update={({ detail }) => (image.description = detail)} />
     </div>
 
     {#if image.location}
@@ -360,7 +369,9 @@
     <div class="my-4 p-2 bg-gray-200 rounded">
       <div class="text-xs font-semibold mb-2">Editor Notes (will not be published)</div>
       <div class="tw-prose max-w-none">
-        <ClassicCustomized bind:html={image.editorNotes} />
+        <ClassicCustomized
+          html={image.editorNotes}
+          on:update={({ detail }) => (image.description = detail)} />
       </div>
     </div>
   </form>
