@@ -77,9 +77,8 @@
           {#await import('$lib/components/editor/ClassicCustomized.svelte') then { default: ClassicCustomized }}
             <ClassicCustomized
               html={intro?.text || ''}
-              on:update={(e) => {
-                console.log(e.detail);
-                intro = { text: e.detail };
+              on:update={({detail}) => {
+                intro = { text: detail };
               }} />
           {/await}
         </div>

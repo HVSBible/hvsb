@@ -9,7 +9,13 @@
   // TODO: refactor document.author and .secondAuthor into .authors[]
   import { flip } from 'svelte/animate';
   import type { Readable } from 'svelte/store';
-  import { DocumentGenres, type DocumentGenre, type IAuthor, type IDocument, type ILocation } from '@hvsb/types';
+  import {
+    DocumentGenres,
+    type DocumentGenre,
+    type IAuthor,
+    type IDocument,
+    type ILocation,
+  } from '@hvsb/types';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import { admin, user } from '$lib/stores';
@@ -272,7 +278,9 @@
       <div class="border-b border-gray-500 pb-2" animate:flip>
         {#if section.contentType === 'text'}
           <div class="mt-5 prose max-w-none">
-            <ClassicCustomized bind:html={section.text} />
+            <ClassicCustomized
+              html={section.text}
+              on:update={({ detail }) => (section.text = detail)} />
           </div>
         {:else if section.contentType === 'image'}
           <ImageInDoc imageId={section.imageId} />
@@ -343,7 +351,7 @@
     <div class="my-4 p-2 bg-gray-200 rounded">
       <div class="text-xs font-semibold mb-2">Editor Notes (will not be published)</div>
       <div class="tw-prose max-w-none">
-        <ClassicCustomized bind:html={document.editorNotes} />
+        <ClassicCustomized html={document.editorNotes} on:update={({ detail }) => (document.editorNotes = detail)} />
       </div>
     </div>
 
