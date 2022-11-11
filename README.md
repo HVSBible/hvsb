@@ -1,5 +1,5 @@
 # [House Visual Study Bible](https://hvsb.app/)
-A mobile-first Visual Bible Study web app built for Dr. H. Wayne House's study Bible.
+Mobile-first Visual Bible Study web app built for Dr. H. Wayne House's study Bible
 
 ## Packages
 
