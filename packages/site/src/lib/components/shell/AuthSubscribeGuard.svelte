@@ -23,7 +23,7 @@
         modal = 'auth';
         cancel();
       } else if (
-        !$admin &&
+        !$admin && !contributor &&
         $page.params.reference &&
         +$page.params.reference > 1 &&
         !isSubscriber($user)
@@ -38,7 +38,7 @@
     NProgress && NProgress.done();
   });
 
-  import { user, admin, isSubscriber } from '$lib/stores';
+  import { user, admin, contributor, isSubscriber } from '$lib/stores';
   let modal: 'auth' | 'subscribe' = null;
 </script>
 
