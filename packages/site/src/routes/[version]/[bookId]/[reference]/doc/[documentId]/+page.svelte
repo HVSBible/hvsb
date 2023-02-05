@@ -70,7 +70,7 @@
             <ParsedParagraph value={section.text} />
           </div>
         {:else if section.contentType === 'image'}
-          {#await import('./_ImageInDoc.svelte') then { default: ImageInDoc }}
+          {#await import('./ImageInDoc.svelte') then { default: ImageInDoc }}
             <ImageInDoc imageId={section.imageId} />
           {/await}
         {/if}

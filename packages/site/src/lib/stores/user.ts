@@ -1,7 +1,6 @@
 import type { IUser } from '@hvsb/types';
-import { createUserStore } from 'sveltefirets';
+import { createUserStore, firebaseConfig } from 'sveltefirets';
 import { createCustomer } from '$lib/helpers/stripe';
-import { firebaseConfig } from '$lib/firebaseConfig';
 
 export const user = createUserStore<IUser>({
   userKey: `${firebaseConfig.projectId}_firebase_user`,

@@ -1,4 +1,4 @@
-import { firebaseConfig } from '$lib/firebaseConfig';
+import { firebaseConfig } from 'sveltefirets';
 
 export async function getImageServingURL(storagePath: string): Promise<string> {
   const imageProcessingUrl = `${import.meta.env.VITE_ProcessImageUrl}/${

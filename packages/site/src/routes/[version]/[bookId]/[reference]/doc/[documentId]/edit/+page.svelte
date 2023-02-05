@@ -16,7 +16,7 @@
   import { moveInArray } from '$lib/helpers/array';
   import { isAddingAttributeToDB, unlinkFromParentDocument } from '$lib/helpers/editing';
   import EditVerseIds from '$lib/components/content/EditVerseIds.svelte';
-  import ImageInDoc from '../../_ImageInDoc.svelte';
+  import ImageInDoc from '../ImageInDoc.svelte';
   import ClassicCustomized from '$lib/components/editor/ClassicCustomized.svelte';
   import { addOnline, collectionStore, deleteDocumentOnline, Doc, update } from 'sveltefirets';
   import { orderBy } from 'firebase/firestore';

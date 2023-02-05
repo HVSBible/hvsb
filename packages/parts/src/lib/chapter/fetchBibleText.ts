@@ -1,3 +1,5 @@
+// duplicated in main repo
+
 export async function fetchBibleText(
   bookId: string,
   chapter: number,

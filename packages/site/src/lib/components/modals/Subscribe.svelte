@@ -2,8 +2,14 @@
   import Modal from 'svelte-pieces/ui/Modal.svelte';
   import Button from 'svelte-pieces/ui/Button.svelte';
   import { user, isSubscriber, subscriptionStatus, createBillingPortalSession } from '$lib/stores';
-
+  import { loadStripe } from '@stripe/stripe-js/pure.js';
+  import type { Stripe } from '@stripe/stripe-js';
   import { onMount, createEventDispatcher } from 'svelte';
+  import { getFirebaseApp } from 'sveltefirets';
+  import { getFunctions, httpsCallable } from 'firebase/functions';
+  import ShowHide from 'svelte-pieces/functions/ShowHide.svelte';
+  import { PUBLIC_STRIPE_PUBLISHABLE } from '$env/static/public'
+
   const dispatch = createEventDispatcher();
   function close() {
     dispatch('close', {
@@ -11,11 +17,7 @@
     });
   }
 
-  import { loadStripe } from '@stripe/stripe-js/pure.js';
-  import type { Stripe } from '@stripe/stripe-js';
-
   let stripe: Stripe;
-
   let period: 'monthly' | 'yearly' = 'yearly';
   let endTrialDate: string;
   let submitError;
@@ -28,12 +30,9 @@
       month: 'short',
       day: 'numeric',
     }).format(Date.now() + fourteenDays);
-    stripe = await loadStripe(import.meta.env.VITE_stripePublishable as string);
+    stripe = await loadStripe(PUBLIC_STRIPE_PUBLISHABLE);
   });
 
-  import { getFirebaseApp } from 'sveltefirets';
-  import { getFunctions, httpsCallable } from 'firebase/functions';
-  import ShowHide from 'svelte-pieces/functions/ShowHide.svelte';
   async function startCheckout() {
     try {
       const functions = getFunctions(getFirebaseApp());

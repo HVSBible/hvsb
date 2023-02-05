@@ -75,6 +75,7 @@ export function getCurrentVerses(verseIds: string[], bookId: string, chapter: st
 import { getBibleId } from '$lib/helpers/versions';
 import { getCollection } from 'sveltefirets';
 import { orderBy, where } from 'firebase/firestore';
+import { PUBLIC_BIBLE_API } from '$env/static/public';
 export async function fetchBibleText(version = 'WEB', bookId: string, chapter: string) {
   try {
     const bibleId = version === 'WEB' ? '9879dbb7cfe39e4d-04' : await getBibleId(version);
@@ -83,7 +84,7 @@ export async function fetchBibleText(version = 'WEB', bookId: string, chapter: s
       `https://api.scripture.api.bible/v1/bibles/${bibleId}/chapters/${bookId}.${chapter}?include-verse-spans=true`,
       {
         headers: {
-          'api-key': import.meta.env.VITE_bibleApi as string,
+          'api-key': PUBLIC_BIBLE_API,
         },
       }
     );
