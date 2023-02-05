@@ -1,4 +1,4 @@
-import { browser } from '$app/env';
+import { browser } from '$app/environment';
 import type { IDocument, IImage, IImageParent, IVideo } from '@hvsb/types';
 import { admin, user, contributor } from '$lib/stores';
 import { get } from 'svelte/store';

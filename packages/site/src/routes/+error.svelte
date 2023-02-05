@@ -4,7 +4,7 @@
   import ShowHide from 'svelte-pieces/functions/ShowHide.svelte';
   import { onMount } from 'svelte';
 
-  import { dev } from '$app/env';
+  import { dev } from '$app/environment';
 
   onMount(async () => {
     const Sentry = await import('@sentry/browser');

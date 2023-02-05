@@ -1,4 +1,4 @@
-import { dev } from '$app/env';
+import { dev } from '$app/environment';
 import { getFirebaseApp } from 'sveltefirets';
 import { getFunctions, httpsCallable } from 'firebase/functions';
 

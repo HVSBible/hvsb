@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { browser } from '$app/env';
+  import { browser } from '$app/environment';
   import ChapterTitle from '$lib/components/navigation/ChapterTitle.svelte';
   import Header from '$lib/components/shell/Header.svelte';
   import View from '$lib/components/ui/View.svelte';
