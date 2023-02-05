@@ -1,22 +1,9 @@
-<script context="module" lang="ts">
-  // export const prerender = true;
-  import { getDocument } from 'sveltefirets';
-
-  import type { Load } from '@sveltejs/kit';
-  export const load: Load = async () => {
-    const aboutId = 'dr-house';
-    const data = await getDocument(`about/${aboutId}`);
-    return {
-      props: { data },
-    };
-  };
-</script>
-
 <script lang="ts">
-  export let data;
   import ParsedParagraph from '$lib/components/content/ParsedParagraph.svelte';
   import Header from '$lib/components/shell/Header.svelte';
   import View from '$lib/components/ui/View.svelte';
+  import type { PageData } from './$types';
+  export let data: PageData;
 </script>
 
 <svelte:head>
@@ -33,8 +20,8 @@
 <View padding={true} marginTop={true} maxWidth={true}>
   <h1 class="text-3xl text-center mb-4">Dr. Wayne House</h1>
   <div class="tw-prose max-w-none">
-    {#if data}
-      <ParsedParagraph value={data.text} />
+    {#if data.bio}
+      <ParsedParagraph value={data.bio.text} />
     {/if}
   </div>
 </View>

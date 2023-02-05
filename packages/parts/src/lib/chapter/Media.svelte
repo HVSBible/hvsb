@@ -33,8 +33,8 @@
     {#if medium.type === 'image'}
       <a
         use:placeAfterVerse={currentVerseNumber}
-        sveltekit:prefetch
-        sveltekit:noscroll
+        
+        data-sveltekit-noscroll
         href="/{version}/{bookId}/{chapter}/img/{medium.id}"
         class="inline-flex"
         style="vertical-align: text-bottom;">
@@ -47,8 +47,8 @@ md:opacity-50 transition-opacity duration-200 hover:opacity-100 h-5 w-5"
     {:else if medium.type === 'document'}
       <a
         use:placeAfterVerse={currentVerseNumber}
-        sveltekit:prefetch
-        sveltekit:noscroll
+        
+        data-sveltekit-noscroll
         href="/{version}/{bookId}/{chapter}/doc/{medium.id}"
         class="text-teal-900 mr-1 opacity-50 transition-opacity duration-200 hover:opacity-100">
         <span class="i-ic-round-bookmarks" />
@@ -58,8 +58,8 @@ md:opacity-50 transition-opacity duration-200 hover:opacity-100 h-5 w-5"
       <!-- TODO: place video first -->
       <a
         use:placeAfterParagraph={currentVerseNumber}
-        sveltekit:prefetch
-        sveltekit:noscroll
+        
+        data-sveltekit-noscroll
         href="/{version}/{bookId}/{chapter}/vid/{medium.id}"
         class="block h-20 relative overflow-hidden md:opacity-75 transition-opacity
       duration-200 hover:opacity-100 rounded my-2 bg-black"

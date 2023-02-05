@@ -1,26 +1,17 @@
-<script context="module" lang="ts">
-  import { getDocument } from 'sveltefirets';
-  import { DocumentGenres, LanguageMappings, type IDocument } from '@hvsb/types';
-
-  import type { Load } from '@sveltejs/kit';
-  export const load: Load = async ({ params }) => {
-    const document = await getDocument<IDocument>(`media/${params.documentId}`);
-    return { props: { document } };
-  };
-</script>
-
 <script lang="ts">
-  export let document: IDocument;
+  import { DocumentGenres, LanguageMappings } from '@hvsb/types';
   import Medium from '$lib/components/content/Medium.svelte';
   import { page } from '$app/stores';
   import { bookAbbrev, DocGenreThumb } from '@hvsb/parts';
   import { getCurrentVerses } from '$lib/helpers/media';
   import ParsedParagraph from '$lib/components/content/ParsedParagraph.svelte';
+  import type { PageData } from './$types';
+  export let data: PageData;
 
   function printCurrentVerses() {
     let versesString = '';
     const currentVerses = getCurrentVerses(
-      document.verseIds,
+      data.document.verseIds,
       $page.params.bookId,
       $page.params.reference
     );
@@ -54,25 +45,25 @@
     </h2>
 
     <div class="mb-2 text-sm text-gray-600">
-      {#if DocumentGenres[document.genre]}
+      {#if DocumentGenres[data.document.genre]}
         <div class="inline-block w-4 h-4" style="vertical-align: -2px;">
-          <DocGenreThumb genre={document.genre} minimal={true} paddingPercent={0} />
+          <DocGenreThumb genre={data.document.genre} minimal={true} paddingPercent={0} />
         </div>
-        {DocumentGenres[document.genre]}
+        {DocumentGenres[data.document.genre]}
         |
       {/if}
       {printCurrentVerses()}
       |
-      {#if document.authors && document.authors.length}
-        {document.authors.join(' • ')}
+      {#if data.document.authors && data.document.authors.length}
+        {data.document.authors.join(' • ')}
       {:else}
-        {document.author ? document.author : 'Hershel Wayne House'}
-        {#if document.secondAuthor}• {document.secondAuthor}{/if}
+        {data.document.author || 'Hershel Wayne House'}
+        {#if data.document.secondAuthor}• {data.document.secondAuthor}{/if}
       {/if}
-      {#if document.location}| {document.location}{/if}
+      {#if data.document.location}| {data.document.location}{/if}
     </div>
 
-    {#each document.sections as section}
+    {#each data.document.sections as section}
       <div class="mb-2">
         {#if section.contentType === 'text'}
           <div class="tw-prose max-w-none">
@@ -87,30 +78,29 @@
     {/each}
   </div>
 
-  {#if document.seriesIds && document.seriesIds.length}
+  {#if data.document.seriesIds && data.document.seriesIds.length}
     {#await import('$lib/components/navigation/SeriesNavigator.svelte') then { default: SeriesNavigator }}
-      {#each document.seriesIds as seriesId}
+      {#each data.document.seriesIds as seriesId}
         <SeriesNavigator {seriesId} {document} />
       {/each}
     {/await}
   {/if}
 
   <div slot="author">
-    {#if document.editorNotes}
+    {#if data.document.editorNotes}
       <div class="mb-4 p-2 bg-gray-200 rounded">
         <div class="text-xs font-semibold">Editor Notes <i class="fas fa-key" /></div>
-        <ParsedParagraph value={document.editorNotes} />
+        <ParsedParagraph value={data.document.editorNotes} />
       </div>
     {/if}
 
     <div class="flex">
       <a
-        sveltekit:prefetch
-        sveltekit:noscroll
+        data-sveltekit-noscroll
         class="font-medium px-3 py-2 hover:bg-gray-200 text-primary-700 rounded
       border border-primary-700"
         href="/{$page.params.version}/{$page.params.bookId}/{$page.params
-          .reference}/doc/{document.id}/edit">
+          .reference}/doc/{data.document.id}/edit">
         Edit
         <i class="fas fa-key" />
       </a>
@@ -120,12 +110,11 @@
 
   <div class="flex" slot="translator">
     <a
-      sveltekit:prefetch
-      sveltekit:noscroll
+      data-sveltekit-noscroll
       class="font-medium px-3 py-2 hover:bg-gray-200 text-primary-700 rounded
       border border-primary-700"
       href="/{$page.params.version}/{$page.params.bookId}/{$page.params
-        .reference}/doc/{document.id}/translate">
+        .reference}/doc/{data.document.id}/translate">
       Translate to {LanguageMappings[translatorLanguage]}
       <i class="fas fa-key" />
     </a>

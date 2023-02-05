@@ -3,8 +3,8 @@
   import { Collection } from 'sveltefirets';
   import ResponsiveTable from 'svelte-pieces/ui/ResponsiveTable.svelte';
   import View from '$lib/components/ui/View.svelte';
-  import Filter from './_Filter.svelte';
-  import SupportMessageRow from './_SupportMessageRow.svelte';
+  import Filter from '../_Filter.svelte';
+  import SupportMessageRow from '../_SupportMessageRow.svelte';
 
   let messagesType: ISupportMessage[] = [];
 </script>

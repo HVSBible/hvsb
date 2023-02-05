@@ -117,7 +117,7 @@
     <a
       class="font-medium px-3 py-2 text-gray-700"
       href="/{$page.params.version}/{$page.params.bookId}/{$page.params.reference}"
-      sveltekit:noscroll>
+      data-sveltekit-noscroll>
       <i class="fas fa-times" />
     </a>
   </div>

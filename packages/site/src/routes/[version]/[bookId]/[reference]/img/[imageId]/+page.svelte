@@ -1,23 +1,15 @@
-<script context="module" lang="ts">
-  import { getDocument } from 'sveltefirets';
-  import type { IImage } from '@hvsb/types';
-  import type { Load } from '@sveltejs/kit';
-  export const load: Load = async ({ params }) => {
-    const image = await getDocument<IImage>(`media/${params.imageId}`);
-    return { props: { image } };
-  };
-</script>
-
 <script lang="ts">
-  export let image: IImage;
   import Medium from '$lib/components/content/Medium.svelte';
-  import ImageDisplay from './_ImageDisplay.svelte';
+  import ImageDisplay from '../_ImageDisplay.svelte';
   import { page } from '$app/stores';
   import ParsedParagraph from '$lib/components/content/ParsedParagraph.svelte';
 
+  import type { PageData } from './$types';
+  export let data: PageData;
+
   function truncatedDescription() {
-    if (image.description) {
-      const plainDescription = image.description.replace(/<[^>]*>/g, '');
+    if (data.image.description) {
+      const plainDescription = data.image.description.replace(/<[^>]*>/g, '');
       return truncateString(plainDescription, 90);
     } else {
       return '';
@@ -33,47 +25,47 @@
 </script>
 
 <Medium
-  data={image}
-  title={image.title || truncatedDescription()}
+  data={data.image}
+  title={data.image.title || truncatedDescription()}
   description={truncatedDescription()}
-  shareImage={`https://lh3.googleusercontent.com/${image.gcs}=w1200`}>
-  <ImageDisplay {image} />
+  shareImage={`https://lh3.googleusercontent.com/${data.image.gcs}=w1200`}>
+  <ImageDisplay image={data.image} />
 
-  {#if image.title}
-    <h3 class="p-2 font-semibold hidden md:block">{image.title}</h3>
+  {#if data.image.title}
+    <h3 class="p-2 font-semibold hidden md:block">{data.image.title}</h3>
   {/if}
 
   <div>
-    {#if image.description && image.description != '<p>&nbsp;</p>'}
+    {#if data.image.description && data.image.description != '<p>&nbsp;</p>'}
       <div class="p-2 tw-prose max-w-none">
-        <ParsedParagraph value={image.description} />
+        <ParsedParagraph value={data.image.description} />
       </div>
     {/if}
 
-    {#if image.sourceURL}
+    {#if data.image.sourceURL}
       <div class="px-2 pb-2 text-sm text-gray-600">
         Image source:
-        <ParsedParagraph value={image.sourceURL} />
+        <ParsedParagraph value={data.image.sourceURL} />
       </div>
     {/if}
   </div>
 
   <div class="mt-2" slot="author">
-    {#if image.editorNotes}
+    {#if data.image.editorNotes}
       <div class="mb-4 p-2 bg-gray-200 rounded">
         <div class="text-xs font-semibold">Editor Notes <i class="fas fa-key" /></div>
-        <ParsedParagraph value={image.editorNotes} />
+        <ParsedParagraph value={data.image.editorNotes} />
       </div>
     {/if}
 
     <div class="flex">
       <a
-        sveltekit:prefetch
-        sveltekit:noscroll
+        
+        data-sveltekit-noscroll
         class="font-medium px-3 py-2 hover:bg-gray-200 text-primary-700 rounded
         border border-primary-700"
         href="/{$page.params.version}/{$page.params.bookId}/{$page.params
-          .reference}/img/{image.id}/edit">
+          .reference}/img/{data.image.id}/edit">
         Edit
         <i class="fas fa-key" />
       </a>

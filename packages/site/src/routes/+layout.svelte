@@ -1,16 +1,5 @@
-<script context="module" lang="ts">
-  import { setConfig } from 'sveltefirets';
-  import { firebaseConfig } from '$lib/firebaseConfig';
-  import type { Load } from '@sveltejs/kit';
-  export const load: Load = () => {
-    setConfig(firebaseConfig);
-    return {};
-  };
-</script>
-
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { navigating } from '$app/stores';
 
   import { page } from '$app/stores';
   let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID as string;

@@ -1,23 +1,3 @@
-<script context="module" lang="ts">
-  import { getDocument, setOnline } from 'sveltefirets';
-  import type { IIntro } from '@hvsb/types';
-
-  import type { Load } from '@sveltejs/kit';
-  export const load: Load = async ({ params }) => {
-    const version = params.version;
-    const bookId = params.bookId;
-    const intro = await getDocument<IIntro>(`intros/${bookId}`);
-
-    return {
-      props: {
-        version,
-        bookId,
-        intro,
-      },
-    };
-  };
-</script>
-
 <script lang="ts">
   import Header from '$lib/components/shell/Header.svelte';
   import ChapterTitle from '$lib/components/navigation/ChapterTitle.svelte';
@@ -26,15 +6,18 @@
   import { admin } from '$lib/stores';
   import { bookName } from '@hvsb/parts';
   import ParsedParagraph from '$lib/components/content/ParsedParagraph.svelte';
-  export let version = 'WEB',
-    bookId: string,
-    intro: IIntro;
+  import { setOnline } from 'sveltefirets';
+
+  import type { PageData } from './$types';
+  export let data: PageData;
+  $: ({ intro } = data);
+
   let editing = false;
 
   import { page } from '$app/stores';
   async function save() {
     try {
-      await setOnline(`intros/${bookId}`, intro);
+      await setOnline(`intros/${data.bookId}`, data.intro);
       window.location.replace(`/${$page.params.version}/${$page.params.bookId}/intro`);
     } catch (err) {
       alert(err);
@@ -43,14 +26,14 @@
 </script>
 
 <Header>
-  <ChapterTitle {bookId} chapter="Intro" />
+  <ChapterTitle bookId={data.bookId} chapter="Intro" />
 </Header>
 
 <View marginTop={true}>
   <div class="px-5 pb-16 w-full flex flex-col items-center">
     <div class="flex">
       <h2 class="hidden md:block mb-3 tw-prose text-3xl font-semibold">
-        Introduction to {bookName(bookId)}
+        Introduction to {bookName(data.bookId)}
       </h2>
       {#if $admin}
         {#if editing}
@@ -66,8 +49,7 @@
       class="next-ch-btn p-3 rounded-full bg-white hover:bg-gray-200 border
       border-solid border-gray-400 shadow-lg fixed"
       style="right: 12px;"
-      sveltekit:prefetch
-      href="/{version}/{bookId}/1">
+      href="/{data.version}/{data.bookId}/1">
       <i class="fas fa-chevron-right text-center" style="width: 1rem;" />
     </a>
 
@@ -77,7 +59,7 @@
           {#await import('$lib/components/editor/ClassicCustomized.svelte') then { default: ClassicCustomized }}
             <ClassicCustomized
               html={intro?.text || ''}
-              on:update={({detail}) => {
+              on:update={({ detail }) => {
                 intro = { text: detail };
               }} />
           {/await}

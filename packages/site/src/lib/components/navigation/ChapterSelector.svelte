@@ -91,7 +91,7 @@
       <a
         href="/{$page.params.version}/{currentBookId}/intro"
         on:click={() => dispatch('close')}
-        sveltekit:prefetch
+        
         class="{currentBookId == $page.params.bookId &&
           $page.params.reference == 'intro' &&
           'bg-gray-200'}
@@ -103,7 +103,7 @@
         <a
           href="/{$page.params.version}/{currentBookId}/{i + 1}"
           on:click={() => dispatch('close')}
-          sveltekit:prefetch
+          
           class="{currentBookId == $page.params.bookId &&
             +$page.params.reference == i + 1 &&
             'bg-gray-200'}

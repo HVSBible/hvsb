@@ -27,7 +27,7 @@
         <RefinementTabs {search} attribute="type" />
         <a
           href={previousUrl || '.'}
-          sveltekit:prefetch
+          
           class="px-3 py-2 text-lg text-gray-600 hover:text-gray-900 ml-auto"
           ><i class="fas fa-times" /></a>
       </nav>

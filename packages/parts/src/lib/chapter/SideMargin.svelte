@@ -56,8 +56,8 @@
         {#each verse.media as medium}
           {#if medium.type === 'document'}
             <a
-              sveltekit:prefetch
-              sveltekit:noscroll
+              
+              data-sveltekit-noscroll
               href="/{version}/{bookId}/{chapter}/doc/{medium.id}"
               title="{DocumentGenres[medium.genre]}{medium.title ? ': ' + medium.title : ''}"
               class="w-$thumbnail-size h-$thumbnail-size m-2px rounded overflow-hidden"
@@ -66,8 +66,8 @@
             </a>
           {:else if medium.type === 'image'}
             <a
-              sveltekit:prefetch
-              sveltekit:noscroll
+              
+              data-sveltekit-noscroll
               href="/{version}/{bookId}/{chapter}/img/{medium.id}"
               title={medium.title}
               class="w-$thumbnail-size h-$thumbnail-size m-2px rounded overflow-hidden"
@@ -76,8 +76,8 @@
             </a>
           {:else if medium.type === 'video'}
             <a
-              sveltekit:prefetch
-              sveltekit:noscroll
+              
+              data-sveltekit-noscroll
               href="/{version}/{bookId}/{chapter}/vid/{medium.id}"
               title={medium.title}
               class="w-$thumbnail-size h-$thumbnail-size lg:w-[calc(var(--thumbnail-box)*2-4px)] xl:w-[calc(var(--thumbnail-box)*3-4px)] m-2px rounded overflow-hidden -order-1"

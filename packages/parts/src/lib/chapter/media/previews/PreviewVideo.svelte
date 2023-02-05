@@ -13,8 +13,8 @@
 <a
   href={href ||
     `WEB/${video.chapterIds[0].split('.')[0]}/${video.chapterIds[0].split('.')[1]}/vid/${video.id}`}
-  sveltekit:prefetch
-  sveltekit:noscroll
+  
+  data-sveltekit-noscroll
   class:ml-4={!video.verseIds}
   class:sm:ml-6={!video.verseIds}
   class="hover:bg-gray-200 shadow overflow-hidden rounded-sm flex
@@ -86,8 +86,8 @@
           {:else}
             {#each video.verseIds as verseId}
               <a
-                sveltekit:prefetch
-                sveltekit:noscroll
+                
+                data-sveltekit-noscroll
                 href={href ||
                   `WEB/${verseId.split('.')[0]}/${verseId.split('.')[1]}/vid/${video.id}`}
                 class="ml-1 mt-1 px-2 py-1 leading-tight text-sm font-medium bg-gray-100 hover:bg-white rounded">
@@ -142,8 +142,8 @@
             {:else}
               {#each video.verseIds as verseId}
                 <a
-                  sveltekit:prefetch
-                  sveltekit:noscroll
+                  
+                  data-sveltekit-noscroll
                   href={href ||
                     `WEB/${verseId.split('.')[0]}/${verseId.split('.')[1]}/vid/${video.id}`}
                   class="ml-1 mt-1 px-2 py-1 leading-tight text-sm font-medium bg-gray-100 hover:bg-white rounded">

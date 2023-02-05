@@ -57,7 +57,7 @@
       Bible.
     </p>
     <a
-      sveltekit:prefetch
+      
       class="py-3 sm:py-4 px-4 sm:px-6 text-xl sm:text-3xl rounded bg-white
             text-gray-900 font-semibold inline-block hover:bg-gray-200"
       href={`/${currentVersion}/${currentBook}/${currentChapter}`}>
@@ -152,7 +152,7 @@
         <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700">
           Keep the Biblical text in view while you learn.
         </p>
-        <a sveltekit:prefetch href={`/WEB/MAT/1`} class="font-bold text-gray-800 mt-8">
+        <a  href={`/WEB/MAT/1`} class="font-bold text-gray-800 mt-8">
           View a sample chapter <i class="fas fa-chevron-right" />
         </a>
       </div>
@@ -269,7 +269,7 @@
         </div>
       </div>
       <div class="w-full md:w-4/12 ml-auto mr-auto p-4 mb-2">
-        <a sveltekit:prefetch href={`/WEB/REV/1/VsIltc7VLDJDKzMCrR9r`}>
+        <a  href={`/WEB/REV/1/VsIltc7VLDJDKzMCrR9r`}>
           <img
             alt="..."
             class="max-w-full rounded-lg shadow-lg"

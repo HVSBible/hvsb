@@ -1,10 +1,3 @@
-<script context="module" lang="ts">
-  import type { Load } from '@sveltejs/kit';
-  export const load: Load = async ({ params }) => {
-    return { props: { imageId: params.imageId } };
-  };
-</script>
-
 <script lang="ts">
   import {
     ImageGenres,
@@ -14,7 +7,7 @@
     type IPhotographer,
     type ISubject,
   } from '@hvsb/types';
-  import ImageDisplay from '../_ImageDisplay.svelte';
+  import ImageDisplay from '../../_ImageDisplay.svelte';
   import { admin } from '$lib/stores';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
@@ -25,7 +18,8 @@
   import { addOnline, collectionStore, deleteDocumentOnline, Doc, update } from 'sveltefirets';
   import { orderBy } from 'firebase/firestore';
 
-  export let imageId: string;
+  import type { PageData } from './$types';
+  export let data: PageData;
   let subjects: Readable<ISubject[]> = collectionStore<ISubject>('subjects', [orderBy('name')], {
     startWith: [],
   });
@@ -96,7 +90,7 @@
 </script>
 
 <Doc
-  path="media/{imageId}"
+  path="media/{data.imageId}"
   on:data={(e) => {
     if (e.detail.data) {
       //@ts-ignore

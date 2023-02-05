@@ -1,10 +1,3 @@
-<script context="module" lang="ts">
-  import type { Load } from '@sveltejs/kit';
-  export const load: Load = async ({ params }) => {
-    return { props: { documentId: params.documentId } };
-  };
-</script>
-
 <script lang="ts">
   // TODO: refactor document.author and .secondAuthor into .authors[]
   import { flip } from 'svelte/animate';
@@ -23,12 +16,14 @@
   import { moveInArray } from '$lib/helpers/array';
   import { isAddingAttributeToDB, unlinkFromParentDocument } from '$lib/helpers/editing';
   import EditVerseIds from '$lib/components/content/EditVerseIds.svelte';
-  import ImageInDoc from '../_ImageInDoc.svelte';
+  import ImageInDoc from '../../_ImageInDoc.svelte';
   import ClassicCustomized from '$lib/components/editor/ClassicCustomized.svelte';
   import { addOnline, collectionStore, deleteDocumentOnline, Doc, update } from 'sveltefirets';
   import { orderBy } from 'firebase/firestore';
 
-  export let documentId: string;
+  import type { PageData } from './$types';
+  export let data: PageData;
+
   let authors: Readable<IAuthor[]> = collectionStore<IAuthor>('authors', [orderBy('name')], {
     startWith: [],
   });
@@ -97,7 +92,7 @@
 </script>
 
 <Doc
-  path="media/{documentId}"
+  path="media/{data.documentId}"
   on:data={(e) => {
     if (e.detail.data) {
       //@ts-ignore

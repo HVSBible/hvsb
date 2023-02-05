@@ -1,16 +1,11 @@
-<script context="module" lang="ts">
-  import type { Load } from '@sveltejs/kit';
-  export const load: Load = async ({ params }) => {
-    return { props: { documentId: params.documentId } };
-  };
-</script>
-
 <script lang="ts">
   import type { IDocument, ITranslatedField } from '@hvsb/types';
   import { LanguageMappings } from '@hvsb/types';
   import { admin, translator } from '$lib/stores';
   import { Doc, getFirebaseApp } from 'sveltefirets';
-  export let documentId: string;
+
+  import type { PageData } from './$types';
+  export let data: PageData;
   let documentType: IDocument;
 
   import { getFunctions, httpsCallable } from 'firebase/functions';
@@ -18,23 +13,23 @@
     try {
       //@ts-ignore
       console.log('Translated: ', e.target.value);
-      const data: ITranslatedField = {
+      const translatedField: ITranslatedField = {
         language: $translator,
-        mediaId: documentId,
+        mediaId: data.documentId,
         field,
         translation: e.target.value,
       };
       // add sectionIndex if field is sections,
       const functions = getFunctions(getFirebaseApp());
       const addTranslatedField = httpsCallable(functions, 'addTranslatedField');
-      await addTranslatedField(data);
+      await addTranslatedField(translatedField);
     } catch (err) {
       alert(`Error saving translation. Please contact us if the problem continues.`);
     }
   }
 </script>
 
-<Doc path="media/{documentId}" startWith={documentType} let:data={document}>
+<Doc path="media/{data.documentId}" startWith={documentType} let:data={document}>
   <p><b>Title</b></p>
   <p>{document.title}</p>
   <div class="font-semibold mt-1 mb-1">{LanguageMappings[$translator]}</div>

@@ -4,9 +4,9 @@
   import ResponsiveTable from 'svelte-pieces/ui/ResponsiveTable.svelte';
   import { Collection } from 'sveltefirets';
   import View from '$lib/components/ui/View.svelte';
-  import Filter from './_Filter.svelte';
-  import SortUsers from './_SortUsers.svelte';
-  import UserRow from './_UserRow.svelte';
+  import Filter from '../_Filter.svelte';
+  import SortUsers from '../_SortUsers.svelte';
+  import UserRow from '../_UserRow.svelte';
   import { exportUsersAsCSV } from '$lib/helpers/export';
 
   let usersType: IUser[] = [];

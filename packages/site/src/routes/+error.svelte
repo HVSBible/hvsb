@@ -1,23 +1,14 @@
-<script context="module" lang="ts">
-  export function load({ error, status }) {
-    return {
-      props: { error, status },
-    };
-  }
-</script>
-
 <script lang="ts">
+  import { page } from '$app/stores';
   import Button from 'svelte-pieces/ui/Button.svelte';
   import ShowHide from 'svelte-pieces/functions/ShowHide.svelte';
   import { onMount } from 'svelte';
 
   import { dev } from '$app/env';
-  export let status;
-  export let error;
 
   onMount(async () => {
     const Sentry = await import('@sentry/browser');
-    const eventId = Sentry.captureException(error);
+    const eventId = Sentry.captureException($page.error);
     console.log('sent error', eventId);
     // https://docs.sentry.io/enriching-error-data/user-feedback
     // Sentry.showReportDialog({ eventId });
@@ -25,7 +16,7 @@
 </script>
 
 <svelte:head>
-  <title>Error: {status}</title>
+  <title>Error: {$page.status}</title>
 </svelte:head>
 
 <div class="p-4 bg-white relative z-20">
@@ -48,12 +39,12 @@
 
   <p class="text-gray-600 text-sm mt-6">
     This is the
-    {status}
+    {$page.status}
     error:
-    {error.message}
+    {$page.error.message}
   </p>
 
-  {#if dev && error.stack}
-    <pre>{error.stack}</pre>
+  {#if dev && $page.error.stack}
+    <pre>{$page.error.stack}</pre>
   {/if}
 </div>

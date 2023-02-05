@@ -12,8 +12,8 @@
 <a
   href={href ||
     `WEB/${image.chapterIds[0].split('.')[0]}/${image.chapterIds[0].split('.')[1]}/img/${image.id}`}
-  sveltekit:prefetch
-  sveltekit:noscroll
+  
+  data-sveltekit-noscroll
   class:ml-4={!image.published}
   class:sm:ml-6={!image.published}
   class="hover:bg-gray-200 shadow overflow-hidden rounded-sm flex
@@ -70,8 +70,8 @@
         {#each image.verseIds as verseId}
           <a
             href={href || `WEB/${verseId.split('.')[0]}/${verseId.split('.')[1]}/img/${image.id}`}
-            sveltekit:prefetch
-            sveltekit:noscroll
+            
+            data-sveltekit-noscroll
             class="ml-1 mt-1 px-2 py-1 leading-tight text-sm font-medium bg-gray-100 hover:bg-white rounded">
             {bookAbbrev(verseId.split('.')[0])}
             {verseId.split('.')[1]}:{verseId.split('.')[2]}
