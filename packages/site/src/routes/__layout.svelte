@@ -10,6 +10,7 @@
 
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { navigating } from '$app/stores';
 
   import { page } from '$app/stores';
   let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID as string;

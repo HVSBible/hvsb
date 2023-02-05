@@ -1,20 +1,10 @@
 <script lang="ts">
-  import NProgress from 'nprogress';
-  import './nprogress.css';
+  import { page, navigating } from '$app/stores';
+  import { beforeNavigate } from '$app/navigation';
+  import { user, admin, contributor, isSubscriber } from '$lib/stores';
+  import LoadingIndicator from './LoadingIndicator.svelte';
 
-  import { onMount } from 'svelte';
-  onMount(() => {
-    // https://github.com/rstacruz/nprogress#configuration
-    NProgress.configure({
-      minimum: 0.16,
-      showSpinner: false,
-    });
-  });
-
-  import { page } from '$app/stores';
-  import { beforeNavigate, afterNavigate } from '$app/navigation';
   beforeNavigate(({ to, cancel }) => {
-    NProgress && NProgress.start();
     if (
       to &&
       (to.pathname.includes('img') || to.pathname.includes('doc') || to.pathname.includes('vid'))
@@ -34,13 +24,13 @@
     }
   });
 
-  afterNavigate(() => {
-    NProgress && NProgress.done();
-  });
-
-  import { user, admin, contributor, isSubscriber } from '$lib/stores';
   let modal: 'auth' | 'subscribe' = null;
 </script>
+
+{#if $navigating}
+  <LoadingIndicator />
+{/if}
+
 
 {#if modal === 'auth'}
   {#await import('$lib/components/modals/Auth.svelte') then { default: Auth }}
