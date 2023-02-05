@@ -3,7 +3,7 @@
   import { createEventDispatcher, tick } from 'svelte';
   import { uniqueVerseAttributes } from './uniqueVerseAttributes';
   import type { IVerse } from '@hvsb/types';
-  import { browser } from '$app/env';
+  import { browser } from '$app/environment';
   export let contentHtml: string;
   export let selected: string = undefined;
   export let hovered: string = undefined;
@@ -114,15 +114,15 @@
   .hovered-verse {
     /* background: hsl(0, 0%, 87%); */
     /* background: hsla(60, 0%, 90%, 0.5); */
-    @apply md:bg-gray-300/50;
+    --at-apply: md:bg-gray-300/50;
   }
   /* .verse-span:focus, */
   .selected-verse {
     /* background: hsl(60, 100%, 94%); */
-    @apply bg-yellow-200/40;
+    --at-apply: bg-yellow-200/40;
   }
   .selected-verse.hovered-verse {
     /* background: hsl(60, 100%, 90%); */
-    @apply bg-yellow-200/70;
+    --at-apply: bg-yellow-200/70;
   }
 </style>

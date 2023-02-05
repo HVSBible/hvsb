@@ -4,7 +4,7 @@
 
   import { page } from '$app/stores';
 
-  import { bibleBooks } from '@hvsb/parts';
+  import { bibleBooks } from '$lib/parts';
   import { getChapters } from '$lib/helpers/chapters';
 
   let currentBookId = $page.params.bookId;

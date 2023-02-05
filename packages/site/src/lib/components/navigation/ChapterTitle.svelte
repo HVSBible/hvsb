@@ -1,6 +1,6 @@
 <script lang="ts">
   export let bookId: string, chapter: string;
-  import { bookAbbrev, bookName } from '@hvsb/parts';
+  import { bookAbbrev, bookName } from '$lib/parts';
   import ShowHide from 'svelte-pieces/functions/ShowHide.svelte';
 </script>
 

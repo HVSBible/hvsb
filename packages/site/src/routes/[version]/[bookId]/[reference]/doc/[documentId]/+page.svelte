@@ -2,7 +2,7 @@
   import { DocumentGenres, LanguageMappings } from '@hvsb/types';
   import Medium from '$lib/components/content/Medium.svelte';
   import { page } from '$app/stores';
-  import { bookAbbrev, DocGenreThumb } from '@hvsb/parts';
+  import { bookAbbrev, DocGenreThumb } from '$lib/parts';
   import { getCurrentVerses } from '$lib/helpers/media';
   import ParsedParagraph from '$lib/components/content/ParsedParagraph.svelte';
   import type { PageData } from './$types';

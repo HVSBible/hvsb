@@ -4,7 +4,7 @@
   import View from '$lib/components/ui/View.svelte';
   import Button from 'svelte-pieces/ui/Button.svelte';
   import { admin } from '$lib/stores';
-  import { bookName } from '@hvsb/parts';
+  import { bookName } from '$lib/parts';
   import ParsedParagraph from '$lib/components/content/ParsedParagraph.svelte';
   import { setOnline } from 'sveltefirets';
 

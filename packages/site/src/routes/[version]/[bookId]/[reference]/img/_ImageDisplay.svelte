@@ -3,7 +3,7 @@
   export let image: IImage;
   import { page } from '$app/stores';
   import { getCurrentVerses } from '$lib/helpers/media';
-  import { bookAbbrev } from '@hvsb/parts';
+  import { bookAbbrev } from '$lib/parts';
 
   function printCurrentVerses() {
     let versesString = '';

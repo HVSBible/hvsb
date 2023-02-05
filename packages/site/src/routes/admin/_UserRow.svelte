@@ -1,6 +1,6 @@
 <script lang="ts">
   import { admin } from '$lib/stores';
-  import { printDate } from '@hvsb/parts';
+  import { printDate } from '$lib/parts';
   import type { IUser } from '@hvsb/types';
   export let user: IUser;
   let manuallySubscribe = false;

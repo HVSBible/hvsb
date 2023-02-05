@@ -4,7 +4,7 @@
   import Button from 'svelte-pieces/ui/Button.svelte';
   import { user, admin, subscriptionStatus, createBillingPortalSession } from '$lib/stores';
 
-  import { printDateWithWeekday } from '@hvsb/parts';
+  import { printDateWithWeekday } from '$lib/parts';
   import { logOut, updateOnline, saveUserData } from 'sveltefirets';
   import ShowHide from 'svelte-pieces/functions/ShowHide.svelte';
 </script>

@@ -2,7 +2,7 @@ import type { IVideo, IVimeoVideo } from '@hvsb/types';
 // was this before svelte-migrate export let video: IVideo & IVimeoVideo;
 
 import { getDocument } from 'sveltefirets';
-import { fetchVideoData } from '@hvsb/parts';
+import { fetchVideoData } from '$lib/parts';
 import type { PageLoad } from '@sveltejs/kit';
 export const load: PageLoad = async ({ params }) => {
   const [videoDoc, vimeoData] = await Promise.all([

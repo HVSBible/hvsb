@@ -3,7 +3,7 @@
   import ChapterTitle from '$lib/components/navigation/ChapterTitle.svelte';
   import Header from '$lib/components/shell/Header.svelte';
   import View from '$lib/components/ui/View.svelte';
-  import { Chapter } from '@hvsb/parts';
+  import { Chapter } from '$lib/parts';
   import type { IMedia } from '@hvsb/types';
   import type { LayoutData } from './$types';
 

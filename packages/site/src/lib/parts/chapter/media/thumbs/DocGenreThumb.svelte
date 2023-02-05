@@ -102,6 +102,6 @@
 
 <style>
   span {
-    @apply h-full w-full !important;
+    --at-apply: h-full w-full !important;
   }
 </style>

@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   // import { prefetch } from '$app/navigation';
   import { user, isSubscriber, admin } from '$lib/stores';
-  import { bookName } from '@hvsb/parts';
+  import { bookName } from '$lib/parts';
 
   let currentVersion = 'WEB';
   let currentBook = 'MAT';

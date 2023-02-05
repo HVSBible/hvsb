@@ -22,6 +22,6 @@
   }
 
   /* h1 {
-		@apply bg-red-200 mx-5 mt-10 text-[green] flex;
+		--at-apply: bg-red-200 mx-5 mt-10 text-[green] flex;
 	}*/
 </style>

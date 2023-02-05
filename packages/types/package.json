@@ -4,7 +4,7 @@
   "description": "Types for HVSB",
   "main": "index.ts",
   "devDependencies": {
-    "firebase": "^9.9.3",
-    "sveltefirets": "^0.0.27"
+    "firebase": "^9.17.1",
+    "sveltefirets": "^0.0.32"
   }
 }

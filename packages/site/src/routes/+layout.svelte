@@ -1,42 +1,70 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-
-  import { page } from '$app/stores';
-  let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID as string;
-
-  onMount(async () => {
-    if (analyticsId) {
-      const { measureWebVitals } = await import('$lib/webVitals');
-      measureWebVitals({ path: $page.url.pathname, params: $page.params, analyticsId });
-    }
-
-    const Sentry = await import('@sentry/browser');
-    Sentry.init({
-      dsn: 'https://4828396351a943f0acbe567421e6a1d1@o214614.ingest.sentry.io/5384573',
-      // https://docs.sentry.io/enriching-error-data/user-feedback
-      // beforeSend(event, hint) {
-      // 	if (event.exception) {
-      // 		Sentry.showReportDialog({ eventId: event.event_id });
-      // 	}
-      // 	return event;
-      // }
-    });
-  });
+  import './global.css';
+  import Preflights from './Preflights.svelte';
+  import { browser } from '$app/environment';
 </script>
+
+<Preflights />
 
 <slot />
 
-{#await import('$lib/components/shell/AuthSubscribeGuard.svelte') then { default: AuthSubscribe }}
-  <AuthSubscribe />
-{/await}
+{#if browser}
+  <!-- {#await import('./Analytics.svelte') then { default: Analytics }}
+    <Analytics />
+  {/await}
 
-<style windi:preflights:global windi:safelist:global global>
-  .ck-content table td h4,
-  .ck-content table th h4 {
-    white-space: nowrap;
+  {#await import('$lib/components/shell/AuthSubscribeGuard.svelte') then { default: AuthSubscribe }}
+    <AuthSubscribe />
+  {/await} -->
+{/if}
+
+<style global>
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border-color: #6b7280;
+    border-width: 1px;
+    border-radius: 0px;
+    padding-top: 0.5rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  input[type='checkbox'] {
+    --at-apply:: focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded;
   }
 
   .form-input {
-    @apply border-gray-300 rounded-md focus:border-indigo-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50;
+    --at-apply:: border-gray-300 rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50;
+  }
+
+  select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    print-color-adjust: exact;
   }
 </style>

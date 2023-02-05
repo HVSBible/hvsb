@@ -4,7 +4,7 @@
   import { deleteVideo } from '$lib/helpers/video';
   import { assignParentDocumentToImage } from '$lib/helpers/assignParentDocumentToImage';
   import Button from 'svelte-pieces/ui/Button.svelte';
-  import { PreviewVideo, PreviewImage, PreviewDocument } from '@hvsb/parts';
+  import { PreviewVideo, PreviewImage, PreviewDocument } from '$lib/parts';
   import { flip } from 'svelte/animate';
 
   import { getContext } from 'svelte';
@@ -79,6 +79,6 @@
 
 <style>
   .selected {
-    @apply shadow-lg bg-white relative z-1;
+    --at-apply: shadow-lg bg-white relative z-1;
   }
 </style>

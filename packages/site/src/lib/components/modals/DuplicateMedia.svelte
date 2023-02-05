@@ -3,7 +3,7 @@
   export let media: IMedia;
   import Modal from 'svelte-pieces/ui/Modal.svelte';
   import Button from 'svelte-pieces/ui/Button.svelte';
-  import { bibleBooks } from '@hvsb/parts';
+  import { bibleBooks } from '$lib/parts';
   import { getChapters, getNumberOfVerses } from '$lib/helpers/chapters';
 
   import { page } from '$app/stores';

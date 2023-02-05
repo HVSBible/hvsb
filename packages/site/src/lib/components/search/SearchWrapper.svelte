@@ -9,7 +9,7 @@
   import ToggleRefinement from './widgets/ToggleRefinement.svelte';
   import ClearRefinements from './widgets/ClearRefinements.svelte';
   import Pagination from './widgets/Pagination.svelte';
-  import { PreviewVideo, PreviewImage, PreviewDocument } from '@hvsb/parts';
+  import { PreviewVideo, PreviewImage, PreviewDocument } from '$lib/parts';
 
   import { fade } from 'svelte/transition';
   import { admin } from '$lib/stores';

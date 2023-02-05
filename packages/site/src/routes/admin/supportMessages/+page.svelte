@@ -32,6 +32,6 @@
 
 <style>
   th {
-    @apply text-xs font-semibold text-gray-600 uppercase tracking-wider;
+    --at-apply: text-xs font-semibold text-gray-600 uppercase tracking-wider;
   }
 </style>
