@@ -1,19 +1,23 @@
 import { browser } from '$app/environment';
-import type { IDocument, IImage, IImageParent, IVideo } from '@hvsb/types';
+import type { IMedia, IImageParent } from '@hvsb/types';
 import { admin, user, contributor } from '$lib/stores';
 import { get } from 'svelte/store';
+import { getBibleId } from '$lib/helpers/versions';
+import { getCollection } from 'sveltefirets';
+import { orderBy, where } from 'firebase/firestore';
+import { PUBLIC_BIBLE_API } from '$env/static/public';
 
 export async function getChapterMedia(
   bookId: string,
   chapter: string
-): Promise<(IImage | IDocument | IVideo)[]> {
+): Promise<IMedia[]> {
   if (get(admin) > 0) {
-    return await getCollection<IImage | IDocument | IVideo>('media', [
+    return await getCollection<IMedia>('media', [
       where('chapterIds', 'array-contains', `${bookId}.${chapter}`),
       orderBy('type'),
     ]);
   } else {
-    let media = await getCollection<IImage | IDocument | IVideo>('media', [
+    let media = await getCollection<IMedia>('media', [
       where('chapterIds', 'array-contains', `${bookId}.${chapter}`),
       where('published', '==', true),
       orderBy('type'),
@@ -21,7 +25,7 @@ export async function getChapterMedia(
 
     if (browser && get(contributor)) {
       const { uid } = get(user);
-      const contributedMedia = await getCollection<IImage | IDocument | IVideo>('media', [
+      const contributedMedia = await getCollection<IMedia>('media', [
         where('chapterIds', 'array-contains', `${bookId}.${chapter}`),
         where('createdBy', '==', uid),
         orderBy('type'),
@@ -34,10 +38,10 @@ export async function getChapterMedia(
 }
 
 export function prepareChapterMedia(
-  media: (IImage | IDocument | IVideo)[],
+  media: IMedia[],
   bookId: string,
   chapter: string
-): (IImage | IDocument | IVideo)[] {
+): (IMedia)[] {
   media = media.map((medium) => {
     if (imageHasParentInChapter(medium, bookId, chapter)) {
       medium.type = 'skip';
@@ -53,7 +57,7 @@ export function prepareChapterMedia(
 }
 
 function imageHasParentInChapter(
-  medium: IImage | IDocument | IVideo,
+  medium: IMedia,
   bookId: string,
   chapter: string
 ): boolean {
@@ -72,10 +76,7 @@ export function getCurrentVerses(verseIds: string[], bookId: string, chapter: st
     .sort((a, b) => a - b);
 }
 
-import { getBibleId } from '$lib/helpers/versions';
-import { getCollection } from 'sveltefirets';
-import { orderBy, where } from 'firebase/firestore';
-import { PUBLIC_BIBLE_API } from '$env/static/public';
+
 export async function fetchBibleText(version = 'WEB', bookId: string, chapter: string) {
   try {
     const bibleId = version === 'WEB' ? '9879dbb7cfe39e4d-04' : await getBibleId(version);

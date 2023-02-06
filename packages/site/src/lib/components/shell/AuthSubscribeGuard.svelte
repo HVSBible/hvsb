@@ -7,7 +7,7 @@
   beforeNavigate(({ to, cancel }) => {
     if (
       to &&
-      (to.pathname.includes('img') || to.pathname.includes('doc') || to.pathname.includes('vid'))
+      (to.url.pathname.includes('img') || to.url.pathname.includes('doc') || to.url.pathname.includes('vid'))
     ) {
       if (!$user) {
         modal = 'auth';

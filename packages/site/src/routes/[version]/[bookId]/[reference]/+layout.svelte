@@ -6,18 +6,12 @@
   import { Chapter } from '$lib/parts';
   import type { IMedia } from '@hvsb/types';
   import type { LayoutData } from './$types';
+  import { setContext } from 'svelte';
+  import { writable } from 'svelte/store';
+  import { createQueryParamStore } from 'svelte-pieces/stores/queryParam';
+  import { page } from '$app/stores';
 
   export let data: LayoutData;
-
-  // export let version: string,
-  //   bookId: string,
-  //   chapter: string,
-  //   previousChapterId: string,
-  //   nextChapterId: string,
-  //   content,
-  //   media: IMedia[],
-  //   textErr,
-  //   mediaErr;
 
   $: if (browser) {
     localStorage.setItem('currentVersion', data.version);
@@ -25,8 +19,6 @@
     localStorage.setItem('currentChapter', data.chapter);
   }
 
-  import { setContext } from 'svelte';
-  import { writable } from 'svelte/store';
   const chapterMedia = writable<IMedia[]>([]);
   setContext('chapterMedia', chapterMedia);
   $: chapterMedia.set(data.media);
@@ -45,10 +37,8 @@
   $: nextUrl = (data.nextChapterId && data.nextChapterId.replace(/\./g, '/')) || null;
 
   let fullWidth = 800;
-  import { page } from '$app/stores';
   $: subpageOpen = $page.params && Object.keys($page.params).length > 3;
 
-  import { createQueryParamStore } from 'svelte-pieces/stores/queryParam';
   const selected = createQueryParamStore<number>({ key: 'vv', replaceState: true });
   setContext('selected', selected);
 </script>

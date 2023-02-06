@@ -72,24 +72,25 @@
         //         break;
         // }
       },
-      () => savePhoto(storagePath)
+      () => save_photo(storagePath)
     );
   }
 
   import type { IImage } from '@hvsb/types';
   import { addOnline } from 'sveltefirets';
-  import { getImageServingURL } from '$lib/helpers/getImageServingURL';
+  import { STORAGE_PATH_URL_PARAM } from '../../../../image_serving_url/constant';
 
-  async function savePhoto(storagePath: string) {
+  async function save_photo(storage_path: string) {
     try {
-      const gcsPath = await getImageServingURL(storagePath);
+      const response = await fetch(`/image_serving_url?${STORAGE_PATH_URL_PARAM}=${storage_path}`);
+      const gcs_path = await response.text();
 
       const image: IImage = {
         bookIds: [$page.params.bookId],
         chapterIds: [`${$page.params.bookId}.${$page.params.reference}`],
         verseIds: [`${$page.params.bookId}.${$page.params.reference}.${verseNumber}`],
-        path: storagePath,
-        gcs: gcsPath,
+        path: storage_path,
+        gcs: gcs_path,
         genre: 'photograph',
         type: 'image',
       };

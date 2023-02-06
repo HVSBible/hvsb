@@ -9,13 +9,13 @@
 <slot />
 
 {#if browser}
-  <!-- {#await import('./Analytics.svelte') then { default: Analytics }}
+  {#await import('./Analytics.svelte') then { default: Analytics }}
     <Analytics />
   {/await}
 
   {#await import('$lib/components/shell/AuthSubscribeGuard.svelte') then { default: AuthSubscribe }}
     <AuthSubscribe />
-  {/await} -->
+  {/await}
 {/if}
 
 <style global>
