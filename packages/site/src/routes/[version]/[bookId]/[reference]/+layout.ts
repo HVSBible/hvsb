@@ -1,8 +1,8 @@
 import { prepareChapterMedia, fetchBibleText, getChapterMedia } from '$lib/helpers/media';
 import type { IReferenceProps } from './_reference-props.interface';
 
-import type { LayoutLoad } from '@sveltejs/kit';
-export const load: LayoutLoad = async ({ params }) => {
+import type { LayoutLoad } from './$types';
+export const load = (async ({ params }) => {
   const version: string = params.version;
   const bookId: string = params.bookId;
   const chapter: string = params.reference.match(/[0-9]*/)[0]; // return '12' in a '12.3-13.1' string
@@ -36,4 +36,4 @@ export const load: LayoutLoad = async ({ params }) => {
   }
 
   return props;
-};
+}) satisfies LayoutLoad;

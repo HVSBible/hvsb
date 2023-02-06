@@ -1,8 +1,8 @@
 import { getDocument } from 'sveltefirets';
 import type { IIntro } from '@hvsb/types';
 
-import type { PageLoad } from '@sveltejs/kit';
-export const load: PageLoad = async ({ params }) => {
+import type { PageLoad } from './$types';
+export const load = (async ({ params }) => {
   const version = params.version;
   const bookId = params.bookId;
   const intro = await getDocument<IIntro>(`intros/${bookId}`);
@@ -12,4 +12,4 @@ export const load: PageLoad = async ({ params }) => {
     bookId,
     intro,
   };
-};
+}) satisfies PageLoad;

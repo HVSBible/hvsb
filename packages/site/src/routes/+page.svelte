@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  // import { prefetch } from '$app/navigation';
   import { user, isSubscriber, admin } from '$lib/stores';
   import { bookName } from '$lib/parts';
 
@@ -21,8 +20,7 @@
     if (storedChapter) {
       currentChapter = storedChapter;
     }
-    // TODO: Causes error: Cannot read property 'load' of undefined (there is a preload in the layout but not the actual file)
-    // prefetch(`/${currentVersion}/${currentBook}/${currentChapter}`);
+    // would be nice to preload (`/${currentVersion}/${currentBook}/${currentChapter}`);
   });
 
   import Header from '$lib/components/shell/Header.svelte';
@@ -79,7 +77,7 @@
       </div>
     </div>
   </div> -->
-  <div class="container mx-auto px-4 max-w-6xl">
+  <div class="mx-auto px-4 max-w-6xl">
     <div class="flex flex-wrap">
       <div class="md:pt-6 w-full md:w-4/12 px-4 text-center">
         <div

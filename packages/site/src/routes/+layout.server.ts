@@ -1,7 +1,7 @@
 import type { IUser } from '@hvsb/types';
 
 import type { LayoutServerLoad } from './$types';
-export const load: LayoutServerLoad = ({ cookies }) => {
+export const load = (({ cookies }) => {
   let user: IUser = null;
   try {
     user = JSON.parse(cookies.get('user') || null) as IUser;
@@ -12,4 +12,4 @@ export const load: LayoutServerLoad = ({ cookies }) => {
   return {
     user,
   };
-};
+}) satisfies LayoutServerLoad;

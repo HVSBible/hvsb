@@ -34,6 +34,7 @@
       class="font-medium px-3 py-2 hover:bg-gray-200 text-primary-700 rounded
       border border-primary-700 my-2 mx-2 md:mx-0 btn inline-block"
       target="_blank"
+      rel="noreferrer"
       href="https://vimeo.com/manage/{data.video.id}/general">
       Edit in Vimeo
       <i class="fas fa-key" />

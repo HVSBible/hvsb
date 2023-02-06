@@ -5,7 +5,7 @@
     "fivethree.vscode-svelte-snippets",
     // Styles
     "antfu.iconify",
-    "voorjaar.windicss-intellisense",
+    "antfu.unocss",
     // Code quality
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
@@ -18,7 +18,6 @@
     // "cschleiden.vscode-github-actions",
     // Efficiency
     "usernamehw.errorlens",
-    "wallabyjs.quokka-vscode",
     "yzhang.markdown-all-in-one",
     // Other Useful Tools
     // "aaron-bond.better-comments",

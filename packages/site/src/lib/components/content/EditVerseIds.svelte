@@ -13,7 +13,7 @@
       class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium leading-4 bg-primary-100 text-primary-800 mr-1 mb-1">
       <a
         class="hover:underline"
-        href="{$page.params.version}/{verseId.split('.')[0]}/{verseId.split(
+        href="/{$page.params.version}/{verseId.split('.')[0]}/{verseId.split(
           '.'
         )[1]}/{medium.type === 'image'
           ? 'img'

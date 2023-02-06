@@ -35,13 +35,13 @@
 
 <Medium
   let:translator={translatorLanguage}
-  data={document}
-  title={document.title}
+  data={data.document}
+  title={data.document.title}
   description={''}
   shareImage={`https://res.cloudinary.com/hvsb/image/upload/w_1200,h_630,c_fill/v1583535926/home/Jerash_Pano_8_v7myoz.jpg`}>
   <div class="p-2">
     <h2 class="hidden md:block text-2xl font-semibold mb-1">
-      {document.title}
+      {data.document.title}
     </h2>
 
     <div class="mb-2 text-sm text-gray-600">
@@ -81,7 +81,7 @@
   {#if data.document.seriesIds && data.document.seriesIds.length}
     {#await import('$lib/components/navigation/SeriesNavigator.svelte') then { default: SeriesNavigator }}
       {#each data.document.seriesIds as seriesId}
-        <SeriesNavigator {seriesId} {document} />
+        <SeriesNavigator {seriesId} document={data.document} />
       {/each}
     {/await}
   {/if}
