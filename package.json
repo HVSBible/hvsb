@@ -2,15 +2,14 @@
 	"name": "hvsb",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "pnpm site",
-		"build": "pnpm site:build",
-		"test": "pnpm --filter=site... test",
-		"site": "pnpm --filter=site dev",
-		"site:build": "pnpm --filter=site build",
-		"site:test": "pnpm --filter=site test",
-		"parts": "pnpm --filter=parts dev",
-		"parts:build": "pnpm --filter=parts build",
-		"parts:test": "pnpm --filter=parts test",
+		"dev": "pnpm --filter=site dev",
+		"build": "pnpm --filter=site build",
+		"preview": "pnpm --filter=site preview",
+		"test": "pnpm --filter=site test",
+		"test:all": "pnpm --recursive --stream test -- --run",
+		"lint": "eslint .",
+		"format-check": "prettier --check --plugin-search-dir=. .",
+		"format": "prettier --write --plugin-search-dir=. .",
 		"check-packages": "pnpm update --interactive --recursive --latest"
 	},
 	"devDependencies": {
