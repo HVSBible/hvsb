@@ -6,7 +6,7 @@
 
   onMount(async () => {
     if (analyticsId) {
-      const { measureWebVitals } = await import('$lib/webvitals');
+      const { measureWebVitals } = await import('$lib/web_vitals');
       measureWebVitals({ path: $page.url.pathname, params: $page.params, analyticsId });
     }
 
