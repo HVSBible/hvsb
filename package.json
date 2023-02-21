@@ -5,6 +5,9 @@
 		"dev": "pnpm --filter=site dev",
 		"build": "pnpm --filter=site build",
 		"preview": "pnpm --filter=site preview",
+		"kitbook": "pnpm --filter=site kitbook",
+    "kitbook:build": "pnpm --filter=site kitbook:build",
+    "kitbook:preview": "pnpm --filter=site kitbook:preview",
 		"test": "pnpm --filter=site test",
 		"test:all": "pnpm --recursive --stream test -- --run",
 		"lint": "eslint .",
@@ -13,9 +16,9 @@
 		"check-packages": "pnpm update --interactive --recursive --latest"
 	},
 	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "^5.50.0",
-		"@typescript-eslint/parser": "^5.50.0",
-		"eslint": "^8.33.0",
+		"@typescript-eslint/eslint-plugin": "^5.53.0",
+		"@typescript-eslint/parser": "^5.53.0",
+		"eslint": "^8.34.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"prettier": "^2.8.3",
