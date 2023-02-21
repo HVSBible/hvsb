@@ -2,9 +2,9 @@
   import { Story } from 'kitbook';
   import { DocumentGenres, type DocumentGenre } from '@hvsb/types';
 
-  import DocGenreThumb from '$lib/chapter/media/thumbs/DocGenreThumb.svelte';
-  import ImageThumb from '$lib/chapter/media/thumbs/ImageThumb.svelte';
-  import VideoThumb from '$lib/chapter/media/thumbs/VideoThumb.svelte';
+  import DocGenreThumb from './DocGenreThumb.svelte';
+  import ImageThumb from './ImageThumb.svelte';
+  import VideoThumb from './VideoThumb.svelte';
   const documentGenres = Object.keys(DocumentGenres) as DocumentGenre[];
 
   const videoData = {

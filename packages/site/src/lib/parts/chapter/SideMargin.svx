@@ -1,9 +1,9 @@
 <script lang="ts">
   import { Story } from 'kitbook';
-  import SideMargin from '$lib/chapter/SideMargin.svelte';
+  import SideMargin from './SideMargin.svelte';
 
-  import media from '$lib/chapter/data/MAT.1.media.json';
-  import verses from '$lib/chapter/data/MAT.1.verses.json';
+  import media from './data/MAT.1.media.json';
+  import verses from './data/MAT.1.verses.json';
   import type { IMedia, IVerse } from '@hvsb/types';
   const mat1Verses = verses as IVerse[];
   const mat1Media = media as unknown as IMedia[];

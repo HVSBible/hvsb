@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Story } from 'kitbook';
-  import PreviewImage from '$lib/chapter/media/previews/PreviewImage.svelte';
+  import PreviewImage from './PreviewImage.svelte';
 
   import type { Hit } from 'instantsearch.js';
   import type { IImage, IMedia } from '@hvsb/types';

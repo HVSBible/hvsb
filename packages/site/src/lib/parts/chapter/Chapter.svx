@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { fetchBibleText } from '$lib/chapter/fetchBibleText';
+  import { fetchBibleText } from './fetchBibleText';
   import { Story } from 'kitbook';
   // import JSON from 'svelte-pieces/data/JSON.svelte';
 
-  import Chapter from '$lib/chapter/Chapter.svelte';
+  import Chapter from './Chapter.svelte';
 
-  import media from '$lib/chapter/data/MAT.1.media.json';
+  import media from './data/MAT.1.media.json';
   import type { IMedia } from '@hvsb/types';
   const mat1Media = media as unknown as IMedia[];
 </script>

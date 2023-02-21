@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Story } from 'kitbook';
-  import PlaceIntoDocument from '$lib/modals/PlaceIntoDocument.svelte';
+  import PlaceIntoDocument from './PlaceIntoDocument.svelte';
 
   import type { IMedia } from '@hvsb/types';
   import { setContext } from 'svelte';

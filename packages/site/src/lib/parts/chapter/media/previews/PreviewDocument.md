@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Story } from 'kitbook';
-  import PreviewDocument from '$lib/chapter/media/previews/PreviewDocument.svelte';
+  import PreviewDocument from './PreviewDocument.svelte';
 
   import type { Hit } from 'instantsearch.js';
   import type { IDocument } from '@hvsb/types';

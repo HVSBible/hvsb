@@ -1,4 +1,4 @@
 /build
-/.svelte-kit
+/.svelte-kit*
 /package
 *.local

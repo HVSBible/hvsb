@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Story } from 'kitbook';
-  import PreviewVideo from '$lib/chapter/media/previews/PreviewVideo.svelte';
+  import PreviewVideo from './PreviewVideo.svelte';
 
   import type { Hit } from 'instantsearch.js';
   import type { IVideo, IVimeoVideo } from '@hvsb/types';
