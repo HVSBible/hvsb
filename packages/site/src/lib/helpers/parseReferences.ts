@@ -130,35 +130,6 @@ if (import.meta.vitest) {
   });
 }
 
-function getBookIndexes(string: string, bookName: string): Location[] {
-  const caseInsensitiveWholeWordBookName = new RegExp(`\\b(${bookName})\\b`, 'ig');
-  return getIndexes(string, caseInsensitiveWholeWordBookName);
-}
-
-if (import.meta.vitest) {
-  describe('getBookIndexes', () => {
-    test('return start, end, and original text', () => {
-      expect(getBookIndexes('Gen 1:1', 'Gen')).toEqual([{
-        start: 0,
-        end: 3,
-        text: "Gen",
-      }]);
-      expect(getBookIndexes('This is Genesis 1:1', 'Genesis')).toEqual([{
-        start: 8,
-        end: 15,
-        text: "Genesis",
-      }]);
-    });
-    test('handles period after abbreviated book name', () => {
-      expect(getBookIndexes('Matt. 5:2', 'Matt')).toEqual([{
-        start: 0,
-        end: 4,
-        text: "Matt",
-      }]);
-    });
-  });
-}
-
 function parseReferencesForBookLocation(string: string): Reference[] {
   const references: Reference[] = [];
   const chapterLocations = getChapterIndexes(string);
@@ -278,6 +249,35 @@ if (import.meta.vitest) {
           end: 24,
         },
       ]);
+    });
+  });
+}
+
+function getBookIndexes(string: string, bookName: string): Location[] {
+  const caseInsensitiveWholeWordBookName = new RegExp(`\\b(${bookName})\\b`, 'ig');
+  return getIndexes(string, caseInsensitiveWholeWordBookName);
+}
+
+if (import.meta.vitest) {
+  describe('getBookIndexes', () => {
+    test('return start, end, and original text', () => {
+      expect(getBookIndexes('Gen 1:1', 'Gen')).toEqual([{
+        start: 0,
+        end: 3,
+        text: "Gen",
+      }]);
+      expect(getBookIndexes('This is Genesis 1:1', 'Genesis')).toEqual([{
+        start: 8,
+        end: 15,
+        text: "Genesis",
+      }]);
+    });
+    test('handles period after abbreviated book name', () => {
+      expect(getBookIndexes('Matt. 5:2', 'Matt')).toEqual([{
+        start: 0,
+        end: 4,
+        text: "Matt",
+      }]);
     });
   });
 }
