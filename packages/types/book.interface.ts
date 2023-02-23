@@ -1,6 +1,6 @@
 export interface IBook {
-  abbreviation: string;
+  abbreviation: string; // human-friendly
   name: string;
-  id: string;
+  id: string; // GEN - Urls, database, backend
   ch: number; // chapters
 }
