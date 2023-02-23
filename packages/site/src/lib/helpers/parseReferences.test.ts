@@ -44,7 +44,7 @@ describe('parseReferences', () => {
     }]);
   });
 
-  // TODO: fix this edge case
+  // TODO: fix this edge case if needed
   test.fails('trailing colon to explain something following a reference', () => {
     expect(findReferencesInParagraph('Remember what we see in Luke 16:10: 20 men!')).toEqual([{
       bookId: 'LUK',

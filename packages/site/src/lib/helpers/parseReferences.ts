@@ -1,13 +1,9 @@
-// NOTES:
-
-// check to see if Dr. House uses Philemon 12 or Phileman 1:12, Jude 20 or Jude 1:20 to refer to verses in books with only 1 chapter
-
-// watch out to see if we need to convert 'en' dash: `–` or 'em' dash: `—` to a hyphen with `.replace(/\u2013|\u2014/g, "-")`
-
-// split a text into paragraphs by newline to keep book location memory from leaking over into next paragraph
-
-
 import { arrayOfBookNamesAbbreviations, getBookId } from "$lib/parts/data/books";
+
+// NOTES:
+// check to see if Dr. House uses Philemon 12 or Phileman 1:12, Jude 20 or Jude 1:20 to refer to verses in books with only 1 chapter
+// watch out to see if we need to convert 'en' dash: `–` or 'em' dash: `—` to a hyphen with `.replace(/\u2013|\u2014/g, "-")`
+// split a text into paragraphs by newline to keep book location memory from leaking over into next paragraph
 
 export interface Reference {
   bookId?: string;
