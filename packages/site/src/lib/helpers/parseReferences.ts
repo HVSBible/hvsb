@@ -6,7 +6,6 @@
 
 // split a text into paragraphs by newline to keep book location memory from leaking over into next paragraph
 
-// check for book abbreviations used in actual articles and pull from https://github.com/phillipb/bible-verse-parser/blob/master/lib/ValidBookNames.ts if helpful
 
 import { arrayOfBookNamesAbbreviations, getBookId } from "$lib/parts/data/books";
 
@@ -25,50 +24,50 @@ interface Location {
   text: string;
 }
 
-const namesAndAbbreviations = arrayOfBookNamesAbbreviations();
-const longestToShortestBookNames = namesAndAbbreviations.sort((a, b) => b.length - a.length);
-
 export function findReferencesInParagraph(string: string): Reference[] {
   const references: Reference[] = [];
-  const bookNameLocations = locationsOfBooksNames(string);
+  const bookNameLocations = getBookNameLocations(string);
 
-  for (const [index, location] of bookNameLocations.entries()) {
+  for (const [index, bookLocation] of bookNameLocations.entries()) {
     const nextLocation = bookNameLocations[index + 1];
     const endOfTextInfluencedByThisBookLocation = nextLocation?.start || string.length;
-    const textInfluencedByThisBookLocation = string.slice(location.start, endOfTextInfluencedByThisBookLocation);
+    const textInfluencedByThisBookLocation = string.slice(bookLocation.start, endOfTextInfluencedByThisBookLocation);
+    const chapterVerseReferencesFromThisBookLocation = findChapterVerseReferences(textInfluencedByThisBookLocation);
 
-    const locationReferences = parseReferencesForBookLocation(textInfluencedByThisBookLocation);
-
-    const bookId = getBookId(location.text);
-    for (const locationReference of locationReferences) {
+    const bookId = getBookId(bookLocation.text);
+    for (const chapterVerseReference of chapterVerseReferencesFromThisBookLocation) {
       const reference: Reference = {
         bookId,
-        ...locationReference,
-        start: locationReference.start + location.start,
-        end: locationReference.end + location.start,
+        ...chapterVerseReference,
+        start: bookLocation.start + chapterVerseReference.start,
+        end: bookLocation.start + chapterVerseReference.end,
       }
       references.push(reference);
     }
   }
-
+  
   return references;
 }
 
-function locationsOfBooksNames(string: string): Location[] {
+const bookNamesAndAbbreviations = arrayOfBookNamesAbbreviations();
+const longestToShortestBookNames = bookNamesAndAbbreviations.sort((a, b) => b.length - a.length);
+// check for book abbreviations used in actual articles and pull additional ones like (I John vs 1 John) from https://github.com/phillipb/bible-verse-parser/blob/master/lib/ValidBookNames.ts if helpful
+
+function getBookNameLocations(string: string): Location[] {
   const locations: Location[] = []
   // Find 1 John before John
   for (const name of longestToShortestBookNames) {
     const bookNameLocations = getBookIndexes(string, name);
     locations.push(...bookNameLocations);
   }
-  const uniqueBookNameLocations = filterOutLocationsWithSameEndIndex(locations);
+  const uniqueBookNameLocations = filterOutLocationsWithSameEnd(locations);
   const sortedByStartIndex = uniqueBookNameLocations.sort((a, b) => a.start - b.start);
   return sortedByStartIndex;
 }
 
 if (import.meta.vitest) {
-  test('locationsOfBooksNames', () => {
-    expect(locationsOfBooksNames('This is Genesis 1:1 and Exod 2:5. Then we reference 1 John 2:1.')).toEqual([
+  test('getBookNameLocations', () => {
+    expect(getBookNameLocations('This is Genesis 1:1 and Exod 2:5. Then we reference 1 John 2:1.')).toEqual([
       {
         start: 8,
         end: 15,
@@ -88,7 +87,7 @@ if (import.meta.vitest) {
   });
 }
 
-function filterOutLocationsWithSameEndIndex(locations: Location[]) {
+function filterOutLocationsWithSameEnd(locations: Location[]) {
   const alreadyFoundEndIndexes: number[] = [];
   return locations.filter((location) => {
     if (alreadyFoundEndIndexes.includes(location.end)) return false;
@@ -97,7 +96,7 @@ function filterOutLocationsWithSameEndIndex(locations: Location[]) {
 }
 
 if (import.meta.vitest) {
-  test('filterOutLocationsWithSameEndIndex', () => {
+  test('filterOutLocationsWithSameEnd', () => {
     const locations: Location[] = [
       {
         start: 8,
@@ -115,7 +114,7 @@ if (import.meta.vitest) {
         text: 'John',
       },
     ]
-    expect(filterOutLocationsWithSameEndIndex(locations)).toEqual([
+    expect(filterOutLocationsWithSameEnd(locations)).toEqual([
       {
         start: 8,
         end: 15,
@@ -130,7 +129,7 @@ if (import.meta.vitest) {
   });
 }
 
-function parseReferencesForBookLocation(string: string): Reference[] {
+function findChapterVerseReferences(string: string): Reference[] {
   const references: Reference[] = [];
   const chapterLocations = getChapterIndexes(string);
   for (const [chapterIndex, chapterLocation] of chapterLocations.entries()) {
@@ -166,7 +165,7 @@ function parseReferencesForBookLocation(string: string): Reference[] {
 if (import.meta.vitest) {
   describe('parseReferencesForBookLocation', () => {
     test('basic', () => {
-      expect(parseReferencesForBookLocation('Genesis 1:1')).toEqual([{
+      expect(findChapterVerseReferences('Genesis 1:1')).toEqual([{
         text: 'Genesis 1:1',
         chapter: 1,
         verseRange: "1",
@@ -176,7 +175,7 @@ if (import.meta.vitest) {
     });
 
     test('chapter with multiple references', () => {
-      expect(parseReferencesForBookLocation('John 5:1-2, 12')).toMatchInlineSnapshot(`
+      expect(findChapterVerseReferences('John 5:1-2, 12')).toMatchInlineSnapshot(`
         [
           {
             "chapter": 5,
@@ -197,7 +196,7 @@ if (import.meta.vitest) {
     });
 
     test('chapter with multiple references', () => {
-      expect(parseReferencesForBookLocation('John 3:1, 5:1-2, 12')).toMatchInlineSnapshot(`
+      expect(findChapterVerseReferences('John 3:1, 5:1-2, 12')).toMatchInlineSnapshot(`
         [
           {
             "chapter": 3,
@@ -225,7 +224,7 @@ if (import.meta.vitest) {
     });
 
     test('sentence with three references', () => {
-      expect(parseReferencesForBookLocation(`Gen. 1:1, 2:3, and 4:5-7 and some more here
+      expect(findChapterVerseReferences(`Gen. 1:1, 2:3, and 4:5-7 and some more here
        and else.`)).toEqual([
         {
           text: 'Gen. 1:1',
@@ -283,6 +282,7 @@ if (import.meta.vitest) {
 }
 
 const NUMBERS_FOLLOWED_BY_COLON = new RegExp('([0-9]+):', 'g');
+
 function getChapterIndexes(string: string): Location[] {
   return getIndexes(string, NUMBERS_FOLLOWED_BY_COLON);
 }
