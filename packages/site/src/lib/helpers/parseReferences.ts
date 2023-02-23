@@ -6,7 +6,7 @@
 
 // split a text into paragraphs by newline to keep book location memory from leaking over into next paragraph
 
-// check for book abbreviations used and pull from https://github.com/phillipb/bible-verse-parser/blob/master/lib/ValidBookNames.ts if helpful
+// check for book abbreviations used in actual articles and pull from https://github.com/phillipb/bible-verse-parser/blob/master/lib/ValidBookNames.ts if helpful
 
 import { arrayOfBookNamesAbbreviations, getBookId } from "$lib/parts/data/books";
 
@@ -28,8 +28,7 @@ interface Location {
 const namesAndAbbreviations = arrayOfBookNamesAbbreviations();
 const longestToShortestBookNames = namesAndAbbreviations.sort((a, b) => b.length - a.length);
 
-
-function findReferencesInParagraph(string: string): Reference[] {
+export function findReferencesInParagraph(string: string): Reference[] {
   const references: Reference[] = [];
   const bookNameLocations = locationsOfBooksNames(string);
 
@@ -53,61 +52,6 @@ function findReferencesInParagraph(string: string): Reference[] {
   }
 
   return references;
-}
-
-if (import.meta.vitest) {
-  describe('parseReferences', () => {
-    test('parses simple reference by itself', () => {
-      const expected: Reference[] = [{
-        bookId: 'GEN',
-        chapter: 1,
-        verseRange: "1",
-        start: 0,
-        end: 11,
-        text: 'Genesis 1:1',
-      }];
-      expect(findReferencesInParagraph('Genesis 1:1')).toEqual(expected);
-    });
-
-    test('handles a sentence full of references separated by commas', () => {
-      expect(findReferencesInParagraph('Gen. 5:12, Exod. 4:10-23, John 1:1-2, 3:1-2, 5:7-8')).toMatchSnapshot();
-    });
-    
-    test('handles Matt 5:1-2, 3, 3:1-2, 2 John 1:3 without marking the "2" in 2 John as verse 2 of Matthew 3', () => {
-      expect(findReferencesInParagraph('Matt 5:1-2, 3, 3:1-2, 2 John 1:3')).toMatchSnapshot();
-    });
-
-    test('handles a conversational prose sentence with references', () => {
-      expect(findReferencesInParagraph('If you go and read Gen 3:1-2, and 5:7-8, 12 then you will see 12 disciples.')).toMatchInlineSnapshot(`
-        [
-          {
-            "bookId": "GEN",
-            "chapter": 3,
-            "end": 28,
-            "start": 19,
-            "text": "Gen 3:1-2",
-            "verseRange": "1-2",
-          },
-          {
-            "bookId": "GEN",
-            "chapter": 5,
-            "end": 39,
-            "start": 34,
-            "text": "5:7-8",
-            "verseRange": "7-8",
-          },
-          {
-            "bookId": "GEN",
-            "chapter": 5,
-            "end": 43,
-            "start": 41,
-            "text": "12",
-            "verseRange": "12",
-          },
-        ]
-      `);
-    });
-  });
 }
 
 function locationsOfBooksNames(string: string): Location[] {
@@ -288,7 +232,7 @@ if (import.meta.vitest) {
         ]
       `);
     });
-    
+
     test('chapter with multiple references', () => {
       expect(parseReferencesForBookLocation('John 3:1, 5:1-2, 12')).toMatchInlineSnapshot(`
         [
@@ -346,7 +290,6 @@ if (import.meta.vitest) {
   });
 }
 
-// TODO: check for "In Gen. 5 we see that the...";
 const NUMBERS_FOLLOWED_BY_COLON = new RegExp('([0-9]+):', 'g');
 function getChapterIndexes(string: string): Location[] {
   const matches: Location[] = [];
