@@ -58,7 +58,7 @@ function locationsOfBooksNames(string: string): Location[] {
   const locations: Location[] = []
   // Find 1 John before John
   for (const name of longestToShortestBookNames) {
-    const bookNameLocations = getAllIndexesOfBook(string, name);
+    const bookNameLocations = getBookIndexes(string, name);
     locations.push(...bookNameLocations);
   }
   const uniqueBookNameLocations = filterOutLocationsWithSameEndIndex(locations);
@@ -130,36 +130,27 @@ if (import.meta.vitest) {
   });
 }
 
-function getAllIndexesOfBook(string: string, bookName: string): Location[] {
-  const caseInsensitiveWholeWordBookName = new RegExp(`\\b${bookName}\\b`, 'ig');
-  const matches: Location[] = [];
-  for (const match of string.matchAll(caseInsensitiveWholeWordBookName)) {
-    const bookText = match[0];
-    matches.push({
-      start: match.index,
-      end: match.index + bookText.length,
-      text: bookText,
-    });
-  }
-  return matches;
+function getBookIndexes(string: string, bookName: string): Location[] {
+  const caseInsensitiveWholeWordBookName = new RegExp(`\\b(${bookName})\\b`, 'ig');
+  return getIndexes(string, caseInsensitiveWholeWordBookName);
 }
 
 if (import.meta.vitest) {
-  describe('getAllIndexesOfBook', () => {
+  describe('getBookIndexes', () => {
     test('return start, end, and original text', () => {
-      expect(getAllIndexesOfBook('Gen 1:1', 'Gen')).toEqual([{
+      expect(getBookIndexes('Gen 1:1', 'Gen')).toEqual([{
         start: 0,
         end: 3,
         text: "Gen",
       }]);
-      expect(getAllIndexesOfBook('This is Genesis 1:1', 'Genesis')).toEqual([{
+      expect(getBookIndexes('This is Genesis 1:1', 'Genesis')).toEqual([{
         start: 8,
         end: 15,
         text: "Genesis",
       }]);
     });
     test('handles period after abbreviated book name', () => {
-      expect(getAllIndexesOfBook('Matt. 5:2', 'Matt')).toEqual([{
+      expect(getBookIndexes('Matt. 5:2', 'Matt')).toEqual([{
         start: 0,
         end: 4,
         text: "Matt",
@@ -187,6 +178,7 @@ function parseReferencesForBookLocation(string: string): Reference[] {
           chapterLocation.end + verseLocation.start;
 
       const verseEnd = chapterLocation.end + verseLocation.end;
+
       const reference: Reference = {
         verseRange: verseLocation.text,
         chapter: parseInt(chapterLocation.text),
@@ -292,16 +284,7 @@ if (import.meta.vitest) {
 
 const NUMBERS_FOLLOWED_BY_COLON = new RegExp('([0-9]+):', 'g');
 function getChapterIndexes(string: string): Location[] {
-  const matches: Location[] = [];
-  for (const match of string.matchAll(NUMBERS_FOLLOWED_BY_COLON)) {
-    const chapter = match[1];
-    matches.push({
-      start: match.index,
-      end: match.index + chapter.length,
-      text: chapter,
-    });
-  }
-  return matches;
+  return getIndexes(string, NUMBERS_FOLLOWED_BY_COLON);
 }
 
 if (import.meta.vitest) {
@@ -328,16 +311,7 @@ const CAPTURE_NUMBER_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS = '([0-9]+
 const NUMBERS_NOT_PRECEEDED_BY_TEXT_BUT_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS = new RegExp(`${NOT_PRECEEDED_BY_TEXT}${CAPTURE_NUMBER_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS}`, 'g');
 
 function getVerseRangeIndexes(string: string): Location[] {
-  const matches: Location[] = [];
-  for (const match of string.matchAll(NUMBERS_NOT_PRECEEDED_BY_TEXT_BUT_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS)) {
-    const verse = match[1];
-    matches.push({
-      start: match.index,
-      end: match.index + verse.length,
-      text: verse,
-    });
-  }
-  return matches;
+  return getIndexes(string, NUMBERS_NOT_PRECEEDED_BY_TEXT_BUT_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS);
 }
 
 if (import.meta.vitest) {
@@ -382,4 +356,17 @@ if (import.meta.vitest) {
       ]);
     });
   });
+}
+
+function getIndexes(string: string, regex: RegExp): Location[] {
+  const matches: Location[] = [];
+  for (const match of string.matchAll(regex)) {
+    const text = match[1];
+    matches.push({
+      start: match.index,
+      end: match.index + text.length,
+      text,
+    });
+  }
+  return matches;
 }
