@@ -90,6 +90,9 @@ export async function fetchBibleText(version = 'WEB', bookId: string, chapter: s
       }
     );
     const json = await res.json(); // { data, meta } _BAPI.t(meta.fumsId);
+    // if (json.error) {
+    //   throw new Error(json.message);
+    // }
     return json.data;
   } catch (err) {
     throw new Error(err);
