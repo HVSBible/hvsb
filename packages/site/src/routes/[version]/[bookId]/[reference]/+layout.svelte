@@ -10,7 +10,8 @@
   import { writable } from 'svelte/store';
   import { createQueryParamStore } from 'svelte-pieces/stores/queryParam';
   import { page } from '$app/stores';
-
+  import { admin, user, contributor } from '$lib/stores';
+  import { getAllChapterMedia, getContributorsChapterMedia, prepareChapterMedia } from '$lib/helpers/media';
   export let data: LayoutData;
 
   $: if (browser) {
@@ -21,7 +22,18 @@
 
   const chapterMedia = writable<IMedia[]>([]);
   setContext('chapterMedia', chapterMedia);
-  $: chapterMedia.set(data.media);
+  $: if (browser && $admin > 0) {
+    // immediately set preloaded admin media if client already inited
+    chapterMedia.set(data.media); 
+    // this is to make sure that admin media shows up on page load when client load function is run before Firebase auth inits and recognizes the user is an admin - this could be solved by setting the state of the user to admin in the initial page request
+    getAllChapterMedia(data.bookId, data.chapter).then((media) => chapterMedia.set(prepareChapterMedia(media, data.bookId, data.chapter)));
+  } else if (browser && $contributor) {
+    getContributorsChapterMedia(data.bookId, data.chapter, $user.uid).then((contributedMedia) =>
+      chapterMedia.set(prepareChapterMedia([...data.media, ...contributedMedia], data.bookId, data.chapter))
+    );
+  } else {
+    chapterMedia.set(data.media);
+  }
 
   let scriptureDiv: HTMLElement;
   $: if (data.version && data.bookId && data.chapter && scriptureDiv) {
@@ -60,7 +72,12 @@
             "Contact Us" button in the upper right if the problem persists.
           </p>
         {:else}
-          <Chapter contentHtml={data.content} media={data.media} version={data.version} bookId={data.bookId} chapter={data.chapter} />
+          <Chapter
+            contentHtml={data.content}
+            media={data.media}
+            version={data.version}
+            bookId={data.bookId}
+            chapter={data.chapter} />
         {/if}
 
         {#await import('$lib/components/navigation/VersionSelector.svelte') then { default: VersionSelector }}

@@ -33,7 +33,6 @@
   {#if $selected}
     <div class="mb-3 flex items-center">
       <Button form="simple" color="black" onclick={() => selected.remove()}>
-        <!-- <i class="i-fa-solid-times mb-2px" /> -->
         <i class="i-fa-solid-arrow-left mb-2px" />
       </Button>
       <div class="font-semibold text-lg ml-1">
@@ -67,6 +66,7 @@
           href={`/${$page.params.version}/${$page.params.bookId}/${$page.params.reference}/img/${medium.id}`} />
       {/if}
       {#if medium.type === 'video'}
+      <!-- Use lazy streaming - for fetch inside here - new SvelteKit feature, or even better: hard-code into database -->
         <PreviewVideo
           video={medium}
           admin={$admin}
