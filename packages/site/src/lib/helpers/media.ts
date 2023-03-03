@@ -1,43 +1,51 @@
-import { browser } from '$app/env';
-import type { IDocument, IImage, IImageParent, IVideo } from '@hvsb/types';
-import { admin, user, contributor } from '$lib/stores';
+import { browser } from '$app/environment';
+import type { IMedia, IImageParent } from '@hvsb/types';
+import { getBibleId } from '$lib/helpers/versions';
+import { getCollection } from 'sveltefirets';
+import { orderBy, where } from 'firebase/firestore';
+import { PUBLIC_BIBLE_API } from '$env/static/public';
+import { admin } from '$lib/stores';
 import { get } from 'svelte/store';
 
 export async function getChapterMedia(
   bookId: string,
   chapter: string
-): Promise<(IImage | IDocument | IVideo)[]> {
-  if (get(admin) > 0) {
-    return await getCollection<IImage | IDocument | IVideo>('media', [
-      where('chapterIds', 'array-contains', `${bookId}.${chapter}`),
-      orderBy('type'),
-    ]);
-  } else {
-    let media = await getCollection<IImage | IDocument | IVideo>('media', [
-      where('chapterIds', 'array-contains', `${bookId}.${chapter}`),
-      where('published', '==', true),
-      orderBy('type'),
-    ]);
+): Promise<IMedia[]> {
+  if (browser && get(admin) > 0) return getAllChapterMedia(bookId, chapter);
+  return await getCollection<IMedia>('media', [
+    where('chapterIds', 'array-contains', `${bookId}.${chapter}`),
+    where('published', '==', true),
+    orderBy('type'),
+  ]);
+}
 
-    if (browser && get(contributor)) {
-      const { uid } = get(user);
-      const contributedMedia = await getCollection<IImage | IDocument | IVideo>('media', [
-        where('chapterIds', 'array-contains', `${bookId}.${chapter}`),
-        where('createdBy', '==', uid),
-        orderBy('type'),
-      ]);
-      media = media.concat(contributedMedia);
-    }
+export async function getAllChapterMedia(
+  bookId: string,
+  chapter: string
+): Promise<IMedia[]> {
+  return await getCollection<IMedia>('media', [
+    where('chapterIds', 'array-contains', `${bookId}.${chapter}`),
+    orderBy('type'),
+  ]);
+}
 
-    return media;
-  }
+export async function getContributorsChapterMedia(
+  bookId: string,
+  chapter: string,
+  uid: string,
+): Promise<IMedia[]> {
+  return await getCollection<IMedia>('media', [
+    where('chapterIds', 'array-contains', `${bookId}.${chapter}`),
+    where('createdBy', '==', uid),
+    orderBy('type'),
+  ]);
 }
 
 export function prepareChapterMedia(
-  media: (IImage | IDocument | IVideo)[],
+  media: IMedia[],
   bookId: string,
   chapter: string
-): (IImage | IDocument | IVideo)[] {
+): (IMedia)[] {
   media = media.map((medium) => {
     if (imageHasParentInChapter(medium, bookId, chapter)) {
       medium.type = 'skip';
@@ -53,7 +61,7 @@ export function prepareChapterMedia(
 }
 
 function imageHasParentInChapter(
-  medium: IImage | IDocument | IVideo,
+  medium: IMedia,
   bookId: string,
   chapter: string
 ): boolean {
@@ -72,9 +80,7 @@ export function getCurrentVerses(verseIds: string[], bookId: string, chapter: st
     .sort((a, b) => a - b);
 }
 
-import { getBibleId } from '$lib/helpers/versions';
-import { getCollection } from 'sveltefirets';
-import { orderBy, where } from 'firebase/firestore';
+
 export async function fetchBibleText(version = 'WEB', bookId: string, chapter: string) {
   try {
     const bibleId = version === 'WEB' ? '9879dbb7cfe39e4d-04' : await getBibleId(version);
@@ -83,11 +89,14 @@ export async function fetchBibleText(version = 'WEB', bookId: string, chapter: s
       `https://api.scripture.api.bible/v1/bibles/${bibleId}/chapters/${bookId}.${chapter}?include-verse-spans=true`,
       {
         headers: {
-          'api-key': import.meta.env.VITE_bibleApi as string,
+          'api-key': PUBLIC_BIBLE_API,
         },
       }
     );
     const json = await res.json(); // { data, meta } _BAPI.t(meta.fumsId);
+    // if (json.error) {
+    //   throw new Error(json.message);
+    // }
     return json.data;
   } catch (err) {
     throw new Error(err);

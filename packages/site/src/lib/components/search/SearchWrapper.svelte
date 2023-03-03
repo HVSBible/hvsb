@@ -9,7 +9,7 @@
   import ToggleRefinement from './widgets/ToggleRefinement.svelte';
   import ClearRefinements from './widgets/ClearRefinements.svelte';
   import Pagination from './widgets/Pagination.svelte';
-  import { PreviewVideo, PreviewImage, PreviewDocument } from '@hvsb/parts';
+  import { PreviewVideo, PreviewImage, PreviewDocument } from '$lib/parts';
 
   import { fade } from 'svelte/transition';
   import { admin } from '$lib/stores';
@@ -27,7 +27,7 @@
         <RefinementTabs {search} attribute="type" />
         <a
           href={previousUrl || '.'}
-          sveltekit:prefetch
+          
           class="px-3 py-2 text-lg text-gray-600 hover:text-gray-900 ml-auto"
           ><i class="fas fa-times" /></a>
       </nav>

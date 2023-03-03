@@ -1,0 +1,4 @@
+.ck-content table td h4,
+.ck-content table th h4 {
+  white-space: nowrap;
+}

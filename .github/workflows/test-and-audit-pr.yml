@@ -1,35 +1,35 @@
-# name: Test & Audit Pull Request
+name: Test & Audit Pull Request
 
-# on:
-#   issue_comment:
-#     types: [edited]
+on:
+  issue_comment:
+    types: [edited]
 
-# env:
-#   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
-# jobs:
-#   build-publish-audit:
-#     name: Build, Publish, Audit
-#     if: ${{ github.event.issue.pull_request }}
-#     runs-on: ubuntu-latest
+jobs:
+  build-publish-audit:
+    name: Build, Publish, Audit
+    if: ${{ github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - name: Add running comment to PR
-#         uses: marocchino/sticky-pull-request-comment@v2
-#         with:
-#           number: ${{ github.event.issue.number }}
-#           header: lighthouse
-#           message: |
-#             ⚡️ Running Svelte-Check, Jest tests, and Lighthouse audit...
+    steps:
+      - name: Add running comment to PR
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          number: ${{ github.event.issue.number }}
+          header: lighthouse
+          message: |
+            ⚡️ Running Svelte-Check, Vitest unit tests, and Lighthouse audit...
 
-#       - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-#       - name: Install Dependencies
-#         run: npm ci
+      - name: Install Dependencies
+        run: pnpm ci
 
 #       - run: npm run check
-#       - run: npm run test
+      - run: pnpm test:all
 
 #       - name: Capture Vercel preview URL
 #         id: vercel_preview_url

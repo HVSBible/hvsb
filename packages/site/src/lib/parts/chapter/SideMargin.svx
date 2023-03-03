@@ -1,0 +1,27 @@
+<script lang="ts">
+  import { Story } from 'kitbook';
+  import SideMargin from './SideMargin.svelte';
+
+  import media from './data/MAT.1.media.json';
+  import verses from './data/MAT.1.verses.json';
+  import type { IMedia, IVerse } from '@hvsb/types';
+  const mat1Verses = verses as IVerse[];
+  const mat1Media = media as unknown as IMedia[];
+</script>
+
+<!-- prettier-ignore -->
+# Side margin
+
+Placed to the right of the text to show thumbnails for media. *In the future, cross-references, timeline points, map references and other study materials can be placed here based on user preferences.*
+<!-- end-prettier-ignore -->
+
+<Story height={1000} knobs={{thumbBox: '44-132;44'}} let:props={{thumbBox}}>
+  <div class="h-full w-$thumbnail-box lg:w-[calc(var(--thumbnail-box)*2)] xl:w-[calc(var(--thumbnail-box)*3)] overflow-hidden" style="--thumbnail-box: {thumbBox}px;">
+    <SideMargin thumbBox={+thumbBox} media={mat1Media} verses={mat1Verses} />
+  </div>
+</Story>
+
+Note that we multiply the thumbnail box by 3 on small+ screens using:
+```
+class="w-$thumbnail-box sm:w-[calc(var(--thumbnail-box)*3)]" style="--thumbnail-box: {thumbBox}px;"
+```

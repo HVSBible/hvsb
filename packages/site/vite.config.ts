@@ -1,20 +1,29 @@
+import type { UserConfig } from 'vite';
 import { configDefaults } from 'vitest/config';
 import { sveltekit } from '@sveltejs/kit/vite';
+// import { svelte } from '@sveltejs/vite-plugin-svelte';
+import { kitbook } from 'kitbook/plugins/vite';
+import UnoCSS from 'unocss/vite';
 
-/** @type {import('vite').UserConfig} */
-const config = {
-  plugins: [sveltekit()],
+const config: UserConfig = {
+  plugins: [
+    UnoCSS({
+      mode: 'svelte-scoped',
+    }),
+    kitbook(),
+    sveltekit()
+  ],
   define: {
     'import.meta.vitest': false,
     'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID),
   },
-  envDir: '../../',
   build: {
-    target: 'es2015', //es6
+    target: 'es2015',
   },
   test: {
+    // plugins: [svelte({ hot: !process.env.VITEST })],
     globals: true,
-    includeSource: ['src/lib/helpers/**/*.ts'],
+    includeSource: ['src/**/*.ts'],
     exclude: [...configDefaults.exclude, '**/tests/**'],
   },
   server: {

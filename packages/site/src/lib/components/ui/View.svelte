@@ -28,6 +28,6 @@
 <!-- {/key} -->
 <style>
   .maxWidth {
-    @apply max-w-screen-md mx-auto;
+    --at-apply: max-w-screen-md mx-auto;
   }
 </style>

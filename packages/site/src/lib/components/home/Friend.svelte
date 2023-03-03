@@ -7,7 +7,7 @@
 
 <div class="w-full md:w-4/12 my-8 px-4">
   <div class="px-6">
-    <a {href} target="_blank">
+    <a {href} target="_blank" rel="noreferrer">
       <img
         alt={title}
         {src}
@@ -20,7 +20,7 @@
         {description}
       </p>
       <div class="mt-6">
-        <a {href} class="text-gray-600 hover:text-gray-900" target="_blank">
+        <a {href} class="text-gray-600 hover:text-gray-900" target="_blank" rel="noreferrer">
           Visit Site <i class="fas fa-chevron-right" />
         </a>
       </div>

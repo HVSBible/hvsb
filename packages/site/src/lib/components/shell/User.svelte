@@ -1,20 +1,16 @@
 <script lang="ts">
-  import { session } from '$app/stores';
+  import { page } from '$app/stores';
   import { user as userStore, admin, contributor } from '$lib/stores';
-  import { getFirebaseApp, update, logOut } from 'sveltefirets';
-  import { firebaseConfig } from '$lib/firebaseConfig';
+  import { getFirebaseApp, update, logOut, authState, firebaseConfig } from 'sveltefirets';
   import ShowHide from 'svelte-pieces/functions/ShowHide.svelte';
   import { clickoutside } from 'svelte-pieces/actions/clickoutside';
 
   import { fly } from 'svelte/transition';
   let open = false;
   
-  $: user = $userStore || $session?.user || null;
-
-  import { browser } from '$app/env';
-  $: if (browser && $userStore && $session) {
-    $session.user = null; // so that page will properly reflect log out status and not fall back to session user from cookies
-  }
+  // @ts-ignore
+  $: user = $userStore || ($authState === undefined && $page.data?.user) || null;
+  // only use page data set from the cookie before authState has been inited so that when a user logs out, the user value here doesn't fall back to the page data  value initially set by the cookie. Even though the cookie is cleared on logout, the page data is not updated.
 </script>
 
 {#if user}

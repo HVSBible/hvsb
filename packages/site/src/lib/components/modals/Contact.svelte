@@ -111,6 +111,6 @@
 
 <style>
   .emphasis {
-    @apply font-bold text-black bg-yellow-200 p-1;
+    --at-apply: font-bold text-black bg-yellow-200 p-1;
   }
 </style>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fetchVideoData } from '@hvsb/parts';
+  import { fetchVideoData } from '$lib/parts';
   import { page } from '$app/stores';
   import { setOnline } from 'sveltefirets';
   export let verseNumber: number;

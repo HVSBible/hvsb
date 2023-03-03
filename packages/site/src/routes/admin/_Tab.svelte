@@ -4,7 +4,7 @@
 </script>
 
 <a
-  sveltekit:prefetch
+  
   href={`/admin/${link}`}
   class="{$page.url.pathname.match(/(\w+)$/)[0] === link
     ? 'border-primary-500 text-primary-600 focus:text-primary-800 focus:border-primary-700'

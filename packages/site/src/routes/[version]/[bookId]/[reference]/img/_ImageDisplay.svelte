@@ -3,7 +3,7 @@
   export let image: IImage;
   import { page } from '$app/stores';
   import { getCurrentVerses } from '$lib/helpers/media';
-  import { bookAbbrev } from '@hvsb/parts';
+  import { bookAbbrev } from '$lib/parts';
 
   function printCurrentVerses() {
     let versesString = '';
@@ -33,8 +33,8 @@
 
 <div
   class="bg-black relative text-white text-sm font-medium md:rounded-lg
-    overflow-hidden text-shadow">
-  <a href="https://lh3.googleusercontent.com/{image.gcs}=s0" target="_blank" class="pointer">
+    overflow-hidden image-shadow">
+  <a href="https://lh3.googleusercontent.com/{image.gcs}=s0" target="_blank" class="pointer" rel="noreferrer">
     <img
       alt={image.title || ''}
       class="w-full"
@@ -65,7 +65,7 @@
 </div>
 
 <style>
-  .text-shadow {
+  .image-shadow {
     text-shadow: -1px -1px 0 hsl(0, 0%, 33%), 1px -1px 0 hsl(0, 0%, 33%), -1px 1px 0 hsl(0, 0%, 33%),
       1px 1px 0 hsl(0, 0%, 33%);
   }
