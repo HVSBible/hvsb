@@ -22,15 +22,8 @@ Demonstrates how to write Cloud Firestore + Cloud Functions **unit tests** and o
 - Using offline testing utilities
 - Open Emulator, modify files and watch triggered functions (if applicable)
 
-## Create New Jest Test
-
-1. To ensure everything is working, create a basic test like so:
-   test('foo', () => {
-   expect(true).toBe(true);
-   })
-2. Make changes to your \*.test.ts file and then run the appropriate testing command.
-
-See https://jestjs.io/docs/en/getting-started for tips
+## Create New Test
+... needs updated to Vitest
 
 ---
 

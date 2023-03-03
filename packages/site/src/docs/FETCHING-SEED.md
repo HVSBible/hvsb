@@ -4,9 +4,11 @@ Learned to setup emulator from codelab: https://codelabs.developers.google.com/f
 Prereq: Install Java: https://devwithus.com/install-java-windows-10/
 
 Add Auth to firebase.json if ever desire:
-// "auth": {
-// "port": 9099
-// },
+```
+"auth": {
+ "port": 9099
+},
+```
 
 ### Pull Down Firestore Seed Data
 
