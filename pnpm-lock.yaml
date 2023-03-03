@@ -60,7 +60,7 @@ importers:
       firebase: ^9.17.1
       happy-dom: ^8.2.6
       instantsearch.js: ^4.50.2
-      kitbook: 1.0.0-alpha.20
+      kitbook: 1.0.0-alpha.21
       linkify-html: ^3.0.5
       linkifyjs: ^3.0.5
       svelte: ^3.55.1
@@ -92,7 +92,7 @@ importers:
       firebase: 9.17.1
       happy-dom: 8.2.6
       instantsearch.js: 4.50.2_algoliasearch@4.14.3
-      kitbook: 1.0.0-alpha.20_typescript@4.9.5
+      kitbook: 1.0.0-alpha.21_typescript@4.9.5
       linkify-html: 3.0.5_linkifyjs@3.0.5
       linkifyjs: 3.0.5
       svelte: 3.55.1
@@ -3716,12 +3716,11 @@ packages:
       graceful-fs: 4.2.10
     dev: true
 
-  /kitbook/1.0.0-alpha.20_typescript@4.9.5:
-    resolution: {integrity: sha512-8KImYGrlvfO2nGKTN9D/jVYSyB1gXCjpS8SEOP0mwl/NhqnQNfMT/dpKBZdCzF+SJthBQLqE7zGynD/esXuxzw==}
+  /kitbook/1.0.0-alpha.21_typescript@4.9.5:
+    resolution: {integrity: sha512-+iDDOepTWvHHqzk9HF0FGezEjXBpZihxFJE6281uOZZAiMyAt5VvGEkaG6SoKH4EySf9Egw9BHnoh1lT0Q4ozw==}
     dependencies:
       '@kitbook/mdsvex-shiki-twoslash': 0.0.3_4x7phaipmicbaooxtnresslofa
       '@kitbook/vite-plugin-kitbook': 0.0.5_4x7phaipmicbaooxtnresslofa
-      lz-string: 1.4.4
       svelte: 3.55.1
       svelte-pieces: 1.0.57_svelte@3.55.1
     transitivePeerDependencies:
