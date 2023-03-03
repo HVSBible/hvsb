@@ -13,7 +13,7 @@
   <span slot="heading">Sign In</span>
   {#if context === 'force'}
     <h4 class="mb-4">
-      You must create a free account to view content beyond the first chapter of each book.
+      You must create a free account to view content. Content for the first chapter in each book is free.
     </h4>
   {/if}
   <FirebaseUiAuth
