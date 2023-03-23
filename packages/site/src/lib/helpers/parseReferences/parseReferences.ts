@@ -28,10 +28,14 @@ export function findReferencesInParagraph(string: string): Reference[] {
   for (const [index, bookLocation] of bookNameLocations.entries()) {
     const nextLocation = bookNameLocations[index + 1];
     const endOfTextInfluencedByThisBookLocation = nextLocation?.start || string.length;
-    const textInfluencedByThisBookLocation = string.slice(bookLocation.start, endOfTextInfluencedByThisBookLocation);
-    const chapterVerseReferencesFromThisBookLocation = findChapterVerseReferences(textInfluencedByThisBookLocation);
 
-    const bookId = getBookId(bookLocation.text);
+    const textInfluencedByThisBookLocation = string.slice(bookLocation.start, endOfTextInfluencedByThisBookLocation);
+
+    const bookName = bookLocation.text;
+
+    const chapterVerseReferencesFromThisBookLocation = findChapterVerseReferences(textInfluencedByThisBookLocation, bookName);
+
+    const bookId = getBookId(bookName);
     for (const chapterVerseReference of chapterVerseReferencesFromThisBookLocation) {
       const reference: Reference = {
         bookId,
@@ -62,11 +66,13 @@ export function getBookNameLocations(string: string): Location[] {
   return sortedByStartIndex;
 }
 
-export function findChapterVerseReferences(string: string): Reference[] {
+export function findChapterVerseReferences(string: string, bookName: string): Reference[] {
   const references: Reference[] = [];
-  const chapterLocations = getChapterIndexes(string);
-  console.log({ chapterLocations, string })
+  const chapterLocations = getChapterIndexes(string, bookName);
+
   for (const [chapterIndex, chapterLocation] of chapterLocations.entries()) {
+    const chapter = parseInt(chapterLocation.text);
+
     const nextLocation = chapterLocations[chapterIndex + 1];
     const endOfTextInfluencedByThisChapterLocation = nextLocation?.start || string.length;
     const textInfluencedByThisChapterLocation = string.slice(chapterLocation.end, endOfTextInfluencedByThisChapterLocation);
@@ -83,15 +89,26 @@ export function findChapterVerseReferences(string: string): Reference[] {
 
       const verseEnd = chapterLocation.end + verseLocation.end;
 
-      const reference: Reference = {
+      references.push({
         verseRange: verseLocation.text,
-        chapter: parseInt(chapterLocation.text),
+        chapter,
         start: verseStart,
         end: verseEnd,
         text: string.slice(verseStart, verseEnd),
-      };
-      references.push(reference);
+      });
     };
+
+    const chapterReferenceWithoutVerses = !verseLocations.length;
+    if (chapterReferenceWithoutVerses) {
+      const bookStart = 0;
+      references.push({
+        verseRange: "1",
+        chapter,
+        start: bookStart,
+        end: chapterLocation.end,
+        text: string.slice(bookStart, chapterLocation.end),
+      });
+    }
   }
   return references;
 }
@@ -101,13 +118,13 @@ export function getBookIndexes(string: string, bookName: string): Location[] {
   return getIndexes(string, caseInsensitiveWholeWordBookName);
 }
 
-const INITIAL_NUMBERS_PRECEEDED_BY_OPTIONAL_PERIOD_THEN_SPACE = /(?<=^\.?\s)(\d+)/g; // using positive lookbehind to ensure it's at beginning of line without actually including those characters in the match index
 const NUMBERS_FOLLOWED_BY_COLON = /(\d+):/g;
 
-export function getChapterIndexes(string: string): Location[] {
+export function getChapterIndexes(string: string, bookName: string): Location[] {
   const locations: Location[] = []
   
-  const initialChapter = getIndexes(string, INITIAL_NUMBERS_PRECEEDED_BY_OPTIONAL_PERIOD_THEN_SPACE);
+  const BOOK_OPTIONAL_PERIOD_FOLLOWED_BY_CHAPTER = new RegExp(`(?<=^${bookName}\\.?\\s)(\\d+)`, 'g'); // using positive lookbehind to ensure right after bookName without actually including those characters in the match index
+  const initialChapter = getIndexes(string, BOOK_OPTIONAL_PERIOD_FOLLOWED_BY_CHAPTER);
   locations.push(...initialChapter);
 
   const chaptersWithVerses = getIndexes(string, NUMBERS_FOLLOWED_BY_COLON);

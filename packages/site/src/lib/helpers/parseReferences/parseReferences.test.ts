@@ -11,20 +11,8 @@ describe('findReferencesInParagraph', () => {
       text: 'Genesis 1:1',
     }]);
   });
-  
-  // TODO: don't do this for book names that are also common names like John, otherwise we'll have John linked everywhere!
-  test.skip('returns first chapter and verse if none given', () => {
-    expect(findReferencesInParagraph('We see in this in Genesis.')).toEqual([{
-      bookId: 'GEN',
-      chapter: 1,
-      verseRange: "1",
-      start: 18,
-      end: 25,
-      text: 'Genesis',
-    }]);
-  });
-  
-  test.skip('returns first verse if book name is followed immediately by chapter number', () => {
+
+  test('returns first verse if book name is followed immediately by chapter number', () => {
     expect(findReferencesInParagraph('We see in this in Genesis 2.')).toEqual([{
       bookId: 'GEN',
       chapter: 2,
@@ -33,25 +21,13 @@ describe('findReferencesInParagraph', () => {
       end: 27,
       text: 'Genesis 2',
     }]);
-    // expect(findReferencesInParagraph('We see in this in Gen. 2.')).toEqual([{
-    //   bookId: 'GEN',
-    //   chapter: 2,
-    //   verseRange: "1",
-    //   start: 18,
-    //   end: 24,
-    //   text: 'Gen. 2',
-    // }]);
-  });
-
-  // TODO: fix this edge case if needed
-  test.skip('trailing colon to explain something following a reference', () => {
-    expect(findReferencesInParagraph('Remember what we see in Luke 16:10: 20 men!')).toEqual([{
-      bookId: 'LUK',
-      chapter: 16,
-      verseRange: "10",
-      start: 24,
-      end: 34,
-      text: 'Luke 16:10',
+    expect(findReferencesInParagraph('We see in this in Gen. 2.')).toEqual([{
+      bookId: 'GEN',
+      chapter: 2,
+      verseRange: "1",
+      start: 18,
+      end: 24,
+      text: 'Gen. 2',
     }]);
   });
 
@@ -114,6 +90,26 @@ describe('findReferencesInParagraph', () => {
       ]
     `);
   });
+  
+  // edge case that may not need solved
+  // test('trailing colon to explain something following a reference', () => {
+  //   expect(findReferencesInParagraph('Remember what we see in Luke 16:10: 20 men!')).toEqual([{
+  //     bookId: 'LUK',
+  //     chapter: 16,
+  //     verseRange: "10",
+  //     start: 24,
+  //     end: 34,
+  //     text: 'Luke 16:10',
+  //   }]);
+  //   expect(findReferencesInParagraph('Now after Luke 16:10, we also find in 17:5: 40 men!')).toEqual([{
+  //     bookId: 'LUK',
+  //     chapter: 16,
+  //     verseRange: "10",
+  //     start: 24,
+  //     end: 34,
+  //     text: 'Luke 16:10',
+  //   }]);
+  // });
 });
 
 test('getBookNameLocations', () => {
@@ -136,9 +132,10 @@ test('getBookNameLocations', () => {
   ]);
 });
 
+
 describe('findChapterVerseReferences', () => {
   test('basic', () => {
-    expect(findChapterVerseReferences('Genesis 1:1')).toEqual([{
+    expect(findChapterVerseReferences('Genesis 1:1', 'Genesis')).toEqual([{
       text: 'Genesis 1:1',
       chapter: 1,
       verseRange: "1",
@@ -148,7 +145,7 @@ describe('findChapterVerseReferences', () => {
   });
 
   test('chapter with multiple references', () => {
-    expect(findChapterVerseReferences('John 5:1-2, 12')).toMatchInlineSnapshot(`
+    expect(findChapterVerseReferences('John 5:1-2, 12', 'John')).toMatchInlineSnapshot(`
       [
         {
           "chapter": 5,
@@ -169,7 +166,7 @@ describe('findChapterVerseReferences', () => {
   });
 
   test('chapter with multiple references', () => {
-    expect(findChapterVerseReferences('John 3:1, 5:1-2, 12')).toMatchInlineSnapshot(`
+    expect(findChapterVerseReferences('John 3:1, 5:1-2, 12', 'John')).toMatchInlineSnapshot(`
       [
         {
           "chapter": 3,
@@ -197,8 +194,7 @@ describe('findChapterVerseReferences', () => {
   });
 
   test('sentence with three references', () => {
-    expect(findChapterVerseReferences(`Gen. 1:1, 2:3, and 4:5-7 and some more here
-     and else.`)).toEqual([
+    expect(findChapterVerseReferences('Gen. 1:1, 2:3, and 4:5-7 and some more here and else.', 'Gen')).toEqual([
       {
         text: 'Gen. 1:1',
         chapter: 1,
@@ -248,34 +244,37 @@ describe('getBookIndexes', () => {
 
 describe('getChapterIndexes', () => {
   test('handles chapter and verse anywhere', () => {
-    expect(getChapterIndexes('. 2:3 and 14:2, 5')).toEqual([
+    expect(getChapterIndexes('Gen. 2:3 and 14:2, 5', 'Gen')).toEqual([
       {
-        "start": 2,
-        "end": 3,
+        "start": 5,
+        "end": 6,
         "text": "2",
       },
       {
-        "start": 10,
-        "end": 12,
+        "start": 13,
+        "end": 15,
         "text": "14",
       },
     ]);
   });
   test('handles just chapter immediately at beginning, after space or period and space', () => {
-    expect(getChapterIndexes(' 2 is a place to read...')).toEqual([
+    expect(getChapterIndexes('Gen 2 is a place to read...', 'Gen')).toEqual([
       {
-        "start": 1,
-        "end": 2,
+        "start": 4,
+        "end": 5,
         "text": "2",
       },
     ]);
-    expect(getChapterIndexes('. 2.')).toEqual([
+    expect(getChapterIndexes('Gen. 2.', 'Gen')).toEqual([
       {
-        "start": 2,
-        "end": 3,
+        "start": 5,
+        "end": 6,
         "text": "2",
       },
     ]);
+  });
+  test('does not pay attention to random number not at beginning', () => {
+    expect(getChapterIndexes(' well talk about something with 2 pigons', 'Exodus')).toEqual([]);
   });
 });
 
