@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`parseReferences > handles Matt 5:1-2, 3, 3:1-2, 2 John 1:3 without marking the "2" in 2 John as verse 2 of Matthew 3 1`] = `
+exports[`findReferencesInParagraph > handles Matt 5:1-2, 3, 3:1-2, 2 John 1:3 without marking the "2" in 2 John as verse 2 of Matthew 3 1`] = `
 [
   {
     "bookId": "MAT",
@@ -37,7 +37,7 @@ exports[`parseReferences > handles Matt 5:1-2, 3, 3:1-2, 2 John 1:3 without mark
 ]
 `;
 
-exports[`parseReferences > handles a sentence full of references separated by commas 1`] = `
+exports[`findReferencesInParagraph > handles a sentence full of references separated by commas 1`] = `
 [
   {
     "bookId": "GEN",
