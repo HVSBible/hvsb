@@ -122,7 +122,7 @@ const NUMBERS_FOLLOWED_BY_COLON = /(\d+):/g;
 
 export function getChapterIndexes(string: string, bookName: string): Location[] {
   const locations: Location[] = []
-  
+
   const BOOK_OPTIONAL_PERIOD_FOLLOWED_BY_CHAPTER = new RegExp(`(?<=^${bookName}\\.?\\s)(\\d+)`, 'g'); // using positive lookbehind to ensure right after bookName without actually including those characters in the match index
   const initialChapter = getIndexes(string, BOOK_OPTIONAL_PERIOD_FOLLOWED_BY_CHAPTER);
   locations.push(...initialChapter);
@@ -135,12 +135,15 @@ export function getChapterIndexes(string: string, bookName: string): Location[] 
   return locations;
 }
 
-const NOT_PRECEEDED_BY_TEXT = '(?<!\\w\\s*)';
-const CAPTURE_NUMBER_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS = '([0-9]+[a-zA-Z0-9-]*)';
-const NUMBERS_NOT_PRECEEDED_BY_TEXT_BUT_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS = new RegExp(`${NOT_PRECEEDED_BY_TEXT}${CAPTURE_NUMBER_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS}`, 'g');
+const LETTER_AT_BEGINNING_OF_WORD = /\b[a-zA-Z]/;
+
+const NOT_PRECEEDED_BY_TEXT_OR_HYPHEN = /(?<!\w\s*-?)/;
+const CAPTURE_NUMBER_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS = /(\b[0-9]+[a-zA-Z0-9-]*)/;
+const NUMBERS_NOT_PRECEEDED_BY_TEXT_BUT_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS = new RegExp(`${NOT_PRECEEDED_BY_TEXT_OR_HYPHEN.source}${CAPTURE_NUMBER_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS.source}`, 'g');
 
 export function getVerseRangeIndexes(string: string): Location[] {
-  return getIndexes(string, NUMBERS_NOT_PRECEEDED_BY_TEXT_BUT_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS);
+  const charactersBeforeFirstWord = string.split(LETTER_AT_BEGINNING_OF_WORD)[0] || string;
+  return getIndexes(charactersBeforeFirstWord, NUMBERS_NOT_PRECEEDED_BY_TEXT_BUT_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS);
 }
 
 function getIndexes(string: string, regex: RegExp): Location[] {

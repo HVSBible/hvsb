@@ -1,21 +1,23 @@
 <script lang="ts">
   import linkifyHtml from 'linkify-html';
   import { onMount } from 'svelte';
-  import { findReferencesInParagraph } from "$lib/helpers/parseReferences/parseReferences";
+  import { findReferencesInParagraph } from '$lib/helpers/parseReferences/parseReferences';
+  import { turnReferencesIntoLinks } from './turnReferencesIntoLinks';
 
   export let value = '';
   let paragraph: string;
 
   $: {
-   const linkified = linkifyHtml(value, {
+    const linkified = linkifyHtml(value, {
       className: 'hover:text-primary-800 underline',
       target: {
         url: '_blank',
       },
     });
-    const references = findReferencesInParagraph(value)
-    paragraph 
-  } 
+    const references = findReferencesInParagraph(linkified);
+    paragraph = turnReferencesIntoLinks(linkified, references);
+    console.log({value, linkified, references})
+  }
 
   let paragraphEl: HTMLDivElement;
 
@@ -49,5 +51,3 @@
 
 <!-- safelist class="hover:text-primary-800 underline" -->
 <div bind:this={paragraphEl}>{@html paragraph}</div>
-
-<pre>{JSON.stringify(findReferencesInParagraph(value), null, 2)}</pre>

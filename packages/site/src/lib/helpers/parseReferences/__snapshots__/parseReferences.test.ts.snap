@@ -81,3 +81,37 @@ exports[`findReferencesInParagraph > handles a sentence full of references separ
   },
 ]
 `;
+
+exports[`findReferencesInParagraph > handles external links 1`] = `
+[
+  {
+    "bookId": "GEN",
+    "chapter": 1,
+    "end": 17,
+    "start": 6,
+    "text": "Genesis 1:2",
+    "verseRange": "2",
+  },
+  {
+    "bookId": "EXO",
+    "chapter": 2,
+    "end": 160,
+    "start": 153,
+    "text": "Exod. 2",
+    "verseRange": "1",
+  },
+]
+`;
+
+exports[`findReferencesInParagraph > handles external links 2`] = `
+[
+  {
+    "bookId": "2SA",
+    "chapter": 7,
+    "end": 39,
+    "start": 23,
+    "text": "2 Samuel 7:12-13",
+    "verseRange": "12-13",
+  },
+]
+`;

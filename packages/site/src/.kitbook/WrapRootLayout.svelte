@@ -1,7 +1,7 @@
 <script>
-  // import './global.css'; // you can import needed global styles here or via style tag demoed below
-  
+  import { pagesStore } from 'kitbook';
   import { setContext } from 'svelte';
+  setContext('pages-store', pagesStore);
 
   /** @type {import('kitbook').KitbookSettings} */
   const kitbookSettings = {
@@ -16,8 +16,3 @@
 
 <slot />
 
-<!-- <style global>
-  :root {
-    --foo: red;
-  }
-</style> -->

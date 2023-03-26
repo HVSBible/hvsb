@@ -61,36 +61,42 @@ describe('findReferencesInParagraph', () => {
   });
 
   test('handles a conversational prose sentence with references', () => {
-    expect(findReferencesInParagraph('If you go and read Gen 3:1-2, and 5:7-8, 12 then you will see 12 disciples.')).toMatchInlineSnapshot(`
-      [
-        {
-          "bookId": "GEN",
-          "chapter": 3,
-          "end": 28,
-          "start": 19,
-          "text": "Gen 3:1-2",
-          "verseRange": "1-2",
-        },
-        {
-          "bookId": "GEN",
-          "chapter": 5,
-          "end": 39,
-          "start": 34,
-          "text": "5:7-8",
-          "verseRange": "7-8",
-        },
-        {
-          "bookId": "GEN",
-          "chapter": 5,
-          "end": 43,
-          "start": 41,
-          "text": "12",
-          "verseRange": "12",
-        },
-      ]
-    `);
+    expect(findReferencesInParagraph('If you go and read Gen 3:1-2, and 5:7-8, 12 then you will see 12 disciples.')).toEqual([
+      {
+        "bookId": "GEN",
+        "chapter": 3,
+        "end": 28,
+        "start": 19,
+        "text": "Gen 3:1-2",
+        "verseRange": "1-2",
+      },
+      {
+        "bookId": "GEN",
+        "chapter": 5,
+        "end": 39,
+        "start": 34,
+        "text": "5:7-8",
+        "verseRange": "7-8",
+      },
+      {
+        "bookId": "GEN",
+        "chapter": 5,
+        "end": 43,
+        "start": 41,
+        "text": "12",
+        "verseRange": "12",
+      },
+    ]);
   });
-  
+
+  test('handles external links', () => {
+    const linkWithClass = `Hello Genesis 1:2. Look at <a href="https://foo.com" class="hover:text-primary-800 underline" target="_blank">https://foo.com</a> to learn. Then turn to Exod. 2.`
+    expect(findReferencesInParagraph(linkWithClass)).toMatchSnapshot();
+
+    const urlWithNumbers = `<p>God promised David (2 Samuel 7:12-13).THE <a href="https://www.amazon.com/s?k=h+wayne+house&amp;crid=55ULNGFAPAI3&amp;sprefix=%2Caps%2C405&amp;ref=nb_sb_ss_i_1_0">REJECTION OF JEHOIACHIN</a> (Coniah, Jeconiah)`
+    expect(findReferencesInParagraph(urlWithNumbers)).toMatchSnapshot();
+  })
+
   // edge case that may not need solved
   // test('trailing colon to explain something following a reference', () => {
   //   expect(findReferencesInParagraph('Remember what we see in Luke 16:10: 20 men!')).toEqual([{
@@ -309,7 +315,7 @@ describe('getVerseRangeIndexes', () => {
     ]);
   });
 
-  test('does not get verse indexes for numbers coming after words', () => {
+  test('does not get verse indexes for numbers coming after a word', () => {
     expect(getVerseRangeIndexes('3 and 12 sheep.')).toEqual([
       {
         "end": 1,
@@ -317,5 +323,18 @@ describe('getVerseRangeIndexes', () => {
         "text": "3",
       },
     ]);
-  });
+    expect(getVerseRangeIndexes(':2. Look at <a href="https://foo.com" class="hover:text-primary-800">https://foo.com</a> to learn')).toEqual(
+      [
+        {
+          "end": 2,
+          "start": 1,
+          "text": "2",
+        },
+      ]);
+    expect(getVerseRangeIndexes(':12-13).THE <a href="https://www.amazon.com/s?k=h+wayne+house&amp;crid=55ULNGFAPAI3&amp;sprefix=%2Caps%2C405&amp;ref=nb_sb_ss_i_1_0">REJECTION OF JEHOIACHIN</a> (Coniah, Jeconiah)')).toEqual([{
+      "end": 6,
+      "start": 1,
+      "text": "12-13",
+    }])
+  })
 });
