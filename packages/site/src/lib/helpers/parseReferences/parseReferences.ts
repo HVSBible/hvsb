@@ -136,13 +136,15 @@ export function getChapterIndexes(string: string, bookName: string): Location[] 
 }
 
 const LETTER_AT_BEGINNING_OF_WORD = /\b[a-zA-Z]/;
+const BRACKET_OR_PERIOD = /[[.]/;
+const combinedPattern = new RegExp(`${LETTER_AT_BEGINNING_OF_WORD.source}|${BRACKET_OR_PERIOD.source}`);
 
 const NOT_PRECEEDED_BY_TEXT_OR_HYPHEN = /(?<!\w\s*-?)/;
 const CAPTURE_NUMBER_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS = /(\b[0-9]+[a-zA-Z0-9-]*)/;
 const NUMBERS_NOT_PRECEEDED_BY_TEXT_BUT_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS = new RegExp(`${NOT_PRECEEDED_BY_TEXT_OR_HYPHEN.source}${CAPTURE_NUMBER_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS.source}`, 'g');
 
 export function getVerseRangeIndexes(string: string): Location[] {
-  const charactersBeforeFirstWord = string.split(LETTER_AT_BEGINNING_OF_WORD)[0] || string;
+  const charactersBeforeFirstWord = string.split(combinedPattern)[0] || string;
   return getIndexes(charactersBeforeFirstWord, NUMBERS_NOT_PRECEEDED_BY_TEXT_BUT_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS);
 }
 

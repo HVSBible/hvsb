@@ -285,7 +285,7 @@ describe('getChapterIndexes', () => {
 });
 
 describe('getVerseRangeIndexes', () => {
-  test('captures verse', () => {
+  test('captures verse number at beginning of string', () => {
     expect(getVerseRangeIndexes('3 and ')).toEqual([
       {
         "end": 1,
@@ -315,6 +315,28 @@ describe('getVerseRangeIndexes', () => {
     ]);
   });
 
+  test('does not capture number in brackets', () => {
+    const numberInsideBrackets = `:41 [3]`
+    expect(getVerseRangeIndexes(numberInsideBrackets)).toEqual([
+      {
+        "start": 1,
+        "end": 3,
+        "text": "41",
+      },
+    ]);
+  });
+
+  test('does not get verse indexes for numbers coming after a period', () => {
+    const numberAfterMedialPeriod = `:41). 3 sheep`
+    expect(getVerseRangeIndexes(numberAfterMedialPeriod)).toEqual([
+      {
+        "start": 1,
+        "end": 3,
+        "text": "41",
+      },
+    ]);
+  });
+
   test('does not get verse indexes for numbers coming after a word', () => {
     expect(getVerseRangeIndexes('3 and 12 sheep.')).toEqual([
       {
@@ -338,3 +360,6 @@ describe('getVerseRangeIndexes', () => {
     }])
   })
 });
+
+
+// TODO: only have 1 chapter so recognize first number as verse Phlm, Philemon, 2 John, 3 John, Jude, Obad, Obadiah
