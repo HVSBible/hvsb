@@ -5,6 +5,10 @@
   import { turnReferencesIntoLinks } from './turnReferencesIntoLinks';
 
   export let value = '';
+  export let version: string = undefined;
+  export let mediaType: 'doc' | 'img' = undefined;
+  export let mediaId: string = undefined;
+
   let paragraph: string;
 
   $: {
@@ -15,8 +19,13 @@
       },
     });
     const references = findReferencesInParagraph(linkified);
-    paragraph = turnReferencesIntoLinks(linkified, references);
-    console.log({value, linkified, references})
+    paragraph = turnReferencesIntoLinks({
+      version,
+      html: linkified,
+      references,
+      mediaType,
+      mediaId,
+    });
   }
 
   let paragraphEl: HTMLDivElement;

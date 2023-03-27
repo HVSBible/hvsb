@@ -1,11 +1,11 @@
 import { findReferencesInParagraph, type Reference } from "$lib/helpers/parseReferences/parseReferences";
 
-export function turnReferencesIntoLinks(html: string, references: Reference[]): any {
+export function turnReferencesIntoLinks({ html, references, version, mediaId, mediaType }: { html: string, references: Reference[], version?: string, mediaId?: string, mediaType?: 'doc' | 'img' }): any {
   let currentIndex = 0;
   let result = "";
 
   references.forEach((reference) => {
-    const link = `<a href="/${reference.bookId}/${reference.chapter}/${reference.verseRange}">${reference.text}</a>`;
+    const link = constructReferenceLink({ version, reference, mediaId, mediaType });
 
     const start = reference.start;
     const end = reference.end;
@@ -21,20 +21,59 @@ export function turnReferencesIntoLinks(html: string, references: Reference[]): 
 
 if (import.meta.vitest) {
   describe('turnReferencesIntoLinks', () => {
-    test('1 instance', () => {
-      const value = "Hello Genesis 1:2 and let's talk about something.";
-      const references = findReferencesInParagraph(value);
-      const result = turnReferencesIntoLinks(value, references);
+    test('1 instance within a doc', () => {
+      const html = "Hello Gen 1:2 and let's talk about something.";
+      const references = findReferencesInParagraph(html);
+      const result = turnReferencesIntoLinks({ html, references, version: 'WEB', mediaType: 'doc', mediaId: 'fooId' });
+      expect(result).toEqual(`Hello <a href="/WEB/GEN/1/doc/fooId?vv=GEN.1.2">Gen 1:2</a> and let's talk about something.`);
+    });
+    
+    test('2 instances from not inside media', () => {
+      const html = "Hello Genesis 1:2 and let's talk about Exod 13.";
+      const references = findReferencesInParagraph(html);
+      const result = turnReferencesIntoLinks({ html, references });
+      expect(result).toEqual(`Hello <a href="/WEB/GEN/1?vv=GEN.1.2">Genesis 1:2</a> and let's talk about <a href="/WEB/EXO/13?vv=EXO.13.1">Exod 13</a>.`);
+    });
+  })
+}
 
-      expect(result).toMatchInlineSnapshot('"Hello <a href=\\"/GEN/1/2\\">Genesis 1:2</a> and let\'s talk about something."');
+// TODO: don't pass verseRange if no verses and then don't add "?vv=..." ending
+const DEFAULT_VERSION = 'WEB'
+function constructReferenceLink({ reference, version, mediaType, mediaId }: { reference: Reference, version?: string, mediaType?: 'doc' | 'img', mediaId?: string }): string {
+  const _version = version || DEFAULT_VERSION;
+
+  if (mediaType && mediaId)
+    return `<a href="/${_version}/${reference.bookId}/${reference.chapter}/${mediaType}/${mediaId}?vv=${reference.bookId}.${reference.chapter}.${reference.verseRange}">${reference.text}</a>`;
+
+  // default: linked to from elsewhere (intro or other place on site)
+  return `<a href="/${_version}/${reference.bookId}/${reference.chapter}?vv=${reference.bookId}.${reference.chapter}.${reference.verseRange}">${reference.text}</a>`;
+}
+
+if (import.meta.vitest) {
+  describe('constructReferenceLink', () => {
+    const reference: Reference = {
+      bookId: 'GEN',
+      chapter: 1,
+      verseRange: '1-2',
+      text: 'Gen 1:1-2',
+      start: 0,
+      end: 7,
+    };
+
+    test('default', () => {
+      const version = 'ABC';
+      const result = constructReferenceLink({ version, reference });
+      expect(result).toEqual(`<a href="/ABC/GEN/1?vv=GEN.1.1-2">Gen 1:1-2</a>`);
     });
 
-    test('2 instances', () => {
-      const value = "Hello Genesis 1:2 and let's talk about Exod 13.";
-      const references = findReferencesInParagraph(value);
-      const result = turnReferencesIntoLinks(value, references);
+    test('handles doc', () => {
+      const result = constructReferenceLink({ reference, mediaType: 'doc', mediaId: 'fooId' });
+      expect(result).toEqual(`<a href="/WEB/GEN/1/doc/fooId?vv=GEN.1.1-2">Gen 1:1-2</a>`);
+    });
 
-      expect(result).toMatchInlineSnapshot('"Hello <a href=\\"/GEN/1/2\\">Genesis 1:2</a> and let\'s talk about <a href=\\"/EXO/13/1\\">Exod 13</a>."');
+    test('handles img', () => {
+      const result = constructReferenceLink({ reference, mediaType: 'img', mediaId: 'fooId' });
+      expect(result).toEqual(`<a href="/WEB/GEN/1/img/fooId?vv=GEN.1.1-2">Gen 1:1-2</a>`);
     });
   })
 }

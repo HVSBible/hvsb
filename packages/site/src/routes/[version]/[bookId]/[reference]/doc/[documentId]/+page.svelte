@@ -67,7 +67,7 @@
       <div class="mb-2">
         {#if section.contentType === 'text'}
           <div class="tw-prose max-w-none">
-            <ParsedParagraph value={section.text} />
+            <ParsedParagraph mediaId={data.document.id} mediaType="doc" version={$page.params.version} value={section.text} />
           </div>
         {:else if section.contentType === 'image'}
           {#await import('./ImageInDoc.svelte') then { default: ImageInDoc }}
@@ -90,7 +90,7 @@
     {#if data.document.editorNotes}
       <div class="mb-4 p-2 bg-gray-200 rounded">
         <div class="text-xs font-semibold">Editor Notes <i class="fas fa-key" /></div>
-        <ParsedParagraph value={data.document.editorNotes} />
+        <ParsedParagraph mediaId={data.document.id} mediaType="doc" version={$page.params.version} value={data.document.editorNotes} />
       </div>
     {/if}
 
