@@ -98,7 +98,7 @@ exports[`findReferencesInParagraph > handles external links 1`] = `
     "end": 160,
     "start": 153,
     "text": "Exod. 2",
-    "verseRange": "1",
+    "verseRange": undefined,
   },
 ]
 `;

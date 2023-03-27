@@ -1,15 +1,16 @@
 import { arrayOfBookNamesAbbreviations, getBookId } from "$lib/parts/data/books";
 import { filterOutLocationsWithSameEnd } from "./filterOutLocationsWithSameEnd";
 
+// TODO: split a text into paragraphs by newline to keep book location memory from leaking over into next paragraph
+// TODO: rename to index.ts
+
 // NOTES:
-// check to see if Dr. House uses Philemon 12 or Phileman 1:12, Jude 20 or Jude 1:20 to refer to verses in books with only 1 chapter
 // watch out to see if we need to convert 'en' dash: `–` or 'em' dash: `—` to a hyphen with `.replace(/\u2013|\u2014/g, "-")`
-// split a text into paragraphs by newline to keep book location memory from leaking over into next paragraph
 
 export interface Reference {
   bookId?: string;
   chapter: number;
-  verseRange: string; // 1 | 5-7 | 4a | 3-4a
+  verseRange?: string; // 1 | 5-7 | 4a | 3-4a
   start: number;
   end: number;
   text: string;
@@ -101,9 +102,11 @@ export function findChapterVerseReferences(string: string, bookName: string): Re
     const chapterReferenceWithoutVerses = !verseLocations.length;
     if (chapterReferenceWithoutVerses) {
       const bookStart = 0;
+      const isSingleChapterBook = ['Phlm', 'Philemon', '2 John', '3 John', 'Jude', 'Obad', 'Obadiah'].includes(bookName);
+
       references.push({
-        verseRange: "1",
-        chapter,
+        verseRange: isSingleChapterBook ? chapter.toString() : undefined,
+        chapter: isSingleChapterBook ? 1 : chapter,
         start: bookStart,
         end: chapterLocation.end,
         text: string.slice(bookStart, chapterLocation.end),

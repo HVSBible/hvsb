@@ -27,7 +27,7 @@ if (import.meta.vitest) {
       const result = turnReferencesIntoLinks({ html, references, version: 'WEB', mediaType: 'doc', mediaId: 'fooId' });
       expect(result).toEqual(`Hello <a href="/WEB/GEN/1/doc/fooId?vv=GEN.1.2">Gen 1:2</a> and let's talk about something.`);
     });
-    
+
     test('2 instances from not inside media', () => {
       const html = "Hello Genesis 1:2 and let's talk about Exod 13.";
       const references = findReferencesInParagraph(html);
@@ -37,16 +37,16 @@ if (import.meta.vitest) {
   })
 }
 
-// TODO: don't pass verseRange if no verses and then don't add "?vv=..." ending
 const DEFAULT_VERSION = 'WEB'
 function constructReferenceLink({ reference, version, mediaType, mediaId }: { reference: Reference, version?: string, mediaType?: 'doc' | 'img', mediaId?: string }): string {
   const _version = version || DEFAULT_VERSION;
+  const verseRangeQueryParam = reference.verseRange ? `?vv=${reference.bookId}.${reference.chapter}.${reference.verseRange}` : '';
 
   if (mediaType && mediaId)
-    return `<a href="/${_version}/${reference.bookId}/${reference.chapter}/${mediaType}/${mediaId}?vv=${reference.bookId}.${reference.chapter}.${reference.verseRange}">${reference.text}</a>`;
+    return `<a href="/${_version}/${reference.bookId}/${reference.chapter}/${mediaType}/${mediaId}${verseRangeQueryParam}">${reference.text}</a>`;
 
   // default: linked to from elsewhere (intro or other place on site)
-  return `<a href="/${_version}/${reference.bookId}/${reference.chapter}?vv=${reference.bookId}.${reference.chapter}.${reference.verseRange}">${reference.text}</a>`;
+  return `<a href="/${_version}/${reference.bookId}/${reference.chapter}${verseRangeQueryParam}">${reference.text}</a>`;
 }
 
 if (import.meta.vitest) {
@@ -74,6 +74,18 @@ if (import.meta.vitest) {
     test('handles img', () => {
       const result = constructReferenceLink({ reference, mediaType: 'img', mediaId: 'fooId' });
       expect(result).toEqual(`<a href="/WEB/GEN/1/img/fooId?vv=GEN.1.1-2">Gen 1:1-2</a>`);
+    });
+
+    test('do not add "?vv=..." ending if no verseRange', () => {
+      const referenceWithNoVerseRange: Reference = {
+        bookId: 'GEN',
+        chapter: 1,
+        text: 'Gen 1',
+        start: 0,
+        end: 4,
+      }
+      const result = constructReferenceLink({ reference: referenceWithNoVerseRange, mediaType: 'img', mediaId: 'fooId' });
+      expect(result).toEqual(`<a href="/WEB/GEN/1/img/fooId">Gen 1</a>`);
     });
   })
 }

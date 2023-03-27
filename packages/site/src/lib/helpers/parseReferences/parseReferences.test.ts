@@ -16,7 +16,6 @@ describe('findReferencesInParagraph', () => {
     expect(findReferencesInParagraph('We see in this in Genesis 2.')).toEqual([{
       bookId: 'GEN',
       chapter: 2,
-      verseRange: "1",
       start: 18,
       end: 27,
       text: 'Genesis 2',
@@ -24,7 +23,6 @@ describe('findReferencesInParagraph', () => {
     expect(findReferencesInParagraph('We see in this in Gen. 2.')).toEqual([{
       bookId: 'GEN',
       chapter: 2,
-      verseRange: "1",
       start: 18,
       end: 24,
       text: 'Gen. 2',
@@ -224,6 +222,30 @@ describe('findChapterVerseReferences', () => {
       },
     ]);
   });
+
+  test('verseRange is undefined if no verse specified', () => {
+    expect(findChapterVerseReferences('Genesis 1', 'Genesis')).toEqual([{
+      text: 'Genesis 1',
+      chapter: 1,
+      verseRange: undefined,
+      start: 0,
+      end: 9,
+    }]);
+  });
+
+  test('books with only 1 chapter', () => {
+    const resultWithChapter = findChapterVerseReferences('2 John 1:4', '2 John');
+    const resultWithOutChapter = findChapterVerseReferences('2 John 4', '2 John');
+    expect(resultWithChapter[0].verseRange).toEqual(resultWithOutChapter[0].verseRange);
+
+    expect(findChapterVerseReferences('Phlm 6', 'Phlm')).toEqual([{
+      text: 'Phlm 6',
+      chapter: 1,
+      verseRange: "6",
+      start: 0,
+      end: 6,
+    }]);
+  });
 });
 
 describe('getBookIndexes', () => {
@@ -360,6 +382,3 @@ describe('getVerseRangeIndexes', () => {
     }])
   })
 });
-
-
-// TODO: only have 1 chapter so recognize first number as verse Phlm, Philemon, 2 John, 3 John, Jude, Obad, Obadiah
