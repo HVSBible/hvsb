@@ -50,8 +50,16 @@ describe('findReferencesInParagraph', () => {
     ]);
   });
 
-  test('handles a sentence full of references separated by commas', () => {
+  test('handles a sentence full of references, separated by commas', () => {
     expect(findReferencesInParagraph('Gen. 5:12, Exod. 4:10-23, John 1:1-2, 3:1-2, 5:7-8')).toMatchSnapshot();
+  });
+
+  test('handles hyphen, en dash, and em dash the same', () => {
+    const hyphenResult = findReferencesInParagraph('Gen 5:7-8');
+    const enDashResult = findReferencesInParagraph('Gen 5:7–8');
+    const emDashResult = findReferencesInParagraph('Gen 5:7—8');
+    expect(hyphenResult).toEqual(enDashResult);
+    expect(hyphenResult).toEqual(emDashResult);
   });
 
   test('handles Matt 5:1-2, 3, 3:1-2, 2 John 1:3 without marking the "2" in 2 John as verse 2 of Matthew 3', () => {
@@ -135,7 +143,6 @@ test('getBookNameLocations', () => {
     },
   ]);
 });
-
 
 describe('findChapterVerseReferences', () => {
   test('basic', () => {

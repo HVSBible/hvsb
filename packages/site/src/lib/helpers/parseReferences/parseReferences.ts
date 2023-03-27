@@ -5,7 +5,6 @@ import { filterOutLocationsWithSameEnd } from "./filterOutLocationsWithSameEnd";
 // TODO: rename to index.ts
 
 // NOTES:
-// watch out to see if we need to convert 'en' dash: `–` or 'em' dash: `—` to a hyphen with `.replace(/\u2013|\u2014/g, "-")`
 
 export interface Reference {
   bookId?: string;
@@ -67,7 +66,11 @@ export function getBookNameLocations(string: string): Location[] {
   return sortedByStartIndex;
 }
 
+const EN_OR_EM_DASH = /–|—/g; // \u2013 \u2014
+
 export function findChapterVerseReferences(string: string, bookName: string): Reference[] {
+  const stringHyphensNormalized = string.replace(EN_OR_EM_DASH, '-')
+
   const references: Reference[] = [];
   const chapterLocations = getChapterIndexes(string, bookName);
 
@@ -76,7 +79,7 @@ export function findChapterVerseReferences(string: string, bookName: string): Re
 
     const nextLocation = chapterLocations[chapterIndex + 1];
     const endOfTextInfluencedByThisChapterLocation = nextLocation?.start || string.length;
-    const textInfluencedByThisChapterLocation = string.slice(chapterLocation.end, endOfTextInfluencedByThisChapterLocation);
+    const textInfluencedByThisChapterLocation = stringHyphensNormalized.slice(chapterLocation.end, endOfTextInfluencedByThisChapterLocation);
 
     const verseLocations = getVerseRangeIndexes(textInfluencedByThisChapterLocation);
 
@@ -95,7 +98,7 @@ export function findChapterVerseReferences(string: string, bookName: string): Re
         chapter,
         start: verseStart,
         end: verseEnd,
-        text: string.slice(verseStart, verseEnd),
+        text: stringHyphensNormalized.slice(verseStart, verseEnd),
       });
     };
 
@@ -109,7 +112,7 @@ export function findChapterVerseReferences(string: string, bookName: string): Re
         chapter: isSingleChapterBook ? 1 : chapter,
         start: bookStart,
         end: chapterLocation.end,
-        text: string.slice(bookStart, chapterLocation.end),
+        text: stringHyphensNormalized.slice(bookStart, chapterLocation.end),
       });
     }
   }
@@ -140,14 +143,14 @@ export function getChapterIndexes(string: string, bookName: string): Location[] 
 
 const LETTER_AT_BEGINNING_OF_WORD = /\b[a-zA-Z]/;
 const BRACKET_OR_PERIOD = /[[.]/;
-const combinedPattern = new RegExp(`${LETTER_AT_BEGINNING_OF_WORD.source}|${BRACKET_OR_PERIOD.source}`);
+const STOP_CHARACTERS = new RegExp(`${LETTER_AT_BEGINNING_OF_WORD.source}|${BRACKET_OR_PERIOD.source}`);
 
 const NOT_PRECEEDED_BY_TEXT_OR_HYPHEN = /(?<!\w\s*-?)/;
 const CAPTURE_NUMBER_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS = /(\b[0-9]+[a-zA-Z0-9-]*)/;
 const NUMBERS_NOT_PRECEEDED_BY_TEXT_BUT_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS = new RegExp(`${NOT_PRECEEDED_BY_TEXT_OR_HYPHEN.source}${CAPTURE_NUMBER_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS.source}`, 'g');
 
 export function getVerseRangeIndexes(string: string): Location[] {
-  const charactersBeforeFirstWord = string.split(combinedPattern)[0] || string;
+  const charactersBeforeFirstWord = string.split(STOP_CHARACTERS)[0] || string;
   return getIndexes(charactersBeforeFirstWord, NUMBERS_NOT_PRECEEDED_BY_TEXT_BUT_OPTIONALLY_FOLLOWED_BY_NUMBERS_HYPHEN_OR_LETTERS);
 }
 
