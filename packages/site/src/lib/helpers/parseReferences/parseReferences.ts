@@ -1,10 +1,8 @@
 import { arrayOfBookNamesAbbreviations, getBookId } from "$lib/parts/data/books";
 import { filterOutLocationsWithSameEnd } from "./filterOutLocationsWithSameEnd";
 
-// TODO: split a text into paragraphs by newline to keep book location memory from leaking over into next paragraph
-// TODO: rename to index.ts
-
-// NOTES:
+// Should we split a text into paragraphs by newline to keep book location memory from leaking over into next paragraph? Sometimes this is nice, sometimes not
+// Should we check parsed results against a book's chapter count to catch user errors?
 
 export interface Reference {
   bookId?: string;
@@ -127,11 +125,11 @@ export function getBookIndexes(string: string, bookName: string): Location[] {
 const NUMBERS_FOLLOWED_BY_COLON = /(\d+):/g;
 
 export function getChapterIndexes(string: string, bookName: string): Location[] {
-  const locations: Location[] = []
-
   const BOOK_OPTIONAL_PERIOD_FOLLOWED_BY_CHAPTER = new RegExp(`(?<=^${bookName}\\.?\\s)(\\d+)`, 'g'); // using positive lookbehind to ensure right after bookName without actually including those characters in the match index
   const initialChapter = getIndexes(string, BOOK_OPTIONAL_PERIOD_FOLLOWED_BY_CHAPTER);
-  locations.push(...initialChapter);
+  
+  if (!initialChapter.length) return [];
+  const locations: Location[] = initialChapter;
 
   const chaptersWithVerses = getIndexes(string, NUMBERS_FOLLOWED_BY_COLON);
   chaptersWithVerses.forEach(location => {

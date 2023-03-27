@@ -103,6 +103,11 @@ describe('findReferencesInParagraph', () => {
     expect(findReferencesInParagraph(urlWithNumbers)).toMatchSnapshot();
   })
 
+  test('First chapter match must follow right after book name', () => {
+    const firstJohnProblem = `John tells us something (12:9). This caused Lazarus (12:10). `
+    expect(findReferencesInParagraph(firstJohnProblem)).toEqual([]);
+  })
+
   // edge case that may not need solved
   // test('trailing colon to explain something following a reference', () => {
   //   expect(findReferencesInParagraph('Remember what we see in Luke 16:10: 20 men!')).toEqual([{

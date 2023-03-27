@@ -67,7 +67,11 @@
       <div class="mb-2">
         {#if section.contentType === 'text'}
           <div class="tw-prose max-w-none">
-            <ParsedParagraph mediaId={data.document.id} mediaType="doc" version={$page.params.version} value={section.text} />
+            <ParsedParagraph
+              mediaId={data.document.id}
+              mediaType="doc"
+              version={$page.params.version}
+              value={section.text} />
           </div>
         {:else if section.contentType === 'image'}
           {#await import('./ImageInDoc.svelte') then { default: ImageInDoc }}
@@ -90,7 +94,11 @@
     {#if data.document.editorNotes}
       <div class="mb-4 p-2 bg-gray-200 rounded">
         <div class="text-xs font-semibold">Editor Notes <i class="fas fa-key" /></div>
-        <ParsedParagraph mediaId={data.document.id} mediaType="doc" version={$page.params.version} value={data.document.editorNotes} />
+        <ParsedParagraph
+          mediaId={data.document.id}
+          mediaType="doc"
+          version={$page.params.version}
+          value={data.document.editorNotes} />
       </div>
     {/if}
 
@@ -99,8 +107,8 @@
         data-sveltekit-noscroll
         class="font-medium px-3 py-2 hover:bg-gray-200 text-primary-700 rounded
       border border-primary-700"
-        href="/{$page.params.version}/{$page.params.bookId}/{$page.params
-          .reference}/doc/{data.document.id}/edit">
+        href="/{$page.params.version}/{$page.params.bookId}/{$page.params.reference}/doc/{data
+          .document.id}/edit">
         Edit
         <i class="fas fa-key" />
       </a>
@@ -113,8 +121,8 @@
       data-sveltekit-noscroll
       class="font-medium px-3 py-2 hover:bg-gray-200 text-primary-700 rounded
       border border-primary-700"
-      href="/{$page.params.version}/{$page.params.bookId}/{$page.params
-        .reference}/doc/{data.document.id}/translate">
+      href="/{$page.params.version}/{$page.params.bookId}/{$page.params.reference}/doc/{data
+        .document.id}/translate">
       Translate to {LanguageMappings[translatorLanguage]}
       <i class="fas fa-key" />
     </a>

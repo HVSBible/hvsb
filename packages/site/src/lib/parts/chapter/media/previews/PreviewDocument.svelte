@@ -13,7 +13,6 @@
     `WEB/${document.chapterIds[0].split('.')[0]}/${document.chapterIds[0].split('.')[1]}/doc/${
       document.id
     }`}
-  
   data-sveltekit-noscroll
   class:ml-4={!document.published}
   class:sm:ml-6={!document.published}
@@ -53,7 +52,6 @@
           <a
             href={href ||
               `WEB/${verseId.split('.')[0]}/${verseId.split('.')[1]}/doc/${document.id}`}
-            
             data-sveltekit-noscroll
             class="ml-1 mt-1 px-2 py-1 leading-tight text-sm font-medium bg-gray-100 hover:bg-white rounded">
             {bookAbbrev(verseId.split('.')[0])}
