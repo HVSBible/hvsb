@@ -7,7 +7,6 @@
   import type { RefinementListItem } from 'instantsearch.js/es/connectors/refinement-list/connectRefinementList';
   import { onMount } from 'svelte';
   const Genres = { ...DocumentGenres, ...ImageGenres };
-  console.log(Genres);
   export let search: InstantSearch,
     attribute:
       | 'genre'

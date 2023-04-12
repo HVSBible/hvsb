@@ -39,7 +39,6 @@ export function measureWebVitals(options: AnalyticsOptions): void {
       webVitals.getLCP((metric) => send_to_analytics(metric, options));
       webVitals.getCLS((metric) => send_to_analytics(metric, options));
       webVitals.getFCP((metric) => send_to_analytics(metric, options));
-      console.log({ webVitals })
     };
     document.head.appendChild(script);
   } catch (err) {

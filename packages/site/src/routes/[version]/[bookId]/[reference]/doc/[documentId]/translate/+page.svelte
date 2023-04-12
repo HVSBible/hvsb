@@ -12,7 +12,6 @@
   async function save(e, field: 'title_translations' | 'description_translations' | 'section') {
     try {
       //@ts-ignore
-      console.log('Translated: ', e.target.value);
       const translatedField: ITranslatedField = {
         language: $translator,
         mediaId: data.documentId,

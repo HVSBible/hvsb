@@ -15,7 +15,7 @@
     "svelte"
   ],
   "files.associations": {
-    "*.svx": "svelte"
+    "*.md": "svelte"
   },
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"

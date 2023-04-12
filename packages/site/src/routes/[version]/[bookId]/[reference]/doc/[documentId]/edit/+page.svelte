@@ -69,7 +69,6 @@
         return alert('Please unlink all embedded images before deleting article.');
       }
       try {
-        console.log(`media/${document.id}`);
         await deleteDocumentOnline(`media/${document.id}`);
         goto(`/${$page.params.version}/${$page.params.bookId}/${$page.params.reference}`);
       } catch (err) {

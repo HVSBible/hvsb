@@ -1,17 +1,32 @@
 <script lang="ts">
   import linkifyHtml from 'linkify-html';
   import { onMount } from 'svelte';
-  // TODO: import { linkifyReferences } from "$lib/helpers/linkify-references";
-  // linkifyReferences(value)
-  // was parseInternalLinks in old repo
+  import { findReferencesInParagraph } from '$lib/helpers/parseReferences/parseReferences';
+  import { turnReferencesIntoLinks } from './turnReferencesIntoLinks';
 
   export let value = '';
+  export let version: string = undefined;
+  export let mediaType: 'doc' | 'img' = undefined;
+  export let mediaId: string = undefined;
+  export let showVerseLinks = false;
+
   $: paragraph = linkifyHtml(value, {
     className: 'hover:text-primary-800 underline',
     target: {
       url: '_blank',
     },
   });
+
+  function addVerseLinksToParagraph(html: string) {
+    const references = findReferencesInParagraph(html);
+    return turnReferencesIntoLinks({
+      version,
+      html,
+      references,
+      mediaType,
+      mediaId,
+    });
+  }
 
   let paragraphEl: HTMLDivElement;
 
@@ -43,5 +58,15 @@
   }
 </script>
 
-<!-- class="hover:text-primary-800 underline" -->
-<div bind:this={paragraphEl}>{@html paragraph}</div>
+<!-- safelist class="hover:text-primary-800 underline" -->
+{#if showVerseLinks}
+  <div bind:this={paragraphEl}>{@html addVerseLinksToParagraph(paragraph)}</div>
+{:else}
+  <div bind:this={paragraphEl}>{@html paragraph}</div>
+{/if}
+
+<style>
+  div :global(a) {
+    text-decoration: underline;
+  }
+</style>

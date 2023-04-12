@@ -8,9 +8,9 @@ export interface IMediaMetaData extends IFirestoreMetaData {
   seriesIds?: string[];
   editorNotes?: string;
 
-  bookIds: string[];
-  chapterIds: string[];
-  verseIds: string[];
+  bookIds: string[]; // GEN
+  chapterIds: string[]; // GEN.1
+  verseIds: string[]; // GEN.1.1
 
   // added based on runtime parameters
   currentVerses?: number[];

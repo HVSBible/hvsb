@@ -41,26 +41,24 @@ Demonstrates how to write Cloud Firestore + Cloud Functions **unit tests** and o
 
 ## Connect emulator to frontend app
 
-```
+```js
 firebase.initializeApp(yourFirebaseConfig);
 
+if (location.hostname === "localhost") {
+  firebase.firestore().settings({
+    host: "localhost:8080",
+    ssl: false
+  });
 
-  if (location.hostname === "localhost") {
-
-    firebase.firestore().settings({
-      host: "localhost:8080",
-      ssl: false
-    });
-
-    firebase.functions().useFunctionsEmulator("http://localhost:5001");
-  }
+  firebase.functions().useFunctionsEmulator("http://localhost:5001");
+}
 ```
 
 ## Generate Fake Data Quickly
 
 Paste code into browser console to quickly create 100 fake documents.
 
-```
+```js
 (function () {
   const script = document.createElement('script');
   script.src =

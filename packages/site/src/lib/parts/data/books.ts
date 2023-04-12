@@ -1,17 +1,54 @@
 import type { IBook } from "@hvsb/types";
 
+// getBookName
 export function bookName(bookId: string): string {
-  const matchingBook = bibleBooks.find((book) => {
-    return book.id === bookId;
-  });
-  return (matchingBook && matchingBook.name) || bookId;
+  const matchingBook = bibleBooks.find((book) => book.id === bookId);
+  return matchingBook?.name || bookId;
 }
 
-export function bookAbbrev(id: string): string {
-  const matchingBook = bibleBooks.find((book) => {
-    return book.id === id;
+if (import.meta.vitest) {
+  test('getBookId', () => {
+    expect(bookName('GEN')).toEqual('Genesis');
   });
-  return (matchingBook && matchingBook.abbreviation) || id;
+}
+
+// refactor to getBookAbbreviation
+export function bookAbbrev(bookId: string): string {
+  const matchingBook = bibleBooks.find((book) => book.id === bookId);
+  return matchingBook?.abbreviation || bookId;
+}
+
+if (import.meta.vitest) {
+  test('getBookId', () => {
+    expect(bookAbbrev('GEN')).toEqual('Gen');
+  });
+}
+
+export function getBookId(bookName: string): string | null {
+  const matchingBook = bibleBooks.find((book) => {
+    return book.name === bookName || book.abbreviation === bookName;
+  });
+  return matchingBook?.id || null;
+}
+
+if (import.meta.vitest) {
+  test('getBookId', () => {
+    expect(getBookId('Genesis')).toEqual('GEN');
+    expect(getBookId('Gen')).toEqual('GEN');
+  });
+}
+
+export function arrayOfBookNamesAbbreviations() {
+  const abbreviations = bibleBooks.map(({ abbreviation }) => abbreviation);
+  const names = bibleBooks.map(({ name }) => name);
+  const uniqueNames = [...new Set([...abbreviations, ...names])]
+  return uniqueNames;
+}
+
+if (import.meta.vitest) {
+  test('arrayOfBookNamesAbbreviations', () => {
+    expect(arrayOfBookNamesAbbreviations()).toMatchSnapshot();
+  });
 }
 
 export const bibleBooks: IBook[] = [

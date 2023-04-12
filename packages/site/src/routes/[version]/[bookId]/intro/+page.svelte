@@ -67,7 +67,7 @@
       {/if}
       <div class="tw-prose prose-lg max-w-screen-md {editing && 'hidden md:block mt-14 ml-3'}">
         {#if intro?.text}
-          <ParsedParagraph value={intro.text} />
+          <ParsedParagraph version={$page.params.version} value={intro.text} showVerseLinks={!!$admin} />
         {:else if !$admin}
           To be written...
         {/if}
