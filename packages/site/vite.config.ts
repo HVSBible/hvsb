@@ -17,6 +17,9 @@ const config: UserConfig = {
     'import.meta.vitest': false,
     'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID),
   },
+  optimizeDeps: {
+    exclude: ['linkify-html'],
+  },
   build: {
     target: 'es2015',
   },

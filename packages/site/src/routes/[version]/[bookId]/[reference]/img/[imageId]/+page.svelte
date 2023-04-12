@@ -5,6 +5,7 @@
   import ParsedParagraph from '$lib/components/content/ParsedParagraph.svelte';
 
   import type { PageData } from './$types';
+    import { admin } from '$lib/stores';
   export let data: PageData;
 
   function truncatedDescription() {
@@ -38,7 +39,7 @@
   <div>
     {#if data.image.description && data.image.description != '<p>&nbsp;</p>'}
       <div class="p-2 tw-prose max-w-none">
-        <ParsedParagraph mediaId={data.image.id} mediaType="img" version={$page.params.version} value={data.image.description} />
+        <ParsedParagraph showVerseLinks={!!$admin} mediaId={data.image.id} mediaType="img" version={$page.params.version} value={data.image.description} />
       </div>
     {/if}
 
@@ -54,7 +55,7 @@
     {#if data.image.editorNotes}
       <div class="mb-4 p-2 bg-gray-200 rounded">
         <div class="text-xs font-semibold">Editor Notes <i class="fas fa-key" /></div>
-        <ParsedParagraph mediaId={data.image.id} mediaType="img" version={$page.params.version} value={data.image.editorNotes} />
+        <ParsedParagraph showVerseLinks mediaId={data.image.id} mediaType="img" version={$page.params.version} value={data.image.editorNotes} />
       </div>
     {/if}
 

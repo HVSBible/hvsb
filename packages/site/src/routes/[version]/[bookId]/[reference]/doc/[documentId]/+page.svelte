@@ -6,6 +6,7 @@
   import { getCurrentVerses } from '$lib/helpers/media';
   import ParsedParagraph from '$lib/components/content/ParsedParagraph.svelte';
   import type { PageData } from './$types';
+  import { admin } from '$lib/stores';
   export let data: PageData;
 
   function printCurrentVerses() {
@@ -68,6 +69,7 @@
         {#if section.contentType === 'text'}
           <div class="tw-prose max-w-none">
             <ParsedParagraph
+              showVerseLinks={!!$admin}
               mediaId={data.document.id}
               mediaType="doc"
               version={$page.params.version}
@@ -95,6 +97,7 @@
       <div class="mb-4 p-2 bg-gray-200 rounded">
         <div class="text-xs font-semibold">Editor Notes <i class="fas fa-key" /></div>
         <ParsedParagraph
+          showVerseLinks
           mediaId={data.document.id}
           mediaType="doc"
           version={$page.params.version}

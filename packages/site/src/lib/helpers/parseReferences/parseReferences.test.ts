@@ -104,8 +104,49 @@ describe('findReferencesInParagraph', () => {
   })
 
   test('First chapter match must follow right after book name', () => {
-    const firstJohnProblem = `John tells us something (12:9). This caused Lazarus (12:10). `
+    const firstJohnProblem = `John tells us something (12:9). This caused Lazarus (12:10).`
     expect(findReferencesInParagraph(firstJohnProblem)).toEqual([]);
+  })
+
+  test('Ignores trailing hyphen cause by redundant chapter usage or range between chapters', () => {
+    const redundantChapter = `Acts 10:1-10:48`
+    expect(findReferencesInParagraph(redundantChapter)).toEqual(      [
+        {
+          "bookId": "ACT",
+          "chapter": 10,
+          "end": 9,
+          "start": 0,
+          "text": "Acts 10:1",
+          "verseRange": "1",
+        },
+        {
+          "bookId": "ACT",
+          "chapter": 10,
+          "end": 15,
+          "start": 10,
+          "text": "10:48",
+          "verseRange": "48",
+        },
+      ]);
+    const chapterRange = `Acts 10:1-11:20`
+    expect(findReferencesInParagraph(chapterRange)).toEqual(      [
+        {
+          "bookId": "ACT",
+          "chapter": 10,
+          "end": 9,
+          "start": 0,
+          "text": "Acts 10:1",
+          "verseRange": "1",
+        },
+        {
+          "bookId": "ACT",
+          "chapter": 11,
+          "end": 15,
+          "start": 10,
+          "text": "11:20",
+          "verseRange": "20",
+        },
+      ]);
   })
 
   // edge case that may not need solved
