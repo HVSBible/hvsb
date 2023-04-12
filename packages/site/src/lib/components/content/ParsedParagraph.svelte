@@ -3,12 +3,12 @@
   import { onMount } from 'svelte';
   import { findReferencesInParagraph } from '$lib/helpers/parseReferences/parseReferences';
   import { turnReferencesIntoLinks } from './turnReferencesIntoLinks';
-  import { admin } from '$lib/stores';
 
   export let value = '';
   export let version: string = undefined;
   export let mediaType: 'doc' | 'img' = undefined;
   export let mediaId: string = undefined;
+  export let showVerseLinks = false;
 
   $: paragraph = linkifyHtml(value, {
     className: 'hover:text-primary-800 underline',
@@ -59,8 +59,14 @@
 </script>
 
 <!-- safelist class="hover:text-primary-800 underline" -->
-{#if $admin}
+{#if showVerseLinks}
   <div bind:this={paragraphEl}>{@html addVerseLinksToParagraph(paragraph)}</div>
 {:else}
   <div bind:this={paragraphEl}>{@html paragraph}</div>
 {/if}
+
+<style>
+  div :global(a) {
+    text-decoration: underline;
+  }
+</style>
