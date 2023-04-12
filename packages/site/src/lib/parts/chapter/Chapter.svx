@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fetchBibleText } from './fetchBibleText';
+  import { fetchBibleText } from '$lib/helpers/media';
   import { Story } from 'kitbook';
   // import JSON from 'svelte-pieces/data/JSON.svelte';
 
@@ -11,13 +11,13 @@
 </script>
 
 <Story name="New Testament" knobs={{ bookId: 'MAT', chapter: 1 }} let:props={{ bookId, chapter }}>
-  {#await fetchBibleText(bookId, chapter) then { content: contentHtml }}
+  {#await fetchBibleText('WEB', bookId, chapter) then { content: contentHtml }}
     <Chapter {contentHtml} media={mat1Media} />
   {/await}
 </Story>
 
 <Story name="Words in Red" knobs={{ bookId: 'MAT', chapter: 5 }} let:props={{ bookId, chapter }}>
-  {#await fetchBibleText(bookId, chapter)}
+  {#await fetchBibleText('WEB', bookId, chapter)}
     Getting text...
   {:then { content: contentHtml }}
     <Chapter {contentHtml} media={mat1Media} />
@@ -28,7 +28,7 @@
 </Story>
 
 <Story name="Old Testament" knobs={{ bookId: 'GEN', chapter: 1 }} let:props={{ bookId, chapter }}>
-  {#await fetchBibleText(bookId, chapter) then { content: contentHtml }}
+  {#await fetchBibleText('WEB', bookId, chapter) then { content: contentHtml }}
     <Chapter {contentHtml} media={mat1Media} />
   {/await}
 </Story>
