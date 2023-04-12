@@ -11,18 +11,18 @@ export const variants: Variants<typeof Component> = [
   },
   {
     name: 'Assumed reference (will not work)',
+    description: 'We have no way to determine if "John says" means which of the four books by John so it must be spelled out as seen in the next example.',
     props: {
       showVerseLinks: true,
-      value: '<p>The apostle John... while on earth (Matt 24:23, 24). The antichrists and false prophets among them, John says, have never really been a part of the assembly of the believers (2:19).</p>'
+      value: 'The apostle John was talking to...  (Matt 24:23, 24). Then, as John says, they have never really been a part of the assembly of the believers (2:19).'
     },
   },
   {
     name: 'Make assumed reference clear',
-    description: 'We have no way to determine if "John says" means which of the John books',
     // height: 400,
     props: {
       showVerseLinks: true,
-      value: '<p>The apostle John... while on earth (Matt 24:23, 24). The antichrists and false prophets among them, John says, have never really been a part of the assembly of the believers (1 John 2:19). </p>'
+      value: 'The apostle John was talking to...  (Matt 24:23, 24). Then, as John says, they have never really been a part of the assembly of the believers (1 John 2:19). '
     },
   },
   {
