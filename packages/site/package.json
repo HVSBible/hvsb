@@ -5,6 +5,7 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
+    "sync": "svelte-kit sync",
     "kitbook": "vite dev --mode kitbook",
     "kitbook:build": "svelte-kit sync && vite build --mode kitbook",
     "kitbook:preview": "vite preview --mode kitbook",
