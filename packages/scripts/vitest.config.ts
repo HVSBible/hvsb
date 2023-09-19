@@ -1,7 +1,8 @@
-import { defineConfig } from 'vitest/config';
+import { defineProject } from 'vitest/config';
 
-export default defineConfig({
+export default defineProject({
   test: {
+    name: 'scripts:unit',
     globals: true,
     includeSource: ['example/**/*.ts'],
   },

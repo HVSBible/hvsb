@@ -9,9 +9,7 @@
     "kitbook": "pnpm --filter=site kitbook",
     "kitbook:build": "pnpm --filter=site kitbook:build",
     "kitbook:preview": "pnpm --filter=site kitbook:preview",
-    "test": "pnpm --filter=site test",
-    "test:ui": "pnpm --filter=site test:ui",
-    "test:all": "pnpm --recursive --stream test -- --run",
+    "test": "pnpm vitest",
     "lint": "eslint .",
     "format-check": "prettier --check --plugin-search-dir=. .",
     "format": "prettier --write --plugin-search-dir=. .",
@@ -26,6 +24,7 @@
     "prettier": "^2.8.3",
     "prettier-plugin-svelte": "^2.9.0",
     "svelte": "^3.55.1",
-    "typescript": "~4.9.5"
+    "typescript": "~4.9.5",
+    "vitest": "^0.34.4"
   }
 }

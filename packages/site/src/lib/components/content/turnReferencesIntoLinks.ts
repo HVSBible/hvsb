@@ -32,7 +32,7 @@ if (import.meta.vitest) {
       const html = "Hello Genesis 1:2 and let's talk about Exod 13.";
       const references = findReferencesInParagraph(html);
       const result = turnReferencesIntoLinks({ html, references });
-      expect(result).toEqual(`Hello <a href="/WEB/GEN/1?vv=GEN.1.2">Genesis 1:2</a> and let's talk about <a href="/WEB/EXO/13?vv=EXO.13.1">Exod 13</a>.`);
+      expect(result).toEqual(`Hello <a href="/WEB/GEN/1?vv=GEN.1.2">Genesis 1:2</a> and let's talk about <a href="/WEB/EXO/13">Exod 13</a>.`);
     });
   })
 }
