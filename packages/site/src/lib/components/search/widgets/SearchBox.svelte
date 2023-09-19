@@ -42,7 +42,10 @@
     <input
       type="search"
       bind:value={query}
-      on:input={(e) => refine(e.target.value)}
+      on:input={(e) => { 
+        //@ts-ignore
+        refine(e.target.value)
+      }}
       use:autofocus
       {placeholder}
       class="appearance-none rounded-none block w-full pl-10 pr-3 py-2 border

@@ -1,35 +1,50 @@
-name: Test & Audit Pull Request
+name: Lint, Svelte Check, & Unit Test Push
 
 on:
-  issue_comment:
-    types: [edited]
+  push:
+    branches:
+      - '**'
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
 jobs:
-  build-publish-audit:
-    name: Build, Publish, Audit
-    if: ${{ github.event.issue.pull_request }}
+  unit_test:
+    name: Svelte Check & Unit Test
     runs-on: ubuntu-latest
 
     steps:
-      - name: Add running comment to PR
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          number: ${{ github.event.issue.number }}
-          header: lighthouse
-          message: |
-            ⚡️ Running Svelte-Check, Vitest unit tests, and Lighthouse audit...
+      - uses: actions/checkout@v3
 
-      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
 
       - name: Install Dependencies
-        run: pnpm ci
+        run: pnpm install
 
-#       - run: npm run check
-      - run: pnpm test:all
+      - run: pnpm -F site sync
+      
+      - name: Svelte Check Site
+        run: pnpm -F site check
+      
+      - name: Run Vitest Unit Tests
+        run: pnpm test
+
+      - name: Slack Unit Test Results Notification
+        uses: 8398a7/action-slack@v3 # https://action-slack.netlify.app/
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          status: ${{ job.status }}
+          fields: workflow,repo,message,commit,author,action,ref # selectable (default: repo,message)
 
 #       - name: Capture Vercel preview URL
 #         id: vercel_preview_url

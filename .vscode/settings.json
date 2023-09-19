@@ -14,9 +14,7 @@
     "javascript",
     "svelte"
   ],
-  "files.associations": {
-    "*.md": "svelte"
-  },
+  "files.associations": {},
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },

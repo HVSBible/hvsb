@@ -1,6 +1,7 @@
 {
   "name": "hvsb",
   "version": "0.0.1",
+  "license": "MIT",
   "scripts": {
     "dev": "pnpm --filter=site dev",
     "build": "pnpm --filter=site build",
