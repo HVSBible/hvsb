@@ -3,14 +3,14 @@
   import { onMount, onDestroy, createEventDispatcher } from 'svelte';
   import type { Editor } from '@ckeditor/ckeditor5-core';
   import type { EditorConfig } from '@ckeditor/ckeditor5-core/src/editor/editorconfig';
-  export let editor: typeof Editor = null;
+
+  export let editor: typeof Editor;
+  export let editorConfig: EditorConfig;
   export let value = '';
-  export let editorConfig: EditorConfig = {};
   // export let debounceMs = 300;
 
-  // let lastEditorData = '';
   let editorEl: HTMLDivElement;
-  let instance: Editor = null;
+  let instance: Editor;
 
   // $: watchValue(value);
 
@@ -32,8 +32,8 @@
 
   const dispatch = createEventDispatcher<{
     update: string;
-    focus: { evt: any; instance: Editor };
-    blur: { evt: any; instance: Editor };
+    // focus: { evt: any; instance: Editor };
+    // blur: { evt: any; instance: Editor };
   }>();
 
   const emitInputEvent = () => {
@@ -43,7 +43,6 @@
   };
 
   onMount(() => {
-    console.log({ value });
     editor
       .create(editorEl, { ...editorConfig, initialData: value })
       .then((editor) => {
