@@ -4,11 +4,11 @@ import * as functions from 'firebase-functions';
  * Validates data payload of a callable function
  */
 export const assert = (data: any, key: string) => {
-  if (!data[key]) {
+  if (!data[key])
     throw new functions.https.HttpsError('invalid-argument', `function called without ${key} data`);
-  } else {
+  else
     return data[key];
-  }
+
 };
 
 /**

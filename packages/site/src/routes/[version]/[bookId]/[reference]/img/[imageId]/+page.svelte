@@ -5,22 +5,22 @@
   import ParsedParagraph from '$lib/components/content/ParsedParagraph.svelte';
 
   import type { PageData } from './$types';
-    import { admin } from '$lib/stores';
+  import { admin } from '$lib/stores';
   export let data: PageData;
 
   function truncatedDescription() {
     if (data.image.description) {
       const plainDescription = data.image.description.replace(/<[^>]*>/g, '');
       return truncateString(plainDescription, 90);
-    } else {
-      return '';
     }
+    return '';
+
   }
 
   function truncateString(str, num) {
-    if (str.length <= num) {
+    if (str.length <= num)
       return str;
-    }
+
     return str.slice(0, num).trim() + '...';
   }
 </script>
@@ -61,10 +61,10 @@
 
     <div class="flex">
       <a
-        
+
         data-sveltekit-noscroll
         class="font-medium px-3 py-2 hover:bg-gray-200 text-primary-700 rounded
-        border border-primary-700"
+          border border-primary-700"
         href="/{$page.params.version}/{$page.params.bookId}/{$page.params
           .reference}/img/{data.image.id}/edit">
         Edit

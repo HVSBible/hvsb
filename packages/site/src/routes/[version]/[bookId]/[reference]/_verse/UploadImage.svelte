@@ -4,7 +4,7 @@
 
   import { tweened } from 'svelte/motion';
   import { cubicOut } from 'svelte/easing';
-  let progress = tweened(0, {
+  const progress = tweened(0, {
     duration: 2000,
     easing: cubicOut,
   });
@@ -44,7 +44,7 @@
       (snapshot) => {
         const progressAmount = snapshot.bytesTransferred / snapshot.totalBytes;
         progress.set(progressAmount);
-        // switch (snapshot.state) {
+      // switch (snapshot.state) {
         //   case firebase.storage.TaskState.PAUSED: // or 'paused'
         //     console.log("Upload is paused");
         //     break;
@@ -56,7 +56,7 @@
       (err) => {
         alert('Image Upload Failed');
         error = err;
-        // A full list of error codes is available at
+      // A full list of error codes is available at
         // https://firebase.google.com/docs/storage/web/handle-errors
         // switch (error.code) {
         //     case 'storage/unauthorized':

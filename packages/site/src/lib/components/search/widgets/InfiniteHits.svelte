@@ -16,13 +16,13 @@
   onMount(async () => {
     const customInfiniteHits = connectInfiniteHits((params) => {
       ({ hits, showMore, isLastPage } = params);
-      // showPrevious, // function
+    // showPrevious, // function
       // isFirstPage, // boolean
     });
 
     search.addWidgets([
       customInfiniteHits({
-        // showPrevious: true,
+      // showPrevious: true,
         // cache: sessionStorageCache,
       }),
     ]);

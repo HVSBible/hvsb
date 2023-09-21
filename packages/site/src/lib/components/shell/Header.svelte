@@ -12,7 +12,7 @@
 
     <a
       href="/search"
-      
+
       class="text-gray-700 hover:bg-gray-200 py-2 px-3 rounded hover:text-black border border-transparent print:hidden">
       <i class="fas fa-search" />
       <span class="ml-1 hidden md:inline">Search</span>

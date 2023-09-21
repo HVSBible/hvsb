@@ -20,9 +20,9 @@
     chapter: string;
 
   function mouseout(verse: IVerse) {
-    if (hovered === verse.id) {
+    if (hovered === verse.id)
       hovered = null;
-    }
+
   }
 
   $: versesWithMedia = setMaxHeightOnMediaBasedOnNextVerseOffsetTop(
@@ -56,7 +56,7 @@
         {#each verse.media as medium}
           {#if medium.type === 'document'}
             <a
-              
+
               data-sveltekit-noscroll
               href="/{version}/{bookId}/{chapter}/doc/{medium.id}"
               title="{DocumentGenres[medium.genre]}{medium.title ? ': ' + medium.title : ''}"
@@ -66,7 +66,7 @@
             </a>
           {:else if medium.type === 'image'}
             <a
-              
+
               data-sveltekit-noscroll
               href="/{version}/{bookId}/{chapter}/img/{medium.id}"
               title={medium.title}
@@ -76,7 +76,7 @@
             </a>
           {:else if medium.type === 'video'}
             <a
-              
+
               data-sveltekit-noscroll
               href="/{version}/{bookId}/{chapter}/vid/{medium.id}"
               title={medium.title}

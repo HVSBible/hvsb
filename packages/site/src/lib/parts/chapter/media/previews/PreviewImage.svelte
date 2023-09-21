@@ -12,12 +12,12 @@
 <a
   href={href ||
     `WEB/${image.chapterIds[0].split('.')[0]}/${image.chapterIds[0].split('.')[1]}/img/${image.id}`}
-  
+
   data-sveltekit-noscroll
   class:ml-4={!image.published}
   class:sm:ml-6={!image.published}
   class="hover:bg-gray-200 shadow overflow-hidden rounded-sm flex
-  items-stretch text-left min-h-75px">
+    items-stretch text-left min-h-75px">
   <div class="media-block bg-gray-500">
     <img
       alt=""
@@ -28,7 +28,7 @@
   <div class="p-2 flex flex-grow flex-col justify-between">
     <div class="text-sm font-semibold text-gray-900">
       <slot name="title">
-        {image.title || (image.description && image.description.replace(/<[^>]*>/g, '')) || ''}
+        {image.title || (image.description?.replace(/<[^>]*>/g, '')) || ''}
       </slot>
       <slot name="admin" />
     </div>
@@ -38,7 +38,7 @@
         {#if !image.published}
           <span
             class="px-2 py-1 leading-tight bg-orange-200 rounded text-orange-600 text-xs font-medium"
-            >Unpublished</span>
+          >Unpublished</span>
         {/if}
       </div>
       <div class="mr-auto" />
@@ -70,7 +70,7 @@
         {#each image.verseIds as verseId}
           <a
             href={href || `WEB/${verseId.split('.')[0]}/${verseId.split('.')[1]}/img/${image.id}`}
-            
+
             data-sveltekit-noscroll
             class="ml-1 mt-1 px-2 py-1 leading-tight text-sm font-medium bg-gray-100 hover:bg-white rounded">
             {bookAbbrev(verseId.split('.')[0])}

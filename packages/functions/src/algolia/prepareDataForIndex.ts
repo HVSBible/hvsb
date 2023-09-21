@@ -30,7 +30,7 @@ export async function prepareDataForIndex(
     }
   }
 
-  dataForIndex.published = data.published ? true : false;
+  dataForIndex.published = !!data.published;
 
   if (data.createdAt) {
     // @ts-ignore
@@ -82,9 +82,9 @@ export async function prepareDataForIndex(
       dataForIndex.duration = vimeoVideoData.duration;
       dataForIndex.thumbnail = vimeoVideoData.pictures.sizes[1].link.replace('?r=pad', '');
 
-      if (vimeoVideoData.description) {
+      if (vimeoVideoData.description)
         dataForIndex.description = vimeoVideoData.description.replace(/Subscribe[\S\s]*/, '');
-      }
+
     }
   }
 

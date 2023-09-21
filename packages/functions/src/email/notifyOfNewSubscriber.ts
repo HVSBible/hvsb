@@ -104,8 +104,8 @@ export const notifyAdminsOfSubscriptionEnd = async (
             Data: `Hey Admins,
 
 ${user.displayName} just ${
-              canceled ? 'canceled' : 'ended'
-            } their ${planName} subscription. Their email is ${user.email}.
+  canceled ? 'canceled' : 'ended'
+} their ${planName} subscription. Their email is ${user.email}.
 
 https://hvsb.app`,
           },

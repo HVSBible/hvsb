@@ -1,13 +1,13 @@
 import fs from 'fs';
 const fileName = process.argv[2];
 
-fs.readFile(fileName, 'utf8', function (err, data) {
-  if (err) {
+fs.readFile(fileName, 'utf8', (err, data) => {
+  if (err)
     return console.log(err);
-  }
+
 
   const bibles = JSON.parse(data);
-  const biblesDataArray = bibles['data'] as IBibleData[];
+  const biblesDataArray = bibles.data as IBibleData[];
 
   const bibleIdsArray: Partial<IBibleData>[] = [];
 
@@ -22,10 +22,10 @@ fs.readFile(fileName, 'utf8', function (err, data) {
   fs.writeFile(
     'scripts/bibles/extracted_Bible_IDs2.json',
     JSON.stringify(bibleIdsArray),
-    function (err) {
-      if (err) {
+    (err) => {
+      if (err)
         return console.log(err);
-      }
+
       console.log('The file was saved.');
     }
   );

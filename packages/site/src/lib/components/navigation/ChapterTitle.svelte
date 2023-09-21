@@ -25,7 +25,7 @@
       on:click={toggle}
       type="button"
       class="font-semibold sm:text-lg py-2 px-3 hover:bg-gray-200
-      rounded">
+        rounded">
       <span class="hidden sm:inline">{bookName(bookId)}</span>
       <span class="sm:hidden">{bookAbbrev(bookId)}</span>
       <span>{chapter}</span>

@@ -6,7 +6,7 @@ export function removeDuplicateVerseSpans(html: string) {
 
   if (!spans) return html;
 
-  // Find the location and verse of each .verse-span  
+  // Find the location and verse of each .verse-span
   const spansData = spans.map((span) => {
     const startIndex = html.indexOf(span);
     const endIndex = startIndex + span.length;
@@ -24,9 +24,9 @@ export function removeDuplicateVerseSpans(html: string) {
 
   const foundVerseIds = new Set([]);
   const duplicateSpans = spansData.filter((span) => {
-    if (foundVerseIds.has(span.verseId)) {
+    if (foundVerseIds.has(span.verseId))
       return true;
-    }
+
     foundVerseIds.add(span.verseId);
     return false;
   });

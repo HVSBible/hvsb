@@ -32,7 +32,7 @@
             <a
               href="/admin"
               class="cursor-pointer px-3 py-2 text-sm font-medium text-white
-              bg-gray-800 rounded-md hover:bg-gray-700">
+                bg-gray-800 rounded-md hover:bg-gray-700">
               Admin Panel
               <i class="fas fa-key" />
             </a>
@@ -154,7 +154,7 @@
                 alert(`You have ${unsubscribed ? 'resubscribed' : 'unsubscribed'}`);
               } catch (err) {
                 alert(
-                  "We're sorry, but there was an error trying to save your preference. Please use the Contact Us form to let us know."
+                  'We\'re sorry, but there was an error trying to save your preference. Please use the Contact Us form to let us know.'
                 );
               }
             }}

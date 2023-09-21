@@ -11,9 +11,9 @@
   let saving;
 
   async function saveVideo() {
-    if (saving) {
+    if (saving)
       return;
-    }
+
     saving = true;
 
     try {
@@ -29,10 +29,11 @@
       window.location.replace(
         `/${$page.params.version}/${$page.params.bookId}/${$page.params.reference}/vid/${videoId}` // TODO: refresh media for chapter so that we can route directly without a page reload
       );
-      // goto(`/${$page.params.version}/${$page.params.bookId}/${$page.params.reference}`);
+    // goto(`/${$page.params.version}/${$page.params.bookId}/${$page.params.reference}`);
     } catch (err) {
       alert(`Error saving video: ${err}`);
     }
+    // eslint-disable-next-line require-atomic-updates
     saving = false;
   }
 </script>
@@ -44,7 +45,7 @@
   <div class="relative rounded-md shadow-sm overflow-hidden">
     <div
       class="absolute inset-y-0 left-0 pl-3 flex items-center
-      pointer-events-none">
+        pointer-events-none">
       <span class="text-gray-500 sm:text-sm sm:leading-5">Video ID</span>
     </div>
     <input
@@ -54,10 +55,10 @@
       class="form-input block w-full pl-18 pr-12 sm:text-sm sm:leading-5"
       placeholder="Paste from VIMEO" />
     <div class="absolute inset-y-0 right-0 flex items-center">
-      <button
+      <button type="button"
         class="{(!videoId || saving) && 'opacity-50 cursor-not-allowed'} h-full
-        py-0 px-3 border-transparent bg-black text-white text-sm leading-5
-        font-semibold"
+          py-0 px-3 border-transparent bg-black text-white text-sm leading-5
+          font-semibold"
         disabled={!videoId || saving}
         on:click={saveVideo}>
         {saving ? 'SAVING' : 'SAVE'}

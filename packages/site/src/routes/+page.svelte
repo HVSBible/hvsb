@@ -9,18 +9,18 @@
 
   onMount(() => {
     const storedVersion = localStorage.getItem('currentVersion');
-    if (storedVersion) {
+    if (storedVersion)
       currentVersion = storedVersion;
-    }
+
     const storedBook = localStorage.getItem('currentBook');
-    if (storedBook) {
+    if (storedBook)
       currentBook = storedBook;
-    }
+
     const storedChapter = localStorage.getItem('currentChapter');
-    if (storedChapter) {
+    if (storedChapter)
       currentChapter = storedChapter;
-    }
-    // would be nice to preload (`/${currentVersion}/${currentBook}/${currentChapter}`);
+
+  // would be nice to preload (`/${currentVersion}/${currentBook}/${currentChapter}`);
   });
 
   import Header from '$lib/components/shell/Header.svelte';
@@ -39,7 +39,7 @@
 
 <div
   class="relative pt-16 pb-16 sm:pb-32 flex content-center items-center
-        justify-center"
+    justify-center"
   style="min-height: 75vh;">
   <div class="absolute top-0 w-full h-full">
     <img
@@ -55,9 +55,9 @@
       Bible.
     </p>
     <a
-      
+
       class="py-3 sm:py-4 px-4 sm:px-6 text-xl sm:text-3xl rounded bg-white
-            text-gray-900 font-semibold inline-block hover:bg-gray-200"
+        text-gray-900 font-semibold inline-block hover:bg-gray-200"
       href={`/${currentVersion}/${currentBook}/${currentChapter}`}>
       {currentBook === 'MAT' && currentChapter == '1' ? 'Begin Reading' : 'Resume Reading'}
     </a>
@@ -82,12 +82,12 @@
       <div class="md:pt-6 w-full md:w-4/12 px-4 text-center">
         <div
           class="relative flex flex-col min-w-0 break-words bg-white w-full
-              mb-8 shadow-lg rounded-lg">
+            mb-8 shadow-lg rounded-lg">
           <div class="px-4 py-5 flex-auto">
             <div
               class="text-white p-3 text-center inline-flex items-center
-                  justify-center w-12 h-12 mb-5 shadow-lg rounded-full
-                  bg-red-400">
+                justify-center w-12 h-12 mb-5 shadow-lg rounded-full
+                bg-red-400">
               <i class="fas fa-user" />
             </div>
             <h6 class="text-xl font-semibold">Biographies</h6>
@@ -101,12 +101,12 @@
       <div class="md:pt-6 w-full md:w-4/12 px-4 text-center">
         <div
           class="relative flex flex-col min-w-0 break-words bg-white w-full
-              mb-8 shadow-lg rounded-lg">
+            mb-8 shadow-lg rounded-lg">
           <div class="px-4 py-5 flex-auto">
             <div
               class="text-white p-3 text-center inline-flex items-center
-                  justify-center w-12 h-12 mb-5 shadow-lg rounded-full
-                  bg-primary-400">
+                justify-center w-12 h-12 mb-5 shadow-lg rounded-full
+                bg-primary-400">
               <i class="far fa-handshake" />
             </div>
             <h6 class="text-xl font-semibold">Customs & Culture</h6>
@@ -120,12 +120,12 @@
       <div class="md:pt-6 w-full md:w-4/12 px-4 text-center">
         <div
           class="relative flex flex-col min-w-0 break-words bg-white w-full
-              mb-8 shadow-lg rounded-lg">
+            mb-8 shadow-lg rounded-lg">
           <div class="px-4 py-5 flex-auto">
             <div
               class="text-white p-3 text-center inline-flex items-center
-                  justify-center w-12 h-12 mb-5 shadow-lg rounded-full
-                  bg-green-400">
+                justify-center w-12 h-12 mb-5 shadow-lg rounded-full
+                bg-green-400">
               <i class="fas fa-question" />
             </div>
             <h6 class="text-xl font-semibold">Theological Issues</h6>
@@ -140,7 +140,7 @@
       <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
         <div
           class="text-gray-600 p-3 text-center inline-flex items-center
-              justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
+            justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
           <i class="fas fa-columns text-xl" />
         </div>
         <h3 class="text-3xl mb-2 font-semibold leading-normal">Parallel Learning</h3>
@@ -157,7 +157,7 @@
       <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
         <div
           class="relative flex flex-col min-w-0 break-words w-full my-6
-              shadow-lg rounded-lg bg-primary-600">
+            shadow-lg rounded-lg bg-primary-600">
           <img
             src="https://res.cloudinary.com/hvsb/image/upload/w_800/v1584228078/home/side-by-side-matt1_wltivk.jpg"
             alt="View study resources beside the text"
@@ -193,8 +193,8 @@
                 <div>
                   <span
                     class="text-xs font-semibold inline-block py-1 px-2
-                        uppercase rounded-full text-primary-600 shadow
-                        bg-gray-100 mr-3">
+                      uppercase rounded-full text-primary-600 shadow
+                      bg-gray-100 mr-3">
                     <i class="fas fa-image" />
                   </span>
                 </div>
@@ -208,8 +208,8 @@
                 <div>
                   <span
                     class="text-xs font-semibold inline-block py-1 px-2
-                        uppercase rounded-full text-primary-600 shadow
-                        bg-gray-100 mr-3">
+                      uppercase rounded-full text-primary-600 shadow
+                      bg-gray-100 mr-3">
                     <i class="far fa-file-alt" />
                   </span>
                 </div>
@@ -223,8 +223,8 @@
                 <div>
                   <span
                     class="text-xs font-semibold inline-block py-1 px-2
-                        uppercase rounded-full text-primary-600 shadow
-                        bg-gray-100 mr-3">
+                      uppercase rounded-full text-primary-600 shadow
+                      bg-gray-100 mr-3">
                     <i class="fas fa-table" />
                   </span>
                 </div>
@@ -238,8 +238,8 @@
                 <div>
                   <span
                     class="text-xs font-semibold inline-block py-1 px-2
-                        uppercase rounded-full text-primary-600 shadow
-                        bg-gray-100 mr-3">
+                      uppercase rounded-full text-primary-600 shadow
+                      bg-gray-100 mr-3">
                     <i class="fas fa-globe-europe" />
                   </span>
                 </div>
@@ -253,8 +253,8 @@
                 <div>
                   <span
                     class="text-xs font-semibold inline-block py-1 px-2
-                        uppercase rounded-full text-primary-600 shadow
-                        bg-gray-100 mr-3">
+                      uppercase rounded-full text-primary-600 shadow
+                      bg-gray-100 mr-3">
                     <i class="fas fa-play" />
                   </span>
                 </div>
@@ -281,7 +281,7 @@
 <section class="relative py-20">
   <div
     class="bottom-auto top-0 left-0 right-0 w-full absolute
-        pointer-events-none overflow-hidden -mt-20"
+      pointer-events-none overflow-hidden -mt-20"
     style="height: 80px; transform: translateZ(0px);">
     <svg
       class="absolute bottom-0 overflow-hidden"
@@ -367,7 +367,7 @@
         title="Veritas International University"
         src="https://res.cloudinary.com/hvsb/image/upload/h_240/v1596552719/friends/VIU2_300dpi_aupwuo.jpg"
         description="Evangelical university committed to the study of Scripture, apologetics, and
-        biblical archaeology" />
+          biblical archaeology" />
       <Friend
         href="https://tutkutours.com/"
         title="Tutku Tours"
@@ -380,7 +380,7 @@
 <section class="pb-20 relative block bg-gray-900">
   <div
     class="bottom-auto top-0 left-0 right-0 w-full absolute
-        pointer-events-none overflow-hidden -mt-20"
+      pointer-events-none overflow-hidden -mt-20"
     style="height: 80px; transform: translateZ(0px);">
     <svg
       class="absolute bottom-0 overflow-hidden"
@@ -429,7 +429,7 @@
 <footer class="relative bg-gray-300 pt-8 pb-6">
   <div
     class="bottom-auto top-0 left-0 right-0 w-full absolute
-        pointer-events-none overflow-hidden -mt-20"
+      pointer-events-none overflow-hidden -mt-20"
     style="height: 80px; transform: translateZ(0px);">
     <svg
       class="absolute bottom-0 overflow-hidden"
@@ -454,7 +454,7 @@
           America, but we will also be looking to have the study Bible translated into many other
           languages. So many people around the world could greatly benefit from this tool, and we
           are so excited about this expansion. God has truly opened doors to spread His Word to
-          many, many more people through the HVSB. 
+          many, many more people through the HVSB.
           <!-- If you would like to help us accomplish this
           goal, please consider making a donation. Thank you and God bless! -->
         </h5>

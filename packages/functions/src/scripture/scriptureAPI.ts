@@ -10,9 +10,9 @@ export default async (data: any, context: functions.https.CallableContext) => {
   console.log(chapter);
 
   console.log(data.version);
-  if (data.verse) {
+  if (data.verse)
     return `${data.bookId}.${data.chapter}.${data.verse}`;
-  } else {
-    return `${data.bookId}.${data.chapter}`;
-  }
+
+  return `${data.bookId}.${data.chapter}`;
+
 };

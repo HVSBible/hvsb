@@ -21,9 +21,9 @@ export const addToIndex = async (
   const objectID = snapshot.id;
   console.log(`adding ${objectID} to Algolia index`);
   const media = await prepareDataForIndex(snapshot.data() as IDocument | IImage);
-  if (projectId === 'hvsb-prod') {
+  if (projectId === 'hvsb-prod')
     await prodIndex.saveObject({ ...media, objectID });
-  }
+
   return true;
 };
 
@@ -34,9 +34,9 @@ export const updateIndex = async (
   const objectID = change.after.id;
   console.log(`updating ${objectID} in Algolia index`);
   const media = await prepareDataForIndex(change.after.data() as IDocument | IImage);
-  if (projectId === 'hvsb-prod') {
+  if (projectId === 'hvsb-prod')
     await prodIndex.saveObject({ ...media, objectID });
-  }
+
   return true;
 };
 
@@ -45,8 +45,8 @@ export const deleteFromIndex = async (
   context: functions.EventContext
 ) => {
   console.log(`deleting ${snapshot.id} from Algolia index`);
-  if (projectId === 'hvsb-prod') {
+  if (projectId === 'hvsb-prod')
     await prodIndex.deleteObject(snapshot.id);
-  }
+
   return true;
 };

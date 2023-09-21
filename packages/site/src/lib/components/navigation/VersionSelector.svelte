@@ -7,7 +7,6 @@
 
 <div class="mt-6">
   <!-- <label for="version" class="block text-sm leading-5 font-medium text-gray-700">Version</label> -->
-  <!-- svelte-ignore a11y-no-onchange -->
   <select
     value={version}
     on:change={(e) => {
@@ -20,7 +19,7 @@
     {#each bibles as bible}
       {#if bible.supported || $admin}
         <option value={bible.abbreviation}
-          >{bible.name} {!bible.supported && $admin ? '(admin-only)' : ''}</option>
+        >{bible.name} {!bible.supported && $admin ? '(admin-only)' : ''}</option>
       {/if}
     {/each}
   </select>

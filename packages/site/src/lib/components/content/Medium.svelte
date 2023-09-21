@@ -23,12 +23,12 @@
 
   async function share() {
     let shareText = 'I want you to watch this video from the House Visual Study Bible:';
-    if (data.type === 'document') {
+    if (data.type === 'document')
       shareText = 'I want you to read this article on the House Visual Study Bible:';
-    }
-    if (data.type === 'image') {
+
+    if (data.type === 'image')
       shareText = 'Check out this study image on the House Visual Study Bible:';
-    }
+
     if (navigator.share) {
       const shareData = {
         title: `${data.type === 'video' ? 'Watch' : 'Learn'} on the House Visual Study Bible`,
@@ -96,8 +96,8 @@
 
     <button
       class="hover:bg-primary-500 text-primary-700 hover:text-white btn rounded
-      px-4 py-2 font-bold hover:shadow text-sm focus:outline-none
-      focus:border-primary-700 focus:ring-primary-500 uppercase leading-6"
+        px-4 py-2 font-bold hover:shadow text-sm focus:outline-none
+        focus:border-primary-700 focus:ring-primary-500 uppercase leading-6"
       type="button"
       on:click={share}>
       <span class="hidden md:inline mr-1">Share</span>
@@ -108,8 +108,8 @@
     <h2 class="font-xl font-semibold mr-auto">{title}</h2>
     <button
       class="hover:bg-primary-500 text-primary-700 hover:text-white btn rounded
-      px-4 py-2 font-bold hover:shadow text-sm focus:outline-none
-      focus:border-primary-700 focus:ring-primary-500 uppercase leading-6"
+        px-4 py-2 font-bold hover:shadow text-sm focus:outline-none
+        focus:border-primary-700 focus:ring-primary-500 uppercase leading-6"
       type="button"
       on:click={share}>
       <i class="fas fa-share-alt" />

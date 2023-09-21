@@ -6,17 +6,17 @@ import { STORAGE_PATH_URL_PARAM } from './constant';
 
 export const GET: RequestHandler = async ({ url }) => {
   const storage_path = url.searchParams.get(STORAGE_PATH_URL_PARAM);
-  if (!storage_path) {
+  if (!storage_path)
     throw error(400, 'must include storage path of photo');
-  }
+
   const gcs_path = await get_image_serving_url(storage_path);
   return new Response(gcs_path);
 };
 
 async function get_image_serving_url(storagePath: string): Promise<string> {
   const image_processing_url = `${PROCESS_IMAGE_URL}/${firebaseConfig.storageBucket
-    }/${storagePath}`;
-  console.log({ image_processing_url })
+  }/${storagePath}`;
+  console.info({ image_processing_url })
 
   const response = await fetch(image_processing_url);
   const url = await response.text();

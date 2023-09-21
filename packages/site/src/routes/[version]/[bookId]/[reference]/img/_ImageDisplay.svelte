@@ -23,9 +23,9 @@
         );
       }
       versesString = versesString.concat(v.toString());
-      if (i != currentVerses.length - 1) {
+      if (i != currentVerses.length - 1)
         versesString = versesString.concat(', ');
-      }
+
     });
     return versesString;
   }

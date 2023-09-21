@@ -1,8 +1,8 @@
 export function getCookie(name: string, cookies?) {
   if (cookies == null) {
-    if (typeof window === 'undefined') {
+    if (typeof window === 'undefined')
       return undefined;
-    }
+
     cookies = document.cookie;
   }
 
@@ -17,9 +17,9 @@ export function getCookie(name: string, cookies?) {
 }
 
 export function setCookie(name: string, value, options: any = {}) {
-  if (options.expires instanceof Date) {
+  if (options.expires instanceof Date)
     options.expires = options.expires.toUTCString();
-  }
+
 
   const updatedCookie = {
     [encodeURIComponent(name)]: encodeURIComponent(value),

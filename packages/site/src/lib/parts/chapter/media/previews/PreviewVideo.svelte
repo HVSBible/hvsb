@@ -13,12 +13,12 @@
 <a
   href={href ||
     `WEB/${video.chapterIds[0].split('.')[0]}/${video.chapterIds[0].split('.')[1]}/vid/${video.id}`}
-  
+
   data-sveltekit-noscroll
   class:ml-4={!video.verseIds}
   class:sm:ml-6={!video.verseIds}
   class="hover:bg-gray-200 shadow overflow-hidden rounded-sm flex
-  items-stretch text-left min-h-75px">
+    items-stretch text-left min-h-75px">
   {#if video.uri}
     <div class="media-block bg-gray-500 relative">
       <img
@@ -27,7 +27,7 @@
         src={video.pictures.sizes[1].link.replace('?r=pad', '')} />
       <div
         class="absolute top-0 right-0 bottom-0 left-0 flex items-center
-        justify-center">
+          justify-center">
         <i class="fas fa-play fa-2x text-white" />
       </div>
     </div>
@@ -48,7 +48,7 @@
           <button
             on:click|preventDefault|once={() => dispatch('deleteVideo', video.id)}
             class="cursor-pointer rounded leading-tight font-medium text-red-600
-            hover:text-red-800 ml-auto px-2 py-1 bg-red-100 mr-2">
+              hover:text-red-800 ml-auto px-2 py-1 bg-red-100 mr-2">
             <i class="fas fa-trash" />
             <i class="fas fa-key" />
           </button>
@@ -62,7 +62,7 @@
         <div style="background: lightgray; width: 75px; height: 75px;" />
         <div
           class="absolute top-0 right-0 bottom-0 left-0 flex items-center
-          justify-center">
+            justify-center">
           <i class="fas fa-play fa-2x text-white" />
         </div>
       </div>
@@ -75,7 +75,7 @@
           {#if video.currentVerses}
             <span
               class="px-2 py-1 leading-tight bg-gray-200 rounded text-sm
-            font-medium">
+                font-medium">
               {video.currentVerses.length > 1 ? 'vv' : 'v'}
               {#each video.currentVerses as verse, i}
                 {#if i === video.currentVerses.length - 1}
@@ -86,7 +86,7 @@
           {:else}
             {#each video.verseIds as verseId}
               <a
-                
+
                 data-sveltekit-noscroll
                 href={href ||
                   `WEB/${verseId.split('.')[0]}/${verseId.split('.')[1]}/vid/${video.id}`}
@@ -106,7 +106,7 @@
           src={data.pictures.sizes[1].link.replace('?r=pad', '')} />
         <div
           class="absolute top-0 right-0 bottom-0 left-0 flex items-center
-          justify-center">
+            justify-center">
           <i class="fas fa-play fa-2x text-white" />
         </div>
       </div>
@@ -122,7 +122,7 @@
             <button
               on:click|preventDefault|once={() => dispatch('deleteVideo', video.id)}
               class="cursor-pointer rounded leading-tight font-medium
-              text-red-600 hover:text-red-800 ml-auto px-2 py-1 bg-red-100 mr-2">
+                text-red-600 hover:text-red-800 ml-auto px-2 py-1 bg-red-100 mr-2">
               <i class="fas fa-trash" />
               <i class="fas fa-key" />
             </button>
@@ -131,7 +131,7 @@
             {#if video.currentVerses}
               <span
                 class="px-2 py-1 leading-tight bg-gray-200 rounded text-sm
-            font-medium">
+                  font-medium">
                 {video.currentVerses.length > 1 ? 'vv' : 'v'}
                 {#each video.currentVerses as verse, i}
                   {#if i === video.currentVerses.length - 1}
@@ -142,7 +142,7 @@
             {:else}
               {#each video.verseIds as verseId}
                 <a
-                  
+
                   data-sveltekit-noscroll
                   href={href ||
                     `WEB/${verseId.split('.')[0]}/${verseId.split('.')[1]}/vid/${video.id}`}

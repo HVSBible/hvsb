@@ -26,9 +26,9 @@
         );
       }
       versesString = versesString.concat(v.toString());
-      if (i != currentVerses.length - 1) {
+      if (i != currentVerses.length - 1)
         versesString = versesString.concat(', ');
-      }
+
     });
     return versesString;
   }
@@ -109,7 +109,7 @@
       <a
         data-sveltekit-noscroll
         class="font-medium px-3 py-2 hover:bg-gray-200 text-primary-700 rounded
-      border border-primary-700"
+          border border-primary-700"
         href="/{$page.params.version}/{$page.params.bookId}/{$page.params.reference}/doc/{data
           .document.id}/edit">
         Edit
@@ -123,7 +123,7 @@
     <a
       data-sveltekit-noscroll
       class="font-medium px-3 py-2 hover:bg-gray-200 text-primary-700 rounded
-      border border-primary-700"
+        border border-primary-700"
       href="/{$page.params.version}/{$page.params.bookId}/{$page.params.reference}/doc/{data
         .document.id}/translate">
       Translate to {LanguageMappings[translatorLanguage]}

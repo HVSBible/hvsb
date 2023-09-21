@@ -8,12 +8,12 @@
       // to keep element from being added to screenshot, add: `data-html2canvas-ignore` to the element
       // @ts-ignore
       html2canvas(document.body).then((canvas) => {
-        console.log(canvas.toDataURL());
+        console.info(canvas.toDataURL());
         const link = document.createElement('a');
         link.download = 'filename.png';
         link.href = canvas.toDataURL();
         link.click();
-        // document.body.appendChild(canvas);
+      // document.body.appendChild(canvas);
         // if needing help saving image to database, look at `dataURLtoBlob(dataurl)` in athletic-app\src\app\_common\services\media-upload\media-upload.service.ts
       });
     };

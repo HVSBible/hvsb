@@ -7,10 +7,10 @@
 
   import { fly } from 'svelte/transition';
   let open = false;
-  
+
   // @ts-ignore
   $: user = $userStore || ($authState === undefined && $page.data?.user) || null;
-  // only use page data set from the cookie before authState has been inited so that when a user logs out, the user value here doesn't fall back to the page data  value initially set by the cookie. Even though the cookie is cleared on logout, the page data is not updated.
+// only use page data set from the cookie before authState has been inited so that when a user logs out, the user value here doesn't fall back to the page data  value initially set by the cookie. Even though the cookie is cleared on logout, the page data is not updated.
 </script>
 
 {#if user}
@@ -40,7 +40,7 @@
       <div
         transition:fly={{ y: -10, duration: 150 }}
         class="origin-top-right absolute z-10 right-0 mt-2 -mr-1 w-48 rounded-md
-        shadow-lg">
+          shadow-lg">
         <div class="py-1 rounded-md bg-white shadow-sm" on:click={() => (open = !open)}>
           <div class="px-4 py-2 text-xs font-semibold text-gray-600 border-b">
             {user.displayName}
@@ -64,7 +64,7 @@
                 });
               }}
               class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100
-            ">
+              ">
               Demote to regular user
               <i class="fas fa-key" />
             </button>
@@ -105,7 +105,7 @@
                 });
               }}
               class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100
-            ">
+              ">
               Return to Admin Role
               <i class="fas fa-key" />
             </button>
@@ -116,15 +116,15 @@
             ">
             Account Details
           </a>
-          <button
+          <button type="button"
             on:click={logOut}
             class="block w-full text-left px-4 py-2 text-sm text-gray-700
-            hover:bg-gray-100 
-            focus:outline-none">
+              hover:bg-gray-100
+              focus:outline-none">
             Sign Out
           </button>
           {#if firebaseConfig.projectId === 'hvsb-dev'}
-            <button
+            <button type="button"
               on:click={async () => {
                 const roleNumber = +prompt('Enter 0, 1, or 2');
                 const { getFunctions, httpsCallable } = await import('firebase/functions');
@@ -137,8 +137,8 @@
                 });
               }}
               class="block w-full text-left px-4 py-2 text-sm text-gray-700
-          hover:bg-gray-100 
-          focus:outline-none">
+                hover:bg-gray-100
+                focus:outline-none">
               Set Admin Role Level (dev only)
             </button>
           {/if}
@@ -151,7 +151,7 @@
     <button
       type="button"
       class="text-gray-700 hover:bg-gray-200 md:mr-2 py-2 px-3 ml-2 rounded bg-transparent font-semibold hover:text-black
-    print:hidden"
+        print:hidden"
       on:click={toggle}>
       <i class="fas fa-sign-in-alt" />
       <span class="ml-1 hidden sm:inline">Sign In</span>

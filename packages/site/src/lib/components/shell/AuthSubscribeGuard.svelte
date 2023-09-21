@@ -7,16 +7,16 @@
   beforeNavigate(({ to, cancel }) => {
     if (
       to &&
-      (to.url.pathname.includes('img') || to.url.pathname.includes('doc') || to.url.pathname.includes('vid'))
+        (to.url.pathname.includes('img') || to.url.pathname.includes('doc') || to.url.pathname.includes('vid'))
     ) {
       if (!$user) {
         modal = 'auth';
         cancel();
       } else if (
         !$admin && !contributor &&
-        $page.params.reference &&
-        +$page.params.reference > 1 &&
-        !isSubscriber($user)
+          $page.params.reference &&
+          +$page.params.reference > 1 &&
+          !isSubscriber($user)
       ) {
         modal = 'subscribe';
         cancel();

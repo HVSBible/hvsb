@@ -8,17 +8,17 @@ export const admin = derived(user, ($user: IUser) => {
 });
 
 export const contributor = derived(user, ($user: IUser) => {
-  if ($user?.roles?.contributor) {
+  if ($user?.roles?.contributor)
     return true;
-  } else {
-    return false;
-  }
+
+  return false;
+
 });
 
 export const translator = derived(user, ($user: IUser) => {
-  if ($user?.roles?.translator) {
+  if ($user?.roles?.translator)
     return $user.roles.translator;
-  }
+
 });
 
 // On an article, show a "Translate" button if $translator === true, and then show appropriate language to let them translate by checking language value of $translator

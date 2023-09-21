@@ -59,10 +59,10 @@ export const getOrCreateCustomer = async (uid: string) => {
   if (!customerId) {
     console.log('no customerId found - going to create');
     return createCustomer(user);
-  } else {
-    console.log('Using customerId to retrieve customer from Stripe');
-    return stripe.customers.retrieve(customerId);
   }
+  console.log('Using customerId to retrieve customer from Stripe');
+  return stripe.customers.retrieve(customerId);
+
 };
 
 /////// DEPLOYABLE FUNCTIONS ////////

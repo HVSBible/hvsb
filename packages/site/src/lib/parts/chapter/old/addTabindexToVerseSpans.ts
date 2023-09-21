@@ -1,7 +1,7 @@
 export function addTabindexToVerseSpans(html: string): string {
-  if (html) {
+  if (html)
     return html.replace(/class="verse-span"/g, 'class="verse-span" tabindex="0"');
-  }
+
   return '';
 }
 

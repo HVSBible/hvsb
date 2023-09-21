@@ -17,7 +17,7 @@
   class:ml-4={!document.published}
   class:sm:ml-6={!document.published}
   class="hover:bg-gray-200 shadow overflow-hidden rounded-sm flex
-  items-stretch text-left min-h-75px">
+    items-stretch text-left min-h-75px">
   <div class="media-block">
     <DocGenreThumb fillBackground genre={document.genre} />
   </div>
@@ -35,7 +35,7 @@
         {#if !document.published}
           <span
             class="px-2 py-1 leading-tight bg-orange-200 rounded text-orange-600 text-xs font-medium"
-            >Unpublished</span>
+          >Unpublished</span>
         {/if}
       </div>
       {#if !adminPanel && document.currentVerses}

@@ -27,9 +27,9 @@
         <RefinementTabs {search} attribute="type" />
         <a
           href={previousUrl || '.'}
-          
+
           class="px-3 py-2 text-lg text-gray-600 hover:text-gray-900 ml-auto"
-          ><i class="fas fa-times" /></a>
+        ><i class="fas fa-times" /></a>
       </nav>
       <SearchBox placeholder="Search Media" {search} on:showFilterMenu={toggle} />
     </div>
@@ -86,11 +86,11 @@
           on:click={toggle} />
       {/if}
       <section
-        class="flex flex-shrink-0 flex-col self-start 
-      transform translate-x-full transition-transform ease-in-out duration-300
-      fixed inset-y-0 right-0 p-4 z-20 overflow-y-auto w-64 
-      bg-white shadow-xl
-      md:w-52 md:ml-3 md:sticky md:z-auto md:p-0 md:shadow-none md:transform-none md:top-[106px] md:max-h-[calc(100vh-118px)]"
+        class="flex flex-shrink-0 flex-col self-start
+          transform translate-x-full transition-transform ease-in-out duration-300
+          fixed inset-y-0 right-0 p-4 z-20 overflow-y-auto w-64
+          bg-white shadow-xl
+          md:w-52 md:ml-3 md:sticky md:z-auto md:p-0 md:shadow-none md:transform-none md:top-[106px] md:max-h-[calc(100vh-118px)]"
         class:translate-x-0={showMobileFilters}>
         <div class="flex items-center justify-between space-x-3 md:pl-1">
           <h2 class="text-lg leading-7 font-medium text-gray-900 mb-2">Filters</h2>

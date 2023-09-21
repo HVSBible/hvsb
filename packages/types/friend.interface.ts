@@ -1,4 +1,4 @@
-import type { IFirestoreMetaData } from 'sveltefirets';;
+import type { IFirestoreMetaData } from 'sveltefirets';
 
 export interface IFriend extends IFirestoreMetaData {
   title: string;

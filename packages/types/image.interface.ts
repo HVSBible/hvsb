@@ -42,15 +42,15 @@ export enum ImageGenres {
   site = 'Site Study',
   biography = 'Biography',
   scenery = 'Scenery & Landscape',
-  character = 'Bible Character', 
-  story = 'Bible Story', 
-  culture = 'Culture & Life', 
-  structure = 'Structure', 
-  
+  character = 'Bible Character',
+  story = 'Bible Story',
+  culture = 'Culture & Life',
+  structure = 'Structure',
+
   // TODO: refactor to image.displayMedium
-  artwork = 'Artwork', 
+  artwork = 'Artwork',
   chart = 'Chart',
-  photograph = 'Photograph',  
+  photograph = 'Photograph',
   drawing = 'Drawing',
   painting = 'Painting',
   map = 'Map',

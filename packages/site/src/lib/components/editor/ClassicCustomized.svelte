@@ -1,9 +1,7 @@
 <script lang="ts">
   import CKEditor from './CKEditor.svelte';
-  import { createEventDispatcher, onMount } from 'svelte';
-  import type { Editor } from '@ckeditor/ckeditor5-core';
   import type { EditorConfig } from '@ckeditor/ckeditor5-core/src/editor/editorconfig';
-  
+
   export let html: string;
   export let editorConfig: EditorConfig = {
     // TODO: figure out which plugins to remove related to photos to speed up
@@ -31,17 +29,12 @@
     ],
   };
 
-  let editor: typeof Editor;
-
-  const dispatch = createEventDispatcher<{
-    update: string;
-  }>();
-
-  onMount(async () => {
-    editor = (await import('ckeditor5-build-classic-with-alignment-underline-smallcaps')).default;
-  });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  interface $$Events {
+    update: CustomEvent<string>;
+  }
 </script>
 
-{#if editor}
+{#await import('ckeditor5-build-classic-with-alignment-underline-smallcaps') then editor}
   <CKEditor {editor} value={html} {editorConfig} on:update />
-{/if}
+{/await}

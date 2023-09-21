@@ -1,11 +1,11 @@
-import { findChapterVerseReferences, findReferencesInParagraph, getBookIndexes, getBookNameLocations, getChapterIndexes, getVerseRangeIndexes } from "./parseReferences";
+import { findChapterVerseReferences, findReferencesInParagraph, getBookIndexes, getBookNameLocations, getChapterIndexes, getVerseRangeIndexes } from './parseReferences';
 
 describe('findReferencesInParagraph', () => {
   test('parses simple reference by itself', () => {
     expect(findReferencesInParagraph('Genesis 1:1')).toEqual([{
       bookId: 'GEN',
       chapter: 1,
-      verseRange: "1",
+      verseRange: '1',
       start: 0,
       end: 11,
       text: 'Genesis 1:1',
@@ -32,20 +32,20 @@ describe('findReferencesInParagraph', () => {
   test('does not parse ranges spanning chapters', () => {
     expect(findReferencesInParagraph('Genesis 1:1 - Genesis 2:1')).toEqual([
       {
-        bookId: "GEN",
+        bookId: 'GEN',
         chapter: 1,
         end: 11,
         start: 0,
-        text: "Genesis 1:1",
-        verseRange: "1",
+        text: 'Genesis 1:1',
+        verseRange: '1',
       },
       {
-        bookId: "GEN",
+        bookId: 'GEN',
         chapter: 2,
         end: 25,
         start: 14,
-        text: "Genesis 2:1",
-        verseRange: "1",
+        text: 'Genesis 2:1',
+        verseRange: '1',
       },
     ]);
   });
@@ -69,28 +69,28 @@ describe('findReferencesInParagraph', () => {
   test('handles a conversational prose sentence with references', () => {
     expect(findReferencesInParagraph('If you go and read Gen 3:1-2, and 5:7-8, 12 then you will see 12 disciples.')).toEqual([
       {
-        "bookId": "GEN",
-        "chapter": 3,
-        "end": 28,
-        "start": 19,
-        "text": "Gen 3:1-2",
-        "verseRange": "1-2",
+        'bookId': 'GEN',
+        'chapter': 3,
+        'end': 28,
+        'start': 19,
+        'text': 'Gen 3:1-2',
+        'verseRange': '1-2',
       },
       {
-        "bookId": "GEN",
-        "chapter": 5,
-        "end": 39,
-        "start": 34,
-        "text": "5:7-8",
-        "verseRange": "7-8",
+        'bookId': 'GEN',
+        'chapter': 5,
+        'end': 39,
+        'start': 34,
+        'text': '5:7-8',
+        'verseRange': '7-8',
       },
       {
-        "bookId": "GEN",
-        "chapter": 5,
-        "end": 43,
-        "start": 41,
-        "text": "12",
-        "verseRange": "12",
+        'bookId': 'GEN',
+        'chapter': 5,
+        'end': 43,
+        'start': 41,
+        'text': '12',
+        'verseRange': '12',
       },
     ]);
   });
@@ -112,39 +112,39 @@ describe('findReferencesInParagraph', () => {
     const redundantChapter = `Acts 10:1-10:48`
     expect(findReferencesInParagraph(redundantChapter)).toEqual([
       {
-        "bookId": "ACT",
-        "chapter": 10,
-        "end": 9,
-        "start": 0,
-        "text": "Acts 10:1",
-        "verseRange": "1",
+        'bookId': 'ACT',
+        'chapter': 10,
+        'end': 9,
+        'start': 0,
+        'text': 'Acts 10:1',
+        'verseRange': '1',
       },
       {
-        "bookId": "ACT",
-        "chapter": 10,
-        "end": 15,
-        "start": 10,
-        "text": "10:48",
-        "verseRange": "48",
+        'bookId': 'ACT',
+        'chapter': 10,
+        'end': 15,
+        'start': 10,
+        'text': '10:48',
+        'verseRange': '48',
       },
     ]);
     const chapterRange = `Acts 10:1-11:20`
     expect(findReferencesInParagraph(chapterRange)).toEqual([
       {
-        "bookId": "ACT",
-        "chapter": 10,
-        "end": 9,
-        "start": 0,
-        "text": "Acts 10:1",
-        "verseRange": "1",
+        'bookId': 'ACT',
+        'chapter': 10,
+        'end': 9,
+        'start': 0,
+        'text': 'Acts 10:1',
+        'verseRange': '1',
       },
       {
-        "bookId": "ACT",
-        "chapter": 11,
-        "end": 15,
-        "start": 10,
-        "text": "11:20",
-        "verseRange": "20",
+        'bookId': 'ACT',
+        'chapter': 11,
+        'end': 15,
+        'start': 10,
+        'text': '11:20',
+        'verseRange': '20',
       },
     ]);
   })
@@ -158,19 +158,19 @@ describe('findReferencesInParagraph', () => {
     expect(findReferencesInParagraph('Remember what we see in Luke 16:10: 20 men! Then we also find in 17:5: 40 men!')).toEqual([{
       bookId: 'LUK',
       chapter: 16,
-      verseRange: "10",
+      verseRange: '10',
       start: 24,
       end: 34,
       text: 'Luke 16:10',
     }]);
-    
+
     expect(findReferencesInParagraph('important article on John 15:2-6: "Viticulture"...')).toEqual([{
-      "bookId": "JHN",
-      "chapter": 15,
-      "start": 21,
-      "end": 32,
-      "text": "John 15:2-6",
-      "verseRange": "2-6",
+      'bookId': 'JHN',
+      'chapter': 15,
+      'start': 21,
+      'end': 32,
+      'text': 'John 15:2-6',
+      'verseRange': '2-6',
     }]);
   });
 });
@@ -200,7 +200,7 @@ describe('findChapterVerseReferences', () => {
     expect(findChapterVerseReferences('Genesis 1:1', 'Genesis')).toEqual([{
       text: 'Genesis 1:1',
       chapter: 1,
-      verseRange: "1",
+      verseRange: '1',
       start: 0,
       end: 11,
     }]);
@@ -260,21 +260,21 @@ describe('findChapterVerseReferences', () => {
       {
         text: 'Gen. 1:1',
         chapter: 1,
-        verseRange: "1",
+        verseRange: '1',
         start: 0,
         end: 8,
       },
       {
         text: '2:3',
         chapter: 2,
-        verseRange: "3",
+        verseRange: '3',
         start: 10,
         end: 13,
       },
       {
         text: '4:5-7',
         chapter: 4,
-        verseRange: "5-7",
+        verseRange: '5-7',
         start: 19,
         end: 24,
       },
@@ -299,7 +299,7 @@ describe('findChapterVerseReferences', () => {
     expect(findChapterVerseReferences('Phlm 6', 'Phlm')).toEqual([{
       text: 'Phlm 6',
       chapter: 1,
-      verseRange: "6",
+      verseRange: '6',
       start: 0,
       end: 6,
     }]);
@@ -311,19 +311,19 @@ describe('getBookIndexes', () => {
     expect(getBookIndexes('Gen 1:1', 'Gen')).toEqual([{
       start: 0,
       end: 3,
-      text: "Gen",
+      text: 'Gen',
     }]);
     expect(getBookIndexes('This is Genesis 1:1', 'Genesis')).toEqual([{
       start: 8,
       end: 15,
-      text: "Genesis",
+      text: 'Genesis',
     }]);
   });
   test('handles period after abbreviated book name', () => {
     expect(getBookIndexes('Matt. 5:2', 'Matt')).toEqual([{
       start: 0,
       end: 4,
-      text: "Matt",
+      text: 'Matt',
     }]);
   });
 });
@@ -332,30 +332,30 @@ describe('getChapterIndexes', () => {
   test('handles chapter and verse anywhere', () => {
     expect(getChapterIndexes('Gen. 2:3 and 14:2, 5', 'Gen')).toEqual([
       {
-        "start": 5,
-        "end": 6,
-        "text": "2",
+        'start': 5,
+        'end': 6,
+        'text': '2',
       },
       {
-        "start": 13,
-        "end": 15,
-        "text": "14",
+        'start': 13,
+        'end': 15,
+        'text': '14',
       },
     ]);
   });
   test('handles just chapter immediately at beginning, after space or period and space', () => {
     expect(getChapterIndexes('Gen 2 is a place to read...', 'Gen')).toEqual([
       {
-        "start": 4,
-        "end": 5,
-        "text": "2",
+        'start': 4,
+        'end': 5,
+        'text': '2',
       },
     ]);
     expect(getChapterIndexes('Gen. 2.', 'Gen')).toEqual([
       {
-        "start": 5,
-        "end": 6,
-        "text": "2",
+        'start': 5,
+        'end': 6,
+        'text': '2',
       },
     ]);
   });
@@ -368,9 +368,9 @@ describe('getVerseRangeIndexes', () => {
   test('captures verse number at beginning of string', () => {
     expect(getVerseRangeIndexes('3 and ')).toEqual([
       {
-        "end": 1,
-        "start": 0,
-        "text": "3",
+        'end': 1,
+        'start': 0,
+        'text': '3',
       },
     ]);
   });
@@ -378,19 +378,19 @@ describe('getVerseRangeIndexes', () => {
   test('handles ranges, and multiple verses following commas or semicolons', () => {
     expect(getVerseRangeIndexes('3a-5, 7; 12, ')).toEqual([
       {
-        "end": 4,
-        "start": 0,
-        "text": "3a-5",
+        'end': 4,
+        'start': 0,
+        'text': '3a-5',
       },
       {
-        "end": 7,
-        "start": 6,
-        "text": "7",
+        'end': 7,
+        'start': 6,
+        'text': '7',
       },
       {
-        "end": 11,
-        "start": 9,
-        "text": "12",
+        'end': 11,
+        'start': 9,
+        'text': '12',
       },
     ]);
   });
@@ -399,9 +399,9 @@ describe('getVerseRangeIndexes', () => {
     const numberInsideBrackets = `:41 [3]`
     expect(getVerseRangeIndexes(numberInsideBrackets)).toEqual([
       {
-        "start": 1,
-        "end": 3,
-        "text": "41",
+        'start': 1,
+        'end': 3,
+        'text': '41',
       },
     ]);
   });
@@ -410,9 +410,9 @@ describe('getVerseRangeIndexes', () => {
     const numberAfterMedialPeriod = `:41). 3 sheep`
     expect(getVerseRangeIndexes(numberAfterMedialPeriod)).toEqual([
       {
-        "start": 1,
-        "end": 3,
-        "text": "41",
+        'start': 1,
+        'end': 3,
+        'text': '41',
       },
     ]);
   });
@@ -420,23 +420,23 @@ describe('getVerseRangeIndexes', () => {
   test('does not get verse indexes for numbers coming after a word', () => {
     expect(getVerseRangeIndexes('3 and 12 sheep.')).toEqual([
       {
-        "end": 1,
-        "start": 0,
-        "text": "3",
+        'end': 1,
+        'start': 0,
+        'text': '3',
       },
     ]);
     expect(getVerseRangeIndexes(':2. Look at <a href="https://foo.com" class="hover:text-primary-800">https://foo.com</a> to learn')).toEqual(
       [
         {
-          "end": 2,
-          "start": 1,
-          "text": "2",
+          'end': 2,
+          'start': 1,
+          'text': '2',
         },
       ]);
     expect(getVerseRangeIndexes(':12-13).THE <a href="https://www.amazon.com/s?k=h+wayne+house&amp;crid=55ULNGFAPAI3&amp;sprefix=%2Caps%2C405&amp;ref=nb_sb_ss_i_1_0">REJECTION OF JEHOIACHIN</a> (Coniah, Jeconiah)')).toEqual([{
-      "end": 6,
-      "start": 1,
-      "text": "12-13",
+      'end': 6,
+      'start': 1,
+      'text': '12-13',
     }])
   })
 });

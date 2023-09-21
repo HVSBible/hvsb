@@ -54,7 +54,7 @@
     type="button"
     on:click={() => show(buttonValue)}
     class="{items.find((item) => item.value === buttonValue) &&
-    items.find((item) => item.value === buttonValue).isRefined
+      items.find((item) => item.value === buttonValue).isRefined
       ? 'text-primary-700 bg-primary-100 focus:text-primary-800 focus:bg-primary-200'
       : 'text-gray-500 hover:text-gray-700 focus:text-primary-600 focus:bg-primary-50'} py-2 px-3 font-medium text-sm leading-5 focus:outline-none rounded-md">
     {#if buttonValue === 'document'}

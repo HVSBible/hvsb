@@ -47,9 +47,9 @@ export function prepareChapterMedia(
   chapter: string
 ): (IMedia)[] {
   media = media.map((medium) => {
-    if (imageHasParentInChapter(medium, bookId, chapter)) {
+    if (imageHasParentInChapter(medium, bookId, chapter))
       medium.type = 'skip';
-    }
+
     medium.currentVerses = getCurrentVerses(medium.verseIds, bookId, chapter);
     return medium;
   });
@@ -66,11 +66,11 @@ function imageHasParentInChapter(
   chapter: string
 ): boolean {
   if (medium.type === 'image' && medium.parents) {
-    const parents: IImageParent[] = medium.parents;
+    const {parents} = medium;
     return parents.some((p) => p.chapterId === `${bookId}.${chapter}`);
-  } else {
-    return false;
   }
+  return false;
+
 }
 
 export function getCurrentVerses(verseIds: string[], bookId: string, chapter: string): number[] {
