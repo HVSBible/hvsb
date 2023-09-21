@@ -45,7 +45,7 @@
           Video, {formatTime(video.duration)}
         </div>
         {#if admin && video.verseIds}
-          <button
+          <button type="button"
             on:click|preventDefault|once={() => dispatch('deleteVideo', video.id)}
             class="cursor-pointer rounded leading-tight font-medium text-red-600
               hover:text-red-800 ml-auto px-2 py-1 bg-red-100 mr-2">
@@ -119,7 +119,7 @@
             Video, {formatTime(data.duration)}
           </div>
           {#if admin}
-            <button
+            <button type="button"
               on:click|preventDefault|once={() => dispatch('deleteVideo', video.id)}
               class="cursor-pointer rounded leading-tight font-medium
                 text-red-600 hover:text-red-800 ml-auto px-2 py-1 bg-red-100 mr-2">
@@ -158,7 +158,7 @@
     {:catch error}
       {#if admin}
         Error on video {video.id}: {error}
-        <button
+        <button type="button"
           on:click|preventDefault|once={() => dispatch('deleteVideo', video.id)}
           class="cursor-pointer font-bold text-red-600 px-2">
           <i class="fas fa-trash" />

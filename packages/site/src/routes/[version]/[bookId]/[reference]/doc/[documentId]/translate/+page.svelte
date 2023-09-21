@@ -1,6 +1,5 @@
 <script lang="ts">
-  import type { IDocument, ITranslatedField } from '@hvsb/types';
-  import { LanguageMappings } from '@hvsb/types';
+  import { LanguageMappings, type IDocument, type ITranslatedField } from '@hvsb/types';
   import { admin, translator } from '$lib/stores';
   import { Doc, getFirebaseApp } from 'sveltefirets';
 
@@ -23,7 +22,7 @@
       const addTranslatedField = httpsCallable(functions, 'addTranslatedField');
       await addTranslatedField(translatedField);
     } catch (err) {
-      alert(`Error saving translation. Please contact us if the problem continues.`);
+      alert(`Error saving translation. Please contact us if the problem continues. Err: ${err}`);
     }
   }
 </script>

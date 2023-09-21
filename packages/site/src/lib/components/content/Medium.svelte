@@ -1,13 +1,12 @@
 <script lang="ts">
   import type { IDocument, IImage, IVideo, IVimeoVideo } from '@hvsb/types';
+  import { admin, user, translator } from '$lib/stores';
+  import { page } from '$app/stores';
 
   export let title = 'Biblical Study Item',
     description: string,
     shareImage: string,
     data: IDocument | IImage | (IVideo & IVimeoVideo); // refactor to medium
-  import { admin, user } from '$lib/stores';
-  import { page } from '$app/stores';
-  import { translator } from '$lib/stores';
 
   $: url = `https://hvsb.app/${$page.params.version}/${$page.params.bookId}/${
     $page.params.reference
@@ -50,7 +49,7 @@
       document.execCommand('copy');
       document.body.removeChild(el);
       alert('Link copied to clipboard. Please paste into a message or post to share with others.');
-    } catch (e) {
+    } catch {
       alert(`Copy and share the following text: ${message}`);
     }
   }

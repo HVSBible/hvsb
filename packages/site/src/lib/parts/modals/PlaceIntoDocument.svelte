@@ -2,8 +2,10 @@
   export let imageId: string;
   import Modal from 'svelte-pieces/ui/Modal.svelte';
   import Button from 'svelte-pieces/ui/Button.svelte';
+  import type { Writable } from 'svelte/store';
+  import type { IMedia } from '@hvsb/types';
+  import { createEventDispatcher, getContext } from 'svelte';
 
-  import { createEventDispatcher } from 'svelte';
   const dispatch = createEventDispatcher<{
     close: boolean;
     assignParent: { documentId: string; imageId: string };
@@ -11,9 +13,6 @@
 
   let documentId: string;
 
-  import { getContext } from 'svelte';
-  import type { Writable } from 'svelte/store';
-  import type { IMedia } from '@hvsb/types';
   const chapterMedia = getContext<Writable<IMedia[]>>('chapterMedia');
 </script>
 

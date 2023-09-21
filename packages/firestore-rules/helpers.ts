@@ -38,5 +38,5 @@ const COVERAGE_URL = `http://${process.env.FIRESTORE_EMULATOR_HOST}/emulator/v1/
 
 export const teardown = async () => {
   Promise.all(firebase.apps().map((app) => app.delete()));
-  console.log(`View rule coverage information at ${COVERAGE_URL}\n`);
+  console.info(`View rule coverage information at ${COVERAGE_URL}\n`);
 };

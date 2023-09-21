@@ -153,9 +153,7 @@
                 });
                 alert(`You have ${unsubscribed ? 'resubscribed' : 'unsubscribed'}`);
               } catch (err) {
-                alert(
-                  'We\'re sorry, but there was an error trying to save your preference. Please use the Contact Us form to let us know.'
-                );
+                alert(`We're sorry, but there was an error trying to save your preference. Please use the Contact Us form to let us know. Error: ${err}`);
               }
             }}
             checked={!$user.unsubscribe}

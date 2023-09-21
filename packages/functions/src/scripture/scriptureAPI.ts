@@ -1,7 +1,6 @@
-import * as functions from 'firebase-functions';
 // import chapter from "./data/cuv/1JN/1.json";
 
-export default async (data: any, context: functions.https.CallableContext) => {
+export default async (data: any) => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const chapter = require(`./data/cuv/${data.bookId}/${data.chapter}.json`);
   // const chapter = JSON.parse(

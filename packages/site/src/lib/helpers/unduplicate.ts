@@ -11,12 +11,11 @@ export function unduplicate(media: IDocument | IImage | IVideo, verseId: string)
 
   // add applicable bookIds and chapterIds for remaining verseIds
   for (const v of media.verseIds) {
-    const bookId = v.split('.')[0];
-    const chapter = v.split('.')[1];
+    const [bookId, chapter] = v.split('.');
     const chapterId = `${bookId}.${chapter}`;
 
-    media.bookIds.indexOf(bookId) === -1 && media.bookIds.push(bookId);
-    media.chapterIds.indexOf(chapterId) === -1 && media.chapterIds.push(chapterId);
+    if (!media.bookIds.includes(bookId)) media.bookIds.push(bookId);
+    if (!media.chapterIds.includes(chapterId)) media.chapterIds.push(chapterId);
   }
 
   return media;

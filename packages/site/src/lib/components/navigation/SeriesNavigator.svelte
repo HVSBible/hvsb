@@ -42,7 +42,6 @@
             </Doc>
           {/if}
 
-          <!-- svelte-ignore a11y-no-onchange -->
           <select
             on:change={(e) => {
               //@ts-ignore

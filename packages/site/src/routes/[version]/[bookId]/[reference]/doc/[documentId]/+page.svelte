@@ -55,7 +55,7 @@
       {/if}
       {printCurrentVerses()}
       |
-      {#if data.document.authors && data.document.authors.length}
+      {#if data.document.authors?.length}
         {data.document.authors.join(' • ')}
       {:else}
         {data.document.author || 'Hershel Wayne House'}
@@ -84,7 +84,7 @@
     {/each}
   </div>
 
-  {#if data.document.seriesIds && data.document.seriesIds.length}
+  {#if data.document.seriesIds?.length}
     {#await import('$lib/components/navigation/SeriesNavigator.svelte') then { default: SeriesNavigator }}
       {#each data.document.seriesIds as seriesId}
         <SeriesNavigator {seriesId} document={data.document} />

@@ -1,3 +1,4 @@
+/* eslint-disable require-atomic-updates */
 import { IDocument, IImage, IVideo, IVimeoVideo } from '../../../src/lib/interfaces';
 
 export async function prepareDataForIndex(

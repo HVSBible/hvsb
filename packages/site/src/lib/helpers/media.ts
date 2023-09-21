@@ -1,5 +1,5 @@
 import { browser } from '$app/environment';
-import type { IMedia, IImageParent } from '@hvsb/types';
+import type { IMedia } from '@hvsb/types';
 import { getBibleId } from '$lib/helpers/versions';
 import { getCollection } from 'sveltefirets';
 import { orderBy, where } from 'firebase/firestore';

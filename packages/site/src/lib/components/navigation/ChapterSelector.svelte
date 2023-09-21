@@ -99,7 +99,7 @@
         style="grid-column: 1 / 3">
         Introduction
       </a>
-      {#each { length: chaptersCount } as chapter, i}
+      {#each { length: chaptersCount } as _, i}
         <a
           href="/{$page.params.version}/{currentBookId}/{i + 1}"
           on:click={() => dispatch('close')}

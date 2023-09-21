@@ -31,6 +31,7 @@ export default defineFlatConfig([
       '.git/**',
       '**/.svelte-kit**',
       '**/.kitbook/routes/**',
+      '**/functions/**', // temporary
     ],
   },
   {

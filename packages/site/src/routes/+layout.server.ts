@@ -6,7 +6,7 @@ export const load = (({ cookies }) => {
   try {
     user = JSON.parse(cookies.get('user') || null) as IUser;
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 
   return {
