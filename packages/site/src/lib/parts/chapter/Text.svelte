@@ -11,7 +11,7 @@
   const dispatch = createEventDispatcher<{ selected: string; hovered: string }>();
 
   function onSelectVerse(e: Event) {
-    let { dataset } = e.target as HTMLElement; // offsetTop, offsetHeight
+    const { dataset } = e.target as HTMLElement; // offsetTop, offsetHeight
     if (dataset.verseId) {
       if (selected === dataset.verseId) {
         selected = null;
@@ -38,17 +38,17 @@
   }
 
   function mouseover(e: Event) {
-    let { dataset } = e.target as HTMLElement;
+    const { dataset } = e.target as HTMLElement;
     if (dataset.verseId) {
       hovered = dataset.verseId;
       dispatch('hovered', hovered);
     }
   }
   function mouseout(e: Event) {
-    let { dataset } = e.target as HTMLElement;
-    if (hovered === dataset.verseId) {
+    const { dataset } = e.target as HTMLElement;
+    if (hovered === dataset.verseId)
       hovered = null;
-    }
+
   }
   let hoveredVerseSpans: NodeListOf<Element>;
   $: {
@@ -89,7 +89,7 @@
   }
 </script>
 
-<svelte:window bind:innerWidth/>
+<svelte:window bind:innerWidth />
 
 <div
   bind:this={container}

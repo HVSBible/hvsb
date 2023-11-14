@@ -6,32 +6,32 @@ export function isSubscriber(user: IUser): boolean {
 }
 
 export function subscriptionStatus(user: IUser) {
-  if (!user) {
+  if (!user)
     return null;
-  }
-  if (user.subscriptions && user.subscriptions.basic) {
-    if (user.subscriptions.basic.status === 'active') {
+
+  if (user.subscriptions?.basic) {
+    if (user.subscriptions.basic.status === 'active')
       return 'active';
-    }
-    if (user.subscriptions.basic.status === 'trialing') {
+
+    if (user.subscriptions.basic.status === 'trialing')
       return 'trialing';
-    }
-    if (user.subscriptions.basic.status === 'past_due') {
+
+    if (user.subscriptions.basic.status === 'past_due')
       return 'past_due';
-    }
+
     if (user.subscriptions.basic.manualSubscriptionEndDate) {
       const now = Timestamp.now();
       // Can't read toDate() method on timestamps cached in localStorage
       const endDate = user.subscriptions.basic.manualSubscriptionEndDate;
-      if (now.seconds <= endDate.seconds) {
+      if (now.seconds <= endDate.seconds)
         return 'manual-active';
-      } else {
-        return 'manual-expired';
-      }
+
+      return 'manual-expired';
+
     }
-    if (user.subscriptions.basic.status === 'canceled') {
+    if (user.subscriptions.basic.status === 'canceled')
       return 'canceled';
-    }
+
   }
 
   return 'never';

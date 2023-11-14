@@ -51,9 +51,9 @@
       const anchorEl = anchorEls[i];
       const href = anchorEl.getAttribute('href');
 
-      if (!internalLinkRegex.test(href)) {
+      if (!internalLinkRegex.test(href))
         anchorEl.setAttribute('target', '_blank');
-      }
+
     }
   }
 </script>

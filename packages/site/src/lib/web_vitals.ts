@@ -12,12 +12,12 @@ declare const webVitals: {
 
 let isRegistered = false;
 
-type AnalyticsOptions = {
-  params: { [s: string]: any } | ArrayLike<any>;
+interface AnalyticsOptions {
+  params: Record<string, any> | ArrayLike<any>;
   path: string;
   analyticsId: string;
   debug?: true;
-};
+}
 
 const VITALS_URL = 'https://vitals.vercel-analytics.com/v1/vitals';
 
@@ -34,11 +34,11 @@ export function measureWebVitals(options: AnalyticsOptions): void {
       // because of ES module import problem
       // When loading `web-vitals` using CDN, all the public
       // methods can be found on the `webVitals` global namespace.
-      webVitals.getFID((metric) => send_to_analytics(metric, options));
-      webVitals.getTTFB((metric) => send_to_analytics(metric, options));
-      webVitals.getLCP((metric) => send_to_analytics(metric, options));
-      webVitals.getCLS((metric) => send_to_analytics(metric, options));
-      webVitals.getFCP((metric) => send_to_analytics(metric, options));
+      webVitals.getFID((metric) => sendToAnalytics(metric, options));
+      webVitals.getTTFB((metric) => sendToAnalytics(metric, options));
+      webVitals.getLCP((metric) => sendToAnalytics(metric, options));
+      webVitals.getCLS((metric) => sendToAnalytics(metric, options));
+      webVitals.getFCP((metric) => sendToAnalytics(metric, options));
     };
     document.head.appendChild(script);
   } catch (err) {
@@ -46,11 +46,17 @@ export function measureWebVitals(options: AnalyticsOptions): void {
   }
 }
 
-function get_connection_speed(): string {
-  return navigator?.['connection']?.['effectiveType'] || '';
+function getConnectionSpeed(): string {
+  if ('connection' in navigator &&
+    navigator.connection &&
+    'effectiveType' in (navigator.connection as object))
+    // eslint-disable-next-line dot-notation
+    return navigator.connection['effectiveType'] as string
+
+  return '';
 }
 
-function send_to_analytics(metric: Metric, options: AnalyticsOptions) {
+function sendToAnalytics(metric: Metric, options: AnalyticsOptions) {
   const page = Object.entries(options.params).reduce(
     (acc, [key, value]) => acc.replace(value, `[${key}]`),
     options.path
@@ -63,12 +69,12 @@ function send_to_analytics(metric: Metric, options: AnalyticsOptions) {
     href: location.href,
     event_name: metric.name,
     value: metric.value.toString(),
-    speed: get_connection_speed(),
+    speed: getConnectionSpeed(),
   };
 
-  if (options.debug) {
-    console.log('[Analytics]', metric.name, JSON.stringify(body, null, 2));
-  }
+  if (options.debug)
+    console.info('[Analytics]', metric.name, JSON.stringify(body, null, 2));
+
 
   const blob = new Blob([new URLSearchParams(body).toString()], {
     // This content type is necessary for `sendBeacon`:
@@ -77,10 +83,10 @@ function send_to_analytics(metric: Metric, options: AnalyticsOptions) {
   if (navigator.sendBeacon) {
     navigator.sendBeacon(VITALS_URL, blob);
   } else
-    fetch(VITALS_URL, {
-      body: blob,
-      method: 'POST',
-      credentials: 'omit',
-      keepalive: true,
-    });
+  {fetch(VITALS_URL, {
+    body: blob,
+    method: 'POST',
+    credentials: 'omit',
+    keepalive: true,
+  });}
 }

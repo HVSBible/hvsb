@@ -73,7 +73,7 @@
 
 The [SideMargin](/1-components/1-side-margin) contains three types of thumbnails for documents, images, and videos.
 
-The document genre thumbnail pulls from an array of thumbnails, sorts out the properties and applies styles and [icons](https://icones.js.org/) appropriately. 
+The document genre thumbnail pulls from an array of thumbnails, sorts out the properties and applies styles and [icons](https://icones.js.org/) appropriately.
 <!-- end-prettier-ignore -->
 
 <Story

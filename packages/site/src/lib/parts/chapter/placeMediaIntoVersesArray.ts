@@ -3,9 +3,9 @@ import type { IMedia, IVerse } from '@hvsb/types';
 export function placeMediaIntoVersesArray(verses: IVerse[], media: IMedia[]) {
   const versesWithMedia = verses.map((verse) => {
     const verseMedia = media.filter((medium) => medium.currentVerses.includes(verse.number));
-    if (verseMedia.length) {
+    if (verseMedia.length)
       verse.media = verseMedia;
-    }
+
     return verse;
   });
   return versesWithMedia.filter((v) => v.media);

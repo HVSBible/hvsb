@@ -1,7 +1,7 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import { cubicInOut } from 'svelte/easing';
-  let duration = 200;
+  const duration = 200;
   export let adminGuard = false,
     marginTop = false,
     padding = false,

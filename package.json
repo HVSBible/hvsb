@@ -1,30 +1,36 @@
 {
   "name": "hvsb",
   "version": "0.0.1",
+  "type": "module",
+  "license": "MIT",
   "scripts": {
     "dev": "pnpm --filter=site dev",
     "build": "pnpm --filter=site build",
     "preview": "pnpm --filter=site preview",
-    "kitbook": "pnpm --filter=site kitbook",
-    "kitbook:build": "pnpm --filter=site kitbook:build",
-    "kitbook:preview": "pnpm --filter=site kitbook:preview",
-    "test": "pnpm --filter=site test",
-    "test:ui": "pnpm --filter=site test:ui",
-    "test:all": "pnpm --recursive --stream test -- --run",
-    "lint": "eslint .",
-    "format-check": "prettier --check --plugin-search-dir=. .",
-    "format": "prettier --write --plugin-search-dir=. .",
+    "test": "pnpm vitest",
+    "lint": "eslint . --cache --quiet",
+    "lint:fix": "eslint . --cache --fix",
     "check-packages": "pnpm update --interactive --recursive --latest"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.57.0",
-    "@typescript-eslint/parser": "^5.57.0",
-    "eslint": "^8.34.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-svelte3": "^4.0.0",
-    "prettier": "^2.8.3",
-    "prettier-plugin-svelte": "^2.9.0",
+    "@typescript-eslint/eslint-plugin": "6.0.0-alpha.138",
+    "@typescript-eslint/parser": "6.0.0-alpha.144",
+    "eslint": "^8.45.0",
+    "eslint-define-config": "^1.21.0",
+    "eslint-plugin-svelte": "^2.32.4",
+    "globals": "^13.20.0",
+    "lint-staged": "^13.2.2",
+    "simple-git-hooks": "^2.8.1",
     "svelte": "^3.55.1",
-    "typescript": "~4.9.5"
+    "typescript": "~4.9.5",
+    "vitest": "^0.34.4"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,svelte,svx}": [
+      "eslint --cache --fix"
+    ]
   }
 }

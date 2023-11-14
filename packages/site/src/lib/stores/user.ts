@@ -8,7 +8,7 @@ export const user = createUserStore<IUser>({
 });
 
 user.subscribe((user) => {
-  if (user && !user.stripeCustomerId) {
+  if (user && !user.stripeCustomerId)
     setTimeout(() => createCustomer(), 3000); // give time for new user's info to be saved to database before running cloud function
-  }
+
 });

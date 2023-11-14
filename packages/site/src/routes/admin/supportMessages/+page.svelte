@@ -6,7 +6,7 @@
   import Filter from '../_Filter.svelte';
   import SupportMessageRow from '../_SupportMessageRow.svelte';
 
-  let messagesType: ISupportMessage[] = [];
+  const messagesType: ISupportMessage[] = [];
 </script>
 
 <View padding={true}>

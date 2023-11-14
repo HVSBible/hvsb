@@ -5,20 +5,25 @@
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "css.lint.unknownAtRules": "ignore",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "css.lint.unknownAtRules": "ignore",
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
   "eslint.validate": [
     "javascript",
+    "typescript",
+    "html",
+    "markdown",
     "svelte"
   ],
+  "eslint.experimental.useFlatConfig": true,
   "files.associations": {
-    "*.md": "svelte"
-  },
-  "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
+    "*.svx": "svelte"
   },
   "unocss.root": "packages/site",
+  "svelte.plugin.svelte.compilerWarnings": {
+    "a11y-click-events-have-key-events": "ignore"
+  },
 }

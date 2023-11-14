@@ -9,7 +9,7 @@
   import UserRow from '../_UserRow.svelte';
   import { exportUsersAsCSV } from '$lib/helpers/export';
 
-  let usersType: IUser[] = [];
+  const usersType: IUser[] = [];
 </script>
 
 <View padding={true}>

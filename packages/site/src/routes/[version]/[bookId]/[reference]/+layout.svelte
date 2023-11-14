@@ -24,7 +24,7 @@
   setContext('chapterMedia', chapterMedia);
   $: if (browser && $admin > 0) {
     // immediately set preloaded admin media if client already inited
-    chapterMedia.set(data.media); 
+    chapterMedia.set(data.media);
     // this is to make sure that admin media shows up on page load when client load function is run before Firebase auth inits and recognizes the user is an admin - this could be solved by setting the state of the user to admin in the initial page request
     getAllChapterMedia(data.bookId, data.chapter).then((media) => chapterMedia.set(prepareChapterMedia(media, data.bookId, data.chapter)));
   } else if (browser && $contributor) {
@@ -36,17 +36,17 @@
   }
 
   let scriptureDiv: HTMLElement;
-  $: if (data.version && data.bookId && data.chapter && scriptureDiv) {
+  $: if (data.version && data.bookId && data.chapter && scriptureDiv)
     scriptureDiv.scrollTop = 0;
-  }
+
   let mediaDiv: HTMLElement;
-  $: if (data.media && mediaDiv) {
+  $: if (data.media && mediaDiv)
     mediaDiv.scrollTop = 0;
-  }
+
 
   // TODO: Keep media id in url when navigating chapters with opened media item
-  $: previousUrl = (data.previousChapterId && data.previousChapterId.replace(/\./g, '/')) || null;
-  $: nextUrl = (data.nextChapterId && data.nextChapterId.replace(/\./g, '/')) || null;
+  $: previousUrl = (data.previousChapterId?.replace(/\./g, '/')) || null;
+  $: nextUrl = (data.nextChapterId?.replace(/\./g, '/')) || null;
 
   let fullWidth = 800;
   $: subpageOpen = $page.params && Object.keys($page.params).length > 3;

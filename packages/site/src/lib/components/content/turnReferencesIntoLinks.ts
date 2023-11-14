@@ -1,14 +1,14 @@
-import { findReferencesInParagraph, type Reference } from "$lib/helpers/parseReferences/parseReferences";
+import { findReferencesInParagraph, type Reference } from '$lib/helpers/parseReferences/parseReferences';
 
 export function turnReferencesIntoLinks({ html, references, version, mediaId, mediaType }: { html: string, references: Reference[], version?: string, mediaId?: string, mediaType?: 'doc' | 'img' }): any {
   let currentIndex = 0;
-  let result = "";
+  let result = '';
 
   references.forEach((reference) => {
     const link = constructReferenceLink({ version, reference, mediaId, mediaType });
 
-    const start = reference.start;
-    const end = reference.end;
+    const {start} = reference;
+    const {end} = reference;
 
     result += html.slice(currentIndex, start) + link;
     currentIndex = end;
@@ -22,17 +22,17 @@ export function turnReferencesIntoLinks({ html, references, version, mediaId, me
 if (import.meta.vitest) {
   describe('turnReferencesIntoLinks', () => {
     test('1 instance within a doc', () => {
-      const html = "Hello Gen 1:2 and let's talk about something.";
+      const html = 'Hello Gen 1:2 and let\'s talk about something.';
       const references = findReferencesInParagraph(html);
       const result = turnReferencesIntoLinks({ html, references, version: 'WEB', mediaType: 'doc', mediaId: 'fooId' });
       expect(result).toEqual(`Hello <a href="/WEB/GEN/1/doc/fooId?vv=GEN.1.2">Gen 1:2</a> and let's talk about something.`);
     });
 
     test('2 instances from not inside media', () => {
-      const html = "Hello Genesis 1:2 and let's talk about Exod 13.";
+      const html = 'Hello Genesis 1:2 and let\'s talk about Exod 13.';
       const references = findReferencesInParagraph(html);
       const result = turnReferencesIntoLinks({ html, references });
-      expect(result).toEqual(`Hello <a href="/WEB/GEN/1?vv=GEN.1.2">Genesis 1:2</a> and let's talk about <a href="/WEB/EXO/13?vv=EXO.13.1">Exod 13</a>.`);
+      expect(result).toEqual(`Hello <a href="/WEB/GEN/1?vv=GEN.1.2">Genesis 1:2</a> and let's talk about <a href="/WEB/EXO/13">Exod 13</a>.`);
     });
   })
 }

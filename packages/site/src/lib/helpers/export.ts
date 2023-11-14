@@ -4,14 +4,13 @@ function convertToCSV(objArray) {
   const array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
   let str = '';
 
+  // eslint-disable-next-line @typescript-eslint/prefer-for-of
   for (let i = 0; i < array.length; i++) {
     let line = '';
     for (const index in array[i]) {
       if (line != '') line += ',';
-
       line += array[i][index];
     }
-
     str += line + '\r\n';
   }
 
@@ -54,17 +53,14 @@ export function exportUsersAsCSV(data: IUser[], title: string) {
   const itemsFormatted = [];
   data.forEach((user) => {
     itemsFormatted.push({
-      displayName: (user.displayName && user.displayName.replace(/,/, '')) || '',
+      displayName: (user.displayName?.replace(/,/, '')) || '',
       email: user.email || '',
-      unsubscribed: (user.unsubscribe && user.unsubscribe.toDate()) || '',
+      unsubscribed: (user.unsubscribe?.toDate()) || '',
       manualSubscription:
-        (user.subscriptions &&
-          user.subscriptions.basic &&
-          user.subscriptions.basic.manualSubscriptionEndDate &&
-          user.subscriptions.basic.manualSubscriptionEndDate.toDate()) ||
+        (user.subscriptions?.basic?.manualSubscriptionEndDate?.toDate()) ||
         '',
       stripeSubscription:
-        (user.subscriptions && user.subscriptions.basic && user.subscriptions.basic.status) || '',
+        (user.subscriptions?.basic?.status) || '',
     });
   });
 

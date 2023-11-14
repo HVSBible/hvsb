@@ -28,7 +28,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    z-index: 999; 
+    z-index: 999;
     /* used to be 1031 */
   }
   .progress {

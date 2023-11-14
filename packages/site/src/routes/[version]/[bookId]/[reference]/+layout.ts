@@ -2,9 +2,9 @@ import { prepareChapterMedia, fetchBibleText, getChapterMedia } from '$lib/helpe
 import type { IReferenceProps } from './reference-props.interface';
 // import { MEDIA_STALE_KEY } from '$lib/media_stale_key';
 import type { LayoutLoad } from './$types';
-export const load = (async ({ params, depends }) => {
-  const version: string = params.version;
-  const bookId: string = params.bookId;
+export const load = (async ({ params }) => {
+  const {version} = params;
+  const {bookId} = params;
   const chapter: string = params.reference.match(/[0-9]*/)[0]; // return '12' in a '12.3-13.1' string
 
   const props: IReferenceProps = {
@@ -25,16 +25,16 @@ export const load = (async ({ params, depends }) => {
     if (textData) {
       const { content, next, previous } = textData;
       props.content = content;
-      props.previousChapterId = (previous && previous.id) || null;
-      props.nextChapterId = (next && next.id) || null;
+      props.previousChapterId = (previous?.id) || null;
+      props.nextChapterId = (next?.id) || null;
     } else {
       props.textErr = 'No content for selected version, book, and chapter.';
     }
   }
 
-  if (!props.mediaErr) {
+  if (!props.mediaErr)
     props.media = prepareChapterMedia(media, bookId, chapter);
-  }
+
 
   return props;
 }) satisfies LayoutLoad;

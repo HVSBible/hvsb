@@ -6,13 +6,13 @@
 
   async function handleImage(files: FileList) {
     const fileToCheck = files.item(0);
-    if (fileToCheck.type.split('/')[0] !== 'image') {
+    if (fileToCheck.type.split('/')[0] !== 'image')
       return alert('Unsupported File Type');
-    }
+
     // Must be smaller than 20MB, http://www.unitconversion.org/data-storage/megabytes-to-bytes-conversion.html
-    if (fileToCheck.size > 20971520) {
+    if (fileToCheck.size > 20971520)
       return alert('Images must be smaller than 20MB');
-    }
+
     file = fileToCheck;
   }
 </script>

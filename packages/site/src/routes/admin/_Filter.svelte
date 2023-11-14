@@ -5,9 +5,9 @@
   let value = '';
   $: filteredItems = items.filter((user) => {
     const itemStr = JSON.stringify(user);
-    if (itemStr.toLowerCase().indexOf(value.toLowerCase()) !== -1) {
+    if (itemStr.toLowerCase().indexOf(value.toLowerCase()) !== -1)
       return true;
-    }
+
   });
 
   function autofocus(node: HTMLInputElement) {
@@ -17,8 +17,8 @@
 
 <div class="flex items-center mb-2">
   <input type="search" class="flex-grow appearance-none block px-3 py-2 border
-  border-gray-300 rounded text-gray-900 placeholder-gray-500
-  focus:outline-none focus:ring-primary-300 focus:border-primary-300" bind:value use:autofocus {placeholder} />
+    border-gray-300 rounded text-gray-900 placeholder-gray-500
+    focus:outline-none focus:ring-primary-300 focus:border-primary-300" bind:value use:autofocus {placeholder} />
   <div class="mr-1" />
   <slot name="right" />
 </div>

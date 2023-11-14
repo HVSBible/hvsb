@@ -53,16 +53,16 @@ Read the stripe customer ID from firestore, or create a new one if missing
 export const getOrCreateCustomer = async (uid: string) => {
   const user = await getUser(uid);
   console.log('getOrCreateCustomer found user: ', user);
-  const customerId = user && user.stripeCustomerId;
+  const customerId = user?.stripeCustomerId;
 
   // If missing customerID, create it
   if (!customerId) {
     console.log('no customerId found - going to create');
     return createCustomer(user);
-  } else {
-    console.log('Using customerId to retrieve customer from Stripe');
-    return stripe.customers.retrieve(customerId);
   }
+  console.log('Using customerId to retrieve customer from Stripe');
+  return stripe.customers.retrieve(customerId);
+
 };
 
 /////// DEPLOYABLE FUNCTIONS ////////

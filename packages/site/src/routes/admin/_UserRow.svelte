@@ -27,14 +27,14 @@
   </td>
   <td class="cursor-pointer" on:click={() => (manuallySubscribe = true)}>
     <!-- Started ' + user.subscriptions.basic.manualSubscriptionStartDate.toDate() : 'Give access until a certain date' -->
-    {#if user.subscriptions && user.subscriptions.basic.manualSubscriptionEndDate}{printDate(
-        user.subscriptions.basic.manualSubscriptionEndDate.toDate()
-      )}
+    {#if user.subscriptions?.basic?.manualSubscriptionEndDate}{printDate(
+      user.subscriptions.basic.manualSubscriptionEndDate.toDate()
+    )}
 
       <small class="text-sm"
-        >({new Date() <= user.subscriptions.basic.manualSubscriptionEndDate.toDate()
-          ? 'active'
-          : 'expired'})</small>
+      >({new Date() <= user.subscriptions.basic.manualSubscriptionEndDate.toDate()
+        ? 'active'
+        : 'expired'})</small>
     {:else}
       <span class="text-sm text-gray-500">Until...</span>
     {/if}

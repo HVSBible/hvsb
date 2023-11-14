@@ -12,9 +12,9 @@ export async function fetchVideoData(videoId: string): Promise<IVimeoVideo> {
       },
     });
     const data = await response.json();
-    if (data.error) {
+    if (data.error)
       throw new Error(data.error);
-    }
+
     return data;
   } catch (err) {
     throw new Error(err);

@@ -30,50 +30,50 @@
     // prettier-ignore
     switch (sortKey) {
       case 'translatorLanguage':
-        valueA = a.roles && a.roles.translator || 'zz';
-        valueB = b.roles && b.roles.translator || 'zz';
+        valueA = a.roles?.translator || 'zz';
+        valueB = b.roles?.translator || 'zz';
         break;
       case 'createdAt':
-        valueA = a.createdAt && a.createdAt.seconds || 0;
-        valueB = b.createdAt && b.createdAt.seconds || 0;
+        valueA = a.createdAt?.seconds || 0;
+        valueB = b.createdAt?.seconds || 0;
         break;
       case 'lastVisit':
-        valueA = a.lastVisit && a.lastVisit.seconds || 0;
-        valueB = b.lastVisit && b.lastVisit.seconds || 0;
+        valueA = a.lastVisit?.seconds || 0;
+        valueB = b.lastVisit?.seconds || 0;
         break;
       case 'unsubscribe':
-        valueA = a.unsubscribe && a.unsubscribe.seconds || 0;
-        valueB = b.unsubscribe && b.unsubscribe.seconds || 0;
+        valueA = a.unsubscribe?.seconds || 0;
+        valueB = b.unsubscribe?.seconds || 0;
         break;
       case 'manualSubscription':
-        valueA = a.subscriptions && a.subscriptions.basic && a.subscriptions.basic.manualSubscriptionEndDate && a.subscriptions.basic.manualSubscriptionEndDate.seconds || 0;
-        valueB = b.subscriptions && b.subscriptions.basic && b.subscriptions.basic.manualSubscriptionEndDate && b.subscriptions.basic.manualSubscriptionEndDate.seconds || 0;
+        valueA = a.subscriptions?.basic?.manualSubscriptionEndDate?.seconds || 0;
+        valueB = b.subscriptions?.basic?.manualSubscriptionEndDate?.seconds || 0;
         break;
       case 'stripeSubscription':
-        valueA = a.subscriptions && a.subscriptions.basic && a.subscriptions.basic.current_period_end || 0;
-        valueB = b.subscriptions && b.subscriptions.basic && b.subscriptions.basic.current_period_end || 0;
+        valueA = a.subscriptions?.basic?.current_period_end || 0;
+        valueB = b.subscriptions?.basic?.current_period_end || 0;
         break;
-      default: 
+      default:
         valueA = a[sortKey] ? a[sortKey].toUpperCase() : 'zz'; // if we ever have missing names or email, then pass 'zz' when the sortKey is undefined
         valueB = b[sortKey] ? b[sortKey].toUpperCase() : 'zz';
-        // a[sortKey].localeCompare(b[sortKey])
+    // a[sortKey].localeCompare(b[sortKey])
     }
-    if (valueA < valueB) {
+    if (valueA < valueB)
       return sortDescending ? -1 : 1;
-    }
-    if (valueA > valueB) {
+
+    if (valueA > valueB)
       return sortDescending ? 1 : -1;
-    }
+
     return 0;
   });
 
   function setSortSettings(paraSortKey: SortFields) {
     //Changes the key if the sort wasn't based on the button before, and if it was, change the direction
-    if (sortKey === paraSortKey) {
+    if (sortKey === paraSortKey)
       sortDescending = !sortDescending;
-    } else {
+    else
       sortKey = paraSortKey;
-    }
+
   }
 </script>
 

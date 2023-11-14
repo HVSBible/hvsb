@@ -49,9 +49,9 @@
       const { error } = await stripe.redirectToCheckout({
         sessionId: response.data,
       });
-      if (error) {
+      if (error)
         submitError = error;
-      }
+
       return true;
     } catch (err) {
       submitError = err;

@@ -1,6 +1,6 @@
 import type { IMediaMetaData } from '.';
 import type { TranslationFields } from './media-metadata.interface';
-// tslint:disable:max-line-length
+
 export interface IDocument extends IMediaMetaData {
   author?: string;
   secondAuthor?: string; // going to remove in favor of array for 'author' field
@@ -43,7 +43,7 @@ export enum DocumentGenres {
   application = 'Application & Worship',
   exegetical = 'Exegetical Insight',
   doctrine = 'Bible Doctrine', // shortened from "Guide to Bible Doctrine"
-  reflection = "Reflection", // shortened from "Reflection on God's Truth"
+  reflection = 'Reflection', // shortened from "Reflection on God's Truth"
   fathers = 'Church Fathers', // shortened from "Teaching of Church Fathers"
   wisdom = 'Words of Wisdom',
 }

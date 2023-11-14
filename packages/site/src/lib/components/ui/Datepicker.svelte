@@ -5,7 +5,7 @@
   export let user: IUser;
   let selectedDate: Date;
   let dateInput: HTMLInputElement;
-  import { onMount } from 'svelte';
+  import { onMount, createEventDispatcher } from 'svelte';
   onMount(() => {
     const script = document.createElement('script');
     script.src = 'https://unpkg.com/js-datepicker';
@@ -24,7 +24,6 @@
     };
   });
 
-  import { createEventDispatcher } from 'svelte';
   const dispatch = createEventDispatcher();
   import Button from 'svelte-pieces/ui/Button.svelte';
 
@@ -34,9 +33,7 @@
     });
     if (
       !(
-        user.subscriptions &&
-        user.subscriptions.basic &&
-        user.subscriptions.basic.manualSubscriptionStartDate
+        user?.subscriptions?.basic?.manualSubscriptionStartDate
       )
     ) {
       await updateOnline(`users/${user.uid}`, {
@@ -62,6 +59,6 @@
   </div>
   <div>
     <Button color="green" onclick={() => setManualSubscriptionEndDate(user, selectedDate)}
-      >Save</Button>
+    >Save</Button>
   </div>
 </Modal>

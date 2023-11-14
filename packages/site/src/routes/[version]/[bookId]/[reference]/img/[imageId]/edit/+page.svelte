@@ -20,15 +20,15 @@
 
   import type { PageData } from './$types';
   export let data: PageData;
-  let subjects: Readable<ISubject[]> = collectionStore<ISubject>('subjects', [orderBy('name')], {
+  const subjects: Readable<ISubject[]> = collectionStore<ISubject>('subjects', [orderBy('name')], {
     startWith: [],
   });
-  let locations: Readable<ILocation[]> = collectionStore<ILocation>(
+  const locations: Readable<ILocation[]> = collectionStore<ILocation>(
     'locations',
     [orderBy('name')],
     { startWith: [] }
   );
-  let photographers: Readable<IPhotographer[]> = collectionStore<IPhotographer>(
+  const photographers: Readable<IPhotographer[]> = collectionStore<IPhotographer>(
     'photographers',
     [orderBy('name')],
     { startWith: [] }
@@ -42,23 +42,23 @@
 
       if (image.credit) {
         for (const credit of image.credit) {
-          if (isAddingAttributeToDB($photographers, credit)) {
+          if (isAddingAttributeToDB($photographers, credit))
             await addOnline<IPhotographer>('photographers', { name: credit });
-          }
+
         }
       }
 
       if (image.location) {
         for (const location of image.location) {
-          if (isAddingAttributeToDB($locations, location)) {
+          if (isAddingAttributeToDB($locations, location))
             await addOnline<ILocation>('locations', { name: location });
-          }
+
         }
       }
 
-      if (image.subject && isAddingAttributeToDB($subjects, image.subject)) {
+      if (image.subject && isAddingAttributeToDB($subjects, image.subject))
         await addOnline<ISubject>('subjects', { name: image.subject });
-      }
+
 
       window.location.replace(
         `/${$page.params.version}/${$page.params.bookId}/${$page.params.reference}/img/${image.id}`
@@ -69,14 +69,14 @@
   }
 
   async function deleteImage(image: IImage) {
-    if (image.parents && image.parents.length) {
+    if (image.parents?.length)
       return alert('Please unlink this image from all articles before deleting');
-    }
+
     if (
       image.verseIds.length > 1
         ? confirm(
-            'This image is attached to multiple verses. Deleting will remove from all of the verses.'
-          )
+          'This image is attached to multiple verses. Deleting will remove from all of the verses.'
+        )
         : confirm('Delete image?')
     ) {
       try {
@@ -103,9 +103,9 @@
     <div class="flex justify-between items-center pb-1 sticky top-0 z-10 bg-white">
       <button
         class="bg-green-500 hover:bg-green-600 text-white btn rounded px-4 py-2
-      font-bold hover:shadow text-sm focus:outline-none focus:border-green-700
-      focus:ring-green-500 uppercase
-      leading-6 mr-1"
+          font-bold hover:shadow text-sm focus:outline-none focus:border-green-700
+          focus:ring-green-500 uppercase
+          leading-6 mr-1"
         type="submit">
         <span class="mr-1">Save</span>
       </button>
@@ -113,7 +113,7 @@
       {#if $admin}
         <button
           class="btn hover:bg-red-200 text-red-700 px-4 py-2 font-bold text-sm
-      rounded  uppercase leading-6 ml-auto"
+            rounded  uppercase leading-6 ml-auto"
           type="button"
           on:click={() => deleteImage(image)}>
           <i class="fas fa-trash mr-1" />
@@ -122,7 +122,7 @@
       {/if}
       <a
         class="hover:bg-gray-200 text-gray-500 px-4 py-2 font-bold text-sm rounded
-     uppercase leading-6"
+          uppercase leading-6"
         href="/{$page.params.version}/{$page.params.bookId}/{$page.params
           .reference}/img/{image.id}">
         <i class="fas fa-times mr-1" />
@@ -168,7 +168,7 @@
                 image.location = [...image.location];
               }}
               class="cursor-pointer justify-center items-center flex
-          bg-gray-200 hover:bg-gray-300 rounded-full h-4 w-4 ml-1">
+                bg-gray-200 hover:bg-gray-300 rounded-full h-4 w-4 ml-1">
               <i class="fas fa-times text-xs" />
             </button>
             {#if location && isAddingAttributeToDB($locations, location)}
@@ -200,9 +200,9 @@
     <button
       type="button"
       on:click={() => {
-        if (!image.location) {
+        if (!image.location)
           image.location = [];
-        }
+
         image.location = [...image.location, ''];
       }}
       class="bg-gray-100 hover:bg-gray-200 rounded mt-1 px-2 py-1 text-xs">
@@ -223,7 +223,7 @@
                 image.credit = [...image.credit];
               }}
               class="cursor-pointer justify-center items-center flex
-          bg-gray-200 hover:bg-gray-300 rounded-full h-4 w-4 ml-1">
+                bg-gray-200 hover:bg-gray-300 rounded-full h-4 w-4 ml-1">
               <i class="fas fa-times text-xs" />
             </button>
             {#if credit && isAddingAttributeToDB($photographers, credit)}
@@ -255,9 +255,9 @@
     <button
       type="button"
       on:click={() => {
-        if (!image.credit) {
+        if (!image.credit)
           image.credit = [];
-        }
+
         image.credit = [...image.credit, ''];
       }}
       class="bg-gray-100 hover:bg-gray-200 rounded mt-1 px-2 py-1 text-xs">

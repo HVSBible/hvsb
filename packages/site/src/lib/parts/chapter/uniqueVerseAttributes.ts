@@ -8,12 +8,12 @@ export function uniqueVerseAttributes(verses: IVerse[]) {
       uniqueVerses.push(verse);
     } else {
       const existingVerse = uniqueVerses[verseIndex];
-      if (verse.offsetTop < existingVerse.offsetTop) {
+      if (verse.offsetTop < existingVerse.offsetTop)
         existingVerse.offsetTop = verse.offsetTop;
-      }
-      if (verse.offsetBottom > existingVerse.offsetBottom) {
+
+      if (verse.offsetBottom > existingVerse.offsetBottom)
         existingVerse.offsetBottom = verse.offsetBottom;
-      }
+
       existingVerse.element = verse.element;
     }
   });

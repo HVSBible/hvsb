@@ -5,7 +5,6 @@ import { SendEmailCommand, SendEmailCommandInput } from '@aws-sdk/client-ses';
 
 export default async (
   snapshot: functions.firestore.DocumentSnapshot,
-  context: functions.EventContext
 ) => {
   const data = snapshot.data() as ISupportMessage;
   const params: SendEmailCommandInput = {

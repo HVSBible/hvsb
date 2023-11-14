@@ -5,24 +5,24 @@
 
   function placeAfterVerse(mediaEl: HTMLElement, currentVerseNumber: number) {
     const verse = verses.find((verse) => verse.number == currentVerseNumber);
-    if (verse) {
+    if (verse)
       verse.element.after(mediaEl);
-    }
+
     return {
       destroy() {
-        mediaEl && mediaEl.parentElement && mediaEl.parentElement.removeChild(mediaEl);
+        mediaEl?.parentElement?.removeChild(mediaEl);
       },
     };
   }
 
   function placeAfterParagraph(mediaEl: HTMLElement, currentVerseNumber: number) {
     const verse = verses.find((verse) => verse.number == currentVerseNumber);
-    if (verse) {
+    if (verse)
       verse.element.closest('p').after(mediaEl);
-    }
+
     return {
       destroy() {
-        mediaEl && mediaEl.parentElement && mediaEl.parentElement.removeChild(mediaEl);
+        mediaEl?.parentElement?.removeChild(mediaEl);
       },
     };
   }
@@ -33,7 +33,7 @@
     {#if medium.type === 'image'}
       <a
         use:placeAfterVerse={currentVerseNumber}
-        
+
         data-sveltekit-noscroll
         href="/{version}/{bookId}/{chapter}/img/{medium.id}"
         class="inline-flex"
@@ -41,13 +41,13 @@
         <img
           alt=""
           class="cursor-pointer bg-gray-400 rounded mr-1 align-baseline
-md:opacity-50 transition-opacity duration-200 hover:opacity-100 h-5 w-5"
+            md:opacity-50 transition-opacity duration-200 hover:opacity-100 h-5 w-5"
           src="https://lh3.googleusercontent.com/{medium.gcs}=s40-p" />
       </a>
     {:else if medium.type === 'document'}
       <a
         use:placeAfterVerse={currentVerseNumber}
-        
+
         data-sveltekit-noscroll
         href="/{version}/{bookId}/{chapter}/doc/{medium.id}"
         class="text-teal-900 mr-1 opacity-50 transition-opacity duration-200 hover:opacity-100">
@@ -58,11 +58,11 @@ md:opacity-50 transition-opacity duration-200 hover:opacity-100 h-5 w-5"
       <!-- TODO: place video first -->
       <a
         use:placeAfterParagraph={currentVerseNumber}
-        
+
         data-sveltekit-noscroll
         href="/{version}/{bookId}/{chapter}/vid/{medium.id}"
         class="block h-20 relative overflow-hidden md:opacity-75 transition-opacity
-      duration-200 hover:opacity-100 rounded my-2 bg-black"
+          duration-200 hover:opacity-100 rounded my-2 bg-black"
         title="Video">
         {#await fetchVideoData(medium.id)}
           <i class="fas fa-play text-white absolute left-2 top-3" />

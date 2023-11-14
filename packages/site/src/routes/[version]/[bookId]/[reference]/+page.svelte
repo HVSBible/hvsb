@@ -66,7 +66,7 @@
           href={`/${$page.params.version}/${$page.params.bookId}/${$page.params.reference}/img/${medium.id}`} />
       {/if}
       {#if medium.type === 'video'}
-      <!-- Use lazy streaming - for fetch inside here - new SvelteKit feature, or even better: hard-code into database -->
+        <!-- Use lazy streaming - for fetch inside here - new SvelteKit feature, or even better: hard-code into database -->
         <PreviewVideo
           video={medium}
           admin={$admin}

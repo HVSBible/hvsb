@@ -17,20 +17,20 @@ export default async (data: ITranslatedField, context: functions.https.CallableC
     } else if (data.field === 'section') {
       await db.runTransaction(async (transaction) => {
         const mediaDoc = await transaction.get(mediaDocRef);
-        if (!mediaDoc.exists) {
+        if (!mediaDoc.exists)
           throw 'Document does not exist';
-        }
+
         const media = mediaDoc.data() as IDocument;
-        const sections = media.sections;
-        if (!sections[data.sectionIndex].text_translations) {
+        const {sections} = media;
+        if (!sections[data.sectionIndex].text_translations)
           sections[data.sectionIndex].text_translations = {};
-        }
+
         sections[data.sectionIndex].text_translations[data.language] = data.translation;
         transaction.update(mediaDocRef, { sections });
       });
     }
     return true;
-  } else {
-    return true;
   }
+  return true;
+
 };

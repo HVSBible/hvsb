@@ -1,12 +1,12 @@
-export async function getBibleName(version: string): Promise<string> {
+export function getBibleName(version: string): string {
   const matchingBible = bibles.find((bible) => {
     return bible.abbreviation === version;
   });
-  if (matchingBible) {
+  if (matchingBible)
     return matchingBible.name;
-  } else {
-    throw new Error('Not a valid Bible version');
-  }
+
+  throw new Error('Not a valid Bible version');
+
 }
 
 export interface IBible {
@@ -56,6 +56,7 @@ export const bibles: IBible[] = [
     id: 'de4e12af7f28f599-02',
     abbreviation: 'KJV',
     name: 'King James Version', // Protestant
+    supported: true,
   },
   {
     id: 'c315fa9f71d4af3a-01',
@@ -66,6 +67,7 @@ export const bibles: IBible[] = [
     id: '06125adad2d5898a-01',
     abbreviation: 'ASV',
     name: 'American Standard Version',
+    supported: true,
   },
   {
     id: '0bc8836afa7427fa-01',
@@ -142,7 +144,7 @@ export const bibles: IBible[] = [
   {
     id: '71d2075d284c4eae-01',
     abbreviation: 'BGS',
-    name: "Baga Sitemu: God's Holy Book",
+    name: 'Baga Sitemu: God\'s Holy Book',
   },
   {
     id: 'c61908161b077c4c-01',
@@ -281,7 +283,7 @@ export const bibles: IBible[] = [
   {
     id: '4ffcec8e8f3c33e7-01',
     abbreviation: 'SKR',
-    name: "God's Holy Book in Sankaran",
+    name: 'God\'s Holy Book in Sankaran',
   },
   {
     id: '5e51f89e89947acb-01',
@@ -526,7 +528,7 @@ export const bibles: IBible[] = [
   {
     id: '30cb581bcc911c45-01',
     abbreviation: 'TOMA',
-    name: "God's Book in Toma",
+    name: 'God\'s Book in Toma',
   },
   {
     id: '5d73986246cb876f-01',

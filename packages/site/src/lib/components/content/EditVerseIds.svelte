@@ -22,7 +22,7 @@
           : medium.type === 'video'
           ? 'vid'
           : ''}/{medium.id}/edit"
-        >{verseId}
+      >{verseId}
       </a>
       {#if medium.verseIds.length > 1}
         <button

@@ -1,4 +1,4 @@
-import type { IMedia } from ".";
+import type { IMedia } from '.';
 
 export interface IVerse {
   id: string;

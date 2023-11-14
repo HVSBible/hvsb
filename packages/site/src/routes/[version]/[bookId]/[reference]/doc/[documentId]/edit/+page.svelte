@@ -24,10 +24,10 @@
   import type { PageData } from './$types';
   export let data: PageData;
 
-  let authors: Readable<IAuthor[]> = collectionStore<IAuthor>('authors', [orderBy('name')], {
+  const authors: Readable<IAuthor[]> = collectionStore<IAuthor>('authors', [orderBy('name')], {
     startWith: [],
   });
-  let locations: Readable<ILocation[]> = collectionStore<ILocation>(
+  const locations: Readable<ILocation[]> = collectionStore<ILocation>(
     'locations',
     [orderBy('name')],
     { startWith: [] }
@@ -41,15 +41,15 @@
 
       if (document.authors) {
         for (const authorInDoc of document.authors) {
-          if (isAddingAttributeToDB($authors, authorInDoc)) {
+          if (isAddingAttributeToDB($authors, authorInDoc))
             await addOnline<IAuthor>('authors', { name: authorInDoc });
-          }
+
         }
       }
 
-      if (document.location && isAddingAttributeToDB($locations, document.location)) {
+      if (document.location && isAddingAttributeToDB($locations, document.location))
         await addOnline<ILocation>('locations', { name: document.location });
-      }
+
 
       // TODO: refresh media and then we can navigate without the full page reload
       // goto(
@@ -65,9 +65,9 @@
 
   async function deleteDocument(document: IDocument) {
     if (confirm('Delete article?')) {
-      if (document.sections.some((section) => section.contentType === 'image')) {
+      if (document.sections.some((section) => section.contentType === 'image'))
         return alert('Please unlink all embedded images before deleting article.');
-      }
+
       try {
         await deleteDocumentOnline(`media/${document.id}`);
         goto(`/${$page.params.version}/${$page.params.bookId}/${$page.params.reference}`);
@@ -80,9 +80,9 @@
   function prepareDocument(document: IDocument): IDocument {
     if (!document.authors) {
       document.authors = document.author ? [document.author] : [];
-      if (document.secondAuthor) {
+      if (document.secondAuthor)
         document.authors.push(document.secondAuthor);
-      }
+
     }
     delete document.author;
     delete document.secondAuthor;
@@ -103,7 +103,7 @@
   <form on:submit|preventDefault={() => save(document)}>
     <div
       class="flex justify-between items-center pb-1 sticky top-0 z-10 bg-white
-    pt-2 -mt-2">
+        pt-2 -mt-2">
       <div class="mr-auto">
         <Button type="submit" color="green" form="filled">Save</Button>
       </div>
@@ -186,7 +186,7 @@
                 document.authors = [...document.authors];
               }}
               class="cursor-pointer justify-center items-center flex
-            bg-gray-200 hover:bg-gray-300 rounded-full h-4 w-4 ml-1">
+                bg-gray-200 hover:bg-gray-300 rounded-full h-4 w-4 ml-1">
               <i class="fas fa-times text-xs" />
             </button>
             {#if docAuthor && isAddingAttributeToDB($authors, docAuthor)}

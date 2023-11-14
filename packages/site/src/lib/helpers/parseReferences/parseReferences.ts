@@ -1,5 +1,5 @@
-import { arrayOfBookNamesAbbreviations, getBookId } from "$lib/parts/data/books";
-import { filterOutLocationsWithSameEnd } from "./filterOutLocationsWithSameEnd";
+import { arrayOfBookNamesAbbreviations, getBookId } from '$lib/parts/data/books';
+import { filterOutLocationsWithSameEnd } from './filterOutLocationsWithSameEnd';
 
 // Should we split a text into paragraphs by newline to keep book location memory from leaking over into next paragraph? Sometimes this is nice, sometimes not
 // Should we check parsed results against a book's chapter count to catch user errors?
@@ -98,7 +98,7 @@ export function findChapterVerseReferences(string: string, bookName: string): Re
         end: verseEnd,
         text: stringHyphensNormalized.slice(verseStart, verseEnd),
       });
-    };
+    }
 
     const chapterReferenceWithoutVerses = !verseLocations.length;
     if (chapterReferenceWithoutVerses) {

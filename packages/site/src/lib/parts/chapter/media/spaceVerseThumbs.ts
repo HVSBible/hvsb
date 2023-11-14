@@ -6,9 +6,9 @@ export function spaceOutVerseMedia(verses: IVerse[], thumbBox: number): IVerse[]
     const prevVerse = verses[index - 1];
     if (prevVerse) {
       const spaceBetweenVerses = verse.offsetTop - prevVerse.offsetTop;
-      if (spaceBetweenVerses < thumbBox) {
+      if (spaceBetweenVerses < thumbBox)
         verse.offsetTop = prevVerse.offsetTop + thumbBox;
-      }
+
     }
     return verse;
   });

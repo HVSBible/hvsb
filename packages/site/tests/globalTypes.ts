@@ -1,4 +1,5 @@
-import { Browser, Page } from 'playwright';
+//@ts-ignore - playwright not installed yet
+import type { Browser, Page } from 'playwright';
 
 declare global {
   const page: Page;

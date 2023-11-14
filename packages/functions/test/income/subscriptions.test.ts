@@ -1,6 +1,7 @@
 /// <reference types="jest" />
 
 import { fun } from '../test-config';
+// eslint-disable-next-line no-unused-expressions
 fun.cleanup;
 
 import { mockUser } from './mocks';

@@ -47,7 +47,7 @@
 
     <a
       class="next-ch-btn p-3 rounded-full bg-white hover:bg-gray-200 border
-      border-solid border-gray-400 shadow-lg fixed"
+        border-solid border-gray-400 shadow-lg fixed"
       style="right: 12px;"
       href="/{data.version}/{data.bookId}/1">
       <i class="fas fa-chevron-right text-center" style="width: 1rem;" />

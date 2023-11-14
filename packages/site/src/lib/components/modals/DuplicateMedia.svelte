@@ -16,17 +16,15 @@
   let chaptersCount = 1;
   let versesCount = 1;
 
-  $: {
-    getChapters($page.params.version, bookId).then((numberOfChapters) => {
-      chaptersCount = numberOfChapters;
-    });
-  }
+  $: getChapters($page.params.version, bookId).then((numberOfChapters) => {
+    chaptersCount = numberOfChapters;
+  });
 
-  $: {
-    getNumberOfVerses($page.params.version, `${bookId}.${chapter}`).then((numberOfVerses) => {
-      versesCount = numberOfVerses;
-    });
-  }
+
+  $: getNumberOfVerses($page.params.version, `${bookId}.${chapter}`).then((numberOfVerses) => {
+    versesCount = numberOfVerses;
+  });
+
 
   const dispatch = createEventDispatcher();
 
@@ -34,7 +32,7 @@
     dispatch('close');
   }
 
-  async function duplicate() {
+  function duplicate() {
     const chapterId = `${bookId}.${chapter}`;
     const verseId = `${bookId}.${chapter}.${verse}`;
     media.bookIds.indexOf(bookId) === -1 && media.bookIds.push(bookId);
@@ -53,7 +51,7 @@
       <select
         bind:value={bookId}
         class="mt-2 rounded-md block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:ring-primary-300 focus:border-primary-300 sm:text-sm sm:leading-5 mr-1">
-        {#each bibleBooks as book, i}
+        {#each bibleBooks as book}
           <option value={book.id}>{book.name}</option>
         {/each}
       </select>
@@ -62,7 +60,7 @@
         style="width: 90px;"
         bind:value={chapter}
         class="mt-2 rounded-md block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:ring-primary-300 focus:border-primary-300 sm:text-sm sm:leading-5 mr-1">
-        {#each { length: chaptersCount } as chapter, i}
+        {#each { length: chaptersCount } as _, i}
           <option value={i + 1}>{i + 1}</option>
         {/each}
       </select>
@@ -71,7 +69,7 @@
         style="width: 90px;"
         bind:value={verse}
         class="mt-2 rounded-md block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:ring-primary-300 focus:border-primary-300 sm:text-sm sm:leading-5">
-        {#each { length: versesCount } as verses, i}
+        {#each { length: versesCount } as _, i}
           <option value={i + 1}>{i + 1}</option>
         {/each}
       </select>

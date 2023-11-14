@@ -26,9 +26,9 @@
         );
       }
       versesString = versesString.concat(v.toString());
-      if (i != currentVerses.length - 1) {
+      if (i != currentVerses.length - 1)
         versesString = versesString.concat(', ');
-      }
+
     });
     return versesString;
   }
@@ -55,7 +55,7 @@
       {/if}
       {printCurrentVerses()}
       |
-      {#if data.document.authors && data.document.authors.length}
+      {#if data.document.authors?.length}
         {data.document.authors.join(' • ')}
       {:else}
         {data.document.author || 'Hershel Wayne House'}
@@ -84,7 +84,7 @@
     {/each}
   </div>
 
-  {#if data.document.seriesIds && data.document.seriesIds.length}
+  {#if data.document.seriesIds?.length}
     {#await import('$lib/components/navigation/SeriesNavigator.svelte') then { default: SeriesNavigator }}
       {#each data.document.seriesIds as seriesId}
         <SeriesNavigator {seriesId} document={data.document} />
@@ -109,7 +109,7 @@
       <a
         data-sveltekit-noscroll
         class="font-medium px-3 py-2 hover:bg-gray-200 text-primary-700 rounded
-      border border-primary-700"
+          border border-primary-700"
         href="/{$page.params.version}/{$page.params.bookId}/{$page.params.reference}/doc/{data
           .document.id}/edit">
         Edit
@@ -123,7 +123,7 @@
     <a
       data-sveltekit-noscroll
       class="font-medium px-3 py-2 hover:bg-gray-200 text-primary-700 rounded
-      border border-primary-700"
+        border border-primary-700"
       href="/{$page.params.version}/{$page.params.bookId}/{$page.params.reference}/doc/{data
         .document.id}/translate">
       Translate to {LanguageMappings[translatorLanguage]}

@@ -21,7 +21,7 @@
     label = '';
 
   let value = '';
-  let maxInitialItems = 5;
+  const maxInitialItems = 5;
 
   let items: RefinementListItem[] = [];
   let refine: (arg0: any) => any;
@@ -34,9 +34,9 @@
     const customRefinementList = connectRefinementList((params) => {
       ({ items, refine, searchForItems, isShowingMore, canToggleShowMore, toggleShowMore } =
         params);
-      if (!params.isFromSearch && value) {
+      if (!params.isFromSearch && value)
         value = ''; // not sure why this was in docs
-      }
+
     });
 
     search.addWidgets([
@@ -99,7 +99,7 @@
     type="button"
     class="p-1 mb-1 ml-1 text-xs text-gray-600"
     on:click={() => toggleShowMore()}
-    ><i class="fas {isShowingMore ? 'fa-chevron-up' : 'fa-chevron-down'}" />
+  ><i class="fas {isShowingMore ? 'fa-chevron-up' : 'fa-chevron-down'}" />
     {isShowingMore ? 'Show less' : 'Show more'}</button>
 {/if}
 

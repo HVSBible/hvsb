@@ -1,4 +1,4 @@
-import type { IBook } from "@hvsb/types";
+import type { IBook } from '@hvsb/types';
 
 // getBookName
 export function bookName(bookId: string): string {

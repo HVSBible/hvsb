@@ -27,7 +27,7 @@ export async function unlinkFromParentDocument(
 
     await Promise.all([updateImage, updateDocument]);
   } catch (err) {
-    alert('Error unlinking image from parent document. Refresh and try again.');
+    alert(`Error unlinking image from parent document. Refresh and try again. ${err}`);
   }
 }
 
