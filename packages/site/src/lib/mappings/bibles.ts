@@ -56,6 +56,7 @@ export const bibles: IBible[] = [
     id: 'de4e12af7f28f599-02',
     abbreviation: 'KJV',
     name: 'King James Version', // Protestant
+    supported: true,
   },
   {
     id: 'c315fa9f71d4af3a-01',
@@ -66,6 +67,7 @@ export const bibles: IBible[] = [
     id: '06125adad2d5898a-01',
     abbreviation: 'ASV',
     name: 'American Standard Version',
+    supported: true,
   },
   {
     id: '0bc8836afa7427fa-01',
