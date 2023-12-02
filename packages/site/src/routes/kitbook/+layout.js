@@ -13,8 +13,8 @@ const variants = import.meta.glob(['/src/**/*.variants.ts']);
 const variantsRaw = import.meta.glob(['/src/**/*.variants.ts'], { as: 'raw' });
 const compositions = import.meta.glob(['/src/**/*.composition']);
 const compositionsRaw = import.meta.glob(['/src/**/*.composition'], { as: 'raw' });
-const markdown = import.meta.glob(['/src/**/*.md', '/README.md']);
-const markdownRaw = import.meta.glob(['/src/**/*.md', '/README.md'], { as: 'raw' });
+const markdown = import.meta.glob(['/src/docs/**/*.md', '/README.md']);
+const markdownRaw = import.meta.glob(['/src/docs/**/*.md', '/README.md'], { as: 'raw' });
 export const _pages = groupColocatedModulesIntoPages({ components, componentsRaw, variants, variantsRaw, compositions, compositionsRaw, markdown, markdownRaw });
 let firstLoad = true;
 if (firstLoad) {
