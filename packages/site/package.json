@@ -30,7 +30,7 @@
     "firebase": "^9.17.1",
     "happy-dom": "^8.2.6",
     "instantsearch.js": "^4.50.2",
-    "kitbook": "1.0.0-alpha.31",
+    "kitbook": "1.0.0-beta.11",
     "linkify-html": "^3.0.5",
     "linkifyjs": "^3.0.5",
     "svelte": "^3.55.1",

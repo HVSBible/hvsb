@@ -2,13 +2,14 @@ import type { UserConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { kitbook } from 'kitbook/plugins/vite';
 import UnoCSS from 'unocss/vite';
+import kitbookConfig from './kitbook.config';
 
 const config: UserConfig = {
   plugins: [
     UnoCSS({
       mode: 'svelte-scoped',
     }),
-    kitbook(),
+    kitbook(kitbookConfig),
     sveltekit()
   ],
   define: {

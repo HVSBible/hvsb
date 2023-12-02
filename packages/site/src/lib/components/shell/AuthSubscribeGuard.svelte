@@ -5,10 +5,10 @@
   import LoadingIndicator from './LoadingIndicator.svelte';
 
   beforeNavigate(({ to, cancel }) => {
-    if (
-      to &&
-        (to.url.pathname.includes('img') || to.url.pathname.includes('doc') || to.url.pathname.includes('vid'))
-    ) {
+    if (!to) return
+    const { pathname } = to.url
+    if (pathname.includes('kitbook')) return
+    if (pathname.includes('img') || pathname.includes('doc') || pathname.includes('vid')) {
       if (!$user) {
         modal = 'auth';
         cancel();

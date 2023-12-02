@@ -9,7 +9,7 @@ Scripture is provided by the powerful [API.Bible](https://scripture.api.bible/) 
 
 ```ts
 const res = await fetch(
-  'https://api.scripture.api.bible/v1/bibles/${bibleId}/books/${bookId}/chapters',
+  'https://api.scripture.api.bible/v1/bibles/<bibleId>/books/<bookId>/chapters',
   {
     headers: {
       'api-key': import.meta.env.VITE_bibleApi,
@@ -19,7 +19,7 @@ const res = await fetch(
 const json = await res.json();
 ```
 
-3. Fetch the text from a particular chapter: `https://api.scripture.api.bible/v1/bibles/${bibleId}/chapters/${bookId}.${chapter}?include-verse-spans=true`
+3. Fetch the text from a particular chapter: `https://api.scripture.api.bible/v1/bibles/<bibleId>/chapters/<bookId>.<chapter>?include-verse-spans=true`
 4. Fetch a particular verse, e.g. `https://api.scripture.api.bible/v1/bibles/9879dbb7cfe39e4d-04/verses/1JN.1.1`
 
 ## Unused Sources

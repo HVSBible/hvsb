@@ -3,11 +3,12 @@ import { error } from '@sveltejs/kit';
 import { firebaseConfig } from 'sveltefirets';
 import { PROCESS_IMAGE_URL } from '$env/static/private';
 import { STORAGE_PATH_URL_PARAM } from './constant';
+import { ResponseCodes } from '$lib/response_codes';
 
 export const GET: RequestHandler = async ({ url }) => {
   const storage_path = url.searchParams.get(STORAGE_PATH_URL_PARAM);
   if (!storage_path)
-    throw error(400, 'must include storage path of photo');
+    throw error(ResponseCodes.BAD_REQUEST, 'must include storage path of photo');
 
   const gcs_path = await get_image_serving_url(storage_path);
   return new Response(gcs_path);
