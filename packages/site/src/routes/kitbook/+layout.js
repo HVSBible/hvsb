@@ -18,13 +18,13 @@ const markdownRaw = import.meta.glob(['/src/**/*.md', '/README.md'], { as: 'raw'
 export const _pages = groupColocatedModulesIntoPages({ components, componentsRaw, variants, variantsRaw, compositions, compositionsRaw, markdown, markdownRaw });
 let firstLoad = true;
 if (firstLoad) {
-    pagesStore.set(_pages);
-    firstLoad = false;
+  pagesStore.set(_pages);
+  firstLoad = false;
 }
 if (import.meta.hot) {
-    import.meta.hot.accept((module) => {
-        if (module?._pages)
-            pagesStore.set(module._pages);
-    });
+  import.meta.hot.accept((module) => {
+    if (module?._pages)
+      pagesStore.set(module._pages);
+  });
 }
 export const load = layoutLoad({ pages: _pages, settings });
