@@ -45,6 +45,8 @@
   </p>
 
   {#if dev && $page.error}
-    <pre>{$page.error}</pre>
+    <div class="w-full overflow-x-auto">
+      <pre>{JSON.stringify($page.error, null, 2)}</pre>
+    </div>
   {/if}
 </div>

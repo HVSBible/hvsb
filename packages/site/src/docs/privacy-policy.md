@@ -1,8 +1,3 @@
----
-title: Privacy Policy
-description: Frontmatter is available to be imported via { attributes } but will not be part of what is returned by { html }
----
-
 # Privacy Policy
 
 _Last updated: May 19, 2021_

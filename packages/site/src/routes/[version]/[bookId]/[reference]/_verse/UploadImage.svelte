@@ -78,11 +78,11 @@
 
   import type { IImage } from '@hvsb/types';
   import { addOnline } from 'sveltefirets';
-  import { STORAGE_PATH_URL_PARAM } from '../../../../image_serving_url/constant';
+  import { STORAGE_PATH_URL_PARAM } from '../../../../api/image_serving_url/constant';
 
   async function save_photo(storage_path: string) {
     try {
-      const response = await fetch(`/image_serving_url?${STORAGE_PATH_URL_PARAM}=${storage_path}`);
+      const response = await fetch(`/api/image_serving_url?${STORAGE_PATH_URL_PARAM}=${storage_path}`);
       const gcs_path = await response.text();
 
       const image: IImage = {

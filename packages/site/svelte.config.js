@@ -3,6 +3,7 @@ import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+  extensions: ['.svelte', '.composition'],
   preprocess: [
     preprocess(),
   ],
@@ -27,5 +28,4 @@ const config = {
   },
 };
 
-import { augmentSvelteConfigForKitbook } from 'kitbook/plugins/vite';
-export default augmentSvelteConfigForKitbook(config);
+export default config;
