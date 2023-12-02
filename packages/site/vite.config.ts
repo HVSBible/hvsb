@@ -12,10 +12,7 @@ const config: UserConfig = {
     kitbook(kitbookConfig),
     sveltekit()
   ],
-  define: {
-    'import.meta.vitest': false,
-    'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID),
-  },
+  define: getReplacements(),
   optimizeDeps: {
     exclude: ['linkify-html'],
   },
@@ -28,3 +25,16 @@ const config: UserConfig = {
 };
 
 export default config;
+
+function getReplacements() {
+  if (typeof process !== 'undefined' && process.env.VERCEL_ANALYTICS_ID) {
+    return {
+      'import.meta.vitest': false,
+      'REPLACED_WITH_VERCEL_ANALYTICS_ID': process.env.VERCEL_ANALYTICS_ID,
+    }
+  }
+
+  return {
+    'import.meta.vitest': false,
+  }
+}
